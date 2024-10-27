@@ -1,4 +1,4 @@
-- On MacOS create a profile, before opening it put the file labled prefs.js in /Users/YourProfileName/Library/Application\ Support/Firefox/Profiles/ProfileOne/prefs.js 
+- On MacOS create a profile named ProfileOne, before opening it put the file labled prefs.js in /Users/YourProfileName/Library/Application\ Support/Firefox/Profiles/ProfileOne/prefs.js 
 
 - Use this command to pick the profile you want firefox to open with: /Applications/Firefox.app/Contents/MacOS/firefox -P
 
