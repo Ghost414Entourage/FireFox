@@ -46,6 +46,41 @@ user_pref("accessibility.tabfocus_applies_to_xul", true);
 // When enabled (true), type-ahead find allows searching for text in the page by typing it directly.
 user_pref("accessibility.typeaheadfind", false);
 
+// Automatically start type-ahead find when typing on a page (true = enabled)
+user_pref("accessibility.typeaheadfind.autostart", true);
+
+// Set case sensitivity for type-ahead find 
+// (0 = case-insensitive, 1 = case-sensitive, 2 = smart-case sensitivity based on input)
+user_pref("accessibility.typeaheadfind.casesensitive", 0);
+
+// Enable or disable sound notification when a match is found during type-ahead find (true = enabled)
+user_pref("accessibility.typeaheadfind.enablesound", true);
+
+// Set whether the find bar should briefly flash to indicate matches 
+// (0 = no flash, 1 = flash once, etc.)
+user_pref("accessibility.typeaheadfind.flashBar", 1);
+
+// Limit type-ahead find to only links on the page (false = search all text, true = links only)
+user_pref("accessibility.typeaheadfind.linksonly", false);
+
+// Allow manual activation of type-ahead find using a designated key (true = enabled)
+user_pref("accessibility.typeaheadfind.manual", true);
+
+// Set the maximum number of matches shown in the type-ahead find (1000 = limit to 1000 matches)
+user_pref("accessibility.typeaheadfind.matchesCountLimit", 1000);
+
+// Enable or disable pre-filling the find bar with the currently selected text (false = disabled)
+user_pref("accessibility.typeaheadfind.prefillwithselection", false);
+
+// Specify the sound URL for type-ahead find matches; "beep" uses the system beep sound
+user_pref("accessibility.typeaheadfind.soundURL", "beep");
+
+// Limit type-ahead find to starting only at links (false = search all text, true = start at links only)
+user_pref("accessibility.typeaheadfind.startlinksonly", false);
+
+// Set the timeout in milliseconds for the type-ahead find search (5000 = 5 seconds)
+user_pref("accessibility.typeaheadfind.timeout", 5000);
+
 
 // Set the startup page to a blank page (0 = blank page)
 user_pref("browser.startup.page", 0); 
