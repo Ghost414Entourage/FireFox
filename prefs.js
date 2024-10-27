@@ -566,15 +566,14 @@ user_pref("browser.pagethumbnails.capturing_disabled", true);
 // Enable or disable using the system backend for notifications (false = disable, true = enable)
 user_pref("alerts.useSystemBackend.windows.notificationserver.enabled", false); 
 
+// Keep Both Disabled: If you prefer not to use EME (often for reasons related to privacy or avoiding DRM.
 // Enable or disable Encrypted Media Extensions (false = disable EME, true = enable EME)
 user_pref("media.eme.enabled", false); 
 
 // Enable or disable the UI for Encrypted Media Extensions (false = disable UI, true = enable UI)
 user_pref("browser.eme.ui.enabled", false); 
 
-
 // https://wiki.mozilla.org/Security/Referrer 
-
 // Never send the Referer header (0 = never send the header, 1 = send only on links, 2 = send on all requests)
 user_pref("network.http.sendRefererHeader", 0);
 
