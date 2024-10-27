@@ -22,6 +22,31 @@ user_pref("accessibility.browsewithcaret", false);
 // When enabled (true), the F7 key can be used to toggle caret browsing on and off.
 user_pref("accessibility.browsewithcaret_shortcut.enabled", true);
 
+// Enable or disable all accessibility services (0 = enabled, 1 = partially disabled, 2 = fully disabled)
+// Setting this to 2 will fully disable accessibility services, which can improve performance if not needed.
+user_pref("accessibility.force_disabled", 0);
+
+// Enable or disable mono audio output (false = stereo, true = mono)
+// When enabled (true), mono audio combines left and right audio channels, useful for users with hearing in one ear.
+user_pref("accessibility.monoaudio.enable", false);
+
+// Control focus behavior for form controls with the mouse (0 = default behavior, 1 = focus with any mouse click, 2 = focus with left mouse click)
+// Setting this to 2 focuses form controls only when clicked with the left mouse button.
+user_pref("accessibility.mouse_focuses_formcontrol", 2);
+
+// Configure tab key focus behavior (value is a bitfield, 1 = text fields, 2 = other form controls, 4 = links)
+// Setting this to 7 (1 + 2 + 4) makes the tab key navigate through all focusable elements (text fields, form controls, and links).
+user_pref("accessibility.tabfocus", 7);
+
+// Enable or disable tab focus for XUL elements (false = disable, true = enable)
+// When enabled (true), the tab key can focus on XUL elements (Firefox's internal UI elements).
+user_pref("accessibility.tabfocus_applies_to_xul", true);
+
+// Enable or disable type-ahead find feature (false = disable, true = enable)
+// When enabled (true), type-ahead find allows searching for text in the page by typing it directly.
+user_pref("accessibility.typeaheadfind", false);
+
+
 // Set the startup page to a blank page (0 = blank page)
 user_pref("browser.startup.page", 0); 
 
