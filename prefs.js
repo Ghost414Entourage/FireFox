@@ -572,6 +572,9 @@ user_pref("media.eme.enabled", false);
 // Enable or disable the UI for Encrypted Media Extensions (false = disable UI, true = enable UI)
 user_pref("browser.eme.ui.enabled", false); 
 
+
+// https://wiki.mozilla.org/Security/Referrer 
+
 // Never send the Referer header (0 = never send the header, 1 = send only on links, 2 = send on all requests)
 user_pref("network.http.sendRefererHeader", 0);
 
