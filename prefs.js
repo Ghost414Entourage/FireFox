@@ -1,3 +1,27 @@
+// Enable or disable the Accessibility Object Model (false = disable, true = enable)
+// When enabled (true), developers can use JavaScript to enhance custom elements for accessibility.
+user_pref("accessibility.AOM.enabled", false);
+
+// Enable or disable ARIA element reflection (false = disable, true = enable)
+// When enabled (true), allows JavaScript to reflect ARIA attributes on elements, improving interaction with ARIA properties.
+user_pref("accessibility.ARIAElementReflection.enabled", false);
+
+// Enable or disable activation of elements by access keys (false = disable, true = enable)
+// When enabled (true), pressing an access key immediately activates associated elements, improving accessibility navigation.
+user_pref("accessibility.accesskeycausesactivation", true);
+
+// Enable or disable blocking of automatic page refreshes (false = disable blocking, true = enable blocking)
+// When enabled (true), Firefox will block auto-refreshing pages, which can be useful for screen readers or low-vision users.
+user_pref("accessibility.blockautorefresh", false);
+
+// Enable or disable caret browsing (false = disable, true = enable)
+// When enabled (true), caret browsing allows navigating web pages using a movable cursor, similar to a text editor.
+user_pref("accessibility.browsewithcaret", false);
+
+// Enable or disable the shortcut for toggling caret browsing (false = disable, true = enable)
+// When enabled (true), the F7 key can be used to toggle caret browsing on and off.
+user_pref("accessibility.browsewithcaret_shortcut.enabled", true);
+
 // Set the startup page to a blank page (0 = blank page)
 user_pref("browser.startup.page", 0); 
 
