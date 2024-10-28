@@ -24,6 +24,6 @@ Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Co
 
 
 
-I believe in the importance of citation because books and technology can complement each other in powerful ways. Just imagine being the person who invented paper! Where do children most often express their creativity through drawing?
+I believe in the importance of citation because books and technology can complement each other in powerful ways. Just imagine being the person who invented paper! Where do children most often express their creativity through drawing? 
 
 https://owl.purdue.edu/owl/research_and_citation/chicago_manual_17th_edition/cmos_formatting_and_style_guide/chicago_manual_of_style_17th_edition.html
