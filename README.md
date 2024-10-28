@@ -6,25 +6,24 @@
 
 APA Style
 
-Format: Author. (Year). Title [Source]. URL
-- Example: Arkenfox. (n.d.). user.js: Firefox hardening user.js [GitHub repository]. https://github.com/arkenfox/user.js/
+Arkenfox. (n.d.). Arkenfox/user.js: Firefox privacy, security and anti-tracking: A comprehensive user.js template for configuration and hardening. GitHub. https://github.com/arkenfox/user.js/. 
 
 
 MLA Style
 
-Format: Author. Title. Publisher, Year. URL.
-- Example: Arkenfox. user.js: Firefox Hardening user.js. GitHub, n.d. https://github.com/arkenfox/user.js/.
+Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Comprehensive User.Js Template for Configuration and Hardening.” GitHub, github.com/arkenfox/user.js/. Accessed 27 Oct. 2024. 
 
 
 Chicago Style
 
-Format: Author. Title. Publisher. Accessed [Date]. URL.
-- Example: Arkenfox. user.js: Firefox Hardening user.js. GitHub. Accessed [Date]. https://github.com/arkenfox/user.js/.
+Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Comprehensive User.Js Template for Configuration and Hardening.” GitHub. Accessed October 27, 2024. https://github.com/arkenfox/user.js/. 
 
 
-IEEE Style
-
-Format: [#] Author, Title, Publisher. [Online]. Available: URL
-- Example: [1] Arkenfox, user.js: Firefox hardening user.js, GitHub. [Online]. Available: https://github.com/arkenfox/user.js/.
 
 
+
+
+
+I believe in the importance of citation because books and technology can complement each other in powerful ways. Just imagine being the person who invented paper! Where do children most often express their creativity through drawing?
+
+https://owl.purdue.edu/owl/research_and_citation/chicago_manual_17th_edition/cmos_formatting_and_style_guide/chicago_manual_of_style_17th_edition.html
