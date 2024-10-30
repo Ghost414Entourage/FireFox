@@ -81,6 +81,49 @@ user_pref("accessibility.typeaheadfind.startlinksonly", false);
 // Set the timeout in milliseconds for the type-ahead find search (5000 = 5 seconds)
 user_pref("accessibility.typeaheadfind.timeout", 5000);
 
+// Enable or disable the UI Automation API, which aids screen readers (false = disabled, true = enabled)
+user_pref("accessibility.uia.enable", false);
+
+// Show a warning when using caret browsing, which allows text cursor navigation (true = show warning, false = disable warning)
+user_pref("accessibility.warn_on_browsewithcaret", true);
+
+// Suppress certain UI elements after a clipboard copy on Windows (0 = no suppression, 1 = minimal suppression, 2 = hide tooltips and pop-ups)
+user_pref("accessibility.windows.suppress-after-clipboard-copy", 2);
+
+// Suppress specific UI elements during Snap Layout actions on Windows (0 = no suppression, 1 = hide some elements, 2 = hide more UI popups and overlays)
+user_pref("accessibility.windows.suppress-for-snap-layout", 2);
+
+// Show or hide favicons (website icons) in notifications (false = hide favicons, true = show favicons)
+user_pref("alerts.showFavicons", false);
+
+// Use the system alert backend for notifications, so alerts are displayed in the system’s notification center (true = use system backend, false = use Firefox notifications)
+user_pref("alerts.useSystemBackend", true);
+
+// URL for submitting feedback or ideas directly to Mozilla
+user_pref("app.feedback.baseURL", "https://ideas.mozilla.org/");
+
+// URL for accessing the Normandy service, which manages remote settings, studies, and rollouts in Firefox
+user_pref("app.normandy.api_url", "https://normandy.cdn.mozilla.net/api/v1");
+
+// Enable developer mode for Normandy, allowing custom experiments (false = disable, true = enable)
+user_pref("app.normandy.dev_mode", false);
+
+// Enable the Normandy experiment and settings system in Firefox (true = enable, false = disable)
+user_pref("app.normandy.enabled", true);
+
+// Indicator of whether this is the first time Normandy is running on this profile (true = first run, false = not first run)
+user_pref("app.normandy.first_run", false);
+
+// Last build ID detected by Normandy, which helps manage experiment compatibility and versioning (blank by default)
+user_pref("app.normandy.last_seen_buildid", "");
+
+
+
+
+
+
+
+
 
 // Set the startup page to a blank page (0 = blank page)
 user_pref("browser.startup.page", 0); 
