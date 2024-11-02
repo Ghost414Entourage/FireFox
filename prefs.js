@@ -109,6 +109,12 @@ user_pref("app.normandy.api_url", "https://normandy.cdn.mozilla.net/api/v1");
 user_pref("app.normandy.dev_mode", false);
 
 // Enable the Normandy experiment and settings system in Firefox (true = enable, false = disable)
+// When set to true, this preference activates Mozilla's Normandy system, which allows Firefox to run experiments and manage feature flags.
+// Normandy can facilitate A/B testing, which means users may receive different versions of features or settings based on their assigned group.
+// This helps Mozilla gather data on user behavior and preferences, allowing for informed decisions about which features to implement or improve.
+// Additionally, it allows for more dynamic and granular control over settings that may not be immediately available through the standard Firefox preferences interface.
+// By enabling Normandy, users may participate in experiments that could lead to enhanced user experiences or performance optimizations,
+// although users may also encounter experimental features that are still in testing phases and not yet finalized for general release.
 user_pref("app.normandy.enabled", true);
 
 // Indicator of whether this is the first time Normandy is running on this profile (true = first run, false = not first run)
