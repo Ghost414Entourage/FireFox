@@ -507,7 +507,227 @@ user_pref("apz.keyboard.passive-listeners", true);
 
 // Enable or disable double-tap zoom gesture on touchpad for Mac (false = disable, true = enable)
 // When enabled (true), users can double-tap with two fingers on a touchpad to zoom in.
-user_pref("apz.mac.enable_double_tap_zoom_
+user_pref("apz.mac.enable_double_tap_zoom_touchpad_gesture", true);
+
+// Set the maximum time for a tap gesture in milliseconds (default: 300)
+// Defines the duration that must be exceeded for a tap gesture to be recognized as a long press.
+user_pref("apz.max_tap_time", 300);
+
+// Set the maximum velocity in inches per millisecond (default: -1.0)
+// Defines the maximum speed at which touch gestures can be recognized; negative means no limit.
+user_pref("apz.max_velocity_inches_per_ms", -1.0);
+
+// Set the size of the velocity queue (default: 5)
+// Specifies the number of velocity entries to keep for touch gestures.
+// This affects how accurately the touch input is interpreted.
+user_pref("apz.max_velocity_queue_size", 5);
+
+// Set the maximum zoom level (default: 10.0)
+// Defines how much users can zoom in on content; higher values allow for more zoom.
+user_pref("apz.max_zoom", 10.0);
+
+// Set the minimum speed required for a skate gesture in pixels per second (default: 1.0)
+// Determines the minimum velocity for a gesture to qualify as a skate gesture.
+user_pref("apz.min_skate_speed", 1.0);
+
+// Set the minimum zoom level (default: 0.25)
+// Defines how much users can zoom out on content; lower values allow for less zoom.
+user_pref("apz.min_zoom", 0.25);
+
+// Enable or disable the minimap feature (false = disable, true = enable)
+// When enabled (true), a minimap is displayed to provide a visual overview of the content.
+user_pref("apz.minimap.enabled", false);
+
+// Enable or disable one-touch pinch gestures (false = disable, true = enable)
+// When enabled (true), users can use a one-finger pinch gesture to zoom.
+user_pref("apz.one_touch_pinch.enabled", false);
+
+// Set the damping factor for overscroll (default: 1.1)
+// Controls how much the overscroll effect is damped during interactions.
+user_pref("apz.overscroll.damping", 1.1);
+
+// Enable or disable overscroll behavior (false = disable, true = enable)
+// When enabled (true), allows content to overscroll beyond its boundaries during touch interactions.
+user_pref("apz.overscroll.enabled", true);
+
+// Set the maximum velocity for overscroll in pixels per second (default: 10.0)
+// Defines the highest speed at which overscroll can occur during touch interactions.
+user_pref("apz.overscroll.max_velocity", 10.0);
+
+// Set the minimum pan distance ratio for overscroll (default: 1.0)
+// Determines the minimum distance a user must pan before overscroll is activated.
+user_pref("apz.overscroll.min_pan_distance_ratio", 1.0);
+
+// Set the spring stiffness for overscroll behavior (default: 200.0)
+// Controls how "springy" the overscroll effect feels; higher values create a stiffer effect.
+user_pref("apz.overscroll.spring_stiffness", 200.0);
+
+// Set the stop distance threshold for overscroll in pixels (default: 5.0)
+// Defines the distance within which the overscroll effect will stop; smaller values lead to quicker stops.
+user_pref("apz.overscroll.stop_distance_threshold", 5.0);
+
+// Set the stop velocity threshold for overscroll in pixels per second (default: 0.01)
+// Determines the minimum speed at which the overscroll effect will be considered as stopped.
+user_pref("apz.overscroll.stop_velocity_threshold", 0.01);
+
+// Set the stretch factor for overscroll (default: 0.35)
+// Controls how much the overscroll content stretches beyond its bounds; higher values allow for more stretch.
+user_pref("apz.overscroll.stretch_factor", 0.35);
+
+// Enable or disable asynchronous scroll offset testing (false = disable, true = enable)
+// When enabled (true), allows for testing of asynchronous scrolling behavior.
+user_pref("apz.overscroll.test_async_scroll_offset.enabled", false);
+
+// Enable or disable paint skipping (false = disable, true = enable)
+// When enabled (true), allows Firefox to skip painting during certain touch interactions to improve performance.
+user_pref("apz.paint_skipping.enabled", true);
+
+// Set the maximum age for pinch lock buffer in milliseconds (default: 80)
+// Defines how long the pinch lock state is maintained; longer durations can affect responsiveness.
+user_pref("apz.pinch_lock.buffer_max_age", 80);
+
+// Set the pinch lock mode (default: 2)
+// Controls the behavior of pinch lock during touch interactions.
+// Mode 0: Disabled; users can zoom freely.
+// Mode 1: Enabled but less strict; allows some flexibility while zooming.
+// Mode 2: Fully enabled and strict; limits zooming actions significantly to prevent unintended gestures.
+user_pref("apz.pinch_lock.mode", 2);
+
+// Set the threshold for scroll lock during pinch gestures (default: 0.0625)
+// Defines how sensitive the scroll lock is during a pinch gesture; lower values mean easier activation.
+user_pref("apz.pinch_lock.scroll_lock_threshold", 0.0625);
+
+// Set the threshold for breaking out of a span lock during pinch gestures (default: 0.03125)
+// Determines how much movement is required to break out of a locked pinch gesture.
+user_pref("apz.pinch_lock.span_breakout_threshold", 0.03125);
+
+// Set the threshold for locking spans during pinch gestures (default: 0.03125)
+// Controls how much movement is required to maintain a locked span during pinch actions.
+user_pref("apz.pinch_lock.span_lock_threshold", 0.03125);
+
+// Enable or disable popups (false = disable, true = enable)
+// When enabled (true), popups can appear as defined by the website.
+user_pref("apz.popups.enabled", true);
+
+// Enable or disable the preference for minimizing jank with smaller display ports (false = disable, true = enable)
+// When enabled (true), the system prefers to maintain minimal display ports to reduce jank during scrolling.
+user_pref("apz.prefer_jank_minimal_displayports", true);
+
+// Enable or disable printing of the APZ tree for debugging purposes (false = disable, true = enable)
+// When enabled (true), the APZ tree can be printed for analysis.
+user_pref("apz.printtree", false);
+
+// Enable or disable recording of checkerboarding events (false = disable, true = enable)
+// When enabled (true), the system can record events related to checkerboarding, which is an optimization technique.
+user_pref("apz.record_checkerboarding", false);
+
+// Enable or disable the use of a rounded external scroll offset (false = disable, true = enable)
+// When enabled (true), the external scroll offset can be rounded for visual consistency.
+user_pref("apz.rounded_external_scroll_offset", false);
+
+// Set the delay for repainting during scaling in milliseconds (default: 500)
+// Controls how long to wait before repainting the screen during scale operations.
+user_pref("apz.scale_repaint_delay_ms", 500);
+
+// Enable or disable the repeat behavior for scrollbar buttons (false = disable, true = enable)
+// When enabled (true), scrollbar buttons will repeat actions if held down.
+user_pref("apz.scrollbarbuttonrepeat.enabled", true);
+
+// Set the delay for the scrollend event in milliseconds (default: 100)
+// Determines how long to wait after scrolling has stopped before firing the scrollend event.
+user_pref("apz.scrollend-event.content.delay_ms", 100);
+
+// Enable or disable recalculation of the scroll thumb position (false = disable, true = enable)
+// When enabled (true), the system recalculates the position of the scroll thumb dynamically.
+user_pref("apz.scrollthumb.recalc", true);
+
+// Set the tolerance for the second tap in seconds (default: 0.5)
+// Defines how close the second tap needs to be in time to register as a double tap.
+user_pref("apz.second_tap_tolerance", 0.5);
+
+// Enable or disable tests that fail with native injection (false = disable, true = enable)
+// When enabled (true), allows tests to run that may not pass when using native event injection.
+user_pref("apz.test.fails_with_native_injection", false);
+
+// Enable or disable logging for test events (false = disable, true = enable)
+// When enabled (true), the system will log test-related events for debugging purposes.
+user_pref("apz.test.logging_enabled", false);
+
+// Set the touch acceleration factor for the X axis (default: 1.0)
+// Controls how much acceleration is applied to touch movements along the X axis.
+user_pref("apz.touch_acceleration_factor_x", 1.0);
+
+// Set the touch acceleration factor for the Y axis (default: 1.0)
+// Controls how much acceleration is applied to touch movements along the Y axis.
+user_pref("apz.touch_acceleration_factor_y", 1.0);
+
+// Set the tolerance for touch movements in meters (default: 0.1)
+// Defines how much movement is tolerated before it's considered a gesture.
+user_pref("apz.touch_move_tolerance", 0.1);
+
+// Set the tolerance for touch start in meters (default: 0.1)
+// Defines how much movement is tolerated before the touch start is recognized.
+user_pref("apz.touch_start_tolerance", 0.1);
+
+// Set the velocity bias for touch events (default: 0.0)
+// Adjusts the perceived velocity of touch movements to enhance responsiveness.
+user_pref("apz.velocity_bias", 0.0);
+
+// Set the relevance time for velocity calculations in milliseconds (default: 100)
+// Defines how long to consider touch movements when calculating velocity.
+user_pref("apz.velocity_relevance_time_ms", 100);
+
+// Enable or disable checking for pan gesture conversion on Windows (false = disable, true = enable)
+// When enabled (true), the system checks if touch gestures can be converted to pan gestures.
+user_pref("apz.windows.check_for_pan_gesture_conversion", true);
+
+// Enable or disable direct manipulation on Windows (false = disable, true = enable)
+// When enabled (true), allows for direct manipulation of content using touch gestures.
+user_pref("apz.windows.force_disable_direct_manipulation", false);
+
+// Enable or disable the use of direct manipulation features on Windows (false = disable, true = enable)
+// When enabled (true), the system uses direct manipulation techniques for touch interactions.
+user_pref("apz.windows.use_direct_manipulation", true);
+
+// Enable or disable activation of all scroll frames (false = disable, true = enable)
+// When enabled (true), all scroll frames in the application will be activated for scrolling.
+user_pref("apz.wr.activate_all_scroll_frames", false);
+
+// Enable or disable activation of all scroll frames when fission is enabled (false = disable, true = enable)
+// When enabled (true), all scroll frames will be activated for scrolling when fission is active.
+user_pref("apz.wr.activate_all_scroll_frames_when_fission", true);
+
+// Set the high-memory adjustment for the X-axis skate (default: 0.0)
+// Adjusts the behavior of the X-axis skate when the system is in high memory usage conditions.
+user_pref("apz.x_skate_highmem_adjust", 0.0);
+
+// Set the size multiplier for X-axis skates (default: 1.25)
+// Defines the scaling factor for the size of skates used for X-axis movements.
+user_pref("apz.x_skate_size_multiplier", 1.25);
+
+// Set the size multiplier for stationary elements on the X-axis (default: 1.5)
+// Defines the scaling factor for stationary elements in the X direction.
+user_pref("apz.x_stationary_size_multiplier", 1.5);
+
+// Set the high-memory adjustment for the Y-axis skate (default: 0.0)
+// Adjusts the behavior of the Y-axis skate when the system is in high memory usage conditions.
+user_pref("apz.y_skate_highmem_adjust", 0.0);
+
+// Set the size multiplier for the Y-axis skates (default: 3.5)
+// Defines the scaling factor for the size of skates used for Y-axis movements.
+user_pref("apz.y_skate_size_multiplier", 3.5);
+
+// Set the size multiplier for stationary elements on the Y-axis (default: 3.5)
+// Defines the scaling factor for stationary elements in the Y direction.
+user_pref("apz.y_stationary_size_multiplier", 3.5);
+
+// Enable or disable zooming to focused input (false = disable, true = enable)
+// When enabled (true), the application will automatically zoom into focused input fields.
+user_pref("apz.zoom-to-focused-input.enabled", true);
+
+// Set the duration of zoom animations in milliseconds (default: 350)
+// Defines how long the zoom animation will take when zooming into input fields.
+user_pref("apz.zoom_animation_duration_ms", 350);
 
 
 
