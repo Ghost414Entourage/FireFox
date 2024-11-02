@@ -1701,3 +1701,915 @@ user_pref("browser.messaging-system.whatsNewPanel.enabled", false);
 
 // Default content analysis allowance (false = block, true = allow)
 user_pref("browser.contentanalysis.default_allow", false); 
+
+
+
+
+
+
+
+// Set the URL for the hidden window interface in Firefox on Mac (default: "chrome://browser/content/hiddenWindowMac.xhtml")
+// This preference specifies the location of the hidden window UI, which can be utilized by certain features or extensions 
+// that require a background process without user interface interruption.
+// It allows for specific layouts or functionalities that operate in the background, enabling seamless integration 
+// of tasks without affecting the primary browsing experience.
+// This setting can be particularly useful for developers creating extensions that need to run tasks discreetly.
+pref("browser.hiddenWindowChromeURL", "chrome://browser/content/hiddenWindowMac.xhtml");
+
+// Enable the abuse reporting feature for extensions in Firefox (true = enable, false = disable)
+// When set to true, this preference allows users to report issues related to add-ons, such as malicious behavior or spam.
+// This feature contributes to a safer and more secure browsing environment by helping Mozilla monitor and address abusive extensions.
+// User reports can lead to the removal of harmful add-ons from the Firefox Add-ons site, thus protecting other users.
+// Enabling this feature promotes community engagement in maintaining the quality of extensions available for Firefox.
+pref("extensions.abuseReport.enabled", true);
+
+// Enable or disable extra logging for the extension system in Firefox (true = enable, false = disable)
+// When set to false, this preference prevents the generation of detailed logs related to the activities of extensions.
+// While logging can be helpful for debugging and identifying issues, it may reduce overall browser performance, 
+// especially when many extensions are installed and active.
+// Disabling logging helps maintain a smoother and faster browsing experience for the user.
+pref("extensions.logging.enabled", false);
+
+// Enable or disable strict compatibility checks for extensions in Firefox (true = enable, false = disable)
+// When set to false, this preference allows the installation of extensions that are marked as incompatible with the current version of Firefox.
+// This flexibility can be beneficial for users who want to utilize specific extensions that may not have been updated for compatibility.
+// However, it can also lead to potential instability if an extension does not function properly with the current browser version,
+// as it may not have been tested against it.
+pref("extensions.strictCompatibility", false);
+
+// Enable or disable the new tab page in Firefox (true = enable, false = disable)
+// When set to false, this preference disables the new tab page, which is typically displayed when users open a new tab.
+// This setting may lead to a more minimalist browsing experience as it removes the default new tab interface,
+// allowing users to focus solely on the content of their current tab or a customized new tab experience.
+user_pref("browser.newtabpage.enabled", false);
+
+// Enable or disable preloading of the new tab page (true = enable, false = disable)
+// When set to false, this preference prevents Firefox from preloading the new tab page when the browser starts or a new tab is opened.
+// Disabling this feature can improve startup performance and resource usage, especially on lower-end devices,
+// as it reduces the background processes running when the browser is first launched.
+user_pref("browser.newtab.preload", false);
+
+// Enable or disable telemetry reporting for new tab page activity stream feeds (true = enable, false = disable)
+// When set to false, this preference disables the collection of telemetry data related to the activity streams on the new tab page.
+// This means that Firefox will not gather usage data to analyze how users interact with the various feeds displayed on the new tab page,
+// potentially enhancing user privacy by limiting the data sent to Mozilla.
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+
+// Enable or disable telemetry for the overall activity stream on the new tab page (true = enable, false = disable)
+// When set to false, this preference stops the collection of telemetry data regarding the general activity stream on the new tab page.
+// Users who are concerned about their data privacy may find this setting useful, as it limits the information sent back to Mozilla.
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+
+// Enable or disable snippets in the new tab page activity stream (true = enable, false = disable)
+// When set to false, this preference disables the display of snippets—brief articles or updates—from Mozilla on the new tab page.
+// This may lead to a more streamlined new tab experience without additional content that some users might find distracting.
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
+
+// Enable or disable the top stories feed in the new tab page activity stream (true = enable, false = disable)
+// When set to false, this preference disables the section that displays top stories from various sources on the new tab page.
+// Users may prefer a more focused experience without curated news articles, opting instead for a blank slate or custom content.
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+
+// Enable or disable inclusion of Pocket highlights in the new tab page activity stream (true = enable, false = disable)
+// When set to false, this preference disables the integration of Pocket's saved articles and highlights in the new tab page.
+// This may appeal to users who do not use Pocket or prefer not to see content from that service when opening a new tab.
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+
+// Enable or disable the Discovery Stream feed on the new tab page (true = enable, false = disable)
+// When set to false, this preference disables the discovery stream feature that suggests new content based on user interests.
+// This allows users to have a less personalized new tab experience, focusing solely on their browsing without external recommendations.
+user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+
+// Enable or disable sponsored content display on the new tab page (true = enable, false = disable)
+// When set to false, this preference prevents Firefox from displaying sponsored content or ads on the new tab page.
+// Users looking for an ad-free experience may find this setting beneficial, as it reduces distractions while browsing.
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+
+// Enable or disable sponsored content in the top sites section of the new tab page (true = enable, false = disable)
+// When set to false, this preference prevents sponsored content from being shown in the top sites section of the new tab page.
+// This provides a cleaner and less commercialized view of frequently visited sites, focusing purely on user preferences.
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+
+// Set the default sites displayed on the new tab page (default: empty string)
+// This preference defines which sites appear by default when opening a new tab. 
+// Setting it to an empty string means no sites will be pre-loaded in the new tab page, 
+// allowing users to customize their experience without predefined options.
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
+
+// Enable or disable the use of the Windows location provider (true = enable, false = disable)
+// When set to false, this preference disables the utilization of Windows' location services for geolocation in Firefox.
+// Users who prefer not to share their location information or who have privacy concerns may find this setting useful.
+// Disabling this may prevent sites from accessing location data based on the device's geolocation capabilities.
+user_pref("geo.provider.ms-windows-location", false); // [Windows]
+
+// Enable or disable the use of macOS Core Location services for geolocation (true = enable, false = disable)
+// When set to false, this preference disables Firefox's ability to use macOS's Core Location services to determine the user's geographic location.
+// This is particularly useful for users who wish to maintain their privacy by preventing applications from accessing their location data.
+user_pref("geo.provider.use_corelocation", false); // [macOS]
+
+// Enable or disable the use of GPSD (GPS Daemon) for geolocation on Linux (true = enable, false = disable)
+// When set to false, this preference stops Firefox from utilizing GPSD, a service for accessing GPS data on Linux systems.
+// This is relevant for users who may not want their location determined through GPS devices connected to their system.
+user_pref("geo.provider.use_gpsd", false); // [Linux]
+
+// Enable or disable the use of Geoclue for geolocation on Linux (true = enable, false = disable)
+// When set to false, this preference disables the use of Geoclue, which is a framework that provides location information on Linux.
+// Disabling this may help users maintain privacy by ensuring that applications cannot determine their location using system resources.
+user_pref("geo.provider.use_geoclue", false); // [Linux]
+
+// Set the URL for network region detection (default: empty string)
+// When set to an empty string, this preference disables the automatic detection of the user's region via network methods.
+// This means that Firefox will not attempt to determine the user's geographical region based on their IP address or network settings.
+user_pref("browser.region.network.url", ""); 
+
+// Enable or disable the automatic update of regional settings in Firefox (true = enable, false = disable)
+// When set to false, this preference prevents Firefox from automatically checking for updates to regional settings.
+// This is useful for users who want to maintain their current regional configuration without the browser attempting to modify it based on changes in their network location or other factors.
+user_pref("browser.region.update.enabled", false);
+
+// Set the accepted languages for web content (default: "en-US, en")
+// This preference defines the languages that Firefox will present to web servers when requesting content.
+// The value "en-US, en" indicates a preference for U.S. English as the primary language, with fallback to general English.
+// This can affect how websites display content, including language, regional settings, and other localized features.
+user_pref("intl.accept_languages", "en-US, en");
+
+// Enable or disable the use of U.S. English locale for JavaScript (true = enable, false = disable)
+// When set to true, this hidden preference forces Firefox to use the U.S. English locale in JavaScript contexts,
+// regardless of the user's system or browser locale settings. This can be useful for ensuring consistent behavior
+// in web applications that rely on JavaScript localization, particularly if they may misinterpret the user's locale.
+user_pref("javascript.use_us_english_locale", true);
+
+// Enable or disable background update scheduling (true = enable, false = disable) [Windows]
+// When set to false, this preference disables the scheduling of background updates in Firefox on Windows.
+// Users will not receive automatic updates in the background, which may require manual checks for updates.
+// This can be useful for users who prefer to control when updates are applied, rather than having them happen automatically.
+user_pref("app.update.background.scheduling.enabled", false);
+
+// Enable or disable automatic updates (true = enable, false = disable) [Non-Windows]
+// When set to false, this preference disables automatic updates for Firefox on non-Windows platforms.
+// Users will need to manually check for and install updates, which can help avoid unexpected changes or potential issues
+// related to new versions. This setting is particularly relevant for users who want to maintain control over their update process.
+user_pref("app.update.auto", false);
+
+// Enable or disable the Add-ons Manager pane visibility (true = enable, false = disable) [HIDDEN PREF]
+// When set to false, this hidden preference prevents the Add-ons Manager pane from being displayed in the Firefox interface.
+// Users will not be able to access or manage their extensions and themes through the typical add-ons pane,
+// which can enhance privacy and limit exposure to potential unwanted add-on installations.
+user_pref("extensions.getAddons.showPane", false);
+
+// Enable or disable recommendations in the Add-ons Manager (true = enable, false = disable)
+// When set to false, this preference disables the display of recommendations in the Firefox Add-ons Manager.
+// This means users will not see suggested extensions or themes, which can help streamline the add-on experience and reduce distractions.
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+
+// Enable or disable the Discovery pane (true = enable, false = disable)
+// When set to false, this preference disables the discovery features in Firefox, which can suggest new features and content to users.
+// This setting can help improve user focus by eliminating notifications or suggestions that may not be relevant or desired.
+user_pref("browser.discovery.enabled", false);
+
+// Enable or disable data submission for reporting purposes (true = enable, false = disable)
+// When set to false, this preference prevents Firefox from submitting data related to user activity and performance,
+// helping to enhance user privacy by not sharing data with Mozilla for analysis.
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
+
+// Enable or disable the Health Report upload feature (true = enable, false = disable)
+// When set to false, this preference disables the automatic upload of health report data,
+// which includes metrics about Firefox performance, user behavior, and other operational statistics.
+user_pref("datareporting.healthreport.uploadEnabled", false);
+
+// Enable or disable telemetry data collection (true = enable, false = disable) [Default: false]
+// When set to false, this preference prevents Firefox from collecting and sending telemetry data back to Mozilla.
+// This helps users maintain their privacy by not sharing any usage data.
+user_pref("toolkit.telemetry.enabled", false);
+
+// Enable or disable unified telemetry features (true = enable, false = disable)
+// When set to false, this preference disables the unified telemetry feature,
+// which is responsible for collecting data across multiple aspects of Firefox's operation.
+user_pref("toolkit.telemetry.unified", false);
+
+// Set the telemetry server URL (default: "data:,")
+// This preference configures the telemetry server to which Firefox sends data.
+// Setting it to "data:," effectively disables data sending since no valid server URL is provided.
+user_pref("toolkit.telemetry.server", "data:,");
+
+// Enable or disable the telemetry archive feature (true = enable, false = disable)
+// When set to false, this preference disables the archiving of telemetry data,
+// which means collected data will not be stored for later analysis.
+user_pref("toolkit.telemetry.archive.enabled", false);
+
+// Enable or disable new profile ping reporting (true = enable, false = disable)
+// When set to false, this preference prevents the collection of telemetry data during new profile creation.
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+
+// Enable or disable telemetry data collection during shutdown (true = enable, false = disable)
+// When set to false, this preference prevents the sending of telemetry data upon Firefox shutdown.
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+
+// Enable or disable update ping reporting (true = enable, false = disable)
+// When set to false, this preference disables the sending of telemetry data related to updates.
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+
+// Enable or disable BHR (Breakage Report) ping reporting (true = enable, false = disable)
+// When set to false, this preference prevents the collection of data about browser crashes or issues.
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+
+// Enable or disable first shutdown ping reporting (true = enable, false = disable)
+// When set to false, this preference prevents the sending of telemetry data on the first shutdown of the browser.
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+
+// Enable opt-out for coverage collection (true = enable, false = disable) [HIDDEN PREF]
+// When set to true, this hidden preference allows users to opt-out of coverage data collection, enhancing privacy.
+user_pref("toolkit.telemetry.coverage.opt-out", true);
+
+// Enable opt-out for coverage collection endpoint (true = enable, false = disable) [HIDDEN PREF]
+// When set to true, this hidden preference allows users to opt-out of coverage collection, enhancing privacy.
+user_pref("toolkit.coverage.opt-out", true);
+
+// Set the coverage endpoint base URL (default: "")
+// This preference configures the endpoint for coverage data submissions. An empty value means no data will be sent.
+user_pref("toolkit.coverage.endpoint.base", "");
+
+// Enable or disable telemetry for ping center features (true = enable, false = disable)
+// When set to false, this preference disables telemetry features related to the ping center, reducing data collection.
+user_pref("browser.ping-centre.telemetry", false);
+
+// Enable or disable the Beacon API (true = enable, false = disable)
+// When set to false, this preference disables the Beacon API, which can be used for sending analytics and tracking data.
+user_pref("beacon.enabled", false);
+
+// Enable or disable participation in studies (true = enable, false = disable)
+// When set to false, this preference opts the user out of any studies that Mozilla may conduct through the Shield system.
+// This means that the user will not participate in experiments or receive experimental features, ensuring a more stable browsing experience.
+user_pref("app.shield.optoutstudies.enabled", false);
+
+// Enable or disable the Normandy and Shield systems in Firefox (true = enable, false = disable)
+// When set to false, this preference disables the entire Normandy/Shield system, which is responsible for managing experiments and feature testing.
+// This prevents Firefox from running any A/B tests or experimental features that may impact the user's experience.
+user_pref("app.normandy.enabled", false);
+
+// Set the API URL for the Normandy system (default: "")
+// This preference specifies the API URL used by Normandy to fetch experiment data. Setting it to an empty string effectively disables communication with any Normandy server,
+// meaning no experiments or feature updates will be received, further enhancing user control over their Firefox experience.
+user_pref("app.normandy.api_url", "");
+
+// Set the URL for sending crash reports to the Breakpad service (default: "")
+// When set to an empty string, this preference disables the sending of crash reports to Mozilla's servers, 
+// preventing any data related to crashes from being reported, which can enhance user privacy.
+user_pref("breakpad.reportURL", "");
+
+// Enable or disable the sending of crash reports from browser tabs (true = enable, false = disable)
+// When set to false, this preference prevents Firefox from automatically sending crash reports 
+// when a tab crashes, ensuring that no crash data is sent without the user's explicit consent.
+user_pref("browser.tabs.crashReporting.sendReport", false);
+
+// Set the canonical URL for captive portal detection (default: "")
+// This preference can be used to specify a URL that will be checked to determine if the user is behind a captive portal.
+// When set to an empty string, this effectively disables the canonical URL check for captive portal detection.
+user_pref("captivedetect.canonicalURL", "");
+
+// Enable or disable the captive portal detection service (true = enable, false = disable)
+// When set to false, this preference disables the network captive portal detection service,
+// preventing Firefox from checking for and notifying the user about captive portals that may restrict internet access.
+user_pref("network.captive-portal-service.enabled", false);
+
+// Enable or disable the network connectivity service (true = enable, false = disable)
+// When set to false, this preference disables network connection checks that Firefox performs to assess 
+// connectivity status. This may prevent the browser from checking for available network connections automatically.
+user_pref("network.connectivity-service.enabled", false);
+
+// Enable or disable the ability to override Safe Browsing warnings (true = enable, false = disable)
+// When set to true, this preference allows users to bypass certain Safe Browsing warnings when they attempt 
+// to access websites that are flagged as potentially dangerous or harmful. This means that users can choose 
+// to proceed to a site despite the warnings, which may be useful in situations where they trust the site 
+// or believe the warning is erroneous.
+// However, enabling this preference can pose risks, as it diminishes the protective measures that Safe Browsing 
+// provides against phishing and malware sites. It's generally advisable to leave this setting at its default 
+// (false) to maintain optimal security while browsing.
+user_pref("browser.safebrowsing.allowOverride", true);
+
+// Disable link prefetching
+// When set to false, this prevents Firefox from prefetching links that a user may visit, 
+// which can help save bandwidth and enhance privacy by not loading pages before the user 
+// actually clicks on them.
+// User preference: 
+user_pref("network.prefetch-next", false);
+
+// Disable DNS prefetching
+// When set to true, this disables DNS prefetching, which means Firefox will not resolve 
+// domain names for links that users might click on in the future. This enhances privacy 
+// by not revealing the user's browsing behavior to DNS servers ahead of time.
+// User preference: 
+user_pref("network.dns.disablePrefetch", true);
+
+// Disable predictor
+// When set to false, this disables the predictor, which can preload pages based on user 
+// browsing habits. This can improve privacy by preventing Firefox from making assumptions 
+// about the user's next moves and preloading pages without explicit action.
+// User preference: 
+user_pref("network.predictor.enabled", false);
+
+// Disable link-mouseover opening connection to linked server
+// When set to 0, this disables speculative connections when hovering over links, 
+// preventing unnecessary connections and enhancing privacy. 
+// Setting it to 1 or higher allows a limited number of connections based on the value set.
+// User preference: 
+user_pref("network.http.speculative-parallel-limit", 0);
+
+// Disable mousedown speculative connections on bookmarks and history
+// When set to false, this prevents Firefox from opening connections to bookmarks or 
+// history entries when the mouse is pressed down, reducing unnecessary connections 
+// and improving privacy.
+// User preference: 
+user_pref("browser.places.speculativeConnect.enabled", false);
+
+// Disable IPv6
+// When set to true, this disables IPv6 support in Firefox, which can prevent potential 
+// privacy issues and network connectivity problems associated with the newer protocol.
+// User preference: 
+user_pref("network.dns.disableIPv6", true);
+
+// Disable GIO protocols as a potential proxy bypass vector
+// When set to an empty string, this disables the use of GIO protocols, which could potentially 
+// bypass proxy settings, enhancing security.
+// User preference: 
+user_pref("network.gio.supported-protocols", "");
+
+// Disable using UNC (Uniform Naming Convention) paths
+// When set to true, this prevents Firefox from using UNC paths, which helps in avoiding 
+// proxy bypass issues that might arise from such paths.
+// User preference: 
+user_pref("network.file.disable_unc_paths", true);
+
+// Remove special permissions for certain Mozilla domains
+// When set to an empty string, this resets any special permissions that might have been set 
+// for specific Mozilla domains, ensuring a clean slate for permissions.
+// User preference: 
+user_pref("permissions.manager.defaultsUrl", "");
+
+// Use Punycode in Internationalized Domain Names to eliminate possible spoofing
+// When set to true, this forces Firefox to display Internationalized Domain Names (IDN) 
+// in Punycode, reducing the risk of phishing attacks that utilize visually similar characters.
+// User preference: 
+user_pref("network.IDN_show_punycode", true);
+
+// Disable search suggestions
+// When set to false, this preference disables search suggestions in the search bar, 
+// ensuring that Firefox does not provide autocomplete options based on previous searches.
+// User preference: 
+user_pref("browser.search.suggest.enabled", false);
+
+// Disable search suggestions in the URL bar
+// When set to false, this preference disables search-related suggestions from appearing 
+// in the address bar when users type, enhancing privacy by not suggesting previous searches.
+// User preference: 
+user_pref("browser.urlbar.suggest.searches", false);
+
+// Disable location bar domain guessing
+// When set to false, this prevents Firefox from guessing alternate domains when a user 
+// types an incomplete URL, which can help avoid unintended navigation and improve privacy.
+// User preference: 
+user_pref("browser.fixup.alternate.enabled", false);
+
+// Display all parts of the URL in the bar
+// When set to false, this preference forces Firefox to display the entire URL, including 
+// the protocol and path, in the address bar, providing users with full transparency about 
+// the site they are visiting.
+// User preference: 
+user_pref("browser.urlbar.trimURLs", false);
+
+// Disable speculative connections from the location bar
+// When set to false, this prevents Firefox from making speculative connections based on 
+// what the user types in the location bar, which can reduce unnecessary network activity 
+// and enhance privacy.
+// User preference: 
+user_pref("browser.urlbar.speculativeConnect.enabled", false);
+
+// Disable form autofill
+// When set to false, this disables Firefox's ability to automatically fill in forms with 
+// previously entered information, providing users with more control over their data.
+// User preference: 
+user_pref("browser.formfill.enable", false);
+
+// Disable address autofill in forms
+// When set to false, this preference disables the autofill feature for address forms, 
+// preventing Firefox from suggesting previously saved addresses when filling out forms.
+// User preference: 
+user_pref("extensions.formautofill.addresses.enabled", false);
+
+// Turn off availability of form autofill
+// When set to "off", this disables the autofill functionality entirely, ensuring no 
+// address information is suggested or filled automatically in forms.
+// User preference: 
+user_pref("extensions.formautofill.available", "off");
+
+// Disable credit card autofill functionality
+// When set to false, this disables the autofill feature for credit card forms, providing 
+// added security by preventing automatic entry of sensitive payment information.
+// User preference: 
+user_pref("extensions.formautofill.creditCards.available", false);
+
+// Disable credit card autofill
+// When set to false, this prevents Firefox from filling in credit card information 
+// automatically in forms, reducing the risk of unintentional data sharing.
+// User preference: 
+user_pref("extensions.formautofill.creditCards.enabled", false);
+
+// Disable heuristics for form autofill
+// When set to false, this disables the heuristic methods Firefox uses to predict 
+// what data to autofill in forms, providing a more manual approach to data entry.
+// User preference: 
+user_pref("extensions.formautofill.heuristics.enabled", false);
+
+// Disable contextual suggestions in the location bar
+// When set to "history", this restricts the suggestions shown in the URL bar to 
+// only include historical data, disabling contextual suggestions based on other 
+// browsing contexts like bookmarks or open tabs.
+// User preference: 
+user_pref("browser.urlbar.quicksuggest.scenario", "history");
+
+// Disable quick suggest functionality in the location bar
+// When set to false, this disables the quick suggest feature in the URL bar, preventing 
+// suggestions from appearing based on what the user is typing.
+// User preference: 
+user_pref("browser.urlbar.quicksuggest.enabled", false);
+
+// Disable non-sponsored quick suggest in the location bar
+// When set to false, this prevents Firefox from showing non-sponsored suggestions in 
+// the URL bar, allowing for a more controlled browsing experience without additional 
+// suggestions from external sources.
+// User preference: 
+user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
+
+// Disable sponsored quick suggest in the location bar
+// When set to false, this prevents Firefox from displaying sponsored suggestions in 
+// the URL bar, ensuring that users only see organic results without advertisements.
+// User preference: 
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+
+// Disable disk cache
+// When set to false, this preference disables the disk cache in Firefox, 
+// meaning that the browser will not store any cached files on the hard drive. 
+// This can improve privacy but may result in slower loading times as the browser 
+// has to fetch files from the internet each time.
+// User preference: 
+user_pref("browser.cache.disk.enable", false);
+
+// Disable storing extra session data
+// When set to 2, this preference configures Firefox to not store session data 
+// at all, meaning that it will not save any extra information from the current 
+// browsing session. This can help enhance privacy but may lead to loss of 
+// session state during unexpected closures.
+// User preference: 
+// 0 = everywhere, 1 = unencrypted sites, 2 = nowhere
+user_pref("browser.sessionstore.privacy_level", 2); 
+
+// Disable resuming session from crash
+// When set to false, this prevents Firefox from automatically restoring the previous 
+// session if the browser crashes. This can enhance security by ensuring no 
+// sensitive information is automatically restored after a crash.
+// User preference: 
+user_pref("browser.sessionstore.resume_from_crash", false);
+
+// Disable page thumbnail collection
+// When set to true, this preference disables the collection of page thumbnails 
+// by Firefox. This means that the browser will not capture and store visual 
+// snapshots of web pages, improving privacy as it won't keep a record of 
+// visited pages visually.
+// User preference: 
+user_pref("browser.pagethumbnails.capturing_disabled", true); 
+
+// Disable favicons in profile folder
+// When set to false, this prevents Firefox from storing shortcut favicons in 
+// the user's profile folder. This can help to minimize the amount of data 
+// stored, particularly for users concerned about privacy.
+// User preference: 
+user_pref("browser.shell.shortcutFavicons", false);
+
+// Delete temporary files opened with external apps
+// When set to true, this preference ensures that any temporary files created 
+// by Firefox and opened with external applications are deleted when the 
+// browser is closed. This helps to maintain privacy by ensuring no leftover 
+// temporary files remain after browsing sessions.
+// User preference: 
+user_pref("browser.helperApps.deleteTempFileOnExit", true);
+
+// Enable HTTPS-Only mode in all windows
+// When set to true, this preference configures Firefox to always use HTTPS for 
+// all web pages, enhancing security by preventing connections to unencrypted 
+// HTTP sites. Users will be automatically redirected to the HTTPS version 
+// if available, protecting their data from eavesdropping and man-in-the-middle 
+// attacks.
+// User preference: 
+user_pref("dom.security.https_only_mode", true);
+
+// Disable sending HTTP request for checking HTTPS support by the server
+// When set to false, this prevents Firefox from sending an HTTP request in the 
+// background to check if a site supports HTTPS. This can improve privacy by 
+// not exposing the user's intention to connect to a specific site before 
+// establishing a secure connection.
+// User preference: 
+user_pref("dom.security.https_only_mode_send_http_background_request", false);
+
+// Display advanced information on Insecure Connection warning pages
+// When set to true, this preference allows users to see detailed information 
+// about security errors on websites. This can help users understand why a 
+// site is deemed insecure and make informed decisions about proceeding.
+// User preference: 
+user_pref("browser.xul.error_pages.expert_bad_cert", true);
+
+// Disable TLS 1.3 0-RTT (round-trip time)
+// When set to false, this disables the use of 0-RTT data in TLS 1.3 connections. 
+// This can prevent potential security issues that arise from allowing data to 
+// be sent before the secure connection is fully established, enhancing overall 
+// security during the handshake process.
+// User preference: 
+user_pref("security.tls.enable_0rtt_data", false);
+
+// Set OCSP to terminate the connection when a CA isn’t validated
+// When set to true, this preference requires that a valid Online Certificate 
+// Status Protocol (OCSP) response is received before establishing a secure 
+// connection. If the CA (Certificate Authority) is not validated, the connection 
+// is terminated, ensuring that only trustworthy certificates are accepted.
+// User preference: 
+user_pref("security.OCSP.require", true);
+
+// Disable SHA-1 certificates
+// When set to 1, this preference enforces that SHA-1 certificates are not 
+// accepted by Firefox, as they are considered weak and vulnerable to attacks. 
+// This enhances security by ensuring that only stronger, more secure certificate 
+// signatures are used.
+// User preference: 
+user_pref("security.pki.sha1_enforcement_level", 1);
+
+// Enable strict pinning (Public Key Pinning)
+// When set to 2, this preference enables strict pinning, meaning that Firefox 
+// will reject certificates that do not match the pinned keys for a site. This 
+// helps protect against man-in-the-middle attacks by ensuring that only 
+// specific certificates are trusted.
+// Options:
+// 0 = Disabled
+// 1 = Allow user MiTM (i.e., your Antivirus)
+// 2 = Strict
+// User preference: 
+user_pref("security.cert_pinning.enforcement_level", 2);
+
+// Enable CRLite
+// When set to true, this preference enables Certificate Revocation List (CRLite) 
+// checks, which verify whether a certificate has been revoked. It allows Firefox 
+// to consult CRLite when establishing secure connections, enhancing security 
+// by ensuring that only valid certificates are accepted. If CRLite is enabled, 
+// it also collects telemetry data to help improve the service.
+// User preference: 
+user_pref("security.remote_settings.crlite_filters.enabled", true);
+
+// Set CRLite mode
+// When set to 2, this preference configures CRLite to enforce both “Revoked” 
+// and “Not Revoked” results when checking the status of certificates. 
+// This ensures that Firefox only trusts certificates that are explicitly marked 
+// as not revoked, enhancing security by minimizing the risk of accepting invalid 
+// or compromised certificates.
+// Options:
+// 0 = Disabled
+// 1 = Consult CRLite but only collect telemetry (default behavior)
+// 2 = Consult CRLite and enforce both “Revoked” and “Not Revoked” results
+// 3 = Consult CRLite and enforce “Not Revoked” results, but defer to OCSP for “Revoked”
+// User preference: 
+user_pref("security.pki.crlite_mode", 2);
+
+// Control when to send a referer
+// When set to 2, this preference configures Firefox to send a referer only 
+// if the hosts match, enhancing privacy by limiting the sharing of 
+// referer information across different domains. This helps reduce the 
+// risk of tracking and exposure to third-party sites.
+// Options:
+// 0 = Always send the referer (default behavior)
+// 1 = Only send if base domains match
+// 2 = Only send if hosts match
+// User preference: 
+user_pref("network.http.referer.XOriginPolicy", 2);
+
+// Control the amount of information to send
+// When set to 2, this preference limits the referer information sent 
+// to only the scheme, host, and port, which reduces the amount of 
+// potentially sensitive data shared with the target site. This 
+// enhances privacy by preventing the target site from seeing the 
+// full URI of the referring page.
+// Options:
+// 0 = Send full URI (default): 
+//    e.g., https://example.com:8888/foo/bar.html?id=1234
+// 1 = Send scheme, host, port, and path: 
+//    e.g., https://example.com:8888/foo/bar.html
+// 2 = Send scheme, host, and port only: 
+//    e.g., https://example.com:8888
+// User preference: 
+user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
+
+// Disable WebRTC
+// When set to false, this preference disables WebRTC (Web Real-Time Communication) 
+// functionality in Firefox, which can enhance privacy and security by preventing 
+// potential IP leaks that may occur during peer-to-peer communications.
+// User preference: 
+user_pref("media.peerconnection.enabled", false);
+
+// Force WebRTC inside the proxy
+// When set to true, this preference configures WebRTC to only use a proxy 
+// for connections if the user is behind a proxy. This helps to prevent 
+// direct connections that could bypass the proxy and reveal the user's 
+// actual IP address, enhancing security while using a proxy.
+// User preference: 
+user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+
+// Force a single network interface for ICE candidates generation
+// When set to true, this preference restricts WebRTC to generate ICE 
+// candidates from a single network interface, which helps limit exposure 
+// of local IP addresses during peer-to-peer connections.
+// User preference: 
+user_pref("media.peerconnection.ice.default_address_only", true);
+
+// Force exclusion of private IPs from ICE candidates
+// When set to true, this preference ensures that WebRTC does not include 
+// private IP addresses in its ICE candidates, further enhancing user privacy 
+// by preventing local network information from being exposed.
+// User preference: 
+user_pref("media.peerconnection.ice.no_host", true);
+
+// Disable WebGL (Web Graphics Library)
+// When set to true, this preference disables WebGL, a JavaScript API that 
+// allows rendering of 2D and 3D graphics in the browser. Disabling WebGL 
+// can enhance privacy and security by preventing fingerprinting techniques 
+// that exploit the unique characteristics of a user's graphics hardware.
+// User preference: 
+user_pref("webgl.disabled", true);
+
+// Disable autoplay of HTML5 media
+// When set to 5, this preference blocks all autoplay of HTML5 media, 
+// preventing media from automatically playing when a page loads. This can 
+// improve user experience and control over media playback, as well as save 
+// bandwidth. Other options include:
+// 0 = Allow all media to autoplay
+// 1 = Block non-muted media (default behavior)
+// 5 = Block all media
+// User preference: 
+user_pref("media.autoplay.default", 5);
+
+// Disable DRM Content
+// When set to false, this preference disables the use of Digital Rights 
+// Management (DRM) content in Firefox. This can enhance user control over 
+// content playback and reduce reliance on proprietary technologies, which 
+// may have privacy implications.
+// User preference: 
+user_pref("media.eme.enabled", false);
+
+// Always ask you where to save files
+// When set to false, this preference configures Firefox to always prompt the user 
+// for a download location rather than automatically saving files to the default 
+// download directory. This provides users with more control over their downloads 
+// and helps ensure files are saved where intended.
+// User preference: 
+user_pref("browser.download.useDownloadDir", false);
+
+// Disable adding downloads to system’s “recent documents” list
+// When set to false, this preference prevents Firefox from adding downloaded 
+// files to the operating system's "recent documents" list. This can enhance 
+// privacy by reducing the visibility of recent activities to other users of 
+// the system.
+// User preference: 
+user_pref("browser.download.manager.addToRecentDocs", false);
+
+// Enable ETP (Enhanced Tracking Protection)
+// When set to "strict," this preference activates Enhanced Tracking Protection in 
+// Firefox, which blocks a wider range of trackers, including cross-site cookies. 
+// In this mode, Total Cookie Protection is enabled, meaning that cookies are 
+// partitioned by the site that created them, preventing tracking across different 
+// sites and enhancing user privacy.
+// User preference: 
+user_pref("browser.contentblocking.category", "strict");
+
+// Enable state partitioning of service workers
+// When set to true, this preference enables state partitioning for service workers, 
+// which ensures that service worker data is isolated by the first-party domain. 
+// This prevents third-party services from accessing data stored in service workers 
+// from other domains, enhancing privacy and security.
+// User preference: 
+user_pref("privacy.partition.serviceWorkers", true);
+
+// Enable APS (Always Partitioning Storage)
+// When set to true, this preference ensures that all third-party storage (not just 
+// cookies) is partitioned by the first-party domain. This includes local storage, 
+// IndexedDB, and cache storage, helping to prevent cross-site tracking and 
+// enhancing user privacy by keeping third-party data siloed.
+// User preference: 
+user_pref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
+
+// Exempt session storage from APS
+// When set to true, this preference configures Firefox to exempt session storage 
+// from Always Partitioning Storage rules. This means that session storage can 
+// be shared across different tabs or windows within the same session, providing 
+// a balance between privacy and functionality for certain web applications.
+// User preference: 
+user_pref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", true);
+
+// Block popup windows
+// When set to true, this preference prevents websites from opening new popup 
+// windows during page load events. This helps enhance the user experience by 
+// minimizing intrusive popups that can disrupt browsing.
+// User preference: 
+user_pref("dom.disable_open_during_load", true);
+
+// Limit events that can cause a popup
+// This preference defines the events that are allowed to trigger popups in 
+// Firefox. By specifying "click dblclick mousedown pointerdown," it restricts 
+// popups to user-initiated actions, reducing unwanted popups from script 
+// actions or other non-user interactions, thus improving user control.
+// User preference: 
+user_pref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
+
+// Disable Pocket extension
+// When set to false, this preference disables the Pocket extension in Firefox, 
+// preventing users from saving webpages to their Pocket account directly from the 
+// browser. This can enhance privacy and reduce clutter for users who do not 
+// use Pocket.
+// User preference: 
+user_pref("extensions.pocket.enabled", false);
+
+// Disable Screenshots extension
+// When set to true, this preference disables the Screenshots feature in Firefox, 
+// which allows users to take and share screenshots of webpages. Disabling this 
+// feature can help streamline the browser and enhance privacy for users who 
+// prefer not to use it.
+// User preference: 
+user_pref("extensions.Screenshots.disabled", true);
+
+// Disable PDF.js scripting
+// When set to false, this preference disables scripting for the PDF.js viewer 
+// in Firefox. This means that any interactive elements within PDF documents 
+// will not function, enhancing security by limiting potential attack vectors 
+// while viewing PDFs in the browser.
+// User preference: 
+user_pref("pdfjs.enableScripting", false);
+
+// Enable Containers and show the UI settings
+// When set to true, this preference enables the use of container tabs in Firefox, 
+// allowing users to isolate different browsing sessions. This enhances privacy 
+// by preventing tracking across different sites and helps organize online activities 
+// based on user-defined contexts. Additionally, it reveals the UI settings for 
+// managing containers within the browser.
+// User preference: 
+user_pref("privacy.userContext.enabled", true);
+
+// Set extensions to work on restricted domains, and their scope is to “profile+applications”
+// When set to 5, this hidden preference allows extensions to operate on domains 
+// that are normally restricted, giving them broader access across applications 
+// and profiles. This can enhance functionality but may raise privacy and security 
+// concerns, as it allows extensions to interact with more sites than usual.
+// The options for this preference are:
+// 0 = "none": Extensions cannot run in restricted domains.
+// 1 = "profile": Extensions can run in the user's profile, but not in applications.
+// 2 = "applications": Extensions can run in applications but not in the user's profile.
+// 3 = "all": Extensions can run in both the user's profile and applications.
+// 4 = "unrestricted": Extensions can run in all contexts, including restricted domains.
+// 5 = "profile+applications": Extensions have the broadest access, operating in both 
+// the profile and applications without restrictions, increasing functionality but also 
+// potential risks.
+// User preference: 
+user_pref("extensions.enabledScopes", 5);  // [HIDDEN PREF]
+
+// Set restricted domains for web extensions
+// This preference allows you to specify a list of domains where web extensions 
+// are restricted from running. When set to an empty string, it means no domains 
+// are restricted, potentially increasing the risk of extension misuse but also 
+// enhancing functionality across all sites.
+// User preference: 
+user_pref("extensions.webextensions.restrictedDomains", "");
+
+// Display always the installation prompt
+// When set to false, this preference disables the installation prompt for third-party 
+// extensions, allowing them to be installed without user confirmation. This can 
+// streamline the installation process but may pose security risks if malicious 
+// extensions are introduced without user knowledge.
+// User preference: 
+user_pref("extensions.postDownloadThirdPartyPrompt", false);
+
+// Clear history, cookies, and site data when Firefox closes
+// When set to 2, this preference configures Firefox to delete cookies and other site data 
+// when it closes, enhancing privacy by ensuring that no residual data remains from the session.
+// User preference:
+// 0 = keep all data, 1 = keep only unencrypted site data, 2 = delete all site data
+user_pref("network.cookie.lifetimePolicy", 2);
+
+// Sanitize on shutdown
+// When set to true, this preference enables the automatic clearing of private data 
+// (like browsing history and cookies) when the browser is closed. This helps to protect 
+// user privacy by preventing data retention between sessions.
+// User preference: 
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+
+// Clear cache on shutdown
+// When set to true, this preference ensures that the disk cache is cleared when 
+// Firefox closes. This can help to enhance privacy by preventing cached content 
+// from being accessed in future sessions.
+// User preference: 
+user_pref("privacy.clearOnShutdown.cache", true);
+
+// Clear cookies on shutdown
+// When set to true, this preference ensures that all cookies are deleted when 
+// Firefox closes, which helps in maintaining privacy by removing session and 
+// tracking cookies that could be used for profiling.
+// User preference: 
+user_pref("privacy.clearOnShutdown.cookies", true);
+
+// Clear downloads on shutdown
+// When set to true, this preference will clear the download history when Firefox 
+// is closed. This is useful for enhancing privacy as it removes records of downloaded files.
+// User preference: 
+user_pref("privacy.clearOnShutdown.downloads", true);
+
+// Clear form data on shutdown
+// When set to true, this preference ensures that saved form data is cleared 
+// upon closing Firefox, which can help maintain privacy by preventing auto-fill data 
+// from being accessible in future sessions.
+// User preference: 
+user_pref("privacy.clearOnShutdown.formdata", true);
+
+// Clear browsing history on shutdown
+// When set to true, this preference will clear the browsing history every time 
+// Firefox is closed, enhancing privacy by ensuring that no record of visited sites 
+// remains after the session ends.
+// User preference: 
+user_pref("privacy.clearOnShutdown.history", true);
+
+// Clear offline apps data on shutdown
+// When set to true, this preference will clear the data of offline applications 
+// when Firefox closes, preventing stored information from being retained 
+// between sessions and enhancing user privacy.
+// User preference: 
+user_pref("privacy.clearOnShutdown.offlineApps", true);
+
+// Clear sessions on shutdown
+// When set to true, this preference ensures that session data is cleared when 
+// Firefox closes, preventing the restoration of tabs or windows upon the next 
+// launch, which can enhance privacy.
+// User preference: 
+user_pref("privacy.clearOnShutdown.sessions", true);
+
+// Clear site settings on shutdown
+// When set to false, this preference keeps site settings intact when Firefox closes. 
+// If set to true, site-specific settings like permissions and preferences will be cleared, 
+// enhancing privacy but potentially disrupting user experience.
+// User preference: 
+user_pref("privacy.clearOnShutdown.sitesettings", true);
+
+// Set time span for sanitization
+// When set to 0, this preference specifies that all history, cookies, and site data 
+// will be cleared when Firefox is closed. This ensures a fresh start for every session, 
+// enhancing privacy at the cost of losing any saved session state.
+// User preference: 
+user_pref("privacy.sanitize.timeSpan", 0);
+
+// Enable RFP (Resist Fingerprinting)
+// When set to true, this preference enables the Resist Fingerprinting feature, 
+// which helps to protect users from being tracked through unique browser characteristics 
+// that can be used to identify and profile them. Enabling RFP aims to enhance 
+// user privacy by minimizing the amount of information exposed to websites.
+// User preference: 
+user_pref("privacy.resistFingerprinting", true);
+
+// Set new window size rounding max values
+// When set to 1600 and 900, these preferences define the maximum width and height 
+// for windows to which Firefox will round the dimensions. This is a part of the 
+// fingerprinting resistance measures, as it prevents websites from accurately 
+// determining the true size of a user's browser window, thus adding another layer 
+// of obfuscation against tracking.
+// User preferences:
+user_pref("privacy.window.maxInnerWidth", 1600);
+user_pref("privacy.window.maxInnerHeight", 900);
+
+// Disable mozAddonManager Web API
+// When set to true, this hidden preference blocks the use of the mozAddonManager 
+// Web API, which can be exploited for fingerprinting purposes. This helps 
+// to further enhance user privacy by reducing the ways in which a website can 
+// gather information about the user's browser environment and installed extensions.
+// User preference: 
+user_pref("privacy.resistFingerprinting.block_mozAddonManager", true); 
+
+// Disable showing about:blank page when possible at startup
+// When set to false, this preference prevents Firefox from displaying the about:blank 
+// page on startup, reducing potential tracking vectors that could exploit the initial 
+// loading state of the browser. This can enhance privacy by making it less predictable 
+// for websites to track the browser's launch behavior.
+// User preference: 
+user_pref("browser.startup.blankWindow", false);
+
+// Disable using system colors
+// When set to false, this preference configures Firefox to ignore system colors and 
+// use its own color settings for the browser interface. This reduces the likelihood 
+// of tracking based on the system color scheme, adding to the fingerprinting resistance.
+// User preference: 
+user_pref("browser.display.use_system_colors", false); 
+
+
+
+
+
+
+
