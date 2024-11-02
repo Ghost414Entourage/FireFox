@@ -125,6 +125,151 @@ user_pref("app.normandy.last_seen_buildid", "");
 
 
 
+
+
+// Enable or disable TRR mode (0 = Off, 1 = Reserved, 2 = First, 3 = Only, 4 = Reserved, 5 = Off by choice)
+// Sets the resolver mode for DNS-over-HTTPS.
+user_pref("network.trr.mode", 3);
+
+// Set the URI for the DoH server (must be HTTPS)
+// Specifies the URL Firefox will use for DNS-over-HTTPS requests.
+user_pref("network.trr.uri", "");
+
+// Set a list of potential resolvers for the user interface
+// When enabled, the TRR service will always use the value of "network.trr.uri".
+user_pref("network.trr.resolvers", "");
+
+// Set credentials that will be used in the HTTP requests to the DoH end-point
+// This is the value sent in the Authorization: request header.
+user_pref("network.trr.credentials", "");
+
+// Enable or disable waiting for captive portal detection before using TRR (false = disable, true = enable)
+// When enabled (true), Firefox waits for portal detection before initiating TRR.
+user_pref("network.trr.wait-for-portal", false);
+
+// Allow or disallow RFC 1918 private addresses in TRR responses (false = disable, true = enable)
+// When enabled (true), allows the use of private addresses in TRR responses.
+user_pref("network.trr.allow-rfc1918", false);
+
+// Enable or disable the use of GET requests instead of POST for DoH (false = disable, true = enable)
+// When enabled (true), Firefox will use GET requests for DoH instead of POST.
+user_pref("network.trr.useGET", false);
+
+// Set the domain for TRR verification at startup (default is example.com)
+// This preference sets which domain to check for a positive answer.
+user_pref("network.trr.confirmationNS", "example.com");
+
+// Set the bootstrap address for the DoH server (default is none)
+// Use this to bypass the native resolver for the specified DoH server.
+user_pref("network.trr.bootstrapAddress", "");
+
+// Set the duration for a name to be kept in the TRR blocklist (in seconds)
+// Default is 60 seconds; this controls how long to wait before retrying blocked names.
+user_pref("network.trr.blacklist-duration", 60);
+
+// Set the request timeout for DoH requests (in milliseconds)
+// Default is 1500 ms; this determines how long to wait for a DoH response before failing.
+user_pref("network.trr.request_timeout_ms", 1500);
+
+// Set the request timeout for TRR-only mode (in milliseconds)
+// Default is 30000 ms; this applies specifically in TRR-only mode.
+user_pref("network.trr.request_timeout_mode_trronly_ms", 30000);
+
+// Enable or disable early AAAA request handling (false = disable, true = enable)
+// When enabled (true), Firefox will use A records as soon as they are received without waiting for AAAA.
+user_pref("network.trr.early-AAAA", false);
+
+// Enable or disable skipping AAAA requests when IPv6 is not supported (false = disable, true = enable)
+// When true, it prevents AAAA requests if the system lacks IPv6 connectivity.
+user_pref("network.trr.skip-AAAA-when-not-supported", true);
+
+// Enable or disable waiting for both A and AAAA responses before notifying listeners (false = disable, true = enable)
+// When true, this cancels early A record usage.
+user_pref("network.trr.wait-for-A-and-AAAA", true);
+
+// Set the maximum number of consecutive failures before TRR is considered broken
+// Default is 5; this checks if the DoH server is functioning correctly.
+user_pref("network.trr.max-fails", 5);
+
+// Enable or disable ECS (EDNS Client Subnet) in TRR requests (false = disable, true = enable)
+// When disabled (true), TRR will not include ECS in requests.
+user_pref("network.trr.disable-ECS", true);
+
+// Set domains to be resolved using the native resolver instead of TRR
+// Users can specify a comma-separated list of domains to exclude from TRR.
+user_pref("network.trr.excluded-domains", "");
+
+// Set a built-in list of domains to be resolved using the native resolver instead of TRR
+// Default includes 'localhost' and 'local'; used for captive portal detection.
+user_pref("network.trr.builtin-excluded-domains", "localhost,local");
+
+// Enable or disable TRR when a VPN is detected (false = disable, true = enable)
+// When true, TRR will be enabled regardless of VPN status on Windows.
+user_pref("network.trr.enable_when_vpn_detected", false);
+
+// Enable or disable TRR when a Windows System Proxy is detected (false = disable, true = enable)
+// When true, TRR will be enabled regardless of proxy status on Windows.
+user_pref("network.trr.enable_when_proxy_detected", true);
+
+// Enable or disable TRR when NRPT (Name Resolution Policy Table) is detected (false = disable, true = enable)
+// When true, TRR will be enabled regardless of NRPT status on Windows.
+user_pref("network.trr.enable_when_nrpt_detected", true);
+
+// Enable or disable sending User-Agent headers in TRR requests (false = disable, true = enable)
+// When false, the User-Agent header will not be included in TRR requests.
+user_pref("network.trr.send_user-agent_headers", false);
+
+// Enable or disable sending Accept-Language headers in TRR requests (false = disable, true = enable)
+// When false, the Accept-Language header will not be included in TRR requests.
+user_pref("network.trr.send_accept-language_headers", false);
+
+// Enable or disable clearing the DNS+TRR cache on preference change (false = disable, true = enable)
+// When true, the cache will be cleared when relevant TRR preferences change.
+user_pref("network.trr.clear-cache-on-pref-change", true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Set the startup page to a blank page (0 = blank page)
 user_pref("browser.startup.page", 0); 
 
