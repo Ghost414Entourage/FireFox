@@ -8,15 +8,20 @@ APA Style
 
 Arkenfox. (n.d.). Arkenfox/user.js: Firefox privacy, security and anti-tracking: A comprehensive user.js template for configuration and hardening. GitHub. https://github.com/arkenfox/user.js/. 
 
+Trusted recursive resolver. Trusted Recursive Resolver - MozillaWiki. (n.d.). https://wiki.mozilla.org/Trusted_Recursive_Resolver 
 
 MLA Style
 
 Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Comprehensive User.Js Template for Configuration and Hardening.” GitHub, github.com/arkenfox/user.js/. Accessed 27 Oct. 2024. 
 
+“Trusted Recursive Resolver.” Trusted Recursive Resolver - MozillaWiki, wiki.mozilla.org/Trusted_Recursive_Resolver. Accessed 2 Nov. 2024. 
+
 
 Chicago Style
 
 Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Comprehensive User.Js Template for Configuration and Hardening.” GitHub. Accessed October 27, 2024. https://github.com/arkenfox/user.js/. 
+
+“Trusted Recursive Resolver.” Trusted Recursive Resolver - MozillaWiki. Accessed November 2, 2024. https://wiki.mozilla.org/Trusted_Recursive_Resolver. 
 
 
 
