@@ -2607,6 +2607,112 @@ user_pref("browser.startup.blankWindow", false);
 // User preference: 
 user_pref("browser.display.use_system_colors", false); 
 
+// Enable optional permission prompts for extensions
+// When set to true, this preference allows Firefox to display prompts for optional 
+// permissions that an extension may request after it has been downloaded. This 
+// enhances user awareness and control over what permissions are granted to extensions.
+// User preference: 
+user_pref("extensions.webextOptionalPermissionPrompts", true);
+
+// If enabled, install origin permission verification happens after addons are downloaded
+// When set to true, this preference ensures that Firefox verifies the permissions 
+// requested by an extension only after the extension has been downloaded. This 
+// approach may streamline the installation process while still keeping the user informed 
+// about permission requirements.
+// User preference: 
+user_pref("extensions.postDownloadThirdPartyPrompt", true);
+
+// Preferences for AMO (Add-ons Mozilla Organization) integration
+// Enable caching for add-on searches
+// When set to true, this preference allows Firefox to cache the results of add-on 
+// searches, potentially speeding up the process when users look for extensions.
+// User preference: 
+user_pref("extensions.getAddons.cache.enabled", true);
+
+// URL for fetching add-on information from AMO
+// This preference defines the URL template for searching add-ons on the AMO site, 
+// replacing placeholders with the respective values for GUIDs and user locale. 
+// This facilitates the retrieval of add-on details.
+// User preference: 
+user_pref("extensions.getAddons.get.url", "https://services.addons.mozilla.org/api/v4/addons/search/?guid=%IDS%&lang=%LOCALE%");
+
+// URL for browsing add-ons on AMO
+// This preference specifies the URL for browsing add-ons on the AMO site, allowing users 
+// to search for extensions directly. The URL includes placeholders for locale and search terms.
+// User preference: 
+user_pref("extensions.getAddons.search.browseURL", "https://addons.mozilla.org/%LOCALE%/firefox/search?q=%TERMS%&platform=%OS%&appver=%VERSION%");
+
+// URL for general add-ons listings
+// This preference sets the URL for the main page of Firefox add-ons, providing 
+// a starting point for users to explore extensions.
+// User preference: 
+user_pref("extensions.getAddons.link.url", "https://addons.mozilla.org/%LOCALE%/firefox/");
+
+// URL for fetching language packs from AMO
+// This preference specifies the URL template for accessing language tools (language packs) 
+// available on AMO, allowing users to customize Firefox language settings.
+// User preference: 
+user_pref("extensions.getAddons.langpacks.url", "https://services.addons.mozilla.org/api/v4/addons/language-tools/?app=firefox&type=language&appversion=%VERSION%");
+
+// URL for add-on discovery API
+// This preference defines the URL for fetching discovery-related information about add-ons, 
+// helping to personalize recommendations based on the user’s locale and distribution.
+// User preference: 
+user_pref("extensions.getAddons.discovery.api_url", "https://services.addons.mozilla.org/api/v4/discovery/?lang=%LOCALE%&edition=%DISTRIBUTION%");
+
+// URL for browser mappings API
+// This preference specifies the URL for the browser mappings API, which provides 
+// compatibility information for extensions across different browsers.
+// User preference: 
+user_pref("extensions.getAddons.browserMappings.url", "https://services.addons.mozilla.org/api/v5/addons/browser-mappings/?browser=%BROWSER%");
+
+// URL for the privacy policy related to recommended extensions
+// This preference sets the URL for the privacy policy regarding the handling of 
+// recommended extensions, ensuring users can review how their data is managed.
+// User preference: 
+user_pref("extensions.recommendations.privacyPolicyUrl", "https://www.mozilla.org/privacy/firefox/?utm_source=firefox-browser&utm_medium=firefox-browser&utm_content=privacy-policy-link#addons");
+
+// URL for Firefox Color recommendations
+// This preference provides the URL for the Firefox Color customization tool, which 
+// is recommended on the themes page in about:addons, allowing users to customize 
+// their browser's appearance.
+// User preference: 
+user_pref("extensions.recommendations.themeRecommendationUrl", "https://color.firefox.com/?utm_source=firefox-browser&utm_medium=firefox-browser&utm_content=theme-footer-link");
+
+// Enable automatic updates for extensions
+// When set to true, this preference enables automatic updates for installed extensions, 
+// ensuring that users receive the latest features and security updates without needing 
+// to manually check for updates.
+// User preference: 
+user_pref("extensions.update.autoUpdateDefault", true);
+
+// Check for updates to system add-ons
+// This preference sets the URL for checking updates for system-installed add-ons, ensuring 
+// that these essential components are kept up to date for optimal performance.
+// User preference: 
+user_pref("extensions.systemAddon.update.url", "https://aus5.mozilla.org/update/3/SystemAddons/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/update.xml");
+
+// Enable updates for system add-ons
+// When set to true, this preference allows Firefox to automatically check for updates 
+// to system add-ons, which are crucial for the browser's functionality and security.
+// User preference: 
+user_pref("extensions.systemAddon.update.enabled", true);
+
+// Disable add-ons that are not installed by the user in all scopes by default
+// When set to 15, this preference disables all add-ons not installed by the user across 
+// all application scopes, enhancing security by preventing unwanted extensions from running.
+// User preference: 
+user_pref("extensions.autoDisableScopes", 15);
+
+// Scopes to scan for changes at startup
+// This preference defines the scopes that Firefox will check for changes to installed 
+// extensions upon startup, ensuring that any newly added or removed extensions are 
+// recognized immediately.
+// User preference: 
+user_pref("extensions.startupScanScopes", 0);
+
+
+
 
 
 
