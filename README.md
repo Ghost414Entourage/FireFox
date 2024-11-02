@@ -10,12 +10,15 @@ Arkenfox. (n.d.). Arkenfox/user.js: Firefox privacy, security and anti-tracking:
 
 Trusted recursive resolver. Trusted Recursive Resolver - MozillaWiki. (n.d.). https://wiki.mozilla.org/Trusted_Recursive_Resolver 
 
+Brainfucksec. (2022, March 21). Firefox hardening guide. brainfucksec. https://brainfucksec.github.io/firefox-hardening-guide 
+
 - MLA Style
 
 Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Comprehensive User.Js Template for Configuration and Hardening.” GitHub, github.com/arkenfox/user.js/. Accessed 27 Oct. 2024. 
 
 “Trusted Recursive Resolver.” Trusted Recursive Resolver - MozillaWiki, wiki.mozilla.org/Trusted_Recursive_Resolver. Accessed 2 Nov. 2024. 
 
+Brainfucksec. “Firefox Hardening Guide.” Brainfucksec, 21 Mar. 2022, brainfucksec.github.io/firefox-hardening-guide. 
 
 - Chicago Style
 
@@ -23,7 +26,7 @@ Arkenfox. “Arkenfox/User.Js: Firefox Privacy, Security and Anti-Tracking: A Co
 
 “Trusted Recursive Resolver.” Trusted Recursive Resolver - MozillaWiki. Accessed November 2, 2024. https://wiki.mozilla.org/Trusted_Recursive_Resolver. 
 
-
+Brainfucksec. “Firefox Hardening Guide.” brainfucksec, March 21, 2022. https://brainfucksec.github.io/firefox-hardening-guide. 
 
 
 
