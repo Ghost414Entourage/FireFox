@@ -2592,14 +2592,6 @@ user_pref("privacy.window.maxInnerHeight", 900);
 // User preference: 
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true); 
 
-// Disable showing about:blank page when possible at startup
-// When set to false, this preference prevents Firefox from displaying the about:blank 
-// page on startup, reducing potential tracking vectors that could exploit the initial 
-// loading state of the browser. This can enhance privacy by making it less predictable 
-// for websites to track the browser's launch behavior.
-// User preference: 
-user_pref("browser.startup.blankWindow", false);
-
 // Disable using system colors
 // When set to false, this preference configures Firefox to ignore system colors and 
 // use its own color settings for the browser interface. This reduces the likelihood 
