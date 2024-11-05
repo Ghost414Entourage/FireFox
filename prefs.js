@@ -1943,22 +1943,22 @@ user_pref("browser.newtabpage.activity-stream.default.sites", "");
 // When set to false, this preference disables the utilization of Windows' location services for geolocation in Firefox.
 // Users who prefer not to share their location information or who have privacy concerns may find this setting useful.
 // Disabling this may prevent sites from accessing location data based on the device's geolocation capabilities.
-user_pref("geo.provider.ms-windows-location", false); // [Windows]
+user_pref("geo.provider.ms-windows-location", false); 
 
 // Enable or disable the use of macOS Core Location services for geolocation (true = enable, false = disable)
 // When set to false, this preference disables Firefox's ability to use macOS's Core Location services to determine the user's geographic location.
 // This is particularly useful for users who wish to maintain their privacy by preventing applications from accessing their location data.
-user_pref("geo.provider.use_corelocation", false); // [macOS]
+user_pref("geo.provider.use_corelocation", false); 
 
 // Enable or disable the use of GPSD (GPS Daemon) for geolocation on Linux (true = enable, false = disable)
 // When set to false, this preference stops Firefox from utilizing GPSD, a service for accessing GPS data on Linux systems.
 // This is relevant for users who may not want their location determined through GPS devices connected to their system.
-user_pref("geo.provider.use_gpsd", false); // [Linux]
+user_pref("geo.provider.use_gpsd", false); 
 
 // Enable or disable the use of Geoclue for geolocation on Linux (true = enable, false = disable)
 // When set to false, this preference disables the use of Geoclue, which is a framework that provides location information on Linux.
 // Disabling this may help users maintain privacy by ensuring that applications cannot determine their location using system resources.
-user_pref("geo.provider.use_geoclue", false); // [Linux]
+user_pref("geo.provider.use_geoclue", false); 
 
 // Set the URL for network region detection (default: empty string)
 // When set to an empty string, this preference disables the automatic detection of the user's region via network methods.
@@ -2862,6 +2862,141 @@ user_pref("extensions.startupScanScopes", 0);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Controls whether internationalized domain names (IDNs) are displayed in their ASCII (Punycode) form
 // IDNs allow domain names to include non-ASCII characters (e.g., accents or scripts like Cyrillic).
 // When set to "false," domain names appear in their native script, which may improve readability
@@ -2870,7 +3005,7 @@ user_pref("extensions.startupScanScopes", 0);
 // true = Display domain names in ASCII (Punycode) for security
 // false = Show domain names in native script for readability
 // User preference:
-user_pref("network.IDN_show_punycode", false);
+user_pref("network.IDN_show_punycode", true);
 
 // Allows the socket thread to use a larger stack size for improved performance
 // The socket thread manages networking functions for Firefox, and a larger stack size can 
@@ -2900,6 +3035,7 @@ user_pref("network.allow_raw_sockets_in_content_processes", false);
 // User preference:
 user_pref("network.allow_redirect_to_data", false);
 
+// Whether to show anti-spoof confirmation prompts when navigating to a url with userinfo
 // Enables confirmation prompts for HTTP authentication requests
 // HTTP authentication prompts users to enter credentials for certain websites.
 // Requiring confirmation provides additional security, ensuring the user approves 
@@ -2928,12 +3064,15 @@ user_pref("network.auth.force-generic-ntlm", false);
 // User preference:
 user_pref("network.auth.force-generic-ntlm-v1", false);
 
+// Resources that are triggered by some non-web-content
+// True: They are allow to present http auth. dialog
+// False: They are not allow to present http auth. dialog.
 // Disables HTTP authentication for resources triggered by non-web content
 // HTTP authentication prompts can sometimes be triggered by non-web content, 
 // potentially leading to unintentional credential exposure. Disabling this enhances security.
 // Options:
-// true = Allow HTTP auth for non-web content resources
-// false = Block HTTP auth for non-web content resources
+// True = Allow HTTP auth for non-web content resources
+// False = Block HTTP auth for non-web content resources
 // User preference:
 user_pref("network.auth.non-web-content-triggered-resources-http-auth-allow", false);
 
@@ -2946,6 +3085,7 @@ user_pref("network.auth.non-web-content-triggered-resources-http-auth-allow", fa
 // User preference:
 user_pref("network.auth.private-browsing-sso", false);
 
+// When true, authentication challenges will be sorted even if an authentication is already in progress. This may cause issues sometimes.
 // Sorts authentication challenges based on the challenge state
 // Some systems may prioritize specific challenges for HTTP authentication 
 // to ensure smoother access, and sorting them can help with compatibility.
@@ -2955,6 +3095,9 @@ user_pref("network.auth.private-browsing-sso", false);
 // User preference:
 user_pref("network.auth.sort_challenge_in_progress", false);
 
+// 0 - don't allow sub-resources to open HTTP authentication credentials dialogs.
+// 1 - allow sub-resources to open HTTP authentication credentials dialogs, but don't allow it for cross-origin sub-resources. 
+// 2 - allow the cross-origin authentication as well.
 // Controls subresource HTTP authentication permissions, e.g., images, stylesheets
 // Subresource HTTP authentication governs access to embedded content like images or CSS, 
 // which may need to access restricted resources in certain contexts.
@@ -2964,6 +3107,11 @@ user_pref("network.auth.sort_challenge_in_progress", false);
 // 2 = Allow for cross-origin with restrictions
 // User preference:
 user_pref("network.auth.subresource-http-auth-allow", 2);
+
+
+
+
+
 
 // Allows cross-origin HTTP authentication for subresource images
 // This option can prevent credentials from being sent with cross-origin image requests, 
