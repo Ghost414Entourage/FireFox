@@ -4667,3 +4667,2349 @@ user_pref("network.http.pacing.requests.enabled", true);
 // Integer value indicating the requests per second for pacing
 // User preference:
 user_pref("network.http.pacing.requests.hz", 80);
+
+// Sets minimum parallelism for pacing HTTP requests
+// Defines the minimum number of parallel connections to maintain 
+// when pacing HTTP requests, ensuring a certain level of concurrency 
+// to optimize loading times.
+// Options:
+// Integer value specifying minimum parallel connections
+// User preference:
+user_pref("network.http.pacing.requests.min-parallelism", 6);
+
+// Enables HTTP priority headers
+// Controls whether HTTP/2 and HTTP/3 requests include the `priority` 
+// header, which allows servers to prioritize requests more effectively.
+// Options:
+// true = Enable priority header
+// false = Disable priority header
+// User preference:
+user_pref("network.http.priority_header.enabled", true);
+
+// Controls prompts for temporary redirects
+// Determines whether users are prompted when encountering temporary redirects, 
+// which may provide transparency but interrupt the browsing experience.
+// Options:
+// true = Prompt for temporary redirects
+// false = Do not prompt for temporary redirects
+// User preference:
+user_pref("network.http.prompt-temp-redirect", false);
+
+// Enables conservative proxy behavior
+// Controls whether the browser respects conservative proxy settings, 
+// which may limit aggressive request handling to avoid overloading 
+// proxy servers.
+// Options:
+// true = Respect conservative proxy settings
+// false = Do not respect conservative proxy settings
+// User preference:
+user_pref("network.http.proxy.respect-be-conservative", true);
+
+// Sets HTTP proxy version
+// Specifies the version of HTTP protocol to use when communicating with proxies.
+// Options:
+// "1.1" = Use HTTP/1.1 for proxy communication
+// "2.0" = Use HTTP/2 for proxy communication
+// User preference:
+user_pref("network.http.proxy.version", "1.1");
+
+// Sets the Quality of Service (QoS) level for HTTP requests
+// Configures the QoS level, which can affect the priority 
+// of packets on the network, potentially improving performance 
+// under network congestion.
+// Options:
+// Integer value representing the QoS level (0-63)
+// User preference:
+user_pref("network.http.qos", 0);
+
+// Sets the normal threshold for RCWN cache queue
+// Configures the threshold for requests that RCWN (Race Cache With Network) 
+// will treat as "normal" priority in the cache queue, helping manage 
+// request prioritization.
+// Options:
+// Integer value for the normal threshold
+// User preference:
+user_pref("network.http.rcwn.cache_queue_normal_threshold", 8);
+
+// Sets the priority threshold for RCWN cache queue
+// Configures the threshold for requests that RCWN will treat as 
+// high priority in the cache queue, optimizing resource usage 
+// for important requests.
+// Options:
+// Integer value for the priority threshold
+// User preference:
+user_pref("network.http.rcwn.cache_queue_priority_threshold", 2);
+
+// Enables RCWN (Race Cache With Network)
+// Controls whether RCWN is enabled, allowing the browser to race 
+// cache and network resources, which can improve load times 
+// for frequently accessed resources.
+// Options:
+// true = Enable RCWN
+// false = Disable RCWN
+// User preference:
+user_pref("network.http.rcwn.enabled", true);
+
+// Sets maximum wait time before racing in RCWN
+// Configures the maximum time (in milliseconds) the browser will 
+// wait before allowing RCWN to race a cache request with a 
+// network request, improving responsiveness for cached resources.
+// Options:
+// Integer value for maximum wait in milliseconds
+// User preference:
+user_pref("network.http.rcwn.max_wait_before_racing_ms", 500);
+
+// Sets minimum wait time before racing in RCWN
+// Configures the minimum time (in milliseconds) before RCWN will 
+// begin racing cache and network requests, allowing some delay 
+// to utilize cached data before using network resources.
+// Options:
+// Integer value for minimum wait in milliseconds
+// User preference:
+user_pref("network.http.rcwn.min_wait_before_racing_ms", 0);
+
+// Defines small resource size threshold for RCWN
+// Sets the threshold size (in kilobytes) for resources considered 
+// "small" by RCWN, allowing these to be prioritized for cache 
+// access over larger resources.
+// Options:
+// Integer value indicating the threshold size in KB
+// User preference:
+user_pref("network.http.rcwn.small_resource_size_kb", 256);
+
+// Sets the maximum number of HTTP redirects allowed in a chain
+// Defines how many redirects are permitted before the browser stops
+// following additional redirects. Prevents excessive redirects that 
+// could lead to infinite loops or resource exhaustion.
+// Options:
+// Integer value representing the redirect limit
+// User preference:
+user_pref("network.http.redirection-limit", 20);
+
+// Configures the `Referer` header policy across different origins
+// Controls whether the `Referer` header is included in requests made to
+// different origins, enhancing privacy by limiting the referrer information.
+// Options:
+// 0 = Send `Referer` header with all requests
+// 1 = Send `Referer` header only for same-origin requests
+// 2 = Send `Referer` header only if both origins share the same base domain
+// User preference:
+user_pref("network.http.referer.XOriginPolicy", 0);
+
+// Configures trimming of the `Referer` header when sent across origins
+// Determines how much information is sent in the `Referer` header for requests
+// to different origins, balancing privacy and debugging needs.
+// Options:
+// 0 = Send full URL in the `Referer` header
+// 1 = Trim to origin (scheme, host, and port)
+// 2 = Send only scheme and host in the `Referer` header
+// User preference:
+user_pref("network.http.referer.XOriginTrimmingPolicy", 0);
+
+// Sets the default `Referer` policy for non-tracking requests
+// Specifies the level of detail sent in the `Referer` header by default for
+// non-tracking content, with stricter policies enhancing privacy.
+// Options:
+// 0 = Send full URL
+// 1 = Trim to origin only
+// 2 = Send only scheme and host
+// User preference:
+user_pref("network.http.referer.defaultPolicy", 2);
+
+// Sets the `Referer` policy for private browsing mode
+// Adjusts the default `Referer` header policy for private browsing mode, providing
+// a stricter level of privacy for incognito sessions.
+// Options:
+// 0 = Send full URL
+// 1 = Trim to origin only
+// 2 = Send only scheme and host
+// User preference:
+user_pref("network.http.referer.defaultPolicy.pbmode", 2);
+
+// Configures the default `Referer` policy for tracker requests
+// Sets a stricter `Referer` policy for content identified as tracking,
+// enhancing privacy by limiting the `Referer` header details shared with trackers.
+// Options:
+// 0 = Send full URL
+// 1 = Trim to origin only
+// 2 = Send only scheme and host
+// User preference:
+user_pref("network.http.referer.defaultPolicy.trackers", 2);
+
+// Configures the `Referer` policy for trackers in private browsing mode
+// Similar to `defaultPolicy.trackers`, but specifically for private browsing mode,
+// this setting limits `Referer` details for trackers in incognito sessions.
+// Options:
+// 0 = Send full URL
+// 1 = Trim to origin only
+// 2 = Send only scheme and host
+// User preference:
+user_pref("network.http.referer.defaultPolicy.trackers.pbmode", 2);
+
+// Disallows relaxed `Referer` policy for cross-site requests by default
+// Prevents the `Referer` header from being relaxed for cross-site requests,
+// improving privacy by maintaining stricter referrer policies across different origins.
+// Options:
+// true = Disallow relaxed referrer policy
+// false = Allow relaxed referrer policy
+// User preference:
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
+
+// Controls relaxed `Referer` policy for cross-site requests in private browsing
+// Ensures stricter `Referer` settings in private browsing, disallowing relaxation
+// of referrer details in cross-origin requests for enhanced privacy.
+// Options:
+// true = Disallow relaxed referrer policy in private mode
+// false = Allow relaxed referrer policy in private mode
+// User preference:
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true);
+
+// Controls relaxed `Referer` policy for top-level cross-site navigation in private browsing
+// Enforces stricter `Referer` policies for top-level navigation across origins in private mode,
+// which can help prevent information leakage between sites.
+// Options:
+// true = Disallow relaxed referrer policy for top navigation in private mode
+// false = Allow relaxed referrer policy for top navigation in private mode
+// User preference:
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true);
+
+// Controls relaxed `Referer` policy for top-level cross-site navigation
+// Regulates the `Referer` header details for cross-origin top-level navigation,
+// affecting how much information is passed between sites.
+// Options:
+// true = Disallow relaxed referrer policy for top navigation
+// false = Allow relaxed referrer policy for top navigation
+// User preference:
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", false);
+
+// Hides `.onion` source information in the `Referer` header for privacy
+// Prevents revealing `.onion` source domains in the `Referer` header,
+// protecting users accessing sites via the Tor network or similar systems.
+// Options:
+// true = Hide `.onion` source in `Referer` header
+// false = Show `.onion` source in `Referer` header
+// User preference:
+user_pref("network.http.referer.hideOnionSource", true);
+
+// Sets the maximum length for the `Referer` header
+// Limits the size of the `Referer` header to avoid sending excessively long URLs,
+// which can improve performance and reduce data leakage risks.
+// Options:
+// Integer value representing the maximum length in characters
+// User preference:
+user_pref("network.http.referer.referrerLengthLimit", 4096);
+
+// Spoofs the source of the `Referer` header
+// Controls whether the `Referer` header source is modified to show a different URL,
+// enhancing privacy but potentially causing issues with sites requiring the actual referrer.
+// Options:
+// true = Spoof the `Referer` header source
+// false = Send the actual `Referer` header source
+// User preference:
+user_pref("network.http.referer.spoofSource", false);
+
+// Determines the level of trimming for the `Referer` header
+// Configures how much detail to include in the `Referer` header, affecting privacy and compatibility.
+// Options:
+// 0 = Send full URL
+// 1 = Trim to origin only (scheme, host, and port)
+// 2 = Send only scheme and host
+// User preference:
+user_pref("network.http.referer.trimmingPolicy", 0);
+
+// Removes the session resumption token on early data failure
+// Ensures the session token is invalidated if early data (0-RTT) fails, improving security
+// by preventing reuse of the token after a failure.
+// Options:
+// true = Remove token on early data failure
+// false = Retain token on early data failure
+// User preference:
+user_pref("network.http.remove_resumption_token_when_early_data_failed", true);
+
+// Prioritizes rendering-critical HTTP requests
+// Allows prioritization of requests critical for rendering the page, improving load times for visible content.
+// Options:
+// true = Enable rendering-critical request prioritization
+// false = Disable rendering-critical request prioritization
+// User preference:
+user_pref("network.http.rendering-critical-requests-prioritization", true);
+
+// Sets the maximum number of attempts for a single HTTP request
+// Limits the number of retries for a request to prevent excessive load on servers and reduce wait time.
+// Options:
+// Integer value representing the maximum retry attempts
+// User preference:
+user_pref("network.http.request.max-attempts", 10);
+
+// Sets the maximum delay before an HTTP request starts
+// Limits the wait time before initiating an HTTP request, which can improve perceived responsiveness.
+// Options:
+// Integer value in seconds for the maximum delay
+// User preference:
+user_pref("network.http.request.max-start-delay", 10);
+
+// Sets the timeout for HTTP responses
+// Defines the maximum time (in seconds) to wait for a response from a server before aborting the request.
+// Options:
+// Integer value in seconds representing the timeout duration
+// User preference:
+user_pref("network.http.response.timeout", 300);
+
+// Sanitizes headers in logs to protect sensitive information
+// Prevents sensitive header data from being logged, enhancing security and privacy.
+// Options:
+// true = Sanitize headers in logs
+// false = Do not sanitize headers in logs
+// User preference:
+user_pref("network.http.sanitize-headers-in-logs", true);
+
+// Configures the `Origin` header for cross-origin requests
+// Controls when the `Origin` header is sent, which can improve privacy by not revealing unnecessary origin data.
+// Options:
+// 0 = Never send `Origin` header
+// 1 = Send `Origin` header for cross-origin requests only
+// 2 = Send `Origin` header for same-origin and cross-origin requests
+// User preference:
+user_pref("network.http.sendOriginHeader", 2);
+
+// Configures when the `Referer` header is sent
+// Controls the inclusion of the `Referer` header in requests, balancing privacy with site compatibility.
+// Options:
+// 0 = Never send `Referer` header
+// 1 = Send `Referer` header for cross-origin requests only
+// 2 = Send `Referer` header for same-origin and cross-origin requests
+// User preference:
+user_pref("network.http.sendRefererHeader", 2);
+
+// Sets the window size for sending HTTP data
+// Determines the size of the send window, optimizing how much data is sent before waiting for acknowledgment.
+// Options:
+// Integer value in bytes for the send window size
+// User preference:
+user_pref("network.http.send_window_size", 1024);
+
+// Sets the limit for speculative parallel connections
+// Defines the maximum number of speculative connections that can be opened in parallel,
+// which may speed up connection setup for resources likely to be requested.
+// Options:
+// Integer value representing the limit of speculative connections
+// User preference:
+user_pref("network.http.speculative-parallel-limit", 20);
+
+// Enables stale-while-revalidate caching
+// Allows the use of stale cached responses while revalidating in the background,
+// improving perceived performance when loading cached resources.
+// Options:
+// true = Enable stale-while-revalidate caching
+// false = Disable stale-while-revalidate caching
+// User preference:
+user_pref("network.http.stale_while_revalidate.enabled", true);
+
+// Sets the maximum delay for HTTP request tailing
+// Limits the maximum delay for tailing HTTP requests, which helps manage network congestion
+// and improves the load order of critical resources.
+// Options:
+// Integer value in milliseconds representing the maximum delay
+// User preference:
+user_pref("network.http.tailing.delay-max", 6000);
+
+// Sets the incremental delay for tailing requests
+// Configures the delay increment used for each request in the tailing queue,
+// balancing network usage and resource prioritization.
+// Options:
+// Integer value in milliseconds representing the incremental delay
+// User preference:
+user_pref("network.http.tailing.delay-quantum", 600);
+
+// Sets the delay for tailing requests after `DOMContentLoaded`
+// Specifies a shorter delay for requests tailing after the `DOMContentLoaded` event,
+// allowing background requests to continue without blocking visible content.
+// Options:
+// Integer value in milliseconds representing the delay
+// User preference:
+user_pref("network.http.tailing.delay-quantum-after-domcontentloaded", 100);
+
+// Enables HTTP request tailing
+// Allows tailing of lower-priority HTTP requests to manage network load efficiently.
+// Options:
+// true = Enable HTTP request tailing
+// false = Disable HTTP request tailing
+// User preference:
+user_pref("network.http.tailing.enabled", true);
+
+// Sets the total maximum delay for all tailing requests
+// Configures the cumulative delay threshold for all requests in the tailing queue,
+// helping to balance network efficiency and responsiveness.
+// Options:
+// Integer value in milliseconds representing the total maximum delay
+// User preference:
+user_pref("network.http.tailing.total-max", 45000);
+
+// Sets the urgency level for HTTP request tailing
+// Defines the priority level for tailing requests to help prioritize critical resources over lower-priority ones.
+// Options:
+// Integer value representing urgency level (higher values indicate higher priority)
+// User preference:
+user_pref("network.http.tailing.urgency", 6);
+
+// Enables TCP keep-alive for long-lived HTTP connections
+// Maintains long-lived connections by sending periodic keep-alive signals,
+// which can improve connection reliability and prevent timeouts.
+// Options:
+// true = Enable TCP keep-alive for long-lived connections
+// false = Disable TCP keep-alive for long-lived connections
+// User preference:
+user_pref("network.http.tcp_keepalive.long_lived_connections", true);
+
+// Sets idle time for TCP keep-alive on long-lived connections
+// Specifies the duration of inactivity (in seconds) before sending a keep-alive packet
+// for long-lived connections, helping prevent server-side timeouts.
+// Options:
+// Integer value in seconds representing idle time
+// User preference:
+user_pref("network.http.tcp_keepalive.long_lived_idle_time", 600);
+
+// Enables TCP keep-alive for short-lived HTTP connections
+// Keeps short-lived connections alive by sending periodic keep-alive signals,
+// improving reliability during brief idle periods.
+// Options:
+// true = Enable TCP keep-alive for short-lived connections
+// false = Disable TCP keep-alive for short-lived connections
+// User preference:
+user_pref("network.http.tcp_keepalive.short_lived_connections", true);
+
+// Sets idle time for TCP keep-alive on short-lived connections
+// Specifies the idle duration (in seconds) before sending a keep-alive packet
+// for short-lived connections, helping reduce unnecessary reconnections.
+// Options:
+// Integer value in seconds representing idle time
+// User preference:
+user_pref("network.http.tcp_keepalive.short_lived_idle_time", 10);
+
+// Sets idle time before TCP keep-alive for short-lived connections
+// Defines the time (in seconds) that a short-lived connection should remain idle
+// before initiating keep-alive to maintain connection stability.
+// Options:
+// Integer value in seconds representing idle time for short-lived connections
+// User preference:
+user_pref("network.http.tcp_keepalive.short_lived_time", 60);
+
+// Enables HTTP request throttling
+// Controls whether throttling of HTTP requests is active to manage bandwidth
+// and reduce network congestion, especially for background tasks.
+// Options:
+// true = Enable HTTP throttling
+// false = Disable HTTP throttling
+// User preference:
+user_pref("network.http.throttle.enable", false);
+
+// Sets hold time for HTTP throttling
+// Specifies the time (in milliseconds) during which a request is held back as part of throttling,
+// allowing critical tasks to take precedence on the network.
+// Options:
+// Integer value in milliseconds representing hold time
+// User preference:
+user_pref("network.http.throttle.hold-time-ms", 800);
+
+// Sets maximum duration for HTTP throttling
+// Defines the upper limit (in milliseconds) for how long a request can be delayed due to throttling,
+// balancing responsiveness with network management.
+// Options:
+// Integer value in milliseconds representing maximum throttle time
+// User preference:
+user_pref("network.http.throttle.max-time-ms", 500);
+
+// Sets read interval for throttled HTTP requests
+// Controls the interval (in milliseconds) at which throttled requests are allowed to read data,
+// maintaining network efficiency while reducing congestion.
+// Options:
+// Integer value in milliseconds for read interval
+// User preference:
+user_pref("network.http.throttle.read-interval-ms", 500);
+
+// Sets read limit for throttled HTTP requests
+// Defines the maximum number of bytes that throttled requests can read at each interval,
+// managing bandwidth while allowing steady data flow for background processes.
+// Options:
+// Integer value in bytes representing the read limit
+// User preference:
+user_pref("network.http.throttle.read-limit-bytes", 8000);
+
+// Sets duration for resuming throttled HTTP requests
+// Specifies the time (in milliseconds) for which a throttled request is temporarily resumed
+// to allow it to catch up before being suspended again.
+// Options:
+// Integer value in milliseconds representing resume time
+// User preference:
+user_pref("network.http.throttle.resume-for", 100);
+
+// Sets suspend time for throttled HTTP requests
+// Configures the time (in milliseconds) a throttled request is suspended to reduce network load
+// before resuming, helping manage congestion without blocking critical traffic.
+// Options:
+// Integer value in milliseconds representing suspend time
+// User preference:
+user_pref("network.http.throttle.suspend-for", 900);
+
+// Sets HTTP throttling version
+// Specifies the version of the HTTP throttling implementation in use,
+// allowing for potential updates or changes in throttling strategy.
+// Options:
+// Integer value representing the version
+// User preference:
+user_pref("network.http.throttle.version", 1);
+
+// Sets the TLS handshake timeout for HTTP connections
+// Defines the maximum time (in seconds) allowed for the TLS handshake process,
+// ensuring quick fallback if the handshake cannot be completed.
+// Options:
+// Integer value in seconds representing the timeout
+// User preference:
+user_pref("network.http.tls-handshake-timeout", 30);
+
+// Specifies the HTTP protocol version
+// Sets the default HTTP version for requests, commonly used are 1.1 and 2,
+// with 1.1 typically being the fallback or standard for older servers.
+// Options:
+// String value representing the HTTP version ("1.1" or "2")
+// User preference:
+user_pref("network.http.version", "1.1");
+
+// Enables Windows SSO (Single Sign-On) support for HTTP in container environments
+// Allows automatic authentication with Windows accounts in containerized environments,
+// simplifying access control in managed network setups.
+// Options:
+// true = Enable Windows SSO in containers
+// false = Disable Windows SSO in containers
+// User preference:
+user_pref("network.http.windows-sso.container-enabled.0", true);
+
+// Enables Windows SSO for HTTP requests
+// Controls the integration of Windows Single Sign-On (SSO) for HTTP requests,
+// providing seamless authentication using Windows credentials.
+// Options:
+// true = Enable Windows SSO
+// false = Disable Windows SSO
+// User preference:
+user_pref("network.http.windows-sso.enabled", false);
+
+// Defines allowed schemes for HTTP index format
+// Restricts the acceptable URL schemes for HTTP index format,
+// enhancing security by only allowing specific schemes.
+// Options:
+// Comma-separated list of schemes (e.g., "file,moz-gio")
+// User preference:
+user_pref("network.http_index_format.allowed_schemes", "file,moz-gio");
+
+// Enforces Punycode for Cyrillic domain names
+// Uses Punycode encoding for Cyrillic domain names to prevent phishing by
+// avoiding visually similar characters that could be used maliciously.
+// Options:
+// true = Encode Cyrillic domains in Punycode
+// false = Display Cyrillic domains in their native form
+// User preference:
+user_pref("network.idn.punycode_cyrillic_confusables", true);
+
+// Sets maximum available size for JAR files
+// Limits the maximum size (in bytes) for JAR files that can be loaded,
+// managing resource usage and preventing excessive memory consumption.
+// Options:
+// Integer value in bytes representing maximum size
+// User preference:
+user_pref("network.jar.max_available_size", 268435456);
+
+// Sets maximum entry size within JAR files
+// Limits the maximum size (in bytes) of individual entries in JAR files,
+// controlling resource usage for large files.
+// Options:
+// Integer value in bytes representing maximum entry size
+// User preference:
+user_pref("network.jar.max_entry_size", 268435456);
+
+// Enables recording of failure reasons for JAR files
+// Logs the reasons for any JAR file loading failures, aiding in diagnostics and troubleshooting.
+// Options:
+// true = Record failure reasons
+// false = Do not record failure reasons
+// User preference:
+user_pref("network.jar.record_failure_reason", false);
+
+// Manages offline status automatically
+// Allows the system to automatically set the offline status based on network availability,
+// streamlining connectivity management.
+// Options:
+// true = Enable automatic offline status management
+// false = Disable automatic offline status management
+// User preference:
+user_pref("network.manage-offline-status", true);
+
+// Sets max failure count for socket processes
+// Limits the number of failed socket process attempts before flagging an error,
+// optimizing network stability by capping retries.
+// Options:
+// Integer value for the number of allowable failures
+// User preference:
+user_pref("network.max_socket_process_failed_count", 1);
+
+// Lists trusted authorities for Microsoft SSO
+// Defines trusted domains for Microsoft Single Sign-On (SSO), ensuring
+// requests to these domains can utilize SSO for authentication.
+// Options:
+// Comma-separated list of Microsoft SSO domains
+// User preference:
+user_pref("network.microsoft-sso-authority-list", "login.microsoft.com, login.microsoftonline.com, sts.windows.net, login.partner.microsoftonline.cn, login.chinacloudapi.cn, login.microsoftonline.us, login-us.microsoftonline.com");
+
+// Enables module preloading
+// Allows preloading of JavaScript modules to improve page load performance
+// by fetching modules in advance.
+// Options:
+// true = Enable module preloading
+// false = Disable module preloading
+// User preference:
+user_pref("network.modulepreload", true);
+
+// Allows non-fully qualified domain names for negotiate authentication
+// Controls whether authentication is allowed for non-fully qualified domain names (non-FQDN),
+// providing flexibility in internal or simplified network environments.
+// Options:
+// true = Allow non-FQDNs for authentication
+// false = Require FQDNs for authentication
+// User preference:
+user_pref("network.negotiate-auth.allow-non-fqdn", false);
+
+// Allows negotiate authentication for proxies
+// Enables negotiate authentication for proxy connections,
+// enhancing security by permitting SSO authentication through proxies.
+// Options:
+// true = Enable negotiate auth for proxies
+// false = Disable negotiate auth for proxies
+// User preference:
+user_pref("network.negotiate-auth.allow-proxies", true);
+
+// Specifies URIs for delegation in negotiate-auth
+// Defines a list of URIs where delegation of credentials is allowed in negotiate-auth,
+// useful for specific trusted domains requiring credential delegation.
+// Options:
+// Comma-separated list of URIs
+// User preference:
+user_pref("network.negotiate-auth.delegation-uris", "");
+
+// Specifies GSSAPI library for negotiate-auth
+// Defines the path to a custom GSSAPI library for negotiate-auth,
+// allowing customization of the GSSAPI library used for authentication.
+// Options:
+// String path to GSSAPI library
+// User preference:
+user_pref("network.negotiate-auth.gsslib", "");
+
+// Specifies trusted URIs for negotiate-auth
+// Lists URIs where negotiate-authentication is trusted and enabled,
+// enhancing security by restricting negotiate-auth to specified domains.
+// Options:
+// Comma-separated list of trusted URIs
+// User preference:
+user_pref("network.negotiate-auth.trusted-uris", "");
+
+// Uses native GSSAPI library for negotiate-auth
+// Controls the use of the operating system’s native GSSAPI library for negotiate-auth
+// for seamless, integrated authentication on supported systems.
+// Options:
+// true = Use native GSSAPI library
+// false = Do not use native GSSAPI library
+// User preference:
+user_pref("network.negotiate-auth.using-native-gsslib", true);
+
+// Enables IPv6 change notifications
+// Notifies the application of changes to IPv6 network status,
+// ensuring it is aware of and can respond to IPv6 network changes.
+// Options:
+// true = Enable IPv6 change notifications
+// false = Disable IPv6 change notifications
+// User preference:
+user_pref("network.notify.IPv6", true);
+
+// Enables general network change notifications
+// Triggers notifications for changes in network configuration or status,
+// enabling dynamic responses to network changes (e.g., Wi-Fi or Ethernet status).
+// Options:
+// true = Enable network change notifications
+// false = Disable network change notifications
+// User preference:
+user_pref("network.notify.changed", true);
+
+// Checks for Name Resolution Policy Table (NRPT) updates
+// Verifies and updates network configuration using the Name Resolution Policy Table,
+// especially useful in enterprise or managed network environments.
+// Options:
+// true = Enable NRPT checks
+// false = Disable NRPT checks
+// User preference:
+user_pref("network.notify.checkForNRPT", true);
+
+// Checks for proxy settings
+// Regularly checks for updates in network proxy settings,
+// allowing the application to dynamically adjust its proxy configuration.
+// Options:
+// true = Enable proxy check
+// false = Disable proxy check
+// User preference:
+user_pref("network.notify.checkForProxies", true);
+
+// Enables DNS suffix list updates
+// Monitors changes to the DNS suffix list, allowing applications
+// to recognize new or modified DNS configurations.
+// Options:
+// true = Enable DNS suffix list updates
+// false = Disable DNS suffix list updates
+// User preference:
+user_pref("network.notify.dnsSuffixList", true);
+
+// Initiates initial network check
+// Performs an initial call to check network status when the application starts,
+// ensuring accurate network state detection on startup.
+// Options:
+// true = Enable initial network call
+// false = Disable initial network call
+// User preference:
+user_pref("network.notify.initial_call", true);
+
+// Enables resolver checks for network status
+// Ensures that resolver checks are performed to confirm network connectivity,
+// supporting accurate connection state monitoring.
+// Options:
+// true = Enable resolver checks
+// false = Disable resolver checks
+// User preference:
+user_pref("network.notify.resolvers", true);
+
+// Disables offline mirrors when connected
+// Prevents using offline mirrors when online connectivity is detected,
+// prioritizing live network data over cached/offline resources.
+// Options:
+// true = Enable offline mirrors when connected
+// false = Disable offline mirrors when connected
+// User preference:
+user_pref("network.offline-mirrors-connectivity", false);
+
+// Controls online status
+// Sets the online status of the application, which can be used to simulate
+// offline conditions or enforce online connectivity in specific scenarios.
+// Options:
+// true = Application is online
+// false = Application is offline
+// User preference:
+user_pref("network.online", true);
+
+// Cached state for parental controls
+// Determines whether parental controls' state is cached,
+// which may enhance performance by reducing checks for control status.
+// Options:
+// true = Cache parental controls state
+// false = Do not cache parental controls state
+// User preference:
+user_pref("network.parental_controls_cached_state", false);
+
+// Enables preconnect
+// Preemptively establishes network connections to servers for expected resources,
+// reducing latency and improving load times for frequently accessed content.
+// Options:
+// true = Enable preconnect
+// false = Disable preconnect
+// User preference:
+user_pref("network.preconnect", true);
+
+// Disables predictor testing
+// Stops any testing processes related to network predictor functionality,
+// which may be used for diagnostic or optimization purposes.
+// Options:
+// true = Enable predictor testing
+// false = Disable predictor testing
+// User preference:
+user_pref("network.predictor.doing-tests", false);
+
+// Disables prefetching on SSL connections during hover
+// Prevents prefetching when hovering over links on SSL-protected pages,
+// which can avoid unwanted requests and maintain data privacy.
+// Options:
+// true = Enable prefetch on SSL hover
+// false = Disable prefetch on SSL hover
+// User preference:
+user_pref("network.predictor.enable-hover-on-ssl", false);
+
+// Disables general prefetching
+// Disables prefetching of resources based on predicted user behavior,
+// reducing bandwidth usage but potentially impacting page load performance.
+// Options:
+// true = Enable prefetching
+// false = Disable prefetching
+// User preference:
+user_pref("network.predictor.enable-prefetch", false);
+
+// Enables network predictor
+// Activates the network predictor, which analyzes browsing patterns
+// to predict and prepare resources for faster loading of frequently visited pages.
+// Options:
+// true = Enable network predictor
+// false = Disable network predictor
+// User preference:
+user_pref("network.predictor.enabled", true);
+
+// Sets max resources per predictor entry
+// Limits the maximum number of resources that can be cached or preloaded
+// for a single predictor entry, optimizing memory and bandwidth usage.
+// Options:
+// Integer value for maximum resources
+// User preference:
+user_pref("network.predictor.max-resources-per-entry", 100);
+
+// Sets max URI length for predictor
+// Defines the maximum length of URIs the predictor will consider,
+// ensuring that excessively long URLs do not affect performance.
+// Options:
+// Integer value for URI length limit
+// User preference:
+user_pref("network.predictor.max-uri-length", 500);
+
+// Configures daily page degradation threshold for predictor
+// Sets the number of times a page load must be degraded in a single day
+// before it is deprioritized by the predictor.
+// Options:
+// Integer value for daily degradation threshold
+// User preference:
+user_pref("network.predictor.page-degradation.day", 0);
+
+// Configures max degradation threshold for predictor
+// Sets the total threshold for page load degradation
+// before the page is deprioritized for network prediction.
+// Options:
+// Integer value for maximum degradation threshold
+// User preference:
+user_pref("network.predictor.page-degradation.max", 50);
+
+// Configures monthly page degradation threshold for predictor
+// Limits the amount of degradation in a month before a page
+// is deprioritized by the network predictor.
+// Options:
+// Integer value for monthly degradation threshold
+// User preference:
+user_pref("network.predictor.page-degradation.month", 10);
+
+// Configures weekly page degradation threshold for predictor
+// Limits the number of times a page load must be degraded in a single week
+// before it is deprioritized by the predictor.
+// Options:
+// Integer value for weekly degradation threshold
+// User preference:
+user_pref("network.predictor.page-degradation.week", 5);
+
+// Configures yearly page degradation threshold for predictor
+// Sets the total threshold for page load degradation over the course of a year
+// before the page is deprioritized for network prediction.
+// Options:
+// Integer value for yearly degradation threshold
+// User preference:
+user_pref("network.predictor.page-degradation.year", 25);
+
+// Sets minimum confidence for preconnect
+// Determines the minimum confidence level required for the predictor
+// to attempt a preconnect action for a given resource.
+// Options:
+// Integer value for minimum confidence percentage (0-100)
+// User preference:
+user_pref("network.predictor.preconnect-min-confidence", 90);
+
+// Sets how long prefetch should be considered valid
+// Configures the duration (in seconds) that a prefetched resource
+// is deemed valid before it is re-evaluated or discarded.
+// Options:
+// Integer value for duration in seconds
+// User preference:
+user_pref("network.predictor.prefetch-force-valid-for", 10);
+
+// Sets minimum confidence for prefetch
+// Specifies the minimum confidence level necessary for the predictor
+// to proceed with prefetching a resource.
+// Options:
+// Integer value for minimum confidence percentage (0-100)
+// User preference:
+user_pref("network.predictor.prefetch-min-confidence", 100);
+
+// Configures the count of rolling loads for prefetch
+// Sets the number of load requests that can be actively prefetched
+// based on current browsing behavior.
+// Options:
+// Integer value for the maximum rolling load count
+// User preference:
+user_pref("network.predictor.prefetch-rolling-load-count", 10);
+
+// Sets minimum confidence for preresolve
+// Defines the minimum confidence level that must be met for the predictor
+// to initiate a DNS pre-resolution for a resource.
+// Options:
+// Integer value for minimum confidence percentage (0-100)
+// User preference:
+user_pref("network.predictor.preresolve-min-confidence", 60);
+
+// Configures daily subresource degradation threshold for predictor
+// Sets the maximum number of times a subresource load must be degraded
+// in a single day before it is deprioritized for network prediction.
+// Options:
+// Integer value for daily subresource degradation threshold
+// User preference:
+user_pref("network.predictor.subresource-degradation.day", 1);
+
+// Configures maximum subresource degradation threshold for predictor
+// Limits the total threshold for subresource load degradation
+// before it is deprioritized by the network predictor.
+// Options:
+// Integer value for maximum degradation threshold
+// User preference:
+user_pref("network.predictor.subresource-degradation.max", 100);
+
+// Configures monthly subresource degradation threshold for predictor
+// Limits the amount of degradation in a month before a subresource
+// is deprioritized by the network predictor.
+// Options:
+// Integer value for monthly degradation threshold
+// User preference:
+user_pref("network.predictor.subresource-degradation.month", 25);
+
+// Configures weekly subresource degradation threshold for predictor
+// Limits the number of times a subresource load must be degraded in a single week
+// before it is deprioritized by the predictor.
+// Options:
+// Integer value for weekly degradation threshold
+// User preference:
+user_pref("network.predictor.subresource-degradation.week", 10);
+
+// Configures yearly subresource degradation threshold for predictor
+// Sets the total threshold for subresource load degradation over the course of a year
+// before the subresource is deprioritized for network prediction.
+// Options:
+// Integer value for yearly degradation threshold
+// User preference:
+user_pref("network.predictor.subresource-degradation.year", 50);
+
+// Enables prefetching for the next resource
+// This setting allows the browser to prefetch the next resource
+// it anticipates the user will request, enhancing performance.
+// Options:
+// true = Enable prefetching for next resource
+// false = Disable prefetching for next resource
+// User preference:
+user_pref("network.prefetch-next", true);
+
+// Enables the processing of network requests
+// This setting determines if the browser processes network requests
+// normally, impacting user experience and performance.
+// Options:
+// true = Enable processing
+// false = Disable processing
+// User preference:
+user_pref("network.process.enabled", true);
+
+// Exposes all protocol handlers
+// This preference controls whether the browser exposes all protocol
+// handlers, impacting how external applications interact with the browser.
+// Options:
+// true = Expose all protocol handlers
+// false = Do not expose all protocol handlers
+// User preference:
+user_pref("network.protocol-handler.expose-all", true);
+
+// Exposes the mailto protocol handler
+// This setting controls if the browser will expose the mailto protocol
+// handler to external applications.
+// Options:
+// true = Expose mailto handler
+// false = Do not expose mailto handler
+// User preference:
+user_pref("network.protocol-handler.expose.mailto", false);
+
+// Exposes the news protocol handler
+// This setting determines if the news protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose news handler
+// false = Do not expose news handler
+// User preference:
+user_pref("network.protocol-handler.expose.news", false);
+
+// Exposes the nntp protocol handler
+// This preference controls whether the NNTP (Network News Transfer Protocol)
+// handler is exposed to external applications.
+// Options:
+// true = Expose nntp handler
+// false = Do not expose nntp handler
+// User preference:
+user_pref("network.protocol-handler.expose.nntp", false);
+
+// Exposes the snews protocol handler
+// This setting determines if the snews protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose snews handler
+// false = Do not expose snews handler
+// User preference:
+user_pref("network.protocol-handler.expose.snews", false);
+
+// Uses external default protocol handler
+// This setting determines if the browser should use the external
+// default protocol handler for specific actions.
+// Options:
+// true = Use external default handler
+// false = Do not use external default handler
+// User preference:
+user_pref("network.protocol-handler.external-default", true);
+
+// Exposes the AFP (Apple Filing Protocol) handler
+// This preference controls whether the AFP protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose AFP handler
+// false = Do not expose AFP handler
+// User preference:
+user_pref("network.protocol-handler.external.afp", false);
+
+// Exposes the data protocol handler
+// This setting determines if the data protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose data handler
+// false = Do not expose data handler
+// User preference:
+user_pref("network.protocol-handler.external.data", false);
+
+// Exposes the disk protocol handler
+// This preference controls whether the disk protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose disk handler
+// false = Do not expose disk handler
+// User preference:
+user_pref("network.protocol-handler.external.disk", false);
+
+// Exposes the disks protocol handler
+// This setting determines if the disks protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose disks handler
+// false = Do not expose disks handler
+// User preference:
+user_pref("network.protocol-handler.external.disks", false);
+
+// Exposes the HCP (Hypertext Control Protocol) handler
+// This setting determines if the HCP protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose HCP handler
+// false = Do not expose HCP handler
+// User preference:
+user_pref("network.protocol-handler.external.hcp", false);
+
+// Exposes the Help protocol handler
+// This preference controls whether the Help protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose Help handler
+// false = Do not expose Help handler
+// User preference:
+user_pref("network.protocol-handler.external.help", false);
+
+// Exposes the HTP (Hypertext Transfer Protocol) handler
+// This setting determines if the HTP protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose HTP handler
+// false = Do not expose HTP handler
+// User preference:
+user_pref("network.protocol-handler.external.htp", false);
+
+// Exposes the HTPS (HTTP Secure) handler
+// This preference controls whether the HTPS protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose HTPS handler
+// false = Do not expose HTPS handler
+// User preference:
+user_pref("network.protocol-handler.external.htps", false);
+
+// Exposes the Internet Explorer HTTP protocol handler
+// This setting determines if the IE HTTP protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose IE HTTP handler
+// false = Do not expose IE HTTP handler
+// User preference:
+user_pref("network.protocol-handler.external.ie.http", false);
+
+// Exposes the Internet Explorer History protocol handler
+// This preference controls whether the IE History protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose IE History handler
+// false = Do not expose IE History handler
+// User preference:
+user_pref("network.protocol-handler.external.iehistory", false);
+
+// Exposes the Internet Explorer RSS protocol handler
+// This setting determines if the IE RSS protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose IE RSS handler
+// false = Do not expose IE RSS handler
+// User preference:
+user_pref("network.protocol-handler.external.ierss", false);
+
+// Exposes the ILE (Internet Locator Service) handler
+// This preference controls whether the ILE protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose ILE handler
+// false = Do not expose ILE handler
+// User preference:
+user_pref("network.protocol-handler.external.ile", false);
+
+// Exposes the JavaScript protocol handler
+// This setting determines if the JavaScript protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose JavaScript handler
+// false = Do not expose JavaScript handler
+// User preference:
+user_pref("network.protocol-handler.external.javascript", false);
+
+// Exposes the LE (Link Exchange) handler
+// This preference controls whether the LE protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose LE handler
+// false = Do not expose LE handler
+// User preference:
+user_pref("network.protocol-handler.external.le", false);
+
+// Exposes the mailto protocol handler
+// This setting controls if the browser will expose the mailto protocol
+// handler to external applications.
+// Options:
+// true = Expose mailto handler
+// false = Do not expose mailto handler
+// User preference:
+user_pref("network.protocol-handler.external.mailto", true);
+
+// Exposes the MK (Make Directory) protocol handler
+// This preference controls whether the MK protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose MK handler
+// false = Do not expose MK handler
+// User preference:
+user_pref("network.protocol-handler.external.mk", false);
+
+// Exposes the MozIcon protocol handler
+// This setting determines if the MozIcon protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose MozIcon handler
+// false = Do not expose MozIcon handler
+// User preference:
+user_pref("network.protocol-handler.external.moz-icon", false);
+
+// Exposes the MS-CXH (Microsoft Context Help) protocol handler
+// This preference controls whether the MS-CXH protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose MS-CXH handler
+// false = Do not expose MS-CXH handler
+// User preference:
+user_pref("network.protocol-handler.external.ms-cxh", false);
+
+// Exposes the MS-CXH-Full protocol handler
+// This setting determines if the MS-CXH-Full protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose MS-CXH-Full handler
+// false = Do not expose MS-CXH-Full handler
+// User preference:
+user_pref("network.protocol-handler.external.ms-cxh-full", false);
+
+// Exposes the MS-Help protocol handler
+// This preference controls whether the MS-Help protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose MS-Help handler
+// false = Do not expose MS-Help handler
+// User preference:
+user_pref("network.protocol-handler.external.ms-help", false);
+
+// Exposes the MS-MSDT (Microsoft Support Diagnostic Tool) protocol handler
+// This setting determines if the MS-MSDT protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose MS-MSDT handler
+// false = Do not expose MS-MSDT handler
+// User preference:
+user_pref("network.protocol-handler.external.ms-msdt", false);
+
+// Exposes the PS (PostScript) protocol handler
+// This preference controls whether the PS protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose PS handler
+// false = Do not expose PS handler
+// User preference:
+user_pref("network.protocol-handler.external.ps", false);
+
+// Exposes the RES (Resource) protocol handler
+// This setting determines if the RES protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose RES handler
+// false = Do not expose RES handler
+// User preference:
+user_pref("network.protocol-handler.external.res", false);
+
+// Exposes the Search protocol handler
+// This preference controls whether the Search protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose Search handler
+// false = Do not expose Search handler
+// User preference:
+user_pref("network.protocol-handler.external.search", false);
+
+// Exposes the Search-MS protocol handler
+// This setting determines if the Search-MS protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose Search-MS handler
+// false = Do not expose Search-MS handler
+// User preference:
+user_pref("network.protocol-handler.external.search-ms", false);
+
+// Exposes the Shell protocol handler
+// This preference controls whether the Shell protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose Shell handler
+// false = Do not expose Shell handler
+// User preference:
+user_pref("network.protocol-handler.external.shell", false);
+
+// Exposes the TPS (Third Party Services) protocol handler
+// This setting determines if the TPS protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose TPS handler
+// false = Do not expose TPS handler
+// User preference:
+user_pref("network.protocol-handler.external.tps", false);
+
+// Exposes the TTP (Third-Party Protocol) protocol handler
+// This preference controls whether the TTP protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose TTP handler
+// false = Do not expose TTP handler
+// User preference:
+user_pref("network.protocol-handler.external.ttp", false);
+
+// Exposes the TTPS (Third Party Secure) protocol handler
+// This setting determines if the TTPS protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose TTPS handler
+// false = Do not expose TTPS handler
+// User preference:
+user_pref("network.protocol-handler.external.ttps", false);
+
+// Exposes the VBScript protocol handler
+// This preference controls whether the VBScript protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose VBScript handler
+// false = Do not expose VBScript handler
+// User preference:
+user_pref("network.protocol-handler.external.vbscript", false);
+
+// Exposes the VND.MS.Radio (Microsoft Radio) protocol handler
+// This setting determines if the VND.MS.Radio protocol handler is exposed
+// to external applications.
+// Options:
+// true = Expose VND.MS.Radio handler
+// false = Do not expose VND.MS.Radio handler
+// User preference:
+user_pref("network.protocol-handler.external.vnd.ms.radio", false);
+
+// Warns when an external protocol is requested
+// This preference determines whether to show a warning when an external
+// protocol handler is invoked.
+// Options:
+// true = Show warning for all external protocols
+// false = Do not show warning
+// User preference:
+user_pref("network.protocol-handler.warn-external-default", true);
+
+// Warns when the mailto protocol is requested externally
+// This setting determines whether to show a warning for the mailto
+// protocol when invoked externally.
+// Options:
+// true = Show warning for mailto protocol
+// false = Do not show warning
+// User preference:
+user_pref("network.protocol-handler.warn-external.mailto", false);
+
+// Allows bypassing of proxy settings for local addresses
+// This preference controls whether local addresses can bypass proxy settings.
+// Options:
+// true = Allow bypass for local addresses
+// false = Do not allow bypass for local addresses
+// User preference:
+user_pref("network.proxy.allow_bypass", true);
+
+// Prevents hijacking of localhost by proxy settings
+// This setting determines whether localhost can be hijacked by proxy settings.
+// Options:
+// true = Allow hijacking of localhost
+// false = Do not allow hijacking of localhost
+// User preference:
+user_pref("network.proxy.allow_hijacking_localhost", false);
+
+// Maximum retry interval for automatic proxy configuration
+// This preference sets the maximum retry interval (in seconds) for
+// automatic proxy configuration URL requests.
+// Options:
+// Integer value for maximum retry interval in seconds
+// User preference:
+user_pref("network.proxy.autoconfig_retry_interval_max", 300);
+
+// Minimum retry interval for automatic proxy configuration
+// This preference sets the minimum retry interval (in seconds) for
+// automatic proxy configuration URL requests.
+// Options:
+// Integer value for minimum retry interval in seconds
+// User preference:
+user_pref("network.proxy.autoconfig_retry_interval_min", 5);
+
+// URL for automatic proxy configuration
+// This preference allows the specification of a URL for automatic proxy
+// configuration (PAC file). Leave empty if not used.
+// User preference:
+user_pref("network.proxy.autoconfig_url", "");
+
+// Includes path in automatic proxy configuration URL
+// This setting determines whether to include the path in the automatic
+// proxy configuration URL.
+// Options:
+// true = Include path
+// false = Do not include path
+// User preference:
+user_pref("network.proxy.autoconfig_url.include_path", false);
+
+// Default SOCKS version for PAC script
+// This preference specifies the default SOCKS version (4 or 5) for PAC scripts.
+// Options:
+// Integer value for SOCKS version
+// User preference:
+user_pref("network.proxy.default_pac_script_socks_version", 4);
+
+// Detects system proxy changes
+// This preference controls whether the application checks for changes in the
+// system's proxy settings automatically.
+// Options:
+// true = Enable detection of system proxy changes
+// false = Disable detection of system proxy changes
+// User preference:
+user_pref("network.proxy.detect_system_proxy_changes", false);
+
+// Enables WPAD (Web Proxy Auto-Discovery) over DHCP
+// This setting determines whether to enable the detection of proxies using
+// WPAD via DHCP.
+// Options:
+// true = Enable WPAD over DHCP
+// false = Disable WPAD over DHCP
+// User preference:
+user_pref("network.proxy.enable_wpad_over_dhcp", true);
+
+// Enables failover to a direct connection
+// This preference determines whether the application should automatically
+// attempt to connect directly if proxy connections fail.
+// Options:
+// true = Enable failover to direct connection
+// false = Disable failover to direct connection
+// User preference:
+user_pref("network.proxy.failover_direct", true);
+
+// Timeout for failover to a direct connection (in seconds)
+// This setting specifies the time (in seconds) to wait before failing
+// over to a direct connection when proxy attempts fail.
+// Options:
+// Integer value for timeout duration
+// User preference:
+user_pref("network.proxy.failover_timeout", 1800);
+
+// Proxy server for HTTP connections
+// This preference allows the specification of a proxy server for HTTP
+// connections. Leave empty if not used.
+// User preference:
+user_pref("network.proxy.http", "");
+
+// Port number for HTTP proxy server
+// This preference specifies the port number to use for the HTTP proxy server.
+// Options:
+// Integer value for port number (0 = use default port)
+// User preference:
+user_pref("network.proxy.http_port", 0);
+
+// No proxy settings for specified addresses
+// This preference allows the specification of addresses that should bypass
+// the proxy settings. Use commas to separate multiple entries.
+// User preference:
+user_pref("network.proxy.no_proxies_on", "");
+
+// Parses PAC files on socket process
+// This setting determines whether to parse PAC files on the socket process.
+// Options:
+// true = Enable parsing of PAC files on socket process
+// false = Disable parsing of PAC files on socket process
+// User preference:
+user_pref("network.proxy.parse_pac_on_socket_process", false);
+
+// Enables proxy connections over TLS
+// This preference controls whether to use TLS for proxy connections.
+// Options:
+// true = Enable proxy connections over TLS
+// false = Disable proxy connections over TLS
+// User preference:
+user_pref("network.proxy.proxy_over_tls", true);
+
+// Delay before reloading PAC file (in milliseconds)
+// This preference specifies the delay (in milliseconds) before reloading
+// the PAC file.
+// Options:
+// Integer value for delay duration
+// User preference:
+user_pref("network.proxy.reload_pac_delay", 2000);
+
+// Retries failed proxy connections
+// This setting determines whether the application should retry connections
+// to proxies that fail.
+// Options:
+// true = Enable retry for failed proxies
+// false = Disable retry for failed proxies
+// User preference:
+user_pref("network.proxy.retry_failed_proxies", true);
+
+// Shares proxy settings between different applications
+// This preference controls whether to share the proxy settings across
+// multiple applications. If enabled, changes to the proxy settings
+// will affect all applications that support this feature.
+// Options:
+// true = Enable sharing of proxy settings
+// false = Disable sharing of proxy settings
+// User preference:
+user_pref("network.proxy.share_proxy_settings", false);
+
+// Proxy server for SOCKS connections
+// This preference allows the specification of a proxy server for SOCKS
+// connections. Leave empty if not used.
+// User preference:
+user_pref("network.proxy.socks", "");
+
+// Enables remote DNS resolution for SOCKS5 proxy
+// This setting specifies whether to use remote DNS resolution for
+// SOCKS5 connections, allowing the proxy to handle DNS queries.
+// Options:
+// true = Enable remote DNS resolution
+// false = Disable remote DNS resolution
+// User preference:
+user_pref("network.proxy.socks5_remote_dns", true);
+
+// Port number for SOCKS proxy server
+// This preference specifies the port number to use for the SOCKS
+// proxy server. A value of 0 indicates the default port.
+// Options:
+// Integer value for port number (0 = use default port)
+// User preference:
+user_pref("network.proxy.socks_port", 0);
+
+// Enables remote DNS resolution for SOCKS proxy
+// This setting specifies whether to use remote DNS resolution for
+// SOCKS connections. If enabled, DNS queries will be sent to the proxy
+// server instead of the local resolver.
+// Options:
+// true = Enable remote DNS resolution
+// false = Disable remote DNS resolution
+// User preference:
+user_pref("network.proxy.socks_remote_dns", false);
+
+// Version of the SOCKS protocol to use
+// This preference sets the version of the SOCKS protocol to be used
+// for connections. The default is SOCKS5, which provides better support
+// for authentication and IPv6.
+// Options:
+// 4 = SOCKS4
+// 5 = SOCKS5
+// User preference:
+user_pref("network.proxy.socks_version", 5);
+
+// Proxy server for SSL connections
+// This preference allows the specification of a proxy server for SSL
+// connections. Leave empty if not used.
+// User preference:
+user_pref("network.proxy.ssl", "");
+
+// Port number for SSL proxy server
+// This preference specifies the port number to use for the SSL proxy server.
+// A value of 0 indicates the default port.
+// Options:
+// Integer value for port number (0 = use default port)
+// User preference:
+user_pref("network.proxy.ssl_port", 0);
+
+// Enables WPAD (Web Proxy Auto-Discovery) for system settings
+// This setting specifies whether to enable the use of WPAD for
+// automatically configuring proxy settings in the system.
+// Options:
+// true = Enable WPAD
+// false = Disable WPAD
+// User preference:
+user_pref("network.proxy.system_wpad", false);
+
+// Allows WPAD settings to be applied
+// This preference determines whether WPAD settings are allowed to be
+// applied. If set to false, WPAD will be ignored even if enabled.
+// Options:
+// true = Allow WPAD settings
+// false = Disallow WPAD settings
+// User preference:
+user_pref("network.proxy.system_wpad.allowed", false);
+
+// Tests whether localhost is secure when hijacked
+// This setting checks whether localhost connections are considered
+// secure when proxy hijacking is in effect.
+// Options:
+// true = Treat localhost as secure when hijacked
+// false = Treat localhost as insecure when hijacked
+// User preference:
+user_pref("network.proxy.testing_localhost_is_secure_when_hijacked", false);
+
+// Sets the type of proxy configuration
+// This preference determines the proxy configuration type being used.
+// Options:
+// 0 = No proxy
+// 1 = Manual proxy configuration
+// 2 = Auto-detect proxy settings
+// 3 = Automatic proxy configuration (PAC)
+// 4 = Use system proxy settings
+// 5 = Proxy settings are specified via URL
+// User preference:
+user_pref("network.proxy.type", 5);
+
+// Notifies on updates to the Public Suffix List (PSL)
+// This setting controls whether the browser sends notifications
+// when the Public Suffix List is updated. The PSL is used for
+// determining domain ownership and cookie restrictions.
+// Options:
+// true = Enable notifications on PSL updates
+// false = Disable notifications on PSL updates
+// User preference:
+user_pref("network.psl.onUpdate_notify", false);
+
+// Sends ODA (OnDataAvailable) notifications directly to content
+// This setting determines whether the OnDataAvailable events are sent
+// directly to content, which may improve performance in certain scenarios.
+// Options:
+// true = Send ODA directly to content
+// false = Do not send ODA directly to content
+// User preference:
+user_pref("network.send_ODA_to_content_directly", true);
+
+// Sends OnDataFinished notifications
+// This setting controls whether OnDataFinished notifications are sent
+// to content when data transfer is completed. This can help with
+// managing resource loading and completion tracking.
+// Options:
+// true = Send OnDataFinished notifications
+// false = Do not send OnDataFinished notifications
+// User preference:
+user_pref("network.send_OnDataFinished", true);
+
+// Sends OnDataFinished notifications for CSS Loader
+// This option specifies whether to send OnDataFinished notifications
+// specifically for CSS loading processes.
+// Options:
+// true = Enable notifications for CSS loading
+// false = Disable notifications for CSS loading
+// User preference:
+user_pref("network.send_OnDataFinished.cssLoader", true);
+
+// Sends OnDataFinished notifications for HTML5 parser
+// This option specifies whether to send OnDataFinished notifications
+// specifically for the HTML5 parsing process.
+// Options:
+// true = Enable notifications for HTML5 parsing
+// false = Disable notifications for HTML5 parsing
+// User preference:
+user_pref("network.send_OnDataFinished.html5parser", true);
+
+// Sends OnDataFinished notifications for nsInputStreamPump
+// This setting controls whether OnDataFinished notifications are sent
+// for the nsInputStreamPump component, which handles streaming data.
+// Options:
+// true = Enable notifications for nsInputStreamPump
+// false = Disable notifications for nsInputStreamPump
+// User preference:
+user_pref("network.send_OnDataFinished.nsInputStreamPump", true);
+
+// Sends OnDataFinished notifications after progress updates
+// This setting controls whether OnDataFinished notifications are sent
+// after progress updates have occurred during data transfer.
+// Options:
+// true = Send notifications after progress updates
+// false = Do not send notifications after progress updates
+// User preference:
+user_pref("network.send_OnDataFinished_after_progress_updates", false);
+
+// Forces a specific port for socket connections
+// This preference allows the user to specify a forced port for socket
+// connections. Leave empty if not used.
+// User preference:
+user_pref("network.socket.forcePort", "");
+
+// Disables using IP address any (0.0.0.0) for socket connections
+// This setting determines whether to disable the use of the "any" IP
+// address in socket connections, which can affect binding and listening.
+// Options:
+// true = Disable use of IP address any
+// false = Enable use of IP address any
+// User preference:
+user_pref("network.socket.ip_addr_any.disabled", false);
+
+// Capacity of the SSL tokens cache
+// This setting specifies the maximum number of SSL tokens that can
+// be cached in memory. This cache is used for session resumption
+// and other SSL-related optimizations.
+// User preference:
+user_pref("network.ssl_tokens_cache_capacity", 2048);
+
+// Number of cache records per entry for SSL tokens
+// This setting specifies how many cache records should be kept
+// for each SSL token entry in the cache. This can help manage
+// memory usage and performance.
+// User preference:
+user_pref("network.ssl_tokens_cache_records_per_entry", 2);
+
+// Maximum length of standard URLs
+// This setting defines the maximum length for standard URLs in
+// the browser, helping to prevent excessively long URLs from causing
+// issues or security risks.
+// User preference:
+user_pref("network.standard-url.max-length", 1048576);
+
+// Enables standard content type parsing for response headers
+// This setting determines whether the browser should parse and
+// handle standard content types present in HTTP response headers.
+// Options:
+// true = Enable standard content type parsing
+// false = Disable standard content type parsing
+// User preference:
+user_pref("network.standard_content_type_parsing.response_headers", true);
+
+// Enables the Strict Transport Security (HSTS) preload list
+// This setting determines whether the browser should use the
+// predefined HSTS preload list, which helps enforce secure connections
+// to known domains automatically.
+// Options:
+// true = Enable HSTS preload list
+// false = Disable HSTS preload list
+// User preference:
+user_pref("network.stricttransportsecurity.preloadlist", true);
+
+// Maximum time for events between two polls in STS
+// This setting specifies the maximum duration allowed for events
+// to occur between polling operations in Strict Transport Security (STS).
+// User preference:
+user_pref("network.sts.max_time_for_events_between_two_polls", 100);
+
+// Maximum time for connection closure during shutdown in STS
+// This setting determines how long the system will wait for
+// connections to close during shutdown in the context of STS.
+// User preference:
+user_pref("network.sts.max_time_for_pr_close_during_shutdown", 5000);
+
+// Poll busy wait period in milliseconds
+// This setting specifies the duration the system will wait
+// in busy mode while polling for STS events.
+// User preference:
+user_pref("network.sts.poll_busy_wait_period", 50);
+
+// Timeout for busy wait period during polling in STS
+// This setting specifies the maximum time allowed for busy
+// waiting while polling for events in STS before timing out.
+// User preference:
+user_pref("network.sts.poll_busy_wait_period_timeout", 7);
+
+// Timeout for polling STS events
+// This setting determines how long the polling for STS events
+// will continue before it is considered to have timed out.
+// User preference:
+user_pref("network.sts.pollable_event_timeout", 6);
+
+// Enables TCP keepalive feature
+// This setting specifies whether to enable the TCP keepalive feature,
+// which helps to maintain persistent connections by periodically
+// sending keepalive packets.
+// Options:
+// true = Enable TCP keepalive
+// false = Disable TCP keepalive
+// User preference:
+user_pref("network.tcp.keepalive.enabled", true);
+
+// Idle time for TCP keepalive in seconds
+// This setting determines the idle time before a keepalive packet
+// is sent on a TCP connection to verify if the connection is still active.
+// User preference:
+user_pref("network.tcp.keepalive.idle_time", 600);
+
+// Delay before tickling Wi-Fi in milliseconds
+// This setting specifies the time to wait before sending a tickle
+// request to Wi-Fi, which can help keep the connection alive.
+// User preference:
+user_pref("network.tickle-wifi.delay", 16);
+
+// Duration of the tickle Wi-Fi action in milliseconds
+// This setting specifies how long the tickle action should last
+// when keeping the Wi-Fi connection active.
+// User preference:
+user_pref("network.tickle-wifi.duration", 400);
+
+// Enables or disables the tickle Wi-Fi feature
+// This setting determines whether the tickle Wi-Fi feature is active,
+// which is used to keep the Wi-Fi connection alive by periodically
+// sending signals to the network.
+// Options:
+// true = Enable tickle Wi-Fi
+// false = Disable tickle Wi-Fi
+// User preference:
+user_pref("network.tickle-wifi.enabled", false);
+
+// Enables the traffic analyzer feature
+// This setting allows the browser to collect and analyze traffic data,
+// which can be useful for performance optimization and monitoring.
+// Options:
+// true = Enable traffic analyzer
+// false = Disable traffic analyzer
+// User preference:
+user_pref("network.traffic_analyzer.enabled", true);
+
+// Allows additional DNS records to be added for TRR
+// This setting determines whether the browser should allow
+// the addition of extra DNS records in the Trusted Recursive Resolver (TRR).
+// Options:
+// true = Allow additional records
+// false = Disallow additional records
+// User preference:
+user_pref("network.trr.add_additional_records", true);
+
+// Allows TRR queries for RFC1918 addresses
+// This setting specifies whether the browser should allow
+// DNS queries for private network addresses defined in RFC1918
+// when using TRR.
+// Options:
+// true = Allow RFC1918 queries
+// false = Disallow RFC1918 queries
+// User preference:
+user_pref("network.trr.allow-rfc1918", false);
+
+// Enables or disables asynchronous connection information for TRR
+// This setting specifies whether connection information should be
+// handled asynchronously when using TRR.
+// Options:
+// true = Enable async connection info
+// false = Disable async connection info
+// User preference:
+user_pref("network.trr.async_connInfo", false);
+
+// Attempts TRR resolution when retrying confirmation
+// This setting determines whether the browser should attempt
+// TRR resolution when confirming a connection after a failure.
+// Options:
+// true = Attempt TRR on retry
+// false = Do not attempt TRR on retry
+// User preference:
+user_pref("network.trr.attempt-when-retrying-confirmation", false);
+
+// Bootstrap address for TRR queries
+// This setting specifies the initial address that will be used for
+// DNS queries when using TRR.
+// User preference:
+user_pref("network.trr.bootstrapAddress", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+
+// List of built-in excluded domains for TRR
+// This setting specifies domains that will be excluded from TRR resolution
+// by default, such as localhost and local domains.
+// User preference:
+user_pref("network.trr.builtin-excluded-domains", "localhost,local");
+
+// Clears TRR cache on preference change
+// This setting specifies whether to clear the TRR cache when
+// related preferences are changed.
+// Options:
+// true = Clear cache on change
+// false = Do not clear cache on change
+// User preference:
+user_pref("network.trr.clear-cache-on-pref-change", true);
+
+// Confirmation nameserver for TRR
+// This setting specifies the nameserver to be used for confirmation
+// when validating DNS queries.
+// User preference:
+user_pref("network.trr.confirmationNS", "example.com");
+
+// Enables or disables confirmation telemetry for TRR
+// This setting determines whether to send telemetry data related
+// to TRR confirmation processes.
+// Options:
+// true = Enable confirmation telemetry
+// false = Disable confirmation telemetry
+// User preference:
+user_pref("network.trr.confirmation_telemetry_enabled", true);
+
+// Timeout for confirmation in milliseconds for TRR
+// This setting specifies how long the browser will wait for a
+// confirmation response when using TRR before timing out.
+// User preference:
+user_pref("network.trr.confirmation_timeout_ms", 6000);
+
+// Credentials for TRR queries
+// This setting specifies the credentials (such as an API key or token)
+// to be used when making DNS queries via the Trusted Recursive Resolver (TRR).
+// User preference:
+user_pref("network.trr.credentials", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+
+// Custom URI for TRR queries
+// This setting allows the user to define a custom URI for TRR queries,
+// which can be useful for connecting to a specific DNS resolver.
+// User preference:
+user_pref("network.trr.custom_uri", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+
+// Default provider URI for TRR queries
+// This setting specifies the default URI to be used for TRR queries,
+// which is the fallback resolver if no other settings are specified.
+// User preference:
+user_pref("network.trr.default_provider_uri", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+
+// Disables EDNS Client Subnet (ECS) for TRR
+// This setting specifies whether to disable ECS when making DNS queries
+// through TRR, which can help improve privacy by preventing the resolver
+// from knowing the user's location.
+// Options:
+// true = Disable ECS
+// false = Enable ECS
+// User preference:
+user_pref("network.trr.disable-ECS", true);
+
+// Displays fallback warning for TRR
+// This setting determines whether a fallback warning should be displayed
+// when TRR is not functioning as expected.
+// Options:
+// true = Display warning
+// false = Do not display warning
+// User preference:
+user_pref("network.trr.display_fallback_warning", false);
+
+// Enables TRR when a VPN is detected
+// This setting allows TRR to be used when a VPN is active,
+// ensuring DNS queries are routed through the TRR resolver even under a VPN.
+// Options:
+// true = Enable TRR with VPN
+// false = Disable TRR with VPN
+// User preference:
+user_pref("network.trr.enable_when_vpn_detected", true);
+
+// Excludes /etc/hosts entries from TRR resolution
+// This setting specifies whether to exclude the entries in the /etc/hosts
+// file from TRR resolution, which may help in environments where local
+// DNS resolution is critical.
+// Options:
+// true = Exclude /etc/hosts
+// false = Include /etc/hosts
+// User preference:
+user_pref("network.trr.exclude-etc-hosts", true);
+
+// List of excluded domains for TRR
+// This setting allows specifying domains that should be excluded from
+// TRR resolution, which can help ensure that certain local or internal
+// domains are resolved normally instead of through TRR.
+// User preference:
+user_pref("network.trr.excluded-domains", "");
+
+// Fallback on zero response for TRR
+// This setting determines whether to fallback to an alternative resolver
+// if a TRR query receives a zero response.
+// Options:
+// true = Fallback on zero response
+// false = Do not fallback on zero response
+// User preference:
+user_pref("network.trr.fallback-on-zero-response", false);
+
+// Heuristic list for fallback warning in TRR
+// This setting specifies the heuristic list used to trigger a fallback
+// warning for TRR, helping to identify potential issues with the resolver.
+// User preference:
+user_pref("network.trr.fallback_warning_heuristic_list", "canary");
+
+// Hard fail on extended error for TRR
+// This setting specifies whether to hard fail TRR resolution on extended errors,
+// which can be useful for quickly diagnosing issues with the resolver.
+// Options:
+// true = Hard fail on extended error
+// false = Soft fail on extended error
+// User preference:
+user_pref("network.trr.hard_fail_on_extended_error", true);
+
+// Maximum number of fails before giving up on TRR
+// This setting specifies the maximum number of consecutive failures
+// that can occur before the browser stops trying to use TRR.
+// User preference:
+user_pref("network.trr.max-fails", 15);
+
+// Maximum retry timeout for TRR in milliseconds
+// This setting specifies the maximum duration to wait for a TRR request
+// to be retried before giving up. A longer timeout can be useful in
+// unstable network environments.
+// User preference:
+user_pref("network.trr.max-retry-timeout-ms", 64000);
+
+// Mode for TRR operation
+// This setting specifies the operational mode for TRR, allowing users
+// to define how the TRR feature behaves. Different values correspond to
+// different operational behaviors.
+// Options:
+// 0 = Off
+// 1 = Default
+// 2 = Native
+// 3 = TRR only
+// User preference:
+user_pref("network.trr.mode", 3);
+
+// Configuration URI for the TRR over HTTP
+// This setting allows users to specify a configuration URI for TRR
+// over HTTP, which can be useful for custom DNS resolver setups.
+// User preference:
+user_pref("network.trr.ohttp.config_uri", "");
+
+// Relay URI for TRR over HTTP
+// This setting specifies the relay URI for TRR over HTTP, which can
+// be used to connect to a specific relay server.
+// User preference:
+user_pref("network.trr.ohttp.relay_uri", "");
+
+// Main URI for TRR over HTTP
+// This setting specifies the main URI for TRR over HTTP, which directs
+// where DNS queries should be sent.
+// User preference:
+user_pref("network.trr.ohttp.uri", "");
+
+// Padding for TRR requests
+// This setting specifies whether padding should be used for TRR requests,
+// which can help obfuscate the content of DNS queries for enhanced privacy.
+// Options:
+// true = Enable padding
+// false = Disable padding
+// User preference:
+user_pref("network.trr.padding", true);
+
+// Length of padding for TRR requests in bytes
+// This setting specifies the length of padding to be added to TRR requests,
+// which can help further obscure query patterns.
+// User preference:
+user_pref("network.trr.padding.length", 128);
+
+// Timeout for TRR pings in milliseconds
+// This setting specifies the maximum time to wait for a TRR ping response
+// before considering it failed. Shorter timeouts can help with quicker
+// recoveries in case of network issues.
+// User preference:
+user_pref("network.trr.ping_timeout", 3000);
+
+// Request timeout mode for TRR only in milliseconds
+// This setting specifies the timeout duration for TRR requests
+// when TRR is the only mode used, helping to control how long to wait
+// before considering a TRR request failed.
+// User preference:
+user_pref("network.trr.request_timeout_mode_trronly_ms", 30000);
+
+// General request timeout for TRR in milliseconds
+// This setting specifies the general timeout duration for all TRR requests,
+// helping to manage how long to wait for responses before retrying.
+// User preference:
+user_pref("network.trr.request_timeout_ms", 1500);
+
+// Retry timeout for TRR requests in milliseconds
+// This setting specifies the timeout for retrying TRR requests,
+// which can be important for maintaining responsiveness in case of temporary
+// network issues.
+// User preference:
+user_pref("network.trr.retry-timeout-ms", 125);
+
+// Retry on recoverable errors for TRR
+// This setting specifies whether to retry TRR requests when a recoverable
+// error occurs, which can help ensure more robust DNS resolution.
+// Options:
+// true = Enable retries on recoverable errors
+// false = Disable retries on recoverable errors
+// User preference:
+user_pref("network.trr.retry_on_recoverable_errors", true);
+
+// Send Accept-Language headers with TRR requests
+// This setting specifies whether to include Accept-Language headers in TRR
+// requests, which can influence content negotiation on the server side.
+// Options:
+// true = Enable sending Accept-Language headers
+// false = Disable sending Accept-Language headers
+// User preference:
+user_pref("network.trr.send_accept-language_headers", false);
+
+// Send empty Accept-Encoding headers with TRR requests
+// This setting specifies whether to send empty Accept-Encoding headers with
+// TRR requests. This can be useful for certain compatibility scenarios.
+// Options:
+// true = Send empty Accept-Encoding headers
+// false = Do not send empty Accept-Encoding headers
+// User preference:
+user_pref("network.trr.send_empty_accept-encoding_headers", true);
+
+// Send User-Agent headers with TRR requests
+// This setting specifies whether to include User-Agent headers in TRR
+// requests, which can affect how the server responds to the request.
+// Options:
+// true = Enable sending User-Agent headers
+// false = Disable sending User-Agent headers
+// User preference:
+user_pref("network.trr.send_user-agent_headers", false);
+
+// Skip AAAA records when not supported
+// This setting specifies whether to skip AAAA records in TRR requests
+// if they are not supported by the resolver, potentially improving compatibility.
+// Options:
+// true = Skip AAAA records when not supported
+// false = Do not skip AAAA records
+// User preference:
+user_pref("network.trr.skip-AAAA-when-not-supported", true);
+
+// Skip checking for blocked hosts
+// This setting specifies whether to bypass checks for blocked hosts
+// during TRR resolution, which can be useful in certain situations.
+// Options:
+// true = Skip checks for blocked hosts
+// false = Do not skip checks for blocked hosts
+// User preference:
+user_pref("network.trr.skip-check-for-blocked-host", false);
+
+// Split-horizon mitigations for TRR
+// This setting specifies whether to enable mitigations for split-horizon DNS
+// scenarios, which can help ensure proper resolution in complex networks.
+// Options:
+// true = Enable split-horizon mitigations
+// false = Disable split-horizon mitigations
+// User preference:
+user_pref("network.trr.split_horizon_mitigations", true);
+
+// Strict fallback request timeout for TRR in milliseconds
+// This setting specifies the timeout duration for strict fallback requests
+// in TRR. This can help manage how quickly to fail over to alternate
+// resolvers if the primary fails to respond.
+// User preference:
+user_pref("network.trr.strict_fallback_request_timeout_ms", 6000);
+
+// Strict native fallback
+// This setting specifies whether to enforce strict native fallback behavior
+// in TRR, affecting how the system handles native DNS queries.
+// Options:
+// true = Enable strict native fallback
+// false = Disable strict native fallback
+// User preference:
+user_pref("network.trr.strict_native_fallback", false);
+
+// Allow timeouts during strict native fallback
+// This setting specifies whether to allow timeouts when using strict
+// native fallback for TRR requests.
+// Options:
+// true = Allow timeouts
+// false = Do not allow timeouts
+// User preference:
+user_pref("network.trr.strict_native_fallback_allow_timeouts", true);
+
+// Temporary blocklist for TRR
+// This setting specifies whether to enable a temporary blocklist for TRR,
+// which can be used to prevent specific domains from being resolved.
+// Options:
+// true = Enable temporary blocklist
+// false = Disable temporary blocklist
+// User preference:
+user_pref("network.trr.temp_blocklist", true);
+
+// Duration for temporary blocklist entries in seconds
+// This setting specifies how long entries remain in the temporary blocklist,
+// allowing for more dynamic management of domain resolution.
+// User preference:
+user_pref("network.trr.temp_blocklist_duration_sec", 60);
+
+// URI for the TRR service
+// This setting specifies the URI of the DNS resolver to use for TRR
+// requests, directing where to send DNS queries.
+// User preference:
+user_pref("network.trr.uri", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+
+// Use GET method for TRR requests
+// This setting specifies whether to use the GET method for TRR requests,
+// which can affect how DNS queries are transmitted to the resolver.
+// Options:
+// true = Use GET method for TRR requests
+// false = Do not use GET method
+// User preference:
+user_pref("network.trr.useGET", false);
+
+// Use OHTTP for TRR requests
+// This setting specifies whether to enable OHTTP (Obfuscated HTTP)
+// for TRR requests, enhancing privacy and security.
+// Options:
+// true = Enable OHTTP
+// false = Disable OHTTP
+// User preference:
+user_pref("network.trr.use_ohttp", false);
+
+// Wait for TRR confirmation
+// This setting specifies whether to wait for confirmation before
+// resolving DNS requests via TRR, potentially improving accuracy.
+// Options:
+// true = Wait for confirmation
+// false = Do not wait for confirmation
+// User preference:
+user_pref("network.trr.wait-for-confirmation", false);
+
+// Wait for portal detection
+// This setting specifies whether to wait for portal detection
+// before resolving DNS requests, which can be useful in captive portal
+// scenarios.
+// Options:
+// true = Wait for portal detection
+// false = Do not wait for portal detection
+// User preference:
+user_pref("network.trr.wait-for-portal", false);
+
+// Show fallback warning option in the TRR UI
+// This setting specifies whether to display an option in the TRR user interface
+// for showing fallback warnings to users.
+// Options:
+// true = Show fallback warning option
+// false = Do not show fallback warning option
+// User preference:
+user_pref("network.trr_ui.show_fallback_warning_option", false);
+
+// URL maximum length
+// This setting specifies the maximum length for URLs processed by the network
+// system, preventing excessively long URLs from causing issues.
+// User preference:
+user_pref("network.url.max-length", 33554432);
+
+// Simple URI schemes
+// This setting can be used to specify simple URI schemes that should be handled
+// differently within the network system. It may include custom or less common schemes.
+// User preference:
+user_pref("network.url.simple_uri_schemes", "");
+
+// Some schemes bypass default URI fallback
+// This setting specifies whether certain URI schemes should bypass the
+// default URI fallback mechanism, allowing for more flexible handling
+// of specific schemes.
+// Options:
+// true = Allow bypass for some schemes
+// false = Do not allow bypass
+// User preference:
+user_pref("network.url.some_schemes_bypass_defaultURI_fallback", true);
+
+// Strict data URL base64 placement
+// This setting specifies whether to enforce strict placement of base64
+// data in data URLs, improving compliance with standards.
+// Options:
+// true = Enable strict placement
+// false = Disable strict placement
+// User preference:
+user_pref("network.url.strict_data_url_base64_placement", true);
+
+// Use default URI for network requests
+// This setting specifies whether to use a default URI for network requests
+// if no specific URI is provided.
+// Options:
+// true = Use default URI
+// false = Do not use default URI
+// User preference:
+user_pref("network.url.useDefaultURI", false);
+
+// Allow insecure WebSocket connections from HTTPS pages
+// This setting specifies whether to allow insecure WebSocket connections
+// (ws://) to be established from secure pages (https://).
+// Options:
+// true = Allow insecure connections
+// false = Do not allow insecure connections
+// User preference:
+user_pref("network.websocket.allowInsecureFromHTTPS", false);
+
+// Delay failed WebSocket reconnects
+// This setting specifies whether to introduce a delay before attempting to
+// reconnect a failed WebSocket connection, helping to avoid rapid reconnection
+// attempts that could overload the server.
+// Options:
+// true = Delay failed reconnects
+// false = Do not delay
+// User preference:
+user_pref("network.websocket.delay-failed-reconnects", true);
+
+// Maximum number of WebSocket connections
+// This setting specifies the maximum number of simultaneous WebSocket
+// connections allowed by the network system.
+// User preference:
+user_pref("network.websocket.max-connections", 200);
+
+// Maximum size of WebSocket messages
+// This setting specifies the maximum size (in bytes) for messages sent
+// over WebSocket connections, helping to manage resource usage and
+// prevent overload.
+// User preference:
+user_pref("network.websocket.max-message-size", 2147483647);
+
+// WebSocket close timeout in seconds
+// This setting specifies the timeout duration for closing WebSocket connections.
+// User preference:
+user_pref("network.websocket.timeout.close", 20);
+
+// WebSocket open timeout in seconds
+// This setting specifies the timeout duration for opening WebSocket connections.
+// User preference:
+user_pref("network.websocket.timeout.open", 20);
+
+// WebSocket ping request timeout in milliseconds
+// This setting specifies the timeout duration for ping requests sent
+// over WebSocket connections.
+// User preference:
+user_pref("network.websocket.timeout.ping.request", 0);
+
+// WebSocket ping response timeout in seconds
+// This setting specifies the timeout duration for waiting for a ping
+// response from WebSocket connections.
+// User preference:
+user_pref("network.websocket.timeout.ping.response", 10);
+
+// WebTransport datagram size in bytes
+// This setting specifies the maximum size for datagrams sent using
+// WebTransport, allowing for efficient data transmission.
+// User preference:
+user_pref("network.webtransport.datagram_size", 1200);
+
+// Enable WebTransport datagrams
+// This setting specifies whether to enable the use of datagrams in WebTransport
+// connections, allowing for more flexible data handling.
+// Options:
+// true = Enable WebTransport datagrams
+// false = Disable WebTransport datagrams
+// User preference:
+user_pref("network.webtransport.datagrams.enabled", true);
+
+// Enable WebTransport
+// This setting specifies whether to enable WebTransport support in the network
+// system, allowing for advanced transport capabilities.
+// Options:
+// true = Enable WebTransport
+// false = Disable WebTransport
+// User preference:
+user_pref("network.webtransport.enabled", true);
+
+// Enable WebTransport redirects
+// This setting specifies whether to allow redirects in WebTransport connections,
+// which can be useful for handling different transport scenarios.
+// Options:
+// true = Enable WebTransport redirects
+// false = Disable WebTransport redirects
+// User preference:
+user_pref("network.webtransport.redirect.enabled", false);
+
+// Wi-Fi scanning period in milliseconds
+// This setting specifies the period for scanning available Wi-Fi networks,
+// allowing for timely updates on connectivity.
+// User preference:
+user_pref("network.wifi.scanning_period", 60000);
+
+// Partition network state for privacy
+// This setting specifies whether to partition the network state for enhanced
+// privacy, preventing data leakage between different browsing contexts.
+// Options:
+// true = Enable partitioned network state
+// false = Disable partitioned network state
+// User preference:
+user_pref("privacy.partition.network_state", true);
+
+// Partition network state for connections with a proxy
+// This setting specifies whether to partition the network state for connections
+// made through a proxy, enhancing privacy and preventing data leakage.
+// Options:
+// true = Enable partitioned network state for proxy connections
+// false = Disable partitioned network state for proxy connections
+// User preference:
+user_pref("privacy.partition.network_state.connection_with_proxy", false);
+
+// Partition network state for OCSP cache
+// This setting specifies whether to partition the OCSP (Online Certificate Status
+// Protocol) cache for enhanced privacy, preventing data leakage between
+// different browsing contexts.
+// Options:
+// true = Enable partitioned OCSP cache
+// false = Disable partitioned OCSP cache
+// User preference:
+user_pref("privacy.partition.network_state.ocsp_cache", true);
+
+// Partition network state for OCSP cache in private mode
+// This setting specifies whether to partition the OCSP cache for private
+// browsing mode, enhancing privacy during sensitive sessions.
+// Options:
+// true = Enable partitioned OCSP cache in private mode
+// false = Disable partitioned OCSP cache in private mode
+// User preference:
+user_pref("privacy.partition.network_state.ocsp_cache.pbmode", true);
+
+// Lower network priority for tracking protection
+// This setting specifies whether to lower network priority for tracking
+// protection features, potentially affecting performance in favor of
+// enhanced privacy.
+// Options:
+// true = Enable lower network priority for tracking protection
+// false = Disable lower network priority
+// User preference:
+user_pref("privacy.trackingprotection.lower_network_priority", false);
+
+// Sync cookie behavior preferences with Firefox Sync
+// This setting specifies whether to synchronize cookie behavior preferences
+// with Firefox Sync, ensuring consistent behavior across devices.
+// Options:
+// true = Enable sync for cookie behavior
+// false = Disable sync for cookie behavior
+// User preference:
+user_pref("services.sync.prefs.sync.network.cookie.cookieBehavior", true);
+
+// URL for learning more about TRR skip reasons
+// This setting specifies the URL for the "Learn More" page regarding
+// reasons for skipping TRR (Trusted Recursive Resolver) requests, providing
+// users with information about different scenarios.
+// User preference:
+user_pref("network.trr_ui.skip_reason_learn_more_url", "https://firefox-source-docs.mozilla.org/networking/dns/trr-skip-reasons.html#");
+
+
+
+
+
+
+
+
+
