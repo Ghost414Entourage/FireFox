@@ -1,126 +1,269 @@
-// Enable or disable the Accessibility Object Model (false = disable, true = enable)
-// When enabled (true), developers can use JavaScript to enhance custom elements for accessibility.
+// Enable or disable the Accessibility Object Model
+// This setting specifies whether developers can use JavaScript to enhance custom elements for accessibility.
+// Options:
+// true = Enable the Accessibility Object Model
+// false = Disable the Accessibility Object Model
+// User preference:
 user_pref("accessibility.AOM.enabled", false);
 
-// Enable or disable ARIA element reflection (false = disable, true = enable)
-// When enabled (true), allows JavaScript to reflect ARIA attributes on elements, improving interaction with ARIA properties.
+// Enable or disable ARIA element reflection
+// This setting specifies whether JavaScript can reflect ARIA attributes on elements, improving interaction with ARIA properties.
+// Options:
+// true = Enable ARIA element reflection
+// false = Disable ARIA element reflection
+// User preference:
 user_pref("accessibility.ARIAElementReflection.enabled", false);
 
-// Enable or disable activation of elements by access keys (false = disable, true = enable)
-// When enabled (true), pressing an access key immediately activates associated elements, improving accessibility navigation.
+// Enable or disable activation of elements by access keys
+// This setting specifies whether pressing an access key immediately activates associated elements, improving accessibility navigation.
+// Options:
+// true = Enable activation of elements by access keys
+// false = Disable activation of elements by access keys
+// User preference:
 user_pref("accessibility.accesskeycausesactivation", true);
 
-// Enable or disable blocking of automatic page refreshes (false = disable blocking, true = enable blocking)
-// When enabled (true), Firefox will block auto-refreshing pages, which can be useful for screen readers or low-vision users.
+// Enable or disable blocking of automatic page refreshes
+// This setting specifies whether Firefox will block auto-refreshing pages, useful for screen readers or low-vision users.
+// Options:
+// true = Enable blocking of automatic page refreshes
+// false = Disable blocking of automatic page refreshes
+// User preference:
 user_pref("accessibility.blockautorefresh", false);
 
-// Enable or disable caret browsing (false = disable, true = enable)
-// When enabled (true), caret browsing allows navigating web pages using a movable cursor, similar to a text editor.
+// Enable or disable caret browsing
+// This setting specifies whether caret browsing allows navigating web pages using a movable cursor, similar to a text editor.
+// Options:
+// true = Enable caret browsing
+// false = Disable caret browsing
+// User preference:
 user_pref("accessibility.browsewithcaret", false);
 
-// Enable or disable the shortcut for toggling caret browsing (false = disable, true = enable)
-// When enabled (true), the F7 key can be used to toggle caret browsing on and off.
+// Enable or disable the shortcut for toggling caret browsing
+// This setting specifies whether the F7 key can be used to toggle caret browsing on and off.
+// Options:
+// true = Enable the F7 shortcut for caret browsing
+// false = Disable the F7 shortcut for caret browsing
+// User preference:
 user_pref("accessibility.browsewithcaret_shortcut.enabled", true);
 
-// Enable or disable all accessibility services (0 = enabled, 1 = partially disabled, 2 = fully disabled)
-// Setting this to 2 will fully disable accessibility services, which can improve performance if not needed.
+// Enable or disable all accessibility services
+// This setting specifies the level of accessibility services enabled.
+// Options:
+// 0 = Enabled
+// 1 = Partially disabled
+// 2 = Fully disabled (improves performance if not needed)
+// User preference:
 user_pref("accessibility.force_disabled", 0);
 
-// Enable or disable mono audio output (false = stereo, true = mono)
-// When enabled (true), mono audio combines left and right audio channels, useful for users with hearing in one ear.
+// Enable or disable mono audio output
+// This setting specifies whether mono audio combines left and right audio channels, useful for users with hearing in one ear.
+// Options:
+// true = Enable mono audio output
+// false = Disable mono audio output
+// User preference:
 user_pref("accessibility.monoaudio.enable", false);
 
-// Control focus behavior for form controls with the mouse (0 = default behavior, 1 = focus with any mouse click, 2 = focus with left mouse click)
-// Setting this to 2 focuses form controls only when clicked with the left mouse button.
+// Control focus behavior for form controls with the mouse
+// This setting specifies how form controls are focused when clicked with the mouse.
+// Options:
+// 0 = Default behavior
+// 1 = Focus with any mouse click
+// 2 = Focus with left mouse click only
+// User preference:
 user_pref("accessibility.mouse_focuses_formcontrol", 2);
 
-// Configure tab key focus behavior (value is a bitfield, 1 = text fields, 2 = other form controls, 4 = links)
-// Setting this to 7 (1 + 2 + 4) makes the tab key navigate through all focusable elements (text fields, form controls, and links).
+// Configure tab key focus behavior
+// This setting specifies the focus behavior of the tab key for various elements.
+// Options:
+// 1 = Text fields
+// 2 = Other form controls
+// 4 = Links
+// User preference (setting to 7 enables focus for all):
 user_pref("accessibility.tabfocus", 7);
 
-// Enable or disable tab focus for XUL elements (false = disable, true = enable)
-// When enabled (true), the tab key can focus on XUL elements (Firefox's internal UI elements).
+// Enable or disable tab focus for XUL elements
+// This setting specifies whether the tab key can focus on XUL elements (Firefox's internal UI elements).
+// Options:
+// true = Enable tab focus for XUL elements
+// false = Disable tab focus for XUL elements
+// User preference:
 user_pref("accessibility.tabfocus_applies_to_xul", true);
 
-// Enable or disable type-ahead find feature (false = disable, true = enable)
-// When enabled (true), type-ahead find allows searching for text in the page by typing it directly.
+// Enable or disable type-ahead find feature
+// This setting specifies whether type-ahead find allows searching for text in the page by typing it directly.
+// Options:
+// true = Enable type-ahead find
+// false = Disable type-ahead find
+// User preference:
 user_pref("accessibility.typeaheadfind", false);
 
-// Automatically start type-ahead find when typing on a page (true = enabled)
+// Automatically start type-ahead find when typing on a page
+// This setting specifies whether type-ahead find is enabled to start automatically when typing.
+// Options:
+// true = Enable automatic start of type-ahead find
+// false = Disable automatic start of type-ahead find
+// User preference:
 user_pref("accessibility.typeaheadfind.autostart", true);
 
-// Set case sensitivity for type-ahead find 
-// (0 = case-insensitive, 1 = case-sensitive, 2 = smart-case sensitivity based on input)
+// Set case sensitivity for type-ahead find
+// This setting specifies the case sensitivity behavior for type-ahead find.
+// Options:
+// 0 = Case-insensitive
+// 1 = Case-sensitive
+// 2 = Smart-case sensitivity based on input
+// User preference:
 user_pref("accessibility.typeaheadfind.casesensitive", 0);
 
-// Enable or disable sound notification when a match is found during type-ahead find (true = enabled)
+// Enable or disable sound notification when a match is found during type-ahead find
+// This setting specifies whether a sound notification is enabled when a match is found.
+// Options:
+// true = Enable sound notification
+// false = Disable sound notification
+// User preference:
 user_pref("accessibility.typeaheadfind.enablesound", true);
 
-// Set whether the find bar should briefly flash to indicate matches 
-// (0 = no flash, 1 = flash once, etc.)
+// Set whether the find bar should briefly flash to indicate matches
+// This setting specifies the flashing behavior of the find bar to indicate matches.
+// Options:
+// 0 = No flash
+// 1 = Flash once
+// User preference:
 user_pref("accessibility.typeaheadfind.flashBar", 1);
 
-// Limit type-ahead find to only links on the page (false = search all text, true = links only)
+// Limit type-ahead find to only links on the page
+// This setting specifies whether type-ahead find is limited to searching only links.
+// Options:
+// true = Limit to links only
+// false = Search all text
+// User preference:
 user_pref("accessibility.typeaheadfind.linksonly", false);
 
-// Allow manual activation of type-ahead find using a designated key (true = enabled)
+// Allow manual activation of type-ahead find using a designated key
+// This setting specifies whether manual activation of type-ahead find is enabled.
+// Options:
+// true = Enable manual activation
+// false = Disable manual activation
+// User preference:
 user_pref("accessibility.typeaheadfind.manual", true);
 
-// Set the maximum number of matches shown in the type-ahead find (1000 = limit to 1000 matches)
+// Set the maximum number of matches shown in the type-ahead find
+// This setting specifies the limit on the number of matches displayed during type-ahead find.
+// User preference (setting to 1000 limits to 1000 matches):
 user_pref("accessibility.typeaheadfind.matchesCountLimit", 1000);
 
-// Enable or disable pre-filling the find bar with the currently selected text (false = disabled)
+// Enable or disable pre-filling the find bar with the currently selected text
+// This setting specifies whether the find bar is pre-filled with the currently selected text.
+// Options:
+// true = Enable pre-filling
+// false = Disable pre-filling
+// User preference:
 user_pref("accessibility.typeaheadfind.prefillwithselection", false);
 
-// Specify the sound URL for type-ahead find matches; "beep" uses the system beep sound
+// Specify the sound URL for type-ahead find matches
+// This setting specifies the sound to be played for type-ahead find matches; "beep" uses the system beep sound.
+// User preference:
 user_pref("accessibility.typeaheadfind.soundURL", "beep");
 
-// Limit type-ahead find to starting only at links (false = search all text, true = start at links only)
+// Limit type-ahead find to starting only at links
+// This setting specifies whether type-ahead find starts at links only.
+// Options:
+// true = Start at links only
+// false = Search all text
+// User preference:
 user_pref("accessibility.typeaheadfind.startlinksonly", false);
 
-// Set the timeout in milliseconds for the type-ahead find search (5000 = 5 seconds)
+// Set the timeout in milliseconds for the type-ahead find search
+// This setting specifies the timeout duration for type-ahead find in milliseconds.
+// User preference (setting to 5000 sets a 5-second timeout):
 user_pref("accessibility.typeaheadfind.timeout", 5000);
 
-// Enable or disable the UI Automation API, which aids screen readers (false = disabled, true = enabled)
+// Enable or disable the UI Automation API, which aids screen readers
+// This setting specifies whether the UI Automation API is enabled to assist screen readers.
+// Options:
+// false = Disable UI Automation API
+// true = Enable UI Automation API
+// User preference:
 user_pref("accessibility.uia.enable", false);
 
-// Show a warning when using caret browsing, which allows text cursor navigation (true = show warning, false = disable warning)
+// Show a warning when using caret browsing, which allows text cursor navigation
+// This setting specifies whether a warning is displayed when caret browsing is used.
+// Options:
+// true = Show warning
+// false = Disable warning
+// User preference:
 user_pref("accessibility.warn_on_browsewithcaret", true);
 
-// Suppress certain UI elements after a clipboard copy on Windows (0 = no suppression, 1 = minimal suppression, 2 = hide tooltips and pop-ups)
+// Suppress certain UI elements after a clipboard copy on Windows
+// This setting specifies the suppression level of UI elements after copying to the clipboard.
+// Options:
+// 0 = No suppression
+// 1 = Minimal suppression
+// 2 = Hide tooltips and pop-ups
+// User preference:
 user_pref("accessibility.windows.suppress-after-clipboard-copy", 2);
 
-// Suppress specific UI elements during Snap Layout actions on Windows (0 = no suppression, 1 = hide some elements, 2 = hide more UI popups and overlays)
+// Suppress specific UI elements during Snap Layout actions on Windows
+// This setting specifies the suppression level of UI elements during Snap Layout actions.
+// Options:
+// 0 = No suppression
+// 1 = Hide some elements
+// 2 = Hide more UI popups and overlays
+// User preference:
 user_pref("accessibility.windows.suppress-for-snap-layout", 2);
 
-// Show or hide favicons (website icons) in notifications (false = hide favicons, true = show favicons)
+// Show or hide favicons (website icons) in notifications
+// This setting specifies whether favicons are shown in notifications.
+// Options:
+// false = Hide favicons
+// true = Show favicons
+// User preference:
 user_pref("alerts.showFavicons", false);
 
-// Use the system alert backend for notifications, so alerts are displayed in the system’s notification center (true = use system backend, false = use Firefox notifications)
+// Use the system alert backend for notifications
+// This setting specifies whether to use the system’s notification center for alerts.
+// Options:
+// true = Use system backend
+// false = Use Firefox notifications
+// User preference:
 user_pref("alerts.useSystemBackend", true);
 
 // URL for submitting feedback or ideas directly to Mozilla
+// This setting specifies the URL where users can submit feedback or ideas to Mozilla.
+// User preference:
 user_pref("app.feedback.baseURL", "https://ideas.mozilla.org/");
 
 // URL for accessing the Normandy service, which manages remote settings, studies, and rollouts in Firefox
+// This setting specifies the API URL for the Normandy service used in Firefox.
+// User preference:
 user_pref("app.normandy.api_url", "https://normandy.cdn.mozilla.net/api/v1");
 
-// Enable developer mode for Normandy, allowing custom experiments (false = disable, true = enable)
+// Enable developer mode for Normandy, allowing custom experiments
+// This setting specifies whether developer mode for Normandy is enabled.
+// Options:
+// false = Disable developer mode
+// true = Enable developer mode
+// User preference:
 user_pref("app.normandy.dev_mode", false);
 
-// Enable the Normandy experiment and settings system in Firefox (true = enable, false = disable)
-// When set to true, this preference activates Mozilla's Normandy system, which allows Firefox to run experiments and manage feature flags.
-// Normandy can facilitate A/B testing, which means users may receive different versions of features or settings based on their assigned group.
-// This helps Mozilla gather data on user behavior and preferences, allowing for informed decisions about which features to implement or improve.
-// Additionally, it allows for more dynamic and granular control over settings that may not be immediately available through the standard Firefox preferences interface.
-// By enabling Normandy, users may participate in experiments that could lead to enhanced user experiences or performance optimizations,
-// although users may also encounter experimental features that are still in testing phases and not yet finalized for general release.
+// Enable the Normandy experiment and settings system in Firefox
+// This setting specifies whether the Normandy system, which allows running experiments and managing feature flags, is enabled.
+// Options:
+// true = Enable Normandy
+// false = Disable Normandy
+// User preference:
 user_pref("app.normandy.enabled", true);
 
-// Indicator of whether this is the first time Normandy is running on this profile (true = first run, false = not first run)
+// Indicator of whether this is the first time Normandy is running on this profile
+// This setting specifies whether it is the first run of Normandy on the current profile.
+// Options:
+// true = First run
+// false = Not first run
+// User preference:
 user_pref("app.normandy.first_run", false);
 
-// Last build ID detected by Normandy, which helps manage experiment compatibility and versioning (blank by default)
+// Last build ID detected by Normandy
+// This setting specifies the last build ID seen by Normandy, which helps manage experiment compatibility and versioning.
+// User preference:
 user_pref("app.normandy.last_seen_buildid", "");
 
 // Set the logging level for Normandy (default: 50)
