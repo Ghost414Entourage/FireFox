@@ -2472,7 +2472,7 @@ user_pref("privacy.userContext.enabled", true);
 // the profile and applications without restrictions, increasing functionality but also 
 // potential risks.
 // User preference: 
-user_pref("extensions.enabledScopes", 5);  // [HIDDEN PREF]
+user_pref("extensions.enabledScopes", 5);  
 
 // Set restricted domains for web extensions
 // This preference allows you to specify a list of domains where web extensions 
@@ -2711,3 +2711,1959 @@ user_pref("extensions.startupScanScopes", 0);
 
 
 
+
+
+
+
+
+
+
+
+// Controls whether internationalized domain names (IDNs) are displayed in their ASCII (Punycode) form
+// IDNs allow domain names to include non-ASCII characters (e.g., accents or scripts like Cyrillic).
+// When set to "false," domain names appear in their native script, which may improve readability
+// but can increase phishing risk, as visually similar characters may be used maliciously.
+// Options:
+// true = Display domain names in ASCII (Punycode) for security
+// false = Show domain names in native script for readability
+// User preference:
+user_pref("network.IDN_show_punycode", false);
+
+// Allows the socket thread to use a larger stack size for improved performance
+// The socket thread manages networking functions for Firefox, and a larger stack size can 
+// enhance performance on some systems but may use more memory.
+// Options:
+// true = Allow larger stack size for socket thread
+// false = Use standard stack size for socket thread
+// User preference:
+user_pref("network.allow_large_stack_size_for_socket_thread", true);
+
+// Enables raw socket access in content processes
+// Raw sockets are low-level network connections that can bypass some security restrictions.
+// Enabling this may allow more control over network operations but can increase security risks.
+// Options:
+// true = Allow raw socket access in content processes
+// false = Deny raw socket access in content processes for security
+// User preference:
+user_pref("network.allow_raw_sockets_in_content_processes", false);
+
+// Determines whether redirects to data URLs are allowed
+// Data URLs allow embedding data directly within a URL, useful for small images or files.
+// Allowing redirects to data URLs may lead to security risks, as data URLs can contain 
+// malicious code or hidden content.
+// Options:
+// true = Allow redirects to data URLs
+// false = Block redirects to data URLs for security
+// User preference:
+user_pref("network.allow_redirect_to_data", false);
+
+// Enables confirmation prompts for HTTP authentication requests
+// HTTP authentication prompts users to enter credentials for certain websites.
+// Requiring confirmation provides additional security, ensuring the user approves 
+// before credentials are sent.
+// Options:
+// true = Enable confirmation prompts for HTTP auth requests
+// false = No confirmation prompts for HTTP auth requests
+// User preference:
+user_pref("network.auth.confirmAuth.enabled", false);
+
+// Forces use of the generic NTLM (NT LAN Manager) authentication protocol
+// NTLM is a protocol primarily used for Microsoft environments. Setting this to "true" 
+// enforces a basic NTLM protocol that may improve compatibility with non-Windows platforms.
+// Options:
+// true = Force use of generic NTLM authentication
+// false = Use standard NTLM protocol as needed
+// User preference:
+user_pref("network.auth.force-generic-ntlm", false);
+
+// Forces use of the older NTLMv1 protocol for NTLM authentication
+// NTLMv1 is an older version of the NTLM protocol, less secure than NTLMv2. 
+// Enabling this may improve compatibility with legacy systems.
+// Options:
+// true = Force NTLMv1 for compatibility
+// false = Use NTLMv2 for better security
+// User preference:
+user_pref("network.auth.force-generic-ntlm-v1", false);
+
+// Disables HTTP authentication for resources triggered by non-web content
+// HTTP authentication prompts can sometimes be triggered by non-web content, 
+// potentially leading to unintentional credential exposure. Disabling this enhances security.
+// Options:
+// true = Allow HTTP auth for non-web content resources
+// false = Block HTTP auth for non-web content resources
+// User preference:
+user_pref("network.auth.non-web-content-triggered-resources-http-auth-allow", false);
+
+// Enables Single Sign-On (SSO) support in private browsing mode
+// SSO enables seamless access across sites using shared login credentials.
+// This setting allows SSO even in private sessions but may introduce privacy risks if SSO tokens persist.
+// Options:
+// true = Allow SSO in private browsing
+// false = Disable SSO in private browsing for enhanced privacy
+// User preference:
+user_pref("network.auth.private-browsing-sso", false);
+
+// Sorts authentication challenges based on the challenge state
+// Some systems may prioritize specific challenges for HTTP authentication 
+// to ensure smoother access, and sorting them can help with compatibility.
+// Options:
+// true = Sort challenges to prioritize in-progress requests
+// false = Do not sort challenges; use default ordering
+// User preference:
+user_pref("network.auth.sort_challenge_in_progress", false);
+
+// Controls subresource HTTP authentication permissions, e.g., images, stylesheets
+// Subresource HTTP authentication governs access to embedded content like images or CSS, 
+// which may need to access restricted resources in certain contexts.
+// Options:
+// 0 = Disable subresource HTTP authentication
+// 1 = Allow subresource HTTP auth only for same-origin resources
+// 2 = Allow for cross-origin with restrictions
+// User preference:
+user_pref("network.auth.subresource-http-auth-allow", 2);
+
+// Allows cross-origin HTTP authentication for subresource images
+// This option can prevent credentials from being sent with cross-origin image requests, 
+// reducing the risk of credential exposure across domains.
+// Options:
+// true = Allow cross-origin HTTP auth for images
+// false = Disable for better security
+// User preference:
+user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
+
+// Suppresses HTTP authentication prompts when X-Frame-Options (XFO) check fails
+// XFO helps prevent clickjacking by allowing content to specify if it should only be displayed in certain frames.
+// Suppressing authentication prompts in these cases improves user experience but may impact access to content.
+// Options:
+// true = Suppress auth prompts on XFO failures
+// false = Show auth prompts regardless of XFO failures
+// User preference:
+user_pref("network.auth.supress_auth_prompt_for_XFO_failures", true);
+
+// Controls the use of HTTP redirects when retrying authentication requests
+// Redirects may improve user flow by streamlining access on retry but could also cause security concerns 
+// if misconfigured on some servers.
+// Options:
+// true = Use redirects for authentication retries
+// false = Disable redirects for authentication retries
+// User preference:
+user_pref("network.auth.use_redirect_for_retries", false);
+
+// Allows NTLM authentication for non-FQDN (fully qualified domain name) addresses
+// Non-FQDN addresses are often local or private network addresses, and enabling this preference 
+// allows NTLM authentication even without fully qualified domain names, but could risk exposing credentials.
+// Options:
+// true = Allow NTLM auth for non-FQDN addresses
+// false = Restrict NTLM auth to FQDNs only
+// User preference:
+user_pref("network.automatic-ntlm-auth.allow-non-fqdn", false);
+
+// Permits automatic NTLM authentication with proxy servers
+// NTLM authentication with proxies can streamline secure network connections in corporate networks.
+// Options:
+// true = Allow NTLM auth for proxies
+// false = Restrict NTLM auth; do not use with proxies
+// User preference:
+user_pref("network.automatic-ntlm-auth.allow-proxies", true);
+
+// Lists trusted URIs for automatic NTLM authentication
+// This is a comma-separated list of URLs where NTLM authentication is automatically attempted, 
+// which can enhance user experience in trusted environments but may expose credentials if misconfigured.
+// Example format: "https://example.com,https://anotherdomain.com"
+// User preference:
+user_pref("network.automatic-ntlm-auth.trusted-uris", "");
+
+// Sets the count of network buffer cache
+// This preference determines the number of buffer caches maintained, affecting network performance 
+// depending on resource needs.
+// Default value: 24
+// User preference:
+user_pref("network.buffer.cache.count", 24);
+
+// Defines the size of each network buffer cache in bytes
+// The buffer cache size can impact network performance and memory usage, especially with large data transfers.
+// Default value: 32768 (32KB)
+// User preference:
+user_pref("network.buffer.cache.size", 32768);
+
+// Manages a workaround for a network cache bug identified as bug 1708673
+// This setting can enable or disable the specific fix for this bug. Consult release notes for more details.
+// Options:
+// true = Enable workaround for bug 1708673
+// false = Disable workaround
+// User preference:
+user_pref("network.cache.bug1708673", false);
+
+// Controls whether permanent HTTP redirects should be cached
+// Caching permanent redirects can reduce repeated requests but may lead to outdated routing 
+// if URLs change frequently.
+// Options:
+// true = Cache permanent HTTP redirects
+// false = Do not cache permanent HTTP redirects
+// User preference:
+user_pref("network.cache.persist_permanent_redirects_http", false);
+
+// Sets minimum progress for purging disk cache
+// This is the minimum percentage of progress required for purging cached data from the disk, 
+// helping manage disk usage efficiently.
+// Default value: 0
+// User preference:
+user_pref("network.cache.purge_minprogress_disk", 0);
+
+// Sets minimum progress for purging memory cache
+// Similar to disk cache purging, this setting manages memory cache purging based on progress percentage.
+// Default value: 32
+// User preference:
+user_pref("network.cache.purge_minprogress_memory", 32);
+
+// Defines the wait time (in seconds) for purging cache on shutdown
+// This controls how long the system waits before clearing cached data during shutdown to ensure data is removed.
+// Default value: 10
+// User preference:
+user_pref("network.cache.shutdown_purge_folder_wait_seconds", 10);
+
+// Enables background task to purge cache during shutdown
+// This setting allows the system to clear cache asynchronously in a background task during shutdown, 
+// potentially speeding up shutdown times but may delay complete cache clearing until the task finishes.
+// Options:
+// true = Enable background task for cache purging
+// false = Purge cache synchronously during shutdown
+// User preference:
+user_pref("network.cache.shutdown_purge_in_background_task", false);
+
+// Sets the backoff factor for captive portal detection retries
+// This factor controls how quickly retry intervals increase when captive portal detection fails, 
+// useful for networks requiring repeated login attempts.
+// Default value: 5.0
+// User preference:
+user_pref("network.captive-portal-service.backoffFactor", 5.0);
+
+// Enables the captive portal service
+// Captive portal service helps identify networks requiring authentication, like those in cafes or airports.
+// Options:
+// true = Enable captive portal detection
+// false = Disable captive portal detection
+// User preference:
+user_pref("network.captive-portal-service.enabled", true);
+
+// Sets the maximum interval (in milliseconds) between captive portal detection attempts
+// Defines the upper limit for time intervals in detecting captive portals to maintain network access.
+// Default value: 1500000 (1,500 seconds)
+// User preference:
+user_pref("network.captive-portal-service.maxInterval", 1500000);
+
+// Sets the minimum interval (in milliseconds) between captive portal detection attempts
+// Determines the shortest allowed time between checks, optimizing response times when access issues arise.
+// Default value: 60000 (60 seconds)
+// User preference:
+user_pref("network.captive-portal-service.minInterval", 60000);
+
+// Specifies the domain for DNS-over-HTTPS (DoH) in connectivity service
+// This is the domain used for DoH requests, ensuring secure, encrypted DNS lookups.
+// Default value: cloudflare-dns.com
+// User preference:
+user_pref("network.connectivity-service.DNS_HTTPS.domain", "cloudflare-dns.com");
+
+// Sets the domain for IPv4 DNS in connectivity service
+// Used to verify network connectivity via DNS, which helps detect online status for IPv4-based connections.
+// Default value: example.org
+// User preference:
+user_pref("network.connectivity-service.DNSv4.domain", "example.org");
+
+// Sets the domain for IPv6 DNS in connectivity service
+// Similar to IPv4, this domain is used to verify connectivity, specifically for IPv6 connections.
+// Default value: example.org
+// User preference:
+user_pref("network.connectivity-service.DNSv6.domain", "example.org");
+
+// Specifies the URL for IPv4 connectivity checks
+// Connectivity service uses this URL to confirm IPv4 internet access by attempting to reach a known resource.
+// Default value: http://detectportal.firefox.com/success.txt?ipv4
+// User preference:
+user_pref("network.connectivity-service.IPv4.url", "http://detectportal.firefox.com/success.txt?ipv4");
+
+// Specifies the URL for IPv6 connectivity checks
+// Similar to IPv4, this URL is used to verify internet connectivity specifically for IPv6-based connections.
+// Default value: http://detectportal.firefox.com/success.txt?ipv6
+// User preference:
+user_pref("network.connectivity-service.IPv6.url", "http://detectportal.firefox.com/success.txt?ipv6");
+
+// Enables the connectivity service
+// Connectivity service monitors network status to determine whether the device is online or offline.
+// Options:
+// true = Enable connectivity monitoring
+// false = Disable connectivity monitoring
+// User preference:
+user_pref("network.connectivity-service.enabled", true);
+
+// Enables NAT64 check in the connectivity service
+// NAT64 allows IPv6-only networks to communicate with IPv4 services, and this check confirms NAT64 support, 
+// enhancing compatibility for IPv6 connections.
+// Options:
+// true = Enable NAT64 detection
+// false = Disable NAT64 detection
+// User preference:
+user_pref("network.connectivity-service.nat64-check", true);
+
+// Specifies the NAT64 prefix used by the connectivity service
+// NAT64 allows IPv6-only networks to interact with IPv4 resources. This prefix helps the connectivity service identify 
+// NAT64-supported IP addresses for seamless compatibility on such networks.
+// Default value: (typically auto-configured, but can be set if known)
+// User preference:
+user_pref("network.connectivity-service.nat64-prefix", "");
+
+// Enables CHIPS (Cookies Having Independent Partitioned State) for enhanced cookie partitioning
+// CHIPS aims to improve privacy by partitioning cookies for third-party sites to isolate data per site. 
+// Disabling it may result in fewer privacy protections.
+// Options:
+// true = Enable CHIPS for cookie isolation
+// false = Disable CHIPS
+// User preference:
+user_pref("network.cookie.CHIPS.enabled", false);
+
+// Blocks cookies containing Unicode characters
+// Unicode characters in cookies can cause issues in cross-domain contexts. Blocking them can prevent 
+// potential security risks or data corruption when dealing with internationalized sites.
+// Options:
+// true = Block Unicode characters in cookies
+// false = Allow Unicode characters
+// User preference:
+user_pref("network.cookie.blockUnicode", false);
+
+// Sets the byte limit for CHIPS partitioned cookies
+// Defines the maximum byte capacity for partitioned cookies under the CHIPS feature, managing storage for 
+// isolated cookie states across sites.
+// Default value: 10240 bytes (10KB)
+// User preference:
+user_pref("network.cookie.chips.partitionLimitByteCapacity", 10240);
+
+// Enables a dry run for partition limit on CHIPS to monitor its effects without enforcing
+// Allows testing of CHIPS partitioning limits to understand potential impacts on site functionality 
+// without fully enforcing the limits.
+// Options:
+// true = Enable dry run
+// false = Disable dry run
+// User preference:
+user_pref("network.cookie.chips.partitionLimitDryRun", true);
+
+// Enables partition limit for CHIPS, enforcing the set byte capacity
+// When enabled, CHIPS enforces the byte limit for partitioned cookies, helping to control storage usage and 
+// maintain privacy boundaries across sites.
+// Options:
+// true = Enforce byte limit
+// false = No limit enforcement
+// User preference:
+user_pref("network.cookie.chips.partitionLimitEnabled", true);
+
+// Configures the cookie behavior for regular browsing mode
+// Determines how cookies are handled to balance privacy and functionality:
+// 0 = Accept all cookies
+// 1 = Block third-party cookies, only cookies from the originating server are allowed. 
+// 2 = Block third-party cookies (with stricter restrictions) No cookies are allowed. 
+// 3 = Third-party cookies are allowed only if that site has stored cookies already from a previous visit 
+// 4 = Isolate cookies by first-party domain, New Cookie Jar policy (prevent storage access to trackers) 
+// 5 = Restrict third-party tracking cookies
+// Default: 5 (restrict tracking cookies)
+// User preference:
+user_pref("network.cookie.cookieBehavior", );
+
+// Enables opt-in partitioning for cookie handling in normal browsing
+// Opt-in partitioning allows cookies to be partitioned by the site, maintaining stricter privacy measures 
+// by isolating cookie storage across different first-party sites.
+// Options:
+// true = Enable opt-in partitioning
+// false = Disable opt-in partitioning
+// User preference:
+user_pref("network.cookie.cookieBehavior.optInPartitioning", false);
+
+// Enables opt-in partitioning for cookie handling in private browsing mode
+// Similar to regular browsing, this isolates cookies by partition in private browsing mode, but is opt-in.
+// Options:
+// true = Enable in private mode
+// false = Disable in private mode
+// User preference:
+user_pref("network.cookie.cookieBehavior.optInPartitioning.pbmode", false);
+
+// Configures the cookie behavior for private browsing mode
+// Similar to regular browsing, this setting controls cookie acceptance and blocking in private browsing mode. 
+// The options are the same as `cookieBehavior`.
+// Default: 5 (restrict tracking cookies)
+// User preference:
+user_pref("network.cookie.cookieBehavior.pbmode", 5);
+
+// Fixes issues on cookie database load
+// When enabled, attempts to automatically resolve inconsistencies or corruption issues found in the cookie 
+// database on load, helping to maintain browser stability.
+// Options:
+// true = Enable fix on load
+// false = Disable fix
+// User preference:
+user_pref("network.cookie.fixup_on_db_load", true);
+
+// Sets the maximum number of cookies that can be stored
+// Controls the overall limit of cookies stored in the browser, balancing storage capacity with privacy and 
+// performance considerations.
+// Default value: 3000
+// User preference:
+user_pref("network.cookie.maxNumber", 3000);
+
+// Sets the maximum number of cookies per host
+// Limits the number of cookies that can be stored by a single host, ensuring that storage is managed efficiently 
+// and individual sites do not overwhelm the browser's cookie storage.
+// Default value: 180 cookies per host
+// User preference:
+user_pref("network.cookie.maxPerHost", 180);
+
+// Caps the maximum age of cookies in seconds
+// Limits how long cookies can remain in storage by setting an upper limit on their lifespan, which can improve 
+// privacy and manage stale data.
+// Default value: 34560000 seconds (approximately 400 days)
+// User preference:
+user_pref("network.cookie.maxageCap", 34560000);
+
+// Disables persistent storage of cookies
+// When set to true, cookies will not be stored persistently, meaning they will be session-only and cleared 
+// upon browser close, enhancing privacy.
+// Options:
+// true = Disable persistent storage (session-only cookies)
+// false = Enable persistent storage
+// User preference:
+user_pref("network.cookie.noPersistentStorage", false);
+
+// Prevents cookies from being set via multipart responses
+// Multipart responses can contain multiple parts in a single response. Blocking cookies from being set 
+// in these responses can reduce tracking risks and improve security.
+// Options:
+// true = Block cookies from multipart responses
+// false = Allow cookies from multipart responses
+// User preference:
+user_pref("network.cookie.prevent_set_cookie_from_multipart", true);
+
+// Sets the quota for cookie storage per host in bytes
+// Limits the amount of storage that cookies can consume per host, helping to manage storage efficiently 
+// and avoid performance issues from excessive cookie storage.
+// Default value: 150 bytes per host
+// User preference:
+user_pref("network.cookie.quotaPerHost", 150);
+
+// Ensures SameSite cookie policies for cross-site iframes
+// Enforces that cross-site cookies in iframes respect SameSite policies, reducing potential tracking 
+// and enhancing privacy by controlling cross-site data access.
+// Options:
+// true = Enforce SameSite policies in cross-site iframes
+// false = Do not enforce
+// User preference:
+user_pref("network.cookie.sameSite.crossSiteIframeSetCheck", true);
+
+// Makes Lax the default SameSite policy for cookies
+// SameSite=Lax restricts cookies to be sent only with top-level navigation. When disabled, the default is None,
+// allowing cookies in all contexts, but this can increase cross-site tracking risks.
+// Options:
+// true = Use Lax as the default
+// false = Default to None
+// User preference:
+user_pref("network.cookie.sameSite.laxByDefault", false);
+
+// Allows redirects through a boomerang-type request under SameSite=Lax
+// Boomerang redirects are a special type of redirect, often used for analytics. Allowing them with Lax helps maintain 
+// compatibility with these redirects while preserving some privacy.
+// Options:
+// true = Allow boomerang redirects
+// false = Disallow boomerang redirects
+// User preference:
+user_pref("network.cookie.sameSite.laxByDefault.allowBoomerangRedirect", true);
+
+// Hosts for which the SameSite=Lax default is disabled
+// Specifies domains for which the SameSite=Lax default policy does not apply, allowing these hosts to set 
+// cookies with less restriction.
+// Default: (typically empty, users can add specific hosts)
+// User preference:
+user_pref("network.cookie.sameSite.laxByDefault.disabledHosts", "");
+
+// Timeout for SameSite=Lax cookies to allow POST requests
+// Sets the time in seconds after a POST request that a SameSite=Lax cookie will continue to be sent, allowing 
+// follow-up actions to occur within a reasonable period.
+// Default value: 120 seconds
+// User preference:
+user_pref("network.cookie.sameSite.laxPlusPOST.timeout", 120);
+
+// Requires secure connections for SameSite=None cookies
+// Enforces that SameSite=None cookies are only sent over secure (HTTPS) connections to prevent cross-site 
+// tracking over unencrypted channels.
+// Options:
+// true = Require secure for SameSite=None
+// false = Do not require secure
+// User preference:
+user_pref("network.cookie.sameSite.noneRequiresSecure", true);
+
+// Makes SameSite checks scheme-aware
+// Schemeful SameSite treats cookies differently based on HTTP vs. HTTPS requests, adding a layer of security 
+// and preventing unintended cross-protocol data sharing.
+// Options:
+// true = Enable scheme-aware SameSite checks
+// false = Disable scheme-aware SameSite checks
+// User preference:
+user_pref("network.cookie.sameSite.schemeful", false);
+
+// Sets the threshold time in seconds before a cookie is considered stale
+// Determines how long a cookie can remain inactive before it is marked as "stale," 
+// which may affect whether it's automatically updated or revalidated.
+// Default value: 60 seconds
+// User preference:
+user_pref("network.cookie.staleThreshold", 60);
+
+// Uses the server's timestamp for cookies instead of the local time
+// This controls whether the browser should use the time from the server when setting 
+// cookies, which can affect expiry times and consistency across time zones.
+// Options:
+// true = Use server time for cookies
+// false = Use local time
+// User preference:
+user_pref("network.cookie.useServerTime", false);
+
+// Enables testing mode for unblocking all cookies
+// Allows cookies to be unblocked specifically for testing purposes, regardless 
+// of regular cookie settings or restrictions.
+// Options:
+// true = Unblock cookies for testing
+// false = Keep standard cookie restrictions
+// User preference:
+user_pref("network.cookieJarSettings.unblocked_for_testing", false);
+
+// Allows CORS preflight requests to include client certificates
+// Controls whether Cross-Origin Resource Sharing (CORS) preflight requests can 
+// use client certificates, which are typically used for authentication and encryption.
+// Options:
+// true = Allow client certificates in preflight requests
+// false = Do not allow
+// User preference:
+user_pref("network.cors_preflight.allow_client_cert", false);
+
+// Covers authorization with wildcard requests in CORS preflight checks
+// Simplifies authorization by allowing wildcard requests (*) to cover 
+// authorization headers, streamlining CORS policy without compromising security.
+// Options:
+// true = Allow authorization with wildcards
+// false = Require specific permissions
+// User preference:
+user_pref("network.cors_preflight.authorization_covered_by_wildcard", true);
+
+// Enables decompression off the main thread
+// Moves data decompression tasks off the main thread, which can improve 
+// performance by reducing the load on the main processing thread.
+// Options:
+// true = Enable off-main-thread decompression
+// false = Disable
+// User preference:
+user_pref("network.decompression_off_mainthread2", true);
+
+// Sets the minimum data size in bytes for off-main-thread decompression
+// Specifies the minimum amount of data (in bytes) for which off-main-thread decompression 
+// will be used, improving performance for large data transfers.
+// Default value: 512 bytes
+// User preference:
+user_pref("network.decompression_off_mainthread_min_size", 512);
+
+// Enables offline mode on localhost
+// Determines whether the browser should treat `localhost` as offline when in offline mode,
+// which can affect local development and testing.
+// Options:
+// true = Disable localhost in offline mode
+// false = Keep localhost accessible
+// User preference:
+user_pref("network.disable-localhost-when-offline", false);
+
+// Blocks DNS requests for `.onion` domains
+// Prevents requests to `.onion` domains from being resolved via DNS, which is intended to 
+// protect privacy and prevent accidental leaks of Tor-related connections.
+// Options:
+// true = Block `.onion` DNS requests
+// false = Allow
+// User preference:
+user_pref("network.dns.blockDotOnion", true);
+
+// Copies DNS request strings before calling the resolver
+// Ensures that DNS request strings are copied before being passed to the DNS resolver, 
+// which may reduce potential issues or conflicts during name resolution.
+// Options:
+// true = Enable DNS request string copying
+// false = Disable
+// User preference:
+user_pref("network.dns.copy_string_before_call", true);
+
+// Disables IPv6 DNS resolution
+// Turns off DNS resolution over IPv6, which can be useful if IPv6 connectivity 
+// is not stable or necessary in certain networks.
+// Options:
+// true = Disable IPv6 resolution
+// false = Enable IPv6 resolution
+// User preference:
+user_pref("network.dns.disableIPv6", false);
+
+// Disables DNS prefetching
+// Prefetches DNS information for links in advance to reduce load times; disabling this 
+// feature can reduce network requests and improve privacy.
+// Options:
+// true = Disable DNS prefetching
+// false = Enable DNS prefetching
+// User preference:
+user_pref("network.dns.disablePrefetch", false);
+
+// Disables DNS prefetching for HTTPS pages
+// Controls whether DNS prefetching should be disabled specifically for HTTPS pages, 
+// which can enhance privacy by avoiding unnecessary DNS lookups on secure pages.
+// Options:
+// true = Disable DNS prefetching for HTTPS
+// false = Allow DNS prefetching for HTTPS
+// User preference:
+user_pref("network.dns.disablePrefetchFromHTTPS", false);
+
+// Disables DNS resolution entirely
+// Turns off DNS lookups in the browser, which can be used for privacy or testing 
+// purposes but will prevent access to websites by their domain names.
+// Options:
+// true = Disable DNS resolution
+// false = Enable DNS resolution
+// User preference:
+user_pref("network.dns.disabled", false);
+
+// Restricts DNS queries to single-label names
+// Prevents DNS resolution for single-label names (e.g., "localhost"), which is 
+// primarily used in local networks and intranet setups.
+// Options:
+// true = Restrict to single-label queries
+// false = Allow all label queries
+// User preference:
+user_pref("network.dns.dns_query_single_label", false);
+
+// Enables Encrypted Client Hello (ECH) configuration
+// Allows the browser to use ECH, which enhances privacy by encrypting DNS request 
+// information, preventing exposure to intermediaries during the connection process.
+// Options:
+// true = Enable ECH
+// false = Disable ECH
+// User preference:
+user_pref("network.dns.echconfig.enabled", true);
+
+// Enables fallback to original server when ECH fails
+// If ECH configuration attempts fail, this setting allows the browser to revert to the 
+// origin server, ensuring connectivity even if ECH fails.
+// Options:
+// true = Allow fallback
+// false = Do not allow fallback
+// User preference:
+user_pref("network.dns.echconfig.fallback_to_origin_when_all_failed", true);
+
+// Forces DNS to resolve a specific hostname to a specified IP address
+// Allows manual resolution of a hostname to an IP address for testing or specific 
+// configurations, bypassing normal DNS resolution. This preference should be set with a 
+// value such as "example.com=127.0.0.1" for the desired hostname-IP pair.
+// User preference:
+user_pref("network.dns.forceResolve", "");
+
+// Forces use of HTTPS records for DNS resolution
+// Requires the browser to use HTTPS Resource Records (RR) when available, improving 
+// security by using secure DNS over HTTPS (DoH) lookups exclusively.
+// Options:
+// true = Enforce HTTPS RR
+// false = Allow other RR types
+// User preference:
+user_pref("network.dns.force_use_https_rr", false);
+
+// Enables retrieval of Time-to-Live (TTL) information with DNS responses
+// Allows the browser to obtain TTL data for DNS records, helping it determine how 
+// long to cache the DNS information before refreshing it.
+// Options:
+// true = Enable TTL retrieval
+// false = Disable TTL retrieval
+// User preference:
+user_pref("network.dns.get-ttl", true);
+
+// Enables HTTP/3 compatibility for ECH configuration
+// Allows ECH settings to work with the HTTP/3 protocol, optimizing secure DNS 
+// configuration even when using newer, faster protocols.
+// Options:
+// true = Enable HTTP/3 compatibility for ECH
+// false = Disable
+// User preference:
+user_pref("network.dns.http3_echconfig.enabled", true);
+
+// Sets the fallback timeout for HTTP/3 fast fallback
+// Defines the time in milliseconds that the browser waits before falling back from 
+// HTTP/3 to an alternative protocol when the HTTPS RR query fails. Default is 50 ms.
+// User preference:
+user_pref("network.dns.httpssvc.http3_fast_fallback_timeout", 50);
+
+// Resets the DNS HTTPS exclusion list
+// Clears any exclusion list for HTTPS DNS queries, ensuring no domains are permanently 
+// excluded from DNS-over-HTTPS (DoH) resolution.
+// Options:
+// true = Reset the exclusion list
+// false = Do not reset
+// User preference:
+user_pref("network.dns.httpssvc.reset_exclustion_list", true);
+
+// Specifies domains to be resolved only over IPv4
+// This setting allows you to define specific domains that should exclusively use 
+// IPv4 resolution, which may improve compatibility in IPv4-only environments.
+// User preference (example format: "example.org,example.com"):
+user_pref("network.dns.ipv4OnlyDomains", "");
+
+// Specifies local domains for custom DNS handling
+// Defines domains that are resolved only within the local network, allowing for internal 
+// hostname management separate from the global DNS system. Useful for intranet setups 
+// and networked resources.
+// User preference (example: "internal.company.com,localserver"):
+user_pref("network.dns.localDomains", "");
+
+// Sets maximum threads for low-priority DNS queries
+// Controls the number of threads that can handle "ANY" priority DNS queries. Increasing 
+// this can improve response times for background queries.
+// User preference:
+user_pref("network.dns.max_any_priority_threads", 24);
+
+// Sets maximum threads for high-priority DNS queries
+// Controls the maximum number of threads dedicated to high-priority DNS requests, which 
+// can improve performance for time-sensitive DNS lookups.
+// User preference:
+user_pref("network.dns.max_high_priority_threads", 40);
+
+// Mock domain for HTTPS Resource Record (RR) tests
+// Used for testing or simulation purposes to override HTTPS RR settings for a specific 
+// domain, simulating HTTPS DNS resolution behavior without affecting live settings.
+// User preference (example: "testdomain.com"):
+user_pref("network.dns.mock_HTTPS_RR_domain", "");
+
+// Determines whether the local DNS resolver treats "localhost" as native
+// When true, treats "localhost" as an internal address, useful for setups where local 
+// testing and development environments rely on "localhost" resolution.
+// Options:
+// true = Treat as native
+// false = Do not treat as native
+// User preference:
+user_pref("network.dns.native-is-localhost", false);
+
+// Enables native HTTPS queries for DNS
+// Allows the DNS resolver to directly handle HTTPS queries, improving privacy and 
+// potentially bypassing intermediaries.
+// Options:
+// true = Enable native HTTPS queries
+// false = Disable
+// User preference:
+user_pref("network.dns.native_https_query", false);
+
+// Allows native HTTPS queries in automated environments
+// Specifically enables native HTTPS DNS handling in automated testing environments, 
+// ensuring that DNS queries use HTTPS in CI/CD or test setups.
+// Options:
+// true = Enable in automation
+// false = Disable in automation
+// User preference:
+user_pref("network.dns.native_https_query_in_automation", false);
+
+// Enables native HTTPS queries on Windows 10 and later
+// Uses the native DNS resolver for HTTPS queries in Windows 10+, which can improve 
+// performance by reducing reliance on third-party DNS services.
+// Options:
+// true = Enable on Windows 10+
+// false = Disable
+// User preference:
+user_pref("network.dns.native_https_query_win10", false);
+
+// Sets the timeout for native HTTPS queries on Android (ms)
+// Configures the timeout duration in milliseconds for HTTPS DNS queries on Android 
+// devices, adjusting to network speed and reliability.
+// User preference:
+user_pref("network.dns.native_https_timeout_android", 20000);
+
+// Sets negative TTL for specific DNS record types
+// Configures the Time-to-Live (TTL) duration in seconds for negative caching, affecting 
+// how long failed DNS lookups for specific record types are cached.
+// User preference:
+user_pref("network.dns.negative_ttl_for_type_record", 300);
+
+// Enables local DNS resolution while offline
+// Allows localhost-related DNS queries to resolve even if the network connection is 
+// offline, useful for local development or testing.
+// Options:
+// true = Enable localhost resolution offline
+// false = Disable
+// User preference:
+user_pref("network.dns.offline-localhost", true);
+
+// Refreshes DNS cache only when a fresh connection is made
+// Limits DNS cache refreshes to instances where a new connection is established, which 
+// helps reduce DNS query traffic and improve efficiency.
+// Options:
+// true = Only refresh on new connections
+// false = Refresh more frequently
+// User preference:
+user_pref("network.dns.only_refresh_on_fresh_connection", true);
+
+// Enables port-prefixed QNAME HTTPS Resource Record (RR) handling
+// When true, allows DNS queries to include the port in the QNAME format for HTTPS RR 
+// lookups, potentially enhancing routing and security for applications that utilize 
+// specific ports for HTTPS services.
+// Options:
+// true = Enable port-prefixed QNAME handling
+// false = Disable
+// User preference:
+user_pref("network.dns.port_prefixed_qname_https_rr", false);
+
+// Specifies preference for IPv6 over IPv4
+// Controls whether the system prioritizes IPv6 addresses when available. Setting this 
+// to true can improve connectivity for networks that support IPv6, but may introduce 
+// compatibility issues with IPv4-only services.
+// Options:
+// true = Prefer IPv6
+// false = Prefer IPv4
+// User preference:
+user_pref("network.dns.preferIPv6", false);
+
+// Controls DNS prefetching via proxy
+// When enabled, allows the use of a proxy for DNS prefetching, which can speed up 
+// web browsing by resolving domain names in advance, but may raise privacy concerns 
+// if not managed carefully.
+// Options:
+// true = Enable prefetch via proxy
+// false = Disable
+// User preference:
+user_pref("network.dns.prefetch_via_proxy", false);
+
+// Sets extra idle time for DNS resolver threads (seconds)
+// Configures the additional idle time in seconds before DNS resolver threads are 
+// terminated when not in use, helping to manage resource allocation and performance.
+// User preference:
+user_pref("network.dns.resolver-thread-extra-idle-time-seconds", 60);
+
+// Sets shutdown timeout for DNS resolver (milliseconds)
+// Defines the maximum duration in milliseconds that the DNS resolver will wait before 
+// shutting down its threads, influencing how quickly resources are released on 
+// application closure.
+// User preference:
+user_pref("network.dns.resolver_shutdown_timeout_ms", 2000);
+
+// Enables upgrade of DNS responses with HTTPS Resource Records (RR)
+// When true, permits the use of HTTPS RR for upgrading existing DNS connections to 
+// secure ones, improving security and privacy for DNS lookups.
+// Options:
+// true = Enable upgrade with HTTPS RR
+// false = Disable
+// User preference:
+user_pref("network.dns.upgrade_with_https_rr", true);
+
+// Allows the use of HTTPS RR as alternative service (AltSvc)
+// Configures whether HTTPS Resource Records can be utilized for alternative service 
+// resolutions, allowing for flexible handling of service requests and improving 
+// connectivity options.
+// Options:
+// true = Use HTTPS RR as AltSvc
+// false = Do not use
+// User preference:
+user_pref("network.dns.use_https_rr_as_altsvc", true);
+
+// Sets the number of entries in the DNS cache
+// Controls the maximum number of DNS entries that can be stored in the cache, which 
+// affects how quickly previously resolved domains can be accessed without new queries.
+// User preference:
+user_pref("network.dnsCacheEntries", 400);
+
+// Specifies the expiration time for DNS cache entries (seconds)
+// Determines how long a DNS entry remains valid in the cache before it needs to be 
+// resolved again, impacting performance and freshness of DNS data.
+// User preference:
+user_pref("network.dnsCacheExpiration", 60);
+
+// Specifies the grace period for DNS cache expiration (seconds)
+// Defines the additional time period in seconds after the initial expiration during 
+// which cached DNS entries may still be considered valid, allowing for a smoother 
+// resolution experience.
+// User preference:
+user_pref("network.dnsCacheExpirationGracePeriod", 60);
+
+// Enables early hints for resource loading
+// When enabled, allows the server to send early hints for resources that may be needed 
+// for a page, potentially improving loading speed and user experience.
+// Options:
+// true = Enable early hints
+// false = Disable
+// User preference:
+user_pref("network.early-hints.enabled", true);
+
+// Enables early hints over HTTP/1.1
+// Configures support for early hints when using HTTP/1.1, facilitating improved 
+// performance by pre-loading certain resources.
+// Options:
+// true = Enable early hints over HTTP/1.1
+// false = Disable
+// User preference:
+user_pref("network.early-hints.over-http-v1-1.enabled", true);
+
+// Sets the timeout for parent connection in early hints (milliseconds)
+// Configures the maximum duration to wait for a connection to a parent resource 
+// when processing early hints, which can impact how quickly resources are fetched 
+// and displayed to the user.
+// User preference:
+user_pref("network.early-hints.parent-connect-timeout", 10000);
+
+// Enables preconnecting to resources for early hints
+// When true, allows the browser to pre-establish connections to resources that are 
+// hinted by the server, potentially improving page load performance by reducing 
+// connection time when the resource is needed.
+// Options:
+// true = Enable preconnect for early hints
+// false = Disable
+// User preference:
+user_pref("network.early-hints.preconnect.enabled", true);
+
+// Sets the maximum number of preconnections for early hints
+// Defines the upper limit of simultaneous connections that can be preestablished 
+// to resources based on early hints, helping to balance resource usage and load 
+// performance.
+// User preference:
+user_pref("network.early-hints.preconnect.max_connections", 10);
+
+// Enables cache partitioning for cross-origin fetch requests
+// When enabled, ensures that cached resources are partitioned based on their 
+// origin, improving privacy and security by preventing cross-origin data leakage 
+// during fetch operations.
+// Options:
+// true = Enable cache partitioning for cross-origin
+// false = Disable
+// User preference:
+user_pref("network.fetch.cache_partition_cross_origin", true);
+
+// Configures fetch API to omit credentials by default
+// When true, specifies that the fetch API will not include credentials (such as 
+// cookies or HTTP authentication) in requests by default, which can enhance 
+// security but may require adjustments for certain sites.
+// Options:
+// true = Omit credentials by default
+// false = Include credentials by default
+// User preference:
+user_pref("network.fetch.systemDefaultsToOmittingCredentials", true);
+
+// Adjusts urgency for fetch priority
+// When enabled, allows the system to modify the urgency level of fetch requests 
+// based on their context, improving the responsiveness of network operations and 
+// resource loading.
+// Options:
+// true = Adjust urgency
+// false = Do not adjust
+// User preference:
+user_pref("network.fetchpriority.adjust_urgency", true);
+
+// Adjusts fetch priority for async or deferred scripts (auto)
+// Configures the urgency adjustment for asynchronous or deferred scripts, 
+// determining how they are prioritized in the fetch queue.
+// User preference:
+user_pref("network.fetchpriority.adjustments.async-or-defer-script.auto", 0);
+
+// Adjusts fetch priority for high urgency async or deferred scripts
+// Sets the priority adjustment for high-urgency asynchronous or deferred scripts, 
+// influencing the order in which resources are fetched.
+// User preference:
+user_pref("network.fetchpriority.adjustments.async-or-defer-script.high", -10);
+
+// Adjusts fetch priority for low urgency async or deferred scripts
+// Configures the priority adjustment for low-urgency asynchronous or deferred 
+// scripts, potentially delaying their fetching relative to others.
+// User preference:
+user_pref("network.fetchpriority.adjustments.async-or-defer-script.low", 10);
+
+// Adjusts fetch priority for deferred styles (auto)
+// Sets the priority adjustment for styles that are deferred, impacting their 
+// loading and rendering behavior on the page.
+// User preference:
+user_pref("network.fetchpriority.adjustments.deferred-style.auto", 0);
+
+// Adjusts fetch priority for high urgency deferred styles
+// Configures the priority adjustment for high-urgency deferred styles, which can 
+// help in rendering performance by prioritizing critical styles.
+// User preference:
+user_pref("network.fetchpriority.adjustments.deferred-style.high", 0);
+
+// Adjusts fetch priority for low urgency deferred styles
+// Sets the priority adjustment for low-urgency deferred styles, potentially 
+// affecting the timing of their application to the document.
+// User preference:
+user_pref("network.fetchpriority.adjustments.deferred-style.low", 10);
+
+// Adjusts fetch priority for global fetch API requests (auto)
+// Configures the priority adjustment for global fetch API requests that do not 
+// fall into any specific category, helping to manage resource loading more effectively.
+// User preference:
+user_pref("network.fetchpriority.adjustments.global-fetch-api.auto", 0);
+
+// Adjusts fetch priority for high urgency global fetch API requests
+// Sets the priority adjustment for high-urgency global fetch API requests, allowing 
+// critical resources to be fetched sooner for improved performance.
+// User preference:
+user_pref("network.fetchpriority.adjustments.global-fetch-api.high", -10);
+
+// Adjusts fetch priority for low urgency global fetch API requests
+// Configures the priority adjustment for low-urgency global fetch API requests, 
+// potentially delaying their fetching to optimize loading performance.
+// User preference:
+user_pref("network.fetchpriority.adjustments.global-fetch-api.low", 10);
+
+// Adjusts fetch priority for image fetch requests (auto)
+// Sets the priority adjustment for image fetch requests that do not have a 
+// specified priority, influencing how quickly images are loaded relative to other 
+// resources on the page.
+// User preference:
+user_pref("network.fetchpriority.adjustments.images.auto", 0);
+
+// Adjusts fetch priority for high urgency image fetch requests
+// Configures the priority adjustment for high-urgency image fetch requests, 
+// ensuring that important images are loaded promptly to enhance user experience.
+// User preference:
+user_pref("network.fetchpriority.adjustments.images.high", -20);
+
+// Adjusts fetch priority for low urgency image fetch requests
+// Sets the priority adjustment for low-urgency image fetch requests, which may 
+// result in their fetching being delayed compared to other resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.images.low", 10);
+
+// Adjusts fetch priority for link preload fetch requests (auto)
+// Configures the priority adjustment for link preload fetch requests that do 
+// not have a defined priority, impacting how preloaded resources are handled.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-fetch.auto", 0);
+
+// Adjusts fetch priority for high urgency link preload fetch requests
+// Sets the priority adjustment for high-urgency link preload fetch requests, 
+// ensuring that crucial resources are preloaded in a timely manner.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-fetch.high", -10);
+
+// Adjusts fetch priority for low urgency link preload fetch requests
+// Configures the priority adjustment for low-urgency link preload fetch requests, 
+// potentially delaying their fetching to optimize resource loading.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-fetch.low", 10);
+
+// Adjusts fetch priority for link preload font fetch requests (auto)
+// Sets the priority adjustment for link preload font fetch requests that do 
+// not have a specified priority, helping to manage font loading efficiency.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-font.auto", 0);
+
+// Adjusts fetch priority for high urgency link preload font fetch requests
+// Configures the priority adjustment for high-urgency link preload font fetch 
+// requests, ensuring that important fonts are loaded quickly for rendering.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-font.high", 0);
+
+// Adjusts fetch priority for low urgency link preload font fetch requests
+// Sets the priority adjustment for low-urgency link preload font fetch requests, 
+// potentially delaying their loading to prioritize more critical resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-font.low", 20);
+
+// Adjusts fetch priority for link preload script fetch requests (auto)
+// Configures the priority adjustment for link preload script fetch requests 
+// that do not have a specified priority, influencing how quickly scripts are loaded.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-script.auto", 0);
+
+// Adjusts fetch priority for high urgency link preload script fetch requests
+// Sets the priority adjustment for high-urgency link preload script fetch requests, 
+// ensuring that critical scripts are loaded promptly to enhance performance.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-script.high", 0);
+
+// Adjusts fetch priority for low urgency link preload script fetch requests
+// Configures the priority adjustment for low-urgency link preload script fetch requests, 
+// which may result in their fetching being delayed compared to other resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-script.low", 30);
+
+// Adjusts fetch priority for link preload style fetch requests (auto)
+// Configures the priority adjustment for link preload style fetch requests that do 
+// not have a defined priority, impacting how preloaded styles are handled.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-style.auto", 0);
+
+// Adjusts fetch priority for high urgency link preload style fetch requests
+// Sets the priority adjustment for high-urgency link preload style fetch requests, 
+// ensuring that essential styles are loaded quickly for rendering.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-style.high", 0);
+
+// Adjusts fetch priority for low urgency link preload style fetch requests
+// Configures the priority adjustment for low-urgency link preload style fetch requests, 
+// which may delay their fetching to optimize loading performance.
+// User preference:
+user_pref("network.fetchpriority.adjustments.link-preload-style.low", 10);
+
+// Adjusts fetch priority for media fetch requests (auto)
+// Sets the priority adjustment for media fetch requests that do not have a specified 
+// priority, influencing the loading behavior of media resources like images and videos.
+// User preference:
+user_pref("network.fetchpriority.adjustments.media.auto", 0);
+
+// Adjusts fetch priority for high urgency media fetch requests
+// Configures the priority adjustment for high-urgency media fetch requests, 
+// ensuring that critical media resources are loaded quickly to improve user experience.
+// User preference:
+user_pref("network.fetchpriority.adjustments.media.high", 0);
+
+// Adjusts fetch priority for low urgency media fetch requests
+// Sets the priority adjustment for low-urgency media fetch requests, which may 
+// result in their fetching being delayed compared to other resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.media.low", 10);
+
+// Adjusts fetch priority for module script fetch requests (auto)
+// Configures the priority adjustment for module script fetch requests that do not 
+// have a specified priority, impacting how quickly module scripts are loaded.
+// User preference:
+user_pref("network.fetchpriority.adjustments.module-script.auto", 0);
+
+// Adjusts fetch priority for high urgency module script fetch requests
+// Sets the priority adjustment for high-urgency module script fetch requests, 
+// ensuring that important module scripts are loaded promptly for execution.
+// User preference:
+user_pref("network.fetchpriority.adjustments.module-script.high", -10);
+
+// Adjusts fetch priority for low urgency module script fetch requests
+// Configures the priority adjustment for low-urgency module script fetch requests, 
+// potentially delaying their loading to prioritize more critical resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.module-script.low", 10);
+
+// Adjusts fetch priority for non-deferred style fetch requests (auto)
+// Configures the priority adjustment for non-deferred style fetch requests that do 
+// not have a specified priority, impacting how quickly these styles are loaded.
+// User preference:
+user_pref("network.fetchpriority.adjustments.non-deferred-style.auto", 0);
+
+// Adjusts fetch priority for high urgency non-deferred style fetch requests
+// Sets the priority adjustment for high-urgency non-deferred style fetch requests, 
+// ensuring that critical styles are loaded promptly to enhance rendering performance.
+// User preference:
+user_pref("network.fetchpriority.adjustments.non-deferred-style.high", -20);
+
+// Adjusts fetch priority for low urgency non-deferred style fetch requests
+// Configures the priority adjustment for low-urgency non-deferred style fetch requests, 
+// which may delay their fetching to optimize loading performance.
+// User preference:
+user_pref("network.fetchpriority.adjustments.non-deferred-style.low", 0);
+
+// Adjusts fetch priority for other script fetch requests (auto)
+// Configures the priority adjustment for other script fetch requests that do not 
+// have a specified priority, influencing their loading behavior.
+// User preference:
+user_pref("network.fetchpriority.adjustments.other-script.auto", 0);
+
+// Adjusts fetch priority for high urgency other script fetch requests
+// Sets the priority adjustment for high-urgency other script fetch requests, 
+// ensuring that important scripts are loaded quickly for execution.
+// User preference:
+user_pref("network.fetchpriority.adjustments.other-script.high", -10);
+
+// Adjusts fetch priority for low urgency other script fetch requests
+// Configures the priority adjustment for low-urgency other script fetch requests, 
+// potentially delaying their loading to prioritize more critical resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.other-script.low", 10);
+
+// Adjusts fetch priority for script in head fetch requests (auto)
+// Configures the priority adjustment for script fetch requests that are located 
+// in the head of a document and do not have a specified priority, impacting how 
+// quickly these scripts are loaded.
+// User preference:
+user_pref("network.fetchpriority.adjustments.script-in-head.auto", 0);
+
+// Adjusts fetch priority for high urgency script in head fetch requests
+// Sets the priority adjustment for high-urgency script fetch requests located in 
+// the head of the document, ensuring that essential scripts are loaded promptly.
+// User preference:
+user_pref("network.fetchpriority.adjustments.script-in-head.high", -10);
+
+// Adjusts fetch priority for low urgency script in head fetch requests
+// Configures the priority adjustment for low-urgency script fetch requests located 
+// in the head of the document, potentially delaying their loading to prioritize 
+// more critical resources.
+// User preference:
+user_pref("network.fetchpriority.adjustments.script-in-head.low", 10);
+
+// Enables fetch priority adjustments
+// Controls whether fetch priority adjustments are enabled, allowing the browser to 
+// optimize resource loading based on specified priority rules.
+// User preference:
+user_pref("network.fetchpriority.enabled", true);
+
+// Specifies the workstation name for NTLM authentication
+// Sets the name of the workstation used during NTLM authentication, which may be 
+// required for proper authentication in certain network environments.
+// User preference:
+user_pref("network.generic-ntlm-auth.workstation", "WORKSTATION");
+
+// Sets the HTTP Accept header
+// Configures the Accept HTTP header, which tells the server which content types 
+// the client can understand, affecting how responses are formatted by the server.
+// User preference:
+user_pref("network.http.accept", "");
+
+// Specifies the HTTP Accept-Encoding header for requests
+// Configures the Accept-Encoding HTTP header, indicating the content-encoding 
+// methods (like gzip and deflate) that the client supports, allowing the server 
+// to compress responses accordingly.
+// User preference:
+user_pref("network.http.accept-encoding", "gzip, deflate");
+
+// Specifies the HTTP Accept-Encoding header for secure requests
+// Configures the Accept-Encoding HTTP header for secure (HTTPS) requests, 
+// indicating additional compression methods (like br for Brotli and zstd) that 
+// the client can handle, optimizing data transfer over secure connections.
+// User preference:
+user_pref("network.http.accept-encoding.secure", "gzip, deflate, br, zstd");
+
+// Includes images in the Accept header
+// Controls whether image types are included in the Accept HTTP header sent to 
+// the server, affecting how the server responds with images and other resources.
+// User preference:
+user_pref("network.http.accept_include_images", false);
+
+// Enables active tab priority for HTTP requests
+// Controls whether HTTP requests from the currently active tab are prioritized 
+// over those from background tabs, enhancing the perceived performance of the 
+// active tab's content loading.
+// User preference:
+user_pref("network.http.active_tab_priority", true);
+
+// Enables ALTSVC (Alternative Services) support
+// Configures whether the ALTSVC HTTP/2 feature is enabled, allowing a server 
+// to specify alternative connection options to improve load balancing and 
+// performance.
+// User preference:
+user_pref("network.http.altsvc.enabled", true);
+
+// Disables ALTSVC origin error checking
+// Controls whether to perform origin error checking for ALTSVC, which can 
+// help ensure that the alternative service is from the expected origin, 
+// increasing security. 
+// User preference:
+user_pref("network.http.altsvc.oe", false);
+
+// Enables proxy checks for ALTSVC
+// Configures whether to check the proxy settings before using ALTSVC, 
+// ensuring that alternative services are compatible with the current proxy 
+// configuration.
+// User preference:
+user_pref("network.http.altsvc.proxy_checks", true);
+
+// Enforces HTTP association requests
+// Controls whether to enforce the association request policy, which governs 
+// how clients request related resources, potentially improving the efficiency 
+// of resource loading.
+// User preference:
+user_pref("network.http.assoc-req.enforce", false);
+
+// Sets the timeout for retrying HTTP connections
+// Configures the timeout duration (in milliseconds) for retrying failed HTTP 
+// connections, impacting how quickly the client attempts to re-establish a 
+// connection after a failure.
+// User preference:
+user_pref("network.http.connection-retry-timeout", 250);
+
+// Sets the connection timeout for HTTP requests
+// Configures the duration (in seconds) before an HTTP connection attempt is 
+// considered timed out, affecting how long the client waits before giving up 
+// on a connection.
+// User preference:
+user_pref("network.http.connection-timeout", 90);
+
+// Specifies the default socket type for HTTP connections
+// Allows the specification of the default socket type used for HTTP connections, 
+// affecting how the network stack manages connections.
+// User preference:
+user_pref("network.http.default-socket-type", "");
+
+// Enables HTTP diagnostics
+// Controls whether HTTP diagnostic features are enabled, which can assist 
+// developers in troubleshooting network issues by providing detailed 
+// connection information.
+// User preference:
+user_pref("network.http.diagnostics", false);
+
+// Sets the length of the nonce used in HTTP Digest Authentication
+// Specifies the length of the client nonce (cnonce) generated for HTTP Digest 
+// Authentication, which helps to ensure the uniqueness of authentication 
+// requests, enhancing security against replay attacks.
+// Options:
+// Integer value defining the length of the nonce
+// User preference:
+user_pref("network.http.digest_auth_cnonce_length", 16);
+
+// Disables early data on HTTP/3 connections upon errors
+// Controls whether to disable the use of early data in HTTP/3 connections 
+// if an error occurs, improving security by preventing potential issues with 
+// request processing during early data transmissions.
+// Options:
+// true = Disable early data on error
+// false = Allow early data even if errors occur
+// User preference:
+user_pref("network.http.early_data_disable_on_error", true);
+
+// Sets the maximum number of errors allowed before disabling early data
+// Configures the threshold for the maximum number of errors allowed before 
+// the early data feature in HTTP/3 connections is disabled, which can help 
+// maintain a stable connection by preventing excessive retries on failure.
+// Options:
+// Integer value indicating the maximum number of errors before disabling early data
+// User preference:
+user_pref("network.http.early_data_max_error", 5);
+
+// Trusts HTTP encoding when using HTTPS
+// Controls whether HTTP encoding (e.g., content encoding like gzip) is considered 
+// trustworthy only when using HTTPS, ensuring that potentially unsafe encodings 
+// are not accepted over insecure connections.
+// Options:
+// true = Trust HTTP encodings only over HTTPS
+// false = Trust HTTP encodings regardless of the protocol
+// User preference:
+user_pref("network.http.encoding.trustworthy_is_https", true);
+
+// Enforces framing rules for HTTP/1.1 connections
+// Configures the enforcement of framing rules for HTTP/1.1 connections, 
+// which can impact how data is framed and processed between client and server.
+// Options:
+// true = Enforce strict framing rules
+// false = Do not enforce strict framing rules
+// User preference:
+user_pref("network.http.enforce-framing.http1", false);
+
+// Allows soft framing enforcement for HTTP connections
+// Configures whether to apply soft framing rules, which are less strict than 
+// hard enforcement, allowing for more flexible handling of HTTP framing while 
+// still maintaining some level of compliance.
+// Options:
+// true = Apply soft framing rules
+// false = Do not apply soft framing rules
+// User preference:
+user_pref("network.http.enforce-framing.soft", true);
+
+// Enforces strict chunked encoding for HTTP connections
+// Controls whether strict chunked encoding rules are enforced in HTTP responses, 
+// which can ensure that data is properly chunked for transmission and enhance 
+// compatibility with various clients and servers.
+// Options:
+// true = Enforce strict chunked encoding
+// false = Do not enforce strict chunked encoding
+// User preference:
+user_pref("network.http.enforce-framing.strict_chunked_encoding", true);
+
+// Sets the fallback connection timeout for HTTP requests
+// Configures the timeout duration (in seconds) for falling back to alternative 
+// connection methods (e.g., IPv4) when initial connection attempts fail, 
+// improving robustness in network connectivity.
+// Options:
+// Integer value indicating the timeout duration in seconds
+// User preference:
+user_pref("network.http.fallback-connection-timeout", 5);
+
+// Enables fast fallback to IPv4 connections
+// Controls whether the client should quickly switch to IPv4 connections 
+// when IPv6 connectivity issues are detected, enhancing the likelihood of 
+// establishing successful connections in dual-stack environments.
+// Options:
+// true = Enable fast fallback to IPv4
+// false = Do not enable fast fallback to IPv4
+// User preference:
+user_pref("network.http.fast-fallback-to-IPv4", true);
+
+// Sets the ratio of transactions for the focused window
+// Configures the transaction ratio for HTTP requests originating from the 
+// currently focused window, allowing for prioritization of requests based on 
+// user activity and enhancing perceived performance.
+// Options:
+// Float value between 0.0 and 1.0 indicating the ratio of focused window transactions
+// User preference:
+user_pref("network.http.focused_window_transaction_ratio", 0.9);
+
+// Enables aggressive coalescing for HTTP/2 connections
+// Controls whether aggressive coalescing of HTTP/2 connections is enabled, 
+// which can improve connection management by merging streams for better 
+// performance but may also introduce complexity in handling requests.
+// Options:
+// true = Enable aggressive coalescing
+// false = Do not enable aggressive coalescing
+// User preference:
+user_pref("network.http.http2.aggressive_coalescing", false);
+
+// Disables HTTP/2 server push feature
+// Configures whether the HTTP/2 server push feature is allowed, which can 
+// preemptively send resources to the client based on anticipated needs, 
+// potentially improving load times but also increasing unnecessary data transfer.
+// Options:
+// true = Allow server push
+// false = Disallow server push
+// User preference:
+user_pref("network.http.http2.allow-push", false);
+
+// Sets the chunk size for HTTP/2 connections
+// Configures the size of the data chunks sent over HTTP/2 connections, 
+// impacting the efficiency of data transmission and potentially 
+// affecting performance for large payloads.
+// Options:
+// Integer value indicating the chunk size in bytes
+// User preference:
+user_pref("network.http.http2.chunk-size", 16000);
+
+// Enables hostname coalescing for HTTP/2 connections
+// Controls whether HTTP/2 connections are allowed to share the same 
+// hostname to improve connection reuse and reduce latency by 
+// coalescing requests to the same server.
+// Options:
+// true = Enable hostname coalescing
+// false = Disable hostname coalescing
+// User preference:
+user_pref("network.http.http2.coalesce-hostnames", true);
+
+// Sets the default number of concurrent streams for HTTP/2 connections
+// Configures the maximum number of concurrent streams allowed for 
+// each HTTP/2 connection, influencing the performance of 
+// multiplexing and resource loading.
+// Options:
+// Integer value indicating the default concurrent streams
+// User preference:
+user_pref("network.http.http2.default-concurrent", 100);
+
+// Sets the default HPACK buffer size for HTTP/2 connections
+// Configures the default size of the HPACK buffer used for 
+// header compression in HTTP/2, affecting the efficiency of 
+// header encoding and decoding during requests and responses.
+// Options:
+// Integer value indicating the default HPACK buffer size in bytes
+// User preference:
+user_pref("network.http.http2.default-hpack-buffer", 65536);
+
+// Enables HPACK dump for HTTP/2 connections
+// Controls whether to enable the dumping of HPACK headers for 
+// debugging purposes, allowing developers to analyze header 
+// compression and decompression behavior in HTTP/2.
+// Options:
+// true = Enable HPACK dumping
+// false = Disable HPACK dumping
+// User preference:
+user_pref("network.http.http2.enable-hpack-dump", false);
+
+// Enables HTTP/2 protocol support
+// Controls whether the HTTP/2 protocol is enabled, allowing for 
+// enhanced performance and reduced latency in web communication 
+// through multiplexing and header compression.
+// Options:
+// true = Enable HTTP/2 support
+// false = Disable HTTP/2 support
+// User preference:
+user_pref("network.http.http2.enabled", true);
+
+// Enables dependencies for HTTP/2 protocol
+// Controls whether dependencies related to HTTP/2 protocol are enabled, 
+// which can affect compatibility and feature availability for connections.
+// Options:
+// true = Enable HTTP/2 dependencies
+// false = Disable HTTP/2 dependencies
+// User preference:
+user_pref("network.http.http2.enabled.deps", false);
+
+// Enforces TLS profile for HTTP/2 connections
+// Configures whether to enforce a specific TLS profile for 
+// HTTP/2 connections, improving security by ensuring 
+// strong cryptographic practices are followed.
+// Options:
+// true = Enforce TLS profile
+// false = Do not enforce TLS profile
+// User preference:
+user_pref("network.http.http2.enforce-tls-profile", true);
+
+// Moves connections to the pending list after a network change
+// Controls whether HTTP/2 connections should be moved to a 
+// pending list when a network change is detected, allowing 
+// for smoother transitions and reconnections.
+// Options:
+// true = Move to pending list after network change
+// false = Do not move to pending list after network change
+// User preference:
+user_pref("network.http.http2.move_to_pending_list_after_network_change", true);
+
+// Sets the ping threshold for HTTP/2 connections
+// Configures the threshold value for pings in HTTP/2 connections, 
+// which can affect connection health checks and timeout behaviors.
+// Options:
+// Integer value indicating the ping threshold
+// User preference:
+user_pref("network.http.http2.ping-threshold", 58);
+
+// Sets the timeout duration for HTTP/2 pings
+// Configures the timeout duration (in seconds) for HTTP/2 
+// ping responses, influencing connection maintenance and 
+// performance in scenarios with delayed acknowledgments.
+// Options:
+// Integer value indicating the ping timeout in seconds
+// User preference:
+user_pref("network.http.http2.ping-timeout", 8);
+
+// Sets the pull allowance for HTTP/2 connections
+// Configures the amount of data (in bytes) that can be pulled 
+// in a single HTTP/2 stream, impacting the flow control and 
+// resource management within connections.
+// Options:
+// Integer value indicating the pull allowance in bytes
+// User preference:
+user_pref("network.http.http2.pull-allowance", 12582912);
+
+// Sets the push allowance for HTTP/2 connections
+// Configures the amount of data (in bytes) that can be pushed 
+// to a client in a single HTTP/2 stream, impacting the efficiency 
+// of server push functionality for preloading resources.
+// Options:
+// Integer value indicating the push allowance in bytes
+// User preference:
+user_pref("network.http.http2.push-allowance", 131072);
+
+// Enables priority updates for HTTP/2 server push
+// Controls whether priority updates are allowed for server push 
+// responses in HTTP/2, affecting how pushed resources are managed 
+// based on their importance.
+// Options:
+// true = Enable priority updates for server push
+// false = Disable priority updates for server push
+// User preference:
+user_pref("network.http.http2.push_priority_update", false);
+
+// Sets the send buffer size for HTTP/2 connections
+// Configures the size of the buffer used for sending data over 
+// HTTP/2 connections, which can impact performance and latency 
+// for data transmission.
+// Options:
+// Integer value indicating the send buffer size in bytes (0 = default)
+// User preference:
+user_pref("network.http.http2.send-buffer-size", 0);
+
+// Enables maximum concurrent frames for HTTP/2 server push
+// Controls whether the maximum number of concurrent frames 
+// for server push responses is limited, affecting the 
+// efficiency of resource delivery to clients.
+// Options:
+// true = Enable limit on maximum concurrent frames
+// false = Disable limit on maximum concurrent frames
+// User preference:
+user_pref("network.http.http2.send-push-max-concurrent-frame", false);
+
+// Enables sending of NO_RFC7540_PRI for HTTP/2 connections
+// Controls whether to send the NO_RFC7540_PRI header in HTTP/2 
+// connections, affecting compatibility with various clients and 
+// potential push resource prioritization.
+// Options:
+// true = Send NO_RFC7540_PRI header
+// false = Do not send NO_RFC7540_PRI header
+// User preference:
+user_pref("network.http.http2.send_NO_RFC7540_PRI", true);
+
+// Sets the timeout duration for HTTP/2 connections
+// Configures the duration (in seconds) before an HTTP/2 
+// connection is considered timed out, influencing connection 
+// stability and responsiveness.
+// Options:
+// Integer value indicating the timeout duration in seconds
+// User preference:
+user_pref("network.http.http2.timeout", 170);
+
+// Enables WebSockets support for HTTP/2
+// Controls whether WebSockets are supported over HTTP/2 connections, 
+// allowing for full-duplex communication channels over a single 
+// connection, enhancing performance for certain applications.
+// Options:
+// true = Enable WebSockets support for HTTP/2
+// false = Disable WebSockets support for HTTP/2
+// User preference:
+user_pref("network.http.http2.websockets", true);
+
+// Sets the alt-svc mapping for testing in HTTP/3
+// Configures the alternate service (alt-svc) mapping for HTTP/3, 
+// which can be used for testing purposes to determine connection 
+// fallbacks or enhancements during development.
+// Options:
+// String value indicating the alt-svc mapping
+// User preference:
+user_pref("network.http.http3.alt-svc-mapping-for-testing", "");
+
+// Sets the backup timer delay for HTTP/3 connections
+// Configures the delay (in milliseconds) for the backup timer in 
+// HTTP/3 connections, which can affect the timing of connection 
+// establishment and fallback mechanisms.
+// Options:
+// Integer value indicating the backup timer delay in milliseconds
+// User preference:
+user_pref("network.http.http3.backup_timer_delay", 100);
+
+// Blocks loopback IPv6 addresses for HTTP/3 connections
+// Controls whether loopback IPv6 addresses are blocked for 
+// HTTP/3 connections, potentially affecting connectivity for 
+// local services using IPv6.
+// Options:
+// true = Block loopback IPv6 addresses
+// false = Allow loopback IPv6 addresses
+// User preference:
+user_pref("network.http.http3.block_loopback_ipv6_addr", false);
+
+// Sets the congestion control algorithm for HTTP/3 connections
+// Configures the congestion control algorithm used for 
+// HTTP/3 connections, affecting how data is transmitted over 
+// the network and optimizing for various conditions.
+// Options:
+// Integer value indicating the congestion control algorithm (1 = default)
+// User preference:
+user_pref("network.http.http3.cc_algorithm", 1);
+
+// Sets the default maximum stream blocked for HTTP/3 connections
+// Configures the maximum number of streams that can be blocked 
+// in HTTP/3 connections before the server takes action, impacting 
+// flow control and resource management.
+// Options:
+// Integer value indicating the default maximum stream blocked
+// User preference:
+user_pref("network.http.http3.default-max-stream-blocked", 20);
+
+// Sets the default QPACK table size for HTTP/3 connections
+// Configures the size (in bytes) of the QPACK compression table 
+// used in HTTP/3, which affects how effectively headers can be 
+// compressed and transmitted, potentially optimizing performance.
+// Options:
+// Integer value indicating the default QPACK table size in bytes
+// User preference:
+user_pref("network.http.http3.default-qpack-table-size", 65536);
+
+// Disables HTTP/3 when third-party roots are found
+// Controls whether HTTP/3 connections are disabled if third-party 
+// root certificates are detected, which may be a security measure 
+// to prevent potential vulnerabilities.
+// Options:
+// true = Disable HTTP/3 if third-party roots are found
+// false = Allow HTTP/3 even if third-party roots are present
+// User preference:
+user_pref("network.http.http3.disable_when_third_party_roots_found", false);
+
+// Enables Explicit Congestion Notification (ECN) for HTTP/3 connections
+// Controls whether Explicit Congestion Notification is enabled 
+// for HTTP/3, which can help optimize network performance by 
+// signaling congestion without dropping packets.
+// Options:
+// true = Enable ECN for HTTP/3
+// false = Disable ECN for HTTP/3
+// User preference:
+user_pref("network.http.http3.ecn", false);
+
+// Enables HTTP/3 support
+// Controls whether HTTP/3 protocol is enabled, allowing the browser 
+// to use this newer protocol for enhanced performance and security.
+// Options:
+// true = Enable HTTP/3 support
+// false = Disable HTTP/3 support
+// User preference:
+user_pref("network.http.http3.enable", true);
+
+// Enables 0-RTT for HTTP/3 connections
+// Controls whether 0-RTT (zero round-trip time) is enabled for 
+// HTTP/3 connections, which can improve performance by allowing 
+// immediate data transmission before the handshake is complete.
+// Options:
+// true = Enable 0-RTT for HTTP/3
+// false = Disable 0-RTT for HTTP/3
+// User preference:
+user_pref("network.http.http3.enable_0rtt", true);
+
+// Enables Kyber post-quantum cryptography for HTTP/3
+// Controls whether Kyber, a post-quantum key encapsulation mechanism, 
+// is enabled for HTTP/3 connections, potentially enhancing security 
+// against quantum computing threats.
+// Options:
+// true = Enable Kyber for HTTP/3
+// false = Disable Kyber for HTTP/3
+// User preference:
+user_pref("network.http.http3.enable_kyber", false);
+
+// Enables QLOG for HTTP/3 connections
+// Controls whether QLOG (an experimental logging format for QUIC) 
+// is enabled for HTTP/3 connections, which can assist in debugging 
+// and analyzing performance issues.
+// Options:
+// true = Enable QLOG for HTTP/3
+// false = Disable QLOG for HTTP/3
+// User preference:
+user_pref("network.http.http3.enable_qlog", false);
+
+// Indicates if third-party roots were found during automation
+// This preference tracks whether third-party root certificates 
+// were detected during automated processes, which could affect 
+// security considerations.
+// Options:
+// true = Third-party roots found in automation
+// false = No third-party roots found in automation
+// User preference:
+user_pref("network.http.http3.has_third_party_roots_found_in_automation", false);
+
+// Sets the maximum accumulated time for HTTP/3 connections
+// Configures the maximum time (in milliseconds) that can be 
+// accumulated for HTTP/3 connections, potentially influencing 
+// performance thresholds.
+// Options:
+// Integer value indicating the maximum accumulated time in milliseconds
+// User preference:
+user_pref("network.http.http3.max_accumlated_time_ms", 1);
+
+// Sets the maximum amount of data for HTTP/3 connections
+// Configures the maximum amount of data (in bytes) that can be 
+// sent over HTTP/3 connections, which may affect throughput 
+// and performance.
+// Options:
+// Integer value indicating the maximum data size in bytes
+// User preference:
+user_pref("network.http.http3.max_data", 25165824);
+
+// Sets the maximum stream data size for HTTP/3 connections
+// Configures the maximum amount of data (in bytes) that can be 
+// sent in a single stream for HTTP/3, impacting the efficiency 
+// of data transmission across multiple streams.
+// Options:
+// Integer value indicating the maximum stream data size in bytes
+// User preference:
+user_pref("network.http.http3.max_stream_data", 12582912);
+
+// Sets the limit on parallel fallback connections for HTTP/3
+// Configures the maximum number of parallel fallback connections 
+// that can be established for HTTP/3, which may influence 
+// connection reliability and performance during fallback scenarios.
+// Options:
+// Integer value indicating the parallel fallback connection limit
+// User preference:
+user_pref("network.http.http3.parallel_fallback_conn_limit", 32);
+
+// Enables HTTP/3 priority handling
+// Controls whether HTTP/3 priority settings are enabled, which can influence
+// how resources are prioritized and transmitted over HTTP/3 connections.
+// Options:
+// true = Enable priority handling for HTTP/3
+// false = Disable priority handling for HTTP/3
+// User preference:
+user_pref("network.http.http3.priority", true);
+
+// Sets the receive buffer size for HTTP/3 connections
+// Configures the size (in bytes) of the receive buffer used for 
+// HTTP/3 connections, which can impact the efficiency of data 
+// transmission and handling of incoming data streams.
+// Options:
+// Integer value indicating the receive buffer size in bytes
+// User preference:
+user_pref("network.http.http3.recvBufferSize", 1048576);
+
+// Allows retrying HTTP/3 connections with a different IP family
+// Controls whether HTTP/3 connections are retried using a different
+// IP family (IPv4 or IPv6) if the initial connection fails, 
+// potentially improving connectivity options.
+// Options:
+// true = Retry HTTP/3 connections with a different IP family
+// false = Do not retry with a different IP family
+// User preference:
+user_pref("network.http.http3.retry_different_ip_family", false);
+
+// Controls prioritization of background tabs for HTTP/3 connections
+// When set to "false," HTTP/3 connections initiated from background 
+// tabs will not be deprioritized, potentially improving loading 
+// times for resources from inactive tabs.
+// Options:
+// true = Deprioritize background tabs for HTTP/3 connections
+// false = Do not deprioritize background tabs for HTTP/3 connections
+// User preference:
+user_pref("network.http.http3.send_background_tabs_deprioritization", false);
+
+// Supports HTTP/3 version 1
+// Controls whether support for version 1 of HTTP/3 is enabled, 
+// allowing the browser to utilize the features and optimizations 
+// associated with this version.
+// Options:
+// true = Enable support for HTTP/3 version 1
+// false = Disable support for HTTP/3 version 1
+// User preference:
+user_pref("network.http.http3.support_version1", true);
+
+// Uses NSPR for I/O operations in HTTP/3
+// Controls whether the Netscape Portable Runtime (NSPR) is used 
+// for input/output operations in HTTP/3, potentially impacting 
+// performance and compatibility with certain I/O operations.
+// Options:
+// true = Use NSPR for I/O in HTTP/3
+// false = Do not use NSPR for I/O in HTTP/3
+// User preference:
+user_pref("network.http.http3.use_nspr_for_io", true);
+
+// Enables version negotiation for HTTP/3
+// Controls whether version negotiation for HTTP/3 is enabled, 
+// allowing the client and server to agree on the HTTP/3 version 
+// to be used during communication.
+// Options:
+// true = Enable version negotiation for HTTP/3
+// false = Disable version negotiation for HTTP/3
+// User preference:
+user_pref("network.http.http3.version_negotiation.enabled", false);
+
+// Sets the timeout for HTTP keep-alive connections
+// Configures the time (in seconds) that HTTP keep-alive connections 
+// remain open before being closed, which can influence the performance 
+// of persistent connections.
+// Options:
+// Integer value indicating the keep-alive timeout in seconds
+// User preference:
+user_pref("network.http.keep-alive.timeout", 115);
+
+// Sets the large keep-alive factor for HTTP connections
+// Configures the factor by which to increase the maximum number of 
+// keep-alive connections for large responses, which can optimize 
+// resource utilization in certain scenarios.
+// Options:
+// Integer value indicating the large keep-alive factor
+// User preference:
+user_pref("network.http.largeKeepaliveFactor", 20);
+
+// Sets the maximum number of HTTP connections
+// Configures the maximum number of simultaneous HTTP connections 
+// that can be opened by the browser, potentially affecting overall 
+// performance and resource usage.
+// Options:
+// Integer value indicating the maximum number of connections
+// User preference:
+user_pref("network.http.max-connections", 900);
+
+// Sets the maximum number of persistent connections per proxy
+// Configures the maximum number of persistent connections that can 
+// be maintained to a single proxy server, influencing how many 
+// simultaneous requests can be sent through that proxy.
+// Options:
+// Integer value indicating the maximum persistent connections per proxy
+// User preference:
+user_pref("network.http.max-persistent-connections-per-proxy", 32);
+
+// Sets the maximum number of persistent connections per server
+// Configures the maximum number of persistent connections that can 
+// be maintained to a single server, which can impact how resources 
+// are loaded and served.
+// Options:
+// Integer value indicating the maximum persistent connections per server
+// User preference:
+user_pref("network.http.max-persistent-connections-per-server", 6);
+
+// Sets the maximum number of excessive urgent start connections per host
+// Configures the maximum number of connections that can be started 
+// urgently (out of the normal request queue) to a single host. 
+// This setting helps manage resource allocation and can influence 
+// how requests are prioritized and handled.
+// Options:
+// Integer value indicating the maximum urgent start connections per host
+// User preference:
+user_pref("network.http.max-urgent-start-excessive-connections-per-host", 3);
+
+// Sets the maximum response header size
+// Configures the maximum size (in bytes) for response headers 
+// that the browser can accept. This can help prevent issues 
+// with excessively large headers that may impact performance.
+// Options:
+// Integer value indicating the maximum response header size in bytes
+// User preference:
+user_pref("network.http.max_response_header_size", 393216);
+
+// Enables Microsoft Entra SSO container for authentication
+// Controls whether the Microsoft Entra Single Sign-On (SSO) container 
+// is enabled for handling authentication processes.
+// Options:
+// true = Enable the Microsoft Entra SSO container
+// false = Disable the Microsoft Entra SSO container
+// User preference:
+user_pref("network.http.microsoft-entra-sso.container-enabled.0", true);
+
+// Enables Microsoft Entra SSO functionality
+// Controls whether Microsoft Entra SSO functionality is enabled, 
+// allowing for seamless authentication across services that support it.
+// Options:
+// true = Enable Microsoft Entra SSO
+// false = Disable Microsoft Entra SSO
+// User preference:
+user_pref("network.http.microsoft-entra-sso.enabled", false);
+
+// Sets the timeout for network change events
+// Configures the time (in seconds) to wait before considering 
+// a network change event to be completed. This can affect how 
+// quickly the browser adapts to network changes.
+// Options:
+// Integer value indicating the network change timeout in seconds
+// User preference:
+user_pref("network.http.network-changed.timeout", 5);
+
+// Enables network access on socket process
+// Controls whether network access is allowed in the socket process, 
+// which can influence how connections and requests are managed.
+// Options:
+// true = Enable network access on socket process
+// false = Disable network access on socket process
+// User preference:
+user_pref("network.http.network_access_on_socket_process.enabled", false);
+
+// Enables network error logging
+// Controls whether network error logging is enabled, which can 
+// help diagnose connectivity issues by logging relevant errors.
+// Options:
+// true = Enable network error logging
+// false = Disable network error logging
+// User preference:
+user_pref("network.http.network_error_logging.enabled", false);
+
+// Sets the priority for on-click network requests
+// Controls whether requests triggered by user clicks are given 
+// priority over other requests, potentially improving responsiveness 
+// for user interactions.
+// Options:
+// true = Enable priority for on-click requests
+// false = Disable priority for on-click requests
+// User preference:
+user_pref("network.http.on_click_priority", true);
+
+// Controls origin redirect for tainted requests
+// Determines whether to allow redirects for "tainted" requests, 
+// which are requests that have been affected by cross-origin policies.
+// Options:
+// true = Allow redirects for tainted requests
+// false = Block redirects for tainted requests
+// User preference:
+user_pref("network.http.origin.redirectTainted", true);
+
+// Sets the burst size for pacing HTTP requests
+// Configures the number of requests that can be sent in a burst 
+// to the server, which can help manage server load and improve 
+// overall performance.
+// Options:
+// Integer value indicating the burst size for requests
+// User preference:
+user_pref("network.http.pacing.requests.burst", 10);
+
+// Enables pacing for HTTP requests
+// Controls whether pacing is applied to HTTP requests, which can 
+// help manage the flow of outgoing requests and prevent overwhelming 
+// the server.
+// Options:
+// true = Enable pacing for HTTP requests
+// false = Disable pacing for HTTP requests
+// User preference:
+user_pref("network.http.pacing.requests.enabled", true);
+
+// Sets the frequency of pacing for HTTP requests
+// Configures the frequency (in requests per second) at which 
+// requests can be sent to the server, helping to balance load 
+// and performance.
+// Options:
+// Integer value indicating the requests per second for pacing
+// User preference:
+user_pref("network.http.pacing.requests.hz", 80);
