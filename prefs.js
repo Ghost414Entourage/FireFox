@@ -6735,7 +6735,7 @@ user_pref("network.trr.attempt-when-retrying-confirmation", false);
 // This setting specifies the initial address that will be used for
 // DNS queries when using TRR.
 // User preference:
-user_pref("network.trr.bootstrapAddress", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+user_pref("network.trr.bootstrapAddress", "");
 
 // List of built-in excluded domains for TRR
 // This setting specifies domains that will be excluded from TRR resolution
@@ -6777,19 +6777,19 @@ user_pref("network.trr.confirmation_timeout_ms", 6000);
 // This setting specifies the credentials (such as an API key or token)
 // to be used when making DNS queries via the Trusted Recursive Resolver (TRR).
 // User preference:
-user_pref("network.trr.credentials", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+user_pref("network.trr.credentials", "");
 
 // Custom URI for TRR queries
 // This setting allows the user to define a custom URI for TRR queries,
 // which can be useful for connecting to a specific DNS resolver.
 // User preference:
-user_pref("network.trr.custom_uri", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+user_pref("network.trr.custom_uri", "");
 
 // Default provider URI for TRR queries
 // This setting specifies the default URI to be used for TRR queries,
 // which is the fallback resolver if no other settings are specified.
 // User preference:
-user_pref("network.trr.default_provider_uri", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+user_pref("network.trr.default_provider_uri", "");
 
 // Disables EDNS Client Subnet (ECS) for TRR
 // This setting specifies whether to disable ECS when making DNS queries
@@ -7052,7 +7052,7 @@ user_pref("network.trr.temp_blocklist_duration_sec", 60);
 // This setting specifies the URI of the DNS resolver to use for TRR
 // requests, directing where to send DNS queries.
 // User preference:
-user_pref("network.trr.uri", "https://wv8f34ikrn.cloudflare-gateway.com/dns-query");
+user_pref("network.trr.uri", "");
 
 // Use GET method for TRR requests
 // This setting specifies whether to use the GET method for TRR requests,
