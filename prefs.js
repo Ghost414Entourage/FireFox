@@ -3101,6 +3101,10 @@ user_pref("network.auth.sort_challenge_in_progress", false);
 // Controls subresource HTTP authentication permissions, e.g., images, stylesheets
 // Subresource HTTP authentication governs access to embedded content like images or CSS, 
 // which may need to access restricted resources in certain contexts.
+// This preference is about controlling HTTP authentication dialogs for subresources 
+// (e.g., images or embedded content from other origins). 
+// Setting this to 0 improves security by preventing cross-origin resources from prompting for credentials, 
+// which helps avoid potential credential leaks across domains.
 // Options:
 // 0 = Disable subresource HTTP authentication
 // 1 = Allow subresource HTTP auth only for same-origin resources
@@ -3108,11 +3112,9 @@ user_pref("network.auth.sort_challenge_in_progress", false);
 // User preference:
 user_pref("network.auth.subresource-http-auth-allow", 2);
 
-
-
-
-
-
+// Sub-resources HTTP-authentication for cross-origin images: 
+// true: It is allowed to present http auth. dialog for cross-origin images. 
+// false: It is not allowed. If network.auth.subresource-http-auth-allow has values 0 or 1 this pref does not have any effect.
 // Allows cross-origin HTTP authentication for subresource images
 // This option can prevent credentials from being sent with cross-origin image requests, 
 // reducing the risk of credential exposure across domains.
@@ -3122,6 +3124,7 @@ user_pref("network.auth.subresource-http-auth-allow", 2);
 // User preference:
 user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
 
+// Whether to display auth prompts if X-Frame-Options header will block loading page
 // Suppresses HTTP authentication prompts when X-Frame-Options (XFO) check fails
 // XFO helps prevent clickjacking by allowing content to specify if it should only be displayed in certain frames.
 // Suppressing authentication prompts in these cases improves user experience but may impact access to content.
@@ -3131,59 +3134,210 @@ user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
 // User preference:
 user_pref("network.auth.supress_auth_prompt_for_XFO_failures", true);
 
-// Controls the use of HTTP redirects when retrying authentication requests
-// Redirects may improve user flow by streamlining access on retry but could also cause security concerns 
-// if misconfigured on some servers.
+// Sub-resources HTTP-authentication for cross-origin images:
+// true: Allows HTTP authentication dialogs for cross-origin images.
+// false: Disables HTTP authentication dialogs for cross-origin images.
+// This option can prevent credentials from being sent with cross-origin image requests, 
+// reducing the risk of credential exposure across domains.
+// User preference:
+user_pref("network.auth.subresource-img-cross-origin-http-auth-allow", false);
+
+// Redirect retries on authentication challenges:
+// true: Retries requests with redirects after a 401 Unauthorized response.
+// false: Prevents retries via redirect for authentication challenges, 
+// keeping the request on the original URL.
 // Options:
-// true = Use redirects for authentication retries
-// false = Disable redirects for authentication retries
+// true = Retry with redirect for authentication challenges
+// false = No redirects for retries on 401 responses (better control)
 // User preference:
 user_pref("network.auth.use_redirect_for_retries", false);
 
-// Allows NTLM authentication for non-FQDN (fully qualified domain name) addresses
-// Non-FQDN addresses are often local or private network addresses, and enabling this preference 
-// allows NTLM authentication even without fully qualified domain names, but could risk exposing credentials.
+// HTTP redirection limit:
+// Defines the maximum number of HTTP redirects Firefox will follow.
+// Setting this to 0 disables all HTTP redirects, preventing any navigation 
+// away from the original source due to redirection.
 // Options:
-// true = Allow NTLM auth for non-FQDN addresses
-// false = Restrict NTLM auth to FQDNs only
+// 0 = Disable redirects completely
+// n = Set a limit 
+// User preference:
+user_pref("network.http.redirection-limit", 0);
+
+// Meta refresh redirects:
+// true: Blocks meta refresh tags from redirecting pages automatically.
+// false: Allows meta refresh tags to redirect pages as defined by the website.
+// Enabling this prevents meta refresh redirects, providing more control over navigation.
+// User preference:
+user_pref("accessibility.blockautorefresh", true);
+
+// Automatic NTLM authentication for non-FQDN (Fully Qualified Domain Name) hosts:
+// true: Allows NTLM (Windows Integrated Authentication) to occur automatically for hosts 
+// without a fully qualified domain name, such as "intranet" instead of "intranet.example.com".
+// false: Restricts NTLM authentication to only fully qualified domain names, enhancing security 
+// by preventing automatic authentication to local network resources with ambiguous names.
+// Options:
+// true = Allow automatic NTLM auth for non-FQDN hosts
+// false = Restrict NTLM auth to FQDN hosts only (better security)
 // User preference:
 user_pref("network.automatic-ntlm-auth.allow-non-fqdn", false);
 
-// Permits automatic NTLM authentication with proxy servers
-// NTLM authentication with proxies can streamline secure network connections in corporate networks.
+// Automatic NTLM authentication for proxy servers:
+// true: Allows NTLM (Windows Integrated Authentication) to occur automatically 
+// for proxy servers. This setting is useful when the network proxy requires 
+// authentication, allowing seamless access without prompting for credentials.
+// false: Disables automatic NTLM authentication for proxy servers, which may 
+// prompt the user for credentials when accessing resources through a proxy.
 // Options:
-// true = Allow NTLM auth for proxies
-// false = Restrict NTLM auth; do not use with proxies
+// true = Allow automatic NTLM authentication for proxies
+// false = Disable automatic NTLM authentication for proxies (more control)
 // User preference:
 user_pref("network.automatic-ntlm-auth.allow-proxies", true);
 
-// Lists trusted URIs for automatic NTLM authentication
-// This is a comma-separated list of URLs where NTLM authentication is automatically attempted, 
-// which can enhance user experience in trusted environments but may expose credentials if misconfigured.
-// Example format: "https://example.com,https://anotherdomain.com"
+// NTLM Authentication Trusted URIs:
+// Specifies which URLs or domains are trusted for automatic NTLM authentication, 
+// typically used in enterprise or intranet environments.
+// This setting allows single sign-on (SSO) using Windows credentials for specified sites, 
+// without prompting the user for credentials.
+// Format:
+// A comma-separated list of domains or URLs (e.g., "intranet.company.com, portal.company.com").
+// Example:
+// "network.automatic-ntlm-auth.trusted-uris", "intranet.company.com, mydomain.com"
 // User preference:
 user_pref("network.automatic-ntlm-auth.trusted-uris", "");
 
-// Sets the count of network buffer cache
-// This preference determines the number of buffer caches maintained, affecting network performance 
-// depending on resource needs.
-// Default value: 24
+// Network Buffer Cache Count:
+// Controls the number of network buffers to keep in the cache, which can help optimize 
+// network performance by storing data temporarily for faster access.
+// This setting is generally managed by Firefox automatically, but adjusting it may be useful
+// in environments with specific performance needs or limited resources.
+// Options:
+// An integer value indicating the number of buffers to maintain in the cache.
+// Higher values may improve performance but use more memory, while lower values may conserve memory.
 // User preference:
 user_pref("network.buffer.cache.count", 24);
 
-// Defines the size of each network buffer cache in bytes
-// The buffer cache size can impact network performance and memory usage, especially with large data transfers.
+// Network Buffer Cache Size:
+// Defines the size of each network buffer cache in bytes.
+// Affects how much data can be stored in each buffer, impacting both network performance and memory usage,
+// particularly during large data transfers.
+// Options:
+// An integer value specifying the buffer size in bytes.
+// Higher values may improve performance with large data transfers, but increase memory usage.
 // Default value: 32768 (32KB)
 // User preference:
 user_pref("network.buffer.cache.size", 32768);
 
-// Manages a workaround for a network cache bug identified as bug 1708673
-// This setting can enable or disable the specific fix for this bug. Consult release notes for more details.
+// When this pref is true, AddStorageEntry will return an error if the
+// OPEN_READONLY & OPEN_SECRETLY flags are passed and no entry exists.
+// If no regressions occur this pref should be removed.
+// Cache Bug 1708673:
+// A special preference related to a specific bug identified in Firefox (Bug 1708673).
+// This bug was related to a cache-related issue in the network component that impacted
+// cache efficiency or behavior under certain conditions. This preference was introduced to
+// control a workaround or fix for this bug.
 // Options:
-// true = Enable workaround for bug 1708673
-// false = Disable workaround
+// - true: The workaround or fix for Bug 1708673 is enabled.
+// - false: The workaround or fix for Bug 1708673 is disabled (default behavior).
 // User preference:
 user_pref("network.cache.bug1708673", false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Controls whether permanent HTTP redirects should be cached
 // Caching permanent redirects can reduce repeated requests but may lead to outdated routing 
