@@ -1705,7 +1705,7 @@ user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("privacy.donottrackheader.enabled", true); 
 
 // Control cookie behavior (1 = block third-party cookies, 0 = allow all, 2 = block all)
-user_pref("network.cookie.cookieBehavior", 1); 
+user_pref("network.cookie.cookieBehavior", 5); 
 
 // Enable or disable fingerprinting protection (true = enable protection, false = disable protection)
 user_pref("privacy.fingerprintingProtection", true); 
