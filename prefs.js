@@ -2984,12 +2984,68 @@ user_pref("extensions.startupScanScopes", 0);
 // User preference:
 user_pref("narrate.enabled", true);
 
+// Controls the filtering of available voices for the Narrate feature, which provides text-to-speech functionality.
+// When set to "true," only voices that are suitable for the Narrate feature will be displayed to the user.
+// This can help streamline the selection process by showing only relevant voices, improving user experience.
+// Options:
+// true = Filter and display only suitable voices for the Narrate feature
+// false = Show all available voices, regardless of suitability
+// User preference:
+user_pref("narrate.filter-voices", true);
 
+// Controls the speech rate for the Narrate feature, which provides text-to-speech functionality.
+// This setting determines how fast the text is read aloud to the user.
+// A higher value results in faster speech, while a lower value results in slower speech.
+// The default value is typically set to a moderate rate, but users can adjust it to their preference.
+// Options:
+// Numeric value = Set the speech rate (e.g., 1.0 for normal speed, 0.5 for slower, 2.0 for faster)
+// User preference:
+user_pref("narrate.rate", 0);
 
+// Controls whether the Narrate feature is in test mode.
+// When set to "true," the Narrate feature may operate in a limited or experimental capacity,
+// allowing users to test new functionalities or settings without affecting the main experience.
+// Setting it to "false" disables test mode, enabling the full functionality of the Narrate feature.
+// Options:
+// true = Enable test mode for the Narrate feature
+// false = Disable test mode and use the standard functionality
+// User preference:
+user_pref("narrate.test", false);
 
+// Controls the default voice used by the Narrate feature, which provides text-to-speech functionality.
+// This setting allows users to specify which voice should be used for reading text aloud.
+// The value can be set to a specific voice name or to "automatic" to let the system choose the best available voice.
+// Options:
+// { "default": "automatic" } = Use the system's automatic voice selection
+// { "default": "voice_name" } = Specify a particular voice by name
+// User preference:
+user_pref("narrate.voice", { "default": "automatic" });
 
+// Controls additional characters that are allowed in internationalized domain names (IDNs).
+// This setting enables users to specify extra characters beyond the standard ASCII set that can be included in IDNs.
+// By customizing this list, users can accommodate specific languages or scripts that may not be covered by default.
+// Options:
+// String value = A string of characters that are allowed in IDNs (e.g., "ñ, é, ü")
+// User preference:
+user_pref("network.IDN.extra_allowed_chars", "");
 
+// Controls additional characters that are blocked in internationalized domain names (IDNs).
+// This setting allows users to specify extra characters beyond the standard ASCII set that should not be allowed in IDNs.
+// By customizing this list, users can enhance security by preventing potentially harmful or confusing characters from being used in domain names.
+// Options:
+// String value = A string of characters that are blocked in IDNs (e.g., "0, O, l, I")
+// User preference:
+user_pref("network.IDN.extra_blocked_chars", "");
 
+// Controls the restriction profile applied to internationalized domain names (IDNs).
+// This setting determines the level of scrutiny and restrictions placed on IDNs to enhance security and prevent abuse.
+// The "high" profile applies stricter rules, limiting the use of certain characters and scripts to reduce the risk of phishing and confusion.
+// Options:
+// "low" = Minimal restrictions on IDNs, allowing a wider range of characters
+// "medium" = Moderate restrictions on IDNs, balancing usability and security
+// "high" = Stricter restrictions on IDNs, enhancing security by limiting character usage
+// User preference:
+user_pref("network.IDN.restriction_profile", "high");
 
 // Controls whether internationalized domain names (IDNs) are displayed in their ASCII (Punycode) form
 // IDNs allow domain names to include non-ASCII characters (e.g., accents or scripts like Cyrillic).
@@ -3234,105 +3290,6 @@ user_pref("network.buffer.cache.size", 32768);
 // User preference:
 user_pref("network.cache.bug1708673", false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Controls whether permanent HTTP redirects should be cached
 // Caching permanent redirects can reduce repeated requests but may lead to outdated routing 
 // if URLs change frequently.
@@ -3377,17 +3334,21 @@ user_pref("network.cache.shutdown_purge_in_background_task", false);
 // User preference:
 user_pref("network.captive-portal-service.backoffFactor", 5.0);
 
-// Enables the captive portal service
-// Captive portal service helps identify networks requiring authentication, like those in cafes or airports.
+// Controls whether the captive portal service is enabled in the browser.
+// When set to "true," the browser actively checks for the presence of a captive portal when connecting to networks,
+// allowing users to be notified if they need to interact with a login page or accept terms before accessing the internet.
+// Disabling this feature may prevent the browser from detecting captive portals, which could lead to connectivity issues in certain environments.
 // Options:
-// true = Enable captive portal detection
-// false = Disable captive portal detection
+// true = Enable the captive portal service to check for and notify users of captive portals
+// false = Disable the captive portal service
 // User preference:
 user_pref("network.captive-portal-service.enabled", true);
 
-// Sets the maximum interval (in milliseconds) between captive portal detection attempts
-// Defines the upper limit for time intervals in detecting captive portals to maintain network access.
-// Default value: 1500000 (1,500 seconds)
+// Controls the maximum interval (in milliseconds) for checking the status of a captive portal.
+// A captive portal is a web page that users must interact with before accessing the internet, often seen in public Wi-Fi networks.
+// This setting determines how often the browser will check for the presence of a captive portal, with a higher value reducing the frequency of checks.
+// Options:
+// Numeric value = Maximum interval for captive portal checks in milliseconds (e.g., 1500000 for 25 minutes)
 // User preference:
 user_pref("network.captive-portal-service.maxInterval", 1500000);
 
@@ -3397,9 +3358,21 @@ user_pref("network.captive-portal-service.maxInterval", 1500000);
 // User preference:
 user_pref("network.captive-portal-service.minInterval", 60000);
 
-// Specifies the domain for DNS-over-HTTPS (DoH) in connectivity service
-// This is the domain used for DoH requests, ensuring secure, encrypted DNS lookups.
-// Default value: cloudflare-dns.com
+// Controls whether the browser allows truncated empty Brotli compressed responses.
+// Brotli is a compression algorithm used to reduce the size of data transmitted over the web.
+// When set to "true," the browser will accept Brotli responses that are truncated and empty, which may be useful for certain server configurations.
+// However, allowing truncated responses could lead to unexpected behavior if the server does not handle them correctly.
+// Options:
+// true = Allow truncated empty Brotli compressed responses
+// false = Disallow truncated empty Brotli compressed responses
+// User preference:
+user_pref("network.compress.allow_truncated_empty_brotli", true);
+
+// Specifies the domain used for DNS over HTTPS (DoH) in the connectivity service.
+// This setting allows the browser to use a specific DNS provider for secure DNS resolution, enhancing privacy and security.
+// When set to "cloudflare-dns.com," the browser will use Cloudflare's DNS service for DNS over HTTPS requests.
+// Options:
+// String value = The domain for the DNS over HTTPS provider (e.g., "cloudflare-dns.com")
 // User preference:
 user_pref("network.connectivity-service.DNS_HTTPS.domain", "cloudflare-dns.com");
 
@@ -3451,23 +3424,38 @@ user_pref("network.connectivity-service.nat64-check", true);
 // User preference:
 user_pref("network.connectivity-service.nat64-prefix", "");
 
-// Enables CHIPS (Cookies Having Independent Partitioned State) for enhanced cookie partitioning
-// CHIPS aims to improve privacy by partitioning cookies for third-party sites to isolate data per site. 
-// Disabling it may result in fewer privacy protections.
+// Controls whether the CHIPS (Client Hint for Privacy and Security) feature for cookies is enabled.
+// CHIPS provides a mechanism for browsers to communicate user preferences regarding cookie behavior to servers,
+// enhancing privacy and security by allowing users to control how cookies are handled, especially in cross-site contexts.
+// When set to "true," the browser allows the use of CHIPS, which can help mitigate cross-site tracking by informing servers
+// about the user's preferences for cookie usage, particularly regarding third-party cookies.
 // Options:
-// true = Enable CHIPS for cookie isolation
-// false = Disable CHIPS
+// true = Enable CHIPS for enhanced cookie privacy and security
+// false = Disable CHIPS, using standard cookie handling
 // User preference:
-user_pref("network.cookie.CHIPS.enabled", false);
+user_pref("network.cookie.CHIPS.enabled", true);
 
-// Blocks cookies containing Unicode characters
-// Unicode characters in cookies can cause issues in cross-domain contexts. Blocking them can prevent 
-// potential security risks or data corruption when dealing with internationalized sites.
+// Controls whether the browser blocks the use of Unicode characters in cookie names and values.
+// When set to "true," the browser will prevent cookies that contain Unicode characters, which can help mitigate
+// potential security risks associated with malformed or malicious cookies that use non-ASCII characters.
+// This setting can enhance compatibility and security, especially in environments where strict cookie handling is required.
 // Options:
-// true = Block Unicode characters in cookies
-// false = Allow Unicode characters
+// true = Block the use of Unicode characters in cookie names and values
+// false = Allow Unicode characters in cookie names and values
 // User preference:
 user_pref("network.cookie.blockUnicode", false);
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Sets the byte limit for CHIPS partitioned cookies
 // Defines the maximum byte capacity for partitioned cookies under the CHIPS feature, managing storage for 
