@@ -3376,17 +3376,23 @@ user_pref("network.compress.allow_truncated_empty_brotli", true);
 // User preference:
 user_pref("network.connectivity-service.DNS_HTTPS.domain", "cloudflare-dns.com");
 
-// Sets the domain for IPv4 DNS in connectivity service
-// Used to verify network connectivity via DNS, which helps detect online status for IPv4-based connections.
-// Default value: example.org
+// Specifies the domain used for DNS (Domain Name System) resolution via IPv4 in the connectivity service.
+// This setting allows the browser to use a specific DNS provider for resolving domain names over IPv4,
+// which can enhance performance and reliability in network connectivity checks.
+// When set to a specific domain, the browser will use that DNS service for DNS resolution tasks.
+// Options:
+// String value = The domain for the DNS provider (e.g., "example.com")
 // User preference:
-user_pref("network.connectivity-service.DNSv4.domain", "example.org");
+user_pref("network.connectivity-service.DNSv4.domain", "example.com");
 
-// Sets the domain for IPv6 DNS in connectivity service
-// Similar to IPv4, this domain is used to verify connectivity, specifically for IPv6 connections.
-// Default value: example.org
+// Specifies the domain used for DNS (Domain Name System) resolution via IPv6 in the connectivity service.
+// This setting allows the browser to use a specific DNS provider for resolving domain names over IPv6,
+// which can enhance performance and reliability in network connectivity checks.
+// When set to a specific domain, the browser will use that DNS service for DNS resolution tasks.
+// Options:
+// String value = The domain for the DNS provider (e.g., "example.com")
 // User preference:
-user_pref("network.connectivity-service.DNSv6.domain", "example.org");
+user_pref("network.connectivity-service.DNSv6.domain", "example.com");
 
 // Specifies the URL for IPv4 connectivity checks
 // Connectivity service uses this URL to confirm IPv4 internet access by attempting to reach a known resource.
@@ -3443,19 +3449,7 @@ user_pref("network.cookie.CHIPS.enabled", true);
 // true = Block the use of Unicode characters in cookie names and values
 // false = Allow Unicode characters in cookie names and values
 // User preference:
-user_pref("network.cookie.blockUnicode", false);
-
-
-
-
-
-
-
-
-
-
-
-
+user_pref("network.cookie.blockUnicode", true);
 
 // Sets the byte limit for CHIPS partitioned cookies
 // Defines the maximum byte capacity for partitioned cookies under the CHIPS feature, managing storage for 
@@ -3473,43 +3467,47 @@ user_pref("network.cookie.chips.partitionLimitByteCapacity", 10240);
 // User preference:
 user_pref("network.cookie.chips.partitionLimitDryRun", true);
 
-// Enables partition limit for CHIPS, enforcing the set byte capacity
-// When enabled, CHIPS enforces the byte limit for partitioned cookies, helping to control storage usage and 
-// maintain privacy boundaries across sites.
+// Controls whether the partition limit for CHIPS (Client Hint for Privacy and Security) is enabled.
+// When set to "true," the browser will enforce a limit on the number of partitions created for cookies based on the CHIPS settings,
+// which helps manage the number of cookie partitions and can enhance performance while maintaining privacy.
+// This setting is particularly relevant in scenarios where excessive partitioning could lead to resource overhead.
 // Options:
-// true = Enforce byte limit
-// false = No limit enforcement
+// true = Enable partition limit for CHIPS to manage cookie partitions
+// false = Disable partition limit for CHIPS, allowing unlimited cookie partitions
 // User preference:
 user_pref("network.cookie.chips.partitionLimitEnabled", true);
 
-// Configures the cookie behavior for regular browsing mode
-// Determines how cookies are handled to balance privacy and functionality:
-// 0 = Accept all cookies
-// 1 = Block third-party cookies, only cookies from the originating server are allowed. 
-// 2 = Block third-party cookies (with stricter restrictions) No cookies are allowed. 
-// 3 = Third-party cookies are allowed only if that site has stored cookies already from a previous visit 
-// 4 = Isolate cookies by first-party domain, New Cookie Jar policy (prevent storage access to trackers) 
-// 5 = Restrict third-party tracking cookies
-// Default: 5 (restrict tracking cookies)
+// Controls the cookie behavior policy for the browser.
+// This setting determines how cookies are handled based on user preferences and privacy settings.
+// The value can be set to different integers representing various cookie handling policies:
+// 0 = Accept all cookies (default)
+// 1 = Accept cookies from the originating site only (block third-party cookies)
+// 2 = Accept cookies from the originating site and third-party cookies only if they are from the same site
+// 3 = Block all cookies
+// 4 = Block third-party cookies in private browsing mode
+// 5 = Block all third-party cookies (including in private browsing mode)
 // User preference:
-user_pref("network.cookie.cookieBehavior", );
+user_pref("network.cookie.cookieBehavior", 5);
 
-// Enables opt-in partitioning for cookie handling in normal browsing
-// Opt-in partitioning allows cookies to be partitioned by the site, maintaining stricter privacy measures 
-// by isolating cookie storage across different first-party sites.
+// Controls whether cookie partitioning is enabled for sites that require user opt-in.
+// When set to "true," the browser will partition cookies based on the site, meaning that cookies set by a site
+// will only be accessible when the user is actively visiting that site. This helps prevent cross-site tracking
+// and enhances user privacy by ensuring that cookies cannot be shared across different sites unless explicitly allowed.
 // Options:
-// true = Enable opt-in partitioning
-// false = Disable opt-in partitioning
+// true = Enable opt-in cookie partitioning for enhanced privacy
+// false = Disable opt-in cookie partitioning, allowing cookies to be shared across sites
 // User preference:
-user_pref("network.cookie.cookieBehavior.optInPartitioning", false);
+user_pref("network.cookie.cookieBehavior.optInPartitioning", true);
 
-// Enables opt-in partitioning for cookie handling in private browsing mode
-// Similar to regular browsing, this isolates cookies by partition in private browsing mode, but is opt-in.
+// Controls whether cookie partitioning is enabled in private browsing mode for sites that require user opt-in.
+// When set to "true," the browser will apply cookie partitioning in private browsing mode, meaning that cookies set by a site
+// will only be accessible during that private session and will not be shared with other sites. This enhances privacy
+// by ensuring that cookies cannot be tracked or accessed across different sites in private browsing mode.
 // Options:
-// true = Enable in private mode
-// false = Disable in private mode
+// true = Enable opt-in cookie partitioning in private browsing mode for enhanced privacy
+// false = Disable opt-in cookie partitioning in private browsing mode, allowing cookies to be shared across sites
 // User preference:
-user_pref("network.cookie.cookieBehavior.optInPartitioning.pbmode", false);
+user_pref("network.cookie.cookieBehavior.optInPartitioning.pbmode", true);
 
 // Configures the cookie behavior for private browsing mode
 // Similar to regular browsing, this setting controls cookie acceptance and blocking in private browsing mode. 
@@ -3541,28 +3539,31 @@ user_pref("network.cookie.maxNumber", 3000);
 // User preference:
 user_pref("network.cookie.maxPerHost", 180);
 
-// Caps the maximum age of cookies in seconds
-// Limits how long cookies can remain in storage by setting an upper limit on their lifespan, which can improve 
-// privacy and manage stale data.
-// Default value: 34560000 seconds (approximately 400 days)
-// User preference:
-user_pref("network.cookie.maxageCap", 34560000);
-
-// Disables persistent storage of cookies
-// When set to true, cookies will not be stored persistently, meaning they will be session-only and cleared 
-// upon browser close, enhancing privacy.
+// Controls the maximum age (in seconds) for cookies that can be set with the Max-Age attribute.
+// When set to a specific numeric value, this setting limits the maximum duration that cookies can persist,
+// regardless of the value specified in the Max-Age attribute of the cookie. This can help enhance user privacy
+// by preventing cookies from being stored for excessively long periods.
 // Options:
-// true = Disable persistent storage (session-only cookies)
-// false = Enable persistent storage
+// Numeric value = Maximum age for cookies in seconds (e.g., 3600 for 1 hour)
 // User preference:
-user_pref("network.cookie.noPersistentStorage", false);
+user_pref("network.cookie.maxageCap", 3600);
 
-// Prevents cookies from being set via multipart responses
-// Multipart responses can contain multiple parts in a single response. Blocking cookies from being set 
-// in these responses can reduce tracking risks and improve security.
+// Controls whether cookies are allowed to be stored persistently on the user's device.
+// When set to "true," the browser will not store cookies persistently, meaning that cookies will only be kept for the duration of the session
+// and will be deleted when the browser is closed. This setting enhances user privacy by preventing long-term tracking through persistent cookies.
 // Options:
-// true = Block cookies from multipart responses
-// false = Allow cookies from multipart responses
+// true = Disable persistent storage of cookies; cookies will be session-only
+// false = Allow cookies to be stored persistently on the device
+// User preference:
+user_pref("network.cookie.noPersistentStorage", true);
+
+// Controls whether the browser prevents cookies from being set in response to multipart responses.
+// When set to "true," the browser will block the setting of cookies that are included in multipart responses,
+// which can help mitigate potential security risks associated with certain types of responses that may attempt to set cookies
+// in an unintended or malicious manner. This setting enhances security by ensuring that cookies are only set in appropriate contexts.
+// Options:
+// true = Prevent cookies from being set in multipart responses
+// false = Allow cookies to be set in multipart responses
 // User preference:
 user_pref("network.cookie.prevent_set_cookie_from_multipart", true);
 
@@ -3573,30 +3574,33 @@ user_pref("network.cookie.prevent_set_cookie_from_multipart", true);
 // User preference:
 user_pref("network.cookie.quotaPerHost", 150);
 
-// Ensures SameSite cookie policies for cross-site iframes
-// Enforces that cross-site cookies in iframes respect SameSite policies, reducing potential tracking 
-// and enhancing privacy by controlling cross-site data access.
+// Controls whether the browser checks for SameSite cookie settings when cookies are set from cross-site iframes.
+// When set to "true," the browser will enforce SameSite cookie policies for cookies that are set from within cross-site iframes,
+// ensuring that such cookies adhere to the SameSite attribute rules. This helps prevent potential security risks, such as
+// cross-site request forgery (CSRF) attacks, by restricting how cookies can be used in cross-origin contexts.
 // Options:
-// true = Enforce SameSite policies in cross-site iframes
-// false = Do not enforce
+// true = Enforce SameSite cookie policies for cookies set from cross-site iframes
+// false = Do not enforce SameSite cookie policies for cross-site iframe cookie settings
 // User preference:
 user_pref("network.cookie.sameSite.crossSiteIframeSetCheck", true);
 
-// Makes Lax the default SameSite policy for cookies
-// SameSite=Lax restricts cookies to be sent only with top-level navigation. When disabled, the default is None,
-// allowing cookies in all contexts, but this can increase cross-site tracking risks.
+// Controls whether the SameSite=Lax attribute is applied by default to cookies that do not specify a SameSite attribute.
+// When set to "true," cookies that are created without an explicit SameSite attribute will automatically be treated as SameSite=Lax,
+// which means they will be sent with top-level navigations and will be sent along with GET requests initiated by third-party websites.
+// This setting enhances privacy by preventing cookies from being sent in cross-site contexts unless explicitly allowed.
 // Options:
-// true = Use Lax as the default
-// false = Default to None
+// true = Apply SameSite=Lax by default to cookies without a specified SameSite attribute
+// false = Do not apply SameSite=Lax by default; cookies will be treated as SameSite=None unless specified otherwise
 // User preference:
-user_pref("network.cookie.sameSite.laxByDefault", false);
+user_pref("network.cookie.sameSite.laxByDefault", true);
 
-// Allows redirects through a boomerang-type request under SameSite=Lax
-// Boomerang redirects are a special type of redirect, often used for analytics. Allowing them with Lax helps maintain 
-// compatibility with these redirects while preserving some privacy.
+// Controls whether cookies with the SameSite=Lax attribute are allowed to be sent in the context of boomerang redirects.
+// A boomerang redirect occurs when a request is redirected back to the original site, which can happen in certain authentication flows.
+// When set to "true," cookies marked as SameSite=Lax can be sent during these types of redirects, allowing for smoother user experiences
+// in scenarios where authentication or session management is involved.
 // Options:
-// true = Allow boomerang redirects
-// false = Disallow boomerang redirects
+// true = Allow SameSite=Lax cookies to be sent during boomerang redirects
+// false = Disallow SameSite=Lax cookies during boomerang redirects
 // User preference:
 user_pref("network.cookie.sameSite.laxByDefault.allowBoomerangRedirect", true);
 
@@ -3614,23 +3618,26 @@ user_pref("network.cookie.sameSite.laxByDefault.disabledHosts", "");
 // User preference:
 user_pref("network.cookie.sameSite.laxPlusPOST.timeout", 120);
 
-// Requires secure connections for SameSite=None cookies
-// Enforces that SameSite=None cookies are only sent over secure (HTTPS) connections to prevent cross-site 
-// tracking over unencrypted channels.
+// Controls whether cookies with the SameSite=None attribute are required to be marked as Secure.
+// When set to "true," cookies that are designated with SameSite=None must also have the Secure attribute,
+// meaning they can only be sent over HTTPS connections. This enhances security by ensuring that cross-site cookies
+// are only transmitted in secure contexts, reducing the risk of interception or misuse.
 // Options:
-// true = Require secure for SameSite=None
-// false = Do not require secure
+// true = Require SameSite=None cookies to be marked as Secure
+// false = Allow SameSite=None cookies without the Secure attribute
 // User preference:
 user_pref("network.cookie.sameSite.noneRequiresSecure", true);
 
-// Makes SameSite checks scheme-aware
-// Schemeful SameSite treats cookies differently based on HTTP vs. HTTPS requests, adding a layer of security 
-// and preventing unintended cross-protocol data sharing.
+// Controls whether the SameSite attribute for cookies is enforced in a schemeful manner.
+// When set to "true," the browser treats cookies as SameSite based on the scheme (HTTP or HTTPS) of the requesting site,
+// meaning that cookies set by a site using HTTPS will only be sent in requests to other HTTPS sites, and vice versa for HTTP.
+// This enhances security by preventing cross-site request forgery (CSRF) attacks and ensuring that cookies are only sent
+// in appropriate contexts based on the scheme of the URL.
 // Options:
-// true = Enable scheme-aware SameSite checks
-// false = Disable scheme-aware SameSite checks
+// true = Enforce SameSite attribute based on the scheme of the requesting site
+// false = Do not enforce schemeful SameSite behavior
 // User preference:
-user_pref("network.cookie.sameSite.schemeful", false);
+user_pref("network.cookie.sameSite.schemeful", true);
 
 // Sets the threshold time in seconds before a cookie is considered stale
 // Determines how long a cookie can remain inactive before it is marked as "stale," 
@@ -3639,12 +3646,33 @@ user_pref("network.cookie.sameSite.schemeful", false);
 // User preference:
 user_pref("network.cookie.staleThreshold", 60);
 
-// Uses the server's timestamp for cookies instead of the local time
-// This controls whether the browser should use the time from the server when setting 
-// cookies, which can affect expiry times and consistency across time zones.
+// Controls whether third-party cookies are restricted to non-secure (HTTP) sessions only.
+// When set to "true," third-party cookies will only be allowed in non-secure contexts, meaning they can be set and accessed
+// only when the user is visiting sites that do not use HTTPS. This setting enhances security by preventing third-party cookies
+// from being used in secure (HTTPS) contexts, which can help mitigate tracking and privacy concerns.
 // Options:
-// true = Use server time for cookies
-// false = Use local time
+// true = Allow third-party cookies only in non-secure (HTTP) sessions
+// false = Allow third-party cookies in both secure (HTTPS) and non-secure (HTTP) sessions
+// User preference:
+user_pref("network.cookie.thirdparty.nonsecureSessionOnly", true);
+
+// Controls whether third-party cookies are restricted to session-only storage.
+// When set to "true," third-party cookies will only be stored for the duration of the browsing session,
+// meaning they will be deleted when the browser is closed. This setting enhances user privacy by preventing
+// third-party cookies from being stored persistently on the user's device, thereby reducing the potential for tracking.
+// Options:
+// true = Allow third-party cookies only for the current session; they will not persist after the browser is closed
+// false = Allow third-party cookies to be stored persistently across sessions
+// User preference:
+user_pref("network.cookie.thirdparty.sessionOnly", true);
+
+// Controls whether the browser uses the server's time for cookie expiration instead of the local system time.
+// When set to "true," the browser will rely on the time provided by the server when determining the expiration of cookies,
+// which can help ensure that cookies are managed consistently across different clients and servers.
+// This setting can be useful in scenarios where the local system time may not be accurate or synchronized.
+// Options:
+// true = Use the server's time for cookie expiration
+// false = Use the local system time for cookie expiration
 // User preference:
 user_pref("network.cookie.useServerTime", false);
 
@@ -3657,30 +3685,32 @@ user_pref("network.cookie.useServerTime", false);
 // User preference:
 user_pref("network.cookieJarSettings.unblocked_for_testing", false);
 
-// Allows CORS preflight requests to include client certificates
-// Controls whether Cross-Origin Resource Sharing (CORS) preflight requests can 
-// use client certificates, which are typically used for authentication and encryption.
+// Controls whether client certificates are allowed in CORS (Cross-Origin Resource Sharing) preflight requests.
+// When set to "true," the browser will include client certificates in CORS preflight requests, which can be necessary
+// for certain secure APIs that require client authentication. This setting can enhance security by allowing
+// authenticated requests to be made across different origins.
 // Options:
-// true = Allow client certificates in preflight requests
-// false = Do not allow
+// true = Allow client certificates in CORS preflight requests
+// false = Disallow client certificates in CORS preflight requests
 // User preference:
 user_pref("network.cors_preflight.allow_client_cert", false);
 
-// Covers authorization with wildcard requests in CORS preflight checks
-// Simplifies authorization by allowing wildcard requests (*) to cover 
-// authorization headers, streamlining CORS policy without compromising security.
+// Controls whether the Authorization header is considered covered by a wildcard in CORS (Cross-Origin Resource Sharing) preflight requests.
+// When set to "true," the browser will treat the Authorization header as being allowed when a wildcard (*) is used in the Access-Control-Allow-Headers response header.
+// This setting can simplify CORS configurations for APIs that use the Authorization header while still allowing for flexible access control.
 // Options:
-// true = Allow authorization with wildcards
-// false = Require specific permissions
+// true = Treat the Authorization header as covered by a wildcard in CORS preflight requests
+// false = Do not treat the Authorization header as covered by a wildcard; explicit listing is required
 // User preference:
 user_pref("network.cors_preflight.authorization_covered_by_wildcard", true);
 
-// Enables decompression off the main thread
-// Moves data decompression tasks off the main thread, which can improve 
-// performance by reducing the load on the main processing thread.
+// Controls whether the browser performs decompression of network responses off the main thread.
+// When set to "true," the browser will handle decompression of network data in a separate thread,
+// which can improve performance and responsiveness by preventing the main thread from being blocked during decompression.
+// This setting is particularly beneficial for handling large responses or when using compression algorithms.
 // Options:
-// true = Enable off-main-thread decompression
-// false = Disable
+// true = Enable off-main-thread decompression for network responses
+// false = Disable off-main-thread decompression, handling it on the main thread
 // User preference:
 user_pref("network.decompression_off_mainthread2", true);
 
@@ -3691,65 +3721,71 @@ user_pref("network.decompression_off_mainthread2", true);
 // User preference:
 user_pref("network.decompression_off_mainthread_min_size", 512);
 
-// Enables offline mode on localhost
-// Determines whether the browser should treat `localhost` as offline when in offline mode,
-// which can affect local development and testing.
+// Controls whether access to localhost is allowed when the browser is in offline mode.
+// When set to "true," the browser will disable access to localhost while offline, preventing any local network requests.
+// This setting can enhance security by ensuring that local resources are not accessible when the browser is not connected to the internet.
 // Options:
-// true = Disable localhost in offline mode
-// false = Keep localhost accessible
+// true = Disable access to localhost when the browser is offline
+// false = Allow access to localhost even when the browser is offline
 // User preference:
 user_pref("network.disable-localhost-when-offline", false);
 
-// Blocks DNS requests for `.onion` domains
-// Prevents requests to `.onion` domains from being resolved via DNS, which is intended to 
-// protect privacy and prevent accidental leaks of Tor-related connections.
+// Controls whether the browser blocks DNS resolution for .onion addresses, which are used for accessing services on the Tor network.
+// When set to "true," the browser will prevent DNS lookups for .onion domains, enhancing security and privacy by ensuring that
+// users cannot inadvertently access hidden services that may not be secure or trustworthy.
 // Options:
-// true = Block `.onion` DNS requests
-// false = Allow
+// true = Block DNS resolution for .onion addresses
+// false = Allow DNS resolution for .onion addresses
 // User preference:
 user_pref("network.dns.blockDotOnion", true);
 
-// Copies DNS request strings before calling the resolver
-// Ensures that DNS request strings are copied before being passed to the DNS resolver, 
-// which may reduce potential issues or conflicts during name resolution.
+// Controls whether the browser makes a copy of the DNS query string before making the DNS resolution call.
+// When set to "true," the browser will create a copy of the DNS query string, which can help prevent potential
+// issues related to string manipulation or modification during the DNS resolution process.
+// This setting can enhance stability and reliability in DNS operations.
 // Options:
-// true = Enable DNS request string copying
-// false = Disable
+// true = Make a copy of the DNS query string before the DNS resolution call
+// false = Do not make a copy; use the original string directly
 // User preference:
 user_pref("network.dns.copy_string_before_call", true);
 
-// Disables IPv6 DNS resolution
-// Turns off DNS resolution over IPv6, which can be useful if IPv6 connectivity 
-// is not stable or necessary in certain networks.
+// Controls whether the browser disables DNS resolution for IPv6 addresses.
+// When set to "true," the browser will not attempt to resolve DNS queries for IPv6 addresses,
+// effectively disabling IPv6 support for DNS lookups. This can be useful in environments where IPv6 is not supported
+// or causes connectivity issues. However, disabling IPv6 may limit access to resources that are only available over IPv6.
 // Options:
-// true = Disable IPv6 resolution
-// false = Enable IPv6 resolution
+// true = Disable DNS resolution for IPv6 addresses
+// false = Enable DNS resolution for IPv6 addresses
 // User preference:
 user_pref("network.dns.disableIPv6", false);
 
-// Disables DNS prefetching
-// Prefetches DNS information for links in advance to reduce load times; disabling this 
-// feature can reduce network requests and improve privacy.
+// Controls whether DNS prefetching is enabled in the browser.
+// When set to "true," the browser will disable DNS prefetching, which is a feature that allows the browser to resolve domain names
+// in advance of a user clicking on a link. This can improve page load times but may also lead to privacy concerns
+// as it can expose browsing behavior to DNS servers. Disabling prefetching can enhance privacy at the cost of potential performance benefits.
 // Options:
 // true = Disable DNS prefetching
 // false = Enable DNS prefetching
 // User preference:
 user_pref("network.dns.disablePrefetch", false);
 
-// Disables DNS prefetching for HTTPS pages
-// Controls whether DNS prefetching should be disabled specifically for HTTPS pages, 
-// which can enhance privacy by avoiding unnecessary DNS lookups on secure pages.
+// Controls whether DNS prefetching is allowed for HTTPS links in the browser.
+// When set to "true," the browser will disable DNS prefetching specifically for links that use HTTPS,
+// which can help enhance privacy by preventing the browser from resolving domain names for secure links before the user clicks on them.
+// This setting can reduce the risk of exposing browsing behavior to DNS servers, but may also impact performance
+// by delaying the resolution of secure links until they are actually accessed.
 // Options:
-// true = Disable DNS prefetching for HTTPS
-// false = Allow DNS prefetching for HTTPS
+// true = Disable DNS prefetching for HTTPS links
+// false = Enable DNS prefetching for HTTPS links
 // User preference:
 user_pref("network.dns.disablePrefetchFromHTTPS", false);
 
-// Disables DNS resolution entirely
-// Turns off DNS lookups in the browser, which can be used for privacy or testing 
-// purposes but will prevent access to websites by their domain names.
+// Controls whether DNS resolution is completely disabled in the browser.
+// When set to "true," the browser will not perform any DNS lookups, effectively disabling all DNS functionality.
+// This can be useful for testing or in environments where DNS resolution is handled externally or through alternative means.
+// However, disabling DNS will prevent the browser from resolving domain names, which can lead to connectivity issues.
 // Options:
-// true = Disable DNS resolution
+// true = Disable DNS resolution entirely
 // false = Enable DNS resolution
 // User preference:
 user_pref("network.dns.disabled", false);
@@ -3763,12 +3799,13 @@ user_pref("network.dns.disabled", false);
 // User preference:
 user_pref("network.dns.dns_query_single_label", false);
 
-// Enables Encrypted Client Hello (ECH) configuration
-// Allows the browser to use ECH, which enhances privacy by encrypting DNS request 
-// information, preventing exposure to intermediaries during the connection process.
+// Controls whether the browser enables DNS Encryption Client Hello (ECH) configuration.
+// When set to "true," the browser will support and use ECH, which enhances privacy by encrypting the DNS Client Hello message
+// sent to DNS resolvers. This helps protect user information from being exposed during the DNS resolution process.
+// Enabling ECH can improve security and privacy for users, especially in environments where DNS queries may be monitored.
 // Options:
-// true = Enable ECH
-// false = Disable ECH
+// true = Enable DNS Encryption Client Hello (ECH) configuration
+// false = Disable DNS Encryption Client Hello (ECH) configuration
 // User preference:
 user_pref("network.dns.echconfig.enabled", true);
 
@@ -3788,30 +3825,34 @@ user_pref("network.dns.echconfig.fallback_to_origin_when_all_failed", true);
 // User preference:
 user_pref("network.dns.forceResolve", "");
 
-// Forces use of HTTPS records for DNS resolution
-// Requires the browser to use HTTPS Resource Records (RR) when available, improving 
-// security by using secure DNS over HTTPS (DoH) lookups exclusively.
+// Controls whether the browser forces the use of HTTPS Resource Records (HTTPS RR) for DNS resolution.
+// When set to "true," the browser will prioritize the use of HTTPS RRs when resolving domain names,
+// which can enhance security by ensuring that DNS queries are resolved using secure methods.
+// This setting is particularly useful for domains that support HTTPS DNS resolution, providing an additional layer of security
+// against DNS spoofing and other attacks.
 // Options:
-// true = Enforce HTTPS RR
-// false = Allow other RR types
+// true = Force the use of HTTPS Resource Records for DNS resolution
+// false = Do not force the use of HTTPS Resource Records; use standard DNS resolution
 // User preference:
 user_pref("network.dns.force_use_https_rr", false);
 
-// Enables retrieval of Time-to-Live (TTL) information with DNS responses
-// Allows the browser to obtain TTL data for DNS records, helping it determine how 
-// long to cache the DNS information before refreshing it.
+// Controls whether the browser retrieves the Time-To-Live (TTL) value for DNS records.
+// When set to "true," the browser will obtain the TTL value associated with DNS records during resolution,
+// which indicates how long the record can be cached before it should be refreshed. This can help optimize DNS caching
+// behavior and improve performance by ensuring that the browser respects the TTL values provided by DNS servers.
 // Options:
-// true = Enable TTL retrieval
-// false = Disable TTL retrieval
+// true = Retrieve the TTL value for DNS records during resolution
+// false = Do not retrieve the TTL value; use default caching behavior
 // User preference:
 user_pref("network.dns.get-ttl", true);
 
-// Enables HTTP/3 compatibility for ECH configuration
-// Allows ECH settings to work with the HTTP/3 protocol, optimizing secure DNS 
-// configuration even when using newer, faster protocols.
+// Controls whether the browser enables DNS Encryption Client Hello (ECH) configuration for HTTP/3.
+// When set to "true," the browser will support and utilize ECH for DNS queries made over HTTP/3,
+// enhancing privacy by encrypting the DNS Client Hello message sent to DNS resolvers. This helps protect user information
+// from being exposed during the DNS resolution process, particularly in environments where HTTP/3 is used.
 // Options:
-// true = Enable HTTP/3 compatibility for ECH
-// false = Disable
+// true = Enable DNS Encryption Client Hello (ECH) configuration for HTTP/3
+// false = Disable DNS Encryption Client Hello (ECH) configuration for HTTP/3
 // User preference:
 user_pref("network.dns.http3_echconfig.enabled", true);
 
@@ -3821,19 +3862,21 @@ user_pref("network.dns.http3_echconfig.enabled", true);
 // User preference:
 user_pref("network.dns.httpssvc.http3_fast_fallback_timeout", 50);
 
-// Resets the DNS HTTPS exclusion list
-// Clears any exclusion list for HTTPS DNS queries, ensuring no domains are permanently 
-// excluded from DNS-over-HTTPS (DoH) resolution.
+// Controls whether the browser resets the exclusion list for DNS HTTPS service (HTTPSsvc) when the browser starts.
+// When set to "true," the browser will clear any previously defined exclusion list for DNS HTTPS service,
+// ensuring that all domains are eligible for HTTPS DNS resolution. This can be useful for maintaining a fresh state
+// and ensuring that any changes to the exclusion list are applied at the start of each session.
 // Options:
-// true = Reset the exclusion list
-// false = Do not reset
+// true = Reset the exclusion list for DNS HTTPS service on startup
+// false = Do not reset the exclusion list; retain the existing exclusions
 // User preference:
-user_pref("network.dns.httpssvc.reset_exclustion_list", true);
+user_pref("network.dns.httpssvc.reset_exclusion_list", true);
 
-// Specifies domains to be resolved only over IPv4
-// This setting allows you to define specific domains that should exclusively use 
-// IPv4 resolution, which may improve compatibility in IPv4-only environments.
-// User preference (example format: "example.org,example.com"):
+// Specifies a list of domains for which only IPv4 addresses should be used for DNS resolution.
+// When set, the browser will resolve these specified domains using only IPv4, ignoring any available IPv6 addresses.
+// This can be useful in environments where IPv6 is not supported or where specific domains are known to have issues with IPv6 resolution.
+// The value should be a comma-separated list of domain names.
+// User preference:
 user_pref("network.dns.ipv4OnlyDomains", "");
 
 // Specifies local domains for custom DNS handling
@@ -3855,47 +3898,52 @@ user_pref("network.dns.max_any_priority_threads", 24);
 // User preference:
 user_pref("network.dns.max_high_priority_threads", 40);
 
-// Mock domain for HTTPS Resource Record (RR) tests
-// Used for testing or simulation purposes to override HTTPS RR settings for a specific 
-// domain, simulating HTTPS DNS resolution behavior without affecting live settings.
-// User preference (example: "testdomain.com"):
+// Specifies a domain to be used for mocking HTTPS Resource Records (HTTPS RR) during DNS resolution.
+// When set, the browser will use this specified domain to simulate the presence of HTTPS RRs, which can be useful for testing
+// or development purposes. This allows developers to verify how their applications handle DNS queries that involve HTTPS RRs
+// without needing to rely on actual DNS infrastructure.
+// User preference:
 user_pref("network.dns.mock_HTTPS_RR_domain", "");
 
-// Determines whether the local DNS resolver treats "localhost" as native
-// When true, treats "localhost" as an internal address, useful for setups where local 
-// testing and development environments rely on "localhost" resolution.
+// Controls whether the browser treats native DNS resolution of certain domains as localhost.
+// When set to "true," the browser will consider DNS resolutions that return addresses typically associated with localhost
+// (such as 127.0.0.1 or ::1) as local, even if they are not explicitly defined in the local hosts file.
+// This can help ensure that requests to these addresses are handled as local traffic, enhancing privacy and security.
 // Options:
-// true = Treat as native
-// false = Do not treat as native
+// true = Treat native DNS resolutions of certain addresses as localhost
+// false = Do not treat native DNS resolutions as localhost; use standard resolution behavior
 // User preference:
-user_pref("network.dns.native-is-localhost", false);
+user_pref("network.dns.native-is-localhost", true);
 
-// Enables native HTTPS queries for DNS
-// Allows the DNS resolver to directly handle HTTPS queries, improving privacy and 
-// potentially bypassing intermediaries.
+// Controls whether the browser uses DNS over HTTPS (DoH) for DNS queries.
+// When set to "true," the browser will perform DNS resolution over HTTPS,
+// enhancing privacy and security by encrypting DNS requests and preventing eavesdropping
+// or tampering during the DNS resolution process.
 // Options:
-// true = Enable native HTTPS queries
-// false = Disable
+// true = Enable DNS over HTTPS (DoH) for DNS queries
+// false = Disable DNS over HTTPS (DoH) for DNS queries
 // User preference:
-user_pref("network.dns.native_https_query", false);
+user_pref("network.dns.native_https_query", true);
 
-// Allows native HTTPS queries in automated environments
-// Specifically enables native HTTPS DNS handling in automated testing environments, 
-// ensuring that DNS queries use HTTPS in CI/CD or test setups.
+// Controls whether the browser enables native DNS over HTTPS (DoH) for automated environments.
+// When set to "true," the browser will support and utilize native DoH for DNS queries
+// in automated testing or headless modes, enhancing privacy and security by encrypting
+// DNS requests even when running in automated scenarios.
 // Options:
-// true = Enable in automation
-// false = Disable in automation
+// true = Enable native DNS over HTTPS (DoH) for automated environments
+// false = Disable native DNS over HTTPS (DoH) for automated environments
 // User preference:
-user_pref("network.dns.native_https_query_in_automation", false);
+user_pref("network.dns.native_https_query_in_automation", true);
 
-// Enables native HTTPS queries on Windows 10 and later
-// Uses the native DNS resolver for HTTPS queries in Windows 10+, which can improve 
-// performance by reducing reliance on third-party DNS services.
+// Controls whether the browser uses native DNS over HTTPS (DoH) specifically for Windows 10.
+// When set to "true," the browser will perform DNS resolution using native HTTPS on Windows 10,
+// enhancing privacy and security by encrypting DNS requests and preventing eavesdropping
+// or tampering during the DNS resolution process on this operating system.
 // Options:
-// true = Enable on Windows 10+
-// false = Disable
+// true = Enable native DNS over HTTPS (DoH) for Windows 10
+// false = Disable native DNS over HTTPS (DoH) for Windows 10
 // User preference:
-user_pref("network.dns.native_https_query_win10", false);
+user_pref("network.dns.native_https_query_win10", true);
 
 // Sets the timeout for native HTTPS queries on Android (ms)
 // Configures the timeout duration in milliseconds for HTTPS DNS queries on Android 
@@ -3909,53 +3957,59 @@ user_pref("network.dns.native_https_timeout_android", 20000);
 // User preference:
 user_pref("network.dns.negative_ttl_for_type_record", 300);
 
-// Enables local DNS resolution while offline
-// Allows localhost-related DNS queries to resolve even if the network connection is 
-// offline, useful for local development or testing.
+// Controls whether the browser allows DNS resolution for localhost when offline.
+// When set to "true," the browser will still resolve DNS queries for "localhost"
+// even if there is no internet connection available. This is useful for local development
+// and testing, ensuring that requests to localhost are handled correctly regardless of
+// the network status.
 // Options:
-// true = Enable localhost resolution offline
-// false = Disable
+// true = Allow DNS resolution for localhost when offline
+// false = Do not allow DNS resolution for localhost when offline
 // User preference:
 user_pref("network.dns.offline-localhost", true);
 
-// Refreshes DNS cache only when a fresh connection is made
-// Limits DNS cache refreshes to instances where a new connection is established, which 
-// helps reduce DNS query traffic and improve efficiency.
+// Controls whether the browser refreshes DNS records only on fresh connections.
+// When set to "true," the browser will only refresh DNS records when a new connection
+// is established, rather than refreshing them periodically or on every request.
+// This can help reduce unnecessary DNS lookups and improve performance, especially
+// in scenarios where connections are reused.
 // Options:
-// true = Only refresh on new connections
-// false = Refresh more frequently
+// true = Refresh DNS records only on fresh connections
+// false = Refresh DNS records more frequently, regardless of connection status
 // User preference:
 user_pref("network.dns.only_refresh_on_fresh_connection", true);
 
-// Enables port-prefixed QNAME HTTPS Resource Record (RR) handling
-// When true, allows DNS queries to include the port in the QNAME format for HTTPS RR 
-// lookups, potentially enhancing routing and security for applications that utilize 
-// specific ports for HTTPS services.
+// Controls whether the browser uses port-prefixed QNAME for DNS over HTTPS (DoH) queries.
+// When set to "true," the browser will include the port number in the QNAME for DNS queries
+// sent over HTTPS, which can help distinguish between different services running on the same
+// domain but on different ports. This can enhance the accuracy of DNS resolution in certain
+// scenarios where multiple services are hosted on the same domain.
 // Options:
-// true = Enable port-prefixed QNAME handling
-// false = Disable
+// true = Use port-prefixed QNAME for DNS over HTTPS (DoH) queries
+// false = Do not use port-prefixed QNAME for DNS over HTTPS (DoH) queries
 // User preference:
-user_pref("network.dns.port_prefixed_qname_https_rr", false);
+user_pref("network.dns.port_prefixed_qname_https_rr", true);
 
-// Specifies preference for IPv6 over IPv4
-// Controls whether the system prioritizes IPv6 addresses when available. Setting this 
-// to true can improve connectivity for networks that support IPv6, but may introduce 
-// compatibility issues with IPv4-only services.
+// Controls whether the browser prefers IPv6 addresses over IPv4 addresses for DNS resolution.
+// When set to "true," the browser will prioritize IPv6 addresses when both IPv4 and IPv6
+// addresses are available for a given domain. This can enhance performance and support for
+// modern networking, as IPv6 is designed to replace IPv4 and offers a larger address space.
 // Options:
-// true = Prefer IPv6
-// false = Prefer IPv4
+// true = Prefer IPv6 addresses over IPv4 addresses for DNS resolution
+// false = Prefer IPv4 addresses over IPv6 addresses for DNS resolution
 // User preference:
 user_pref("network.dns.preferIPv6", false);
 
-// Controls DNS prefetching via proxy
-// When enabled, allows the use of a proxy for DNS prefetching, which can speed up 
-// web browsing by resolving domain names in advance, but may raise privacy concerns 
-// if not managed carefully.
+// Controls whether the browser allows DNS prefetching through a proxy server.
+// When set to "true," the browser will perform DNS prefetching for URLs that are
+// likely to be visited, using the configured proxy server for DNS resolution.
+// This can improve loading times for websites by resolving DNS names in advance,
+// but it may also lead to privacy concerns if the proxy server logs these requests.
 // Options:
-// true = Enable prefetch via proxy
-// false = Disable
+// true = Allow DNS prefetching via proxy
+// false = Do not allow DNS prefetching via proxy
 // User preference:
-user_pref("network.dns.prefetch_via_proxy", false);
+user_pref("network.dns.prefetch_via_proxy", true);
 
 // Sets extra idle time for DNS resolver threads (seconds)
 // Configures the additional idle time in seconds before DNS resolver threads are 
@@ -3970,22 +4024,24 @@ user_pref("network.dns.resolver-thread-extra-idle-time-seconds", 60);
 // User preference:
 user_pref("network.dns.resolver_shutdown_timeout_ms", 2000);
 
-// Enables upgrade of DNS responses with HTTPS Resource Records (RR)
-// When true, permits the use of HTTPS RR for upgrading existing DNS connections to 
-// secure ones, improving security and privacy for DNS lookups.
+// Controls whether the browser upgrades DNS queries to HTTPS when an HTTPS Resource Record (RR) is available.
+// When set to "true," the browser will attempt to upgrade DNS queries to use DNS over HTTPS (DoH)
+// if the DNS response includes an HTTPS Resource Record, enhancing privacy and security by encrypting
+// DNS requests and preventing eavesdropping or tampering during the DNS resolution process.
 // Options:
-// true = Enable upgrade with HTTPS RR
-// false = Disable
+// true = Upgrade DNS queries to HTTPS when an HTTPS Resource Record is available
+// false = Do not upgrade DNS queries to HTTPS, even if an HTTPS Resource Record is available
 // User preference:
 user_pref("network.dns.upgrade_with_https_rr", true);
 
-// Allows the use of HTTPS RR as alternative service (AltSvc)
-// Configures whether HTTPS Resource Records can be utilized for alternative service 
-// resolutions, allowing for flexible handling of service requests and improving 
-// connectivity options.
+// Controls whether the browser uses HTTPS Resource Records (RR) as alternative service (Alt-Svc) indicators.
+// When set to "true," the browser will consider HTTPS Resource Records in DNS responses as potential
+// alternative service endpoints, allowing it to connect to services over different protocols or ports
+// as specified by the DNS response. This can enhance performance by enabling the use of alternative
+// services that may be more efficient or faster.
 // Options:
-// true = Use HTTPS RR as AltSvc
-// false = Do not use
+// true = Use HTTPS Resource Records as alternative service indicators
+// false = Do not use HTTPS Resource Records as alternative service indicators
 // User preference:
 user_pref("network.dns.use_https_rr_as_altsvc", true);
 
@@ -4008,21 +4064,24 @@ user_pref("network.dnsCacheExpiration", 60);
 // User preference:
 user_pref("network.dnsCacheExpirationGracePeriod", 60);
 
-// Enables early hints for resource loading
-// When enabled, allows the server to send early hints for resources that may be needed 
-// for a page, potentially improving loading speed and user experience.
+// Controls whether the browser supports Early Hints (HTTP Status Code 103).
+// When set to "true," the browser will enable support for Early Hints, allowing servers
+// to send hints to the browser about resources that may be needed for a page before the
+// final response is sent. This can improve loading times by allowing the browser to start
+// fetching resources earlier in the page load process.
 // Options:
-// true = Enable early hints
-// false = Disable
+// true = Enable support for Early Hints (HTTP 103)
+// false = Disable support for Early Hints (HTTP 103)
 // User preference:
 user_pref("network.early-hints.enabled", true);
 
-// Enables early hints over HTTP/1.1
-// Configures support for early hints when using HTTP/1.1, facilitating improved 
-// performance by pre-loading certain resources.
+// Controls whether the browser supports Early Hints (HTTP Status Code 103) over HTTP/1.1.
+// When set to "true," the browser will enable support for receiving Early Hints from servers
+// that communicate using the HTTP/1.1 protocol. This allows the browser to start fetching
+// resources earlier in the page load process, even when the server does not support HTTP/2 or HTTP/3.
 // Options:
-// true = Enable early hints over HTTP/1.1
-// false = Disable
+// true = Enable support for Early Hints over HTTP/1.1
+// false = Disable support for Early Hints over HTTP/1.1
 // User preference:
 user_pref("network.early-hints.over-http-v1-1.enabled", true);
 
@@ -4033,13 +4092,13 @@ user_pref("network.early-hints.over-http-v1-1.enabled", true);
 // User preference:
 user_pref("network.early-hints.parent-connect-timeout", 10000);
 
-// Enables preconnecting to resources for early hints
-// When true, allows the browser to pre-establish connections to resources that are 
-// hinted by the server, potentially improving page load performance by reducing 
-// connection time when the resource is needed.
+// Controls whether the browser supports preconnecting to origins based on Early Hints (HTTP Status Code 103).
+// When set to "true," the browser will initiate preconnections to specified origins as indicated by
+// Early Hints from the server. This allows the browser to establish connections to resources before
+// they are actually needed, potentially improving loading times for web pages.
 // Options:
-// true = Enable preconnect for early hints
-// false = Disable
+// true = Enable preconnecting to origins based on Early Hints
+// false = Disable preconnecting to origins based on Early Hints
 // User preference:
 user_pref("network.early-hints.preconnect.enabled", true);
 
@@ -4050,33 +4109,34 @@ user_pref("network.early-hints.preconnect.enabled", true);
 // User preference:
 user_pref("network.early-hints.preconnect.max_connections", 10);
 
-// Enables cache partitioning for cross-origin fetch requests
-// When enabled, ensures that cached resources are partitioned based on their 
-// origin, improving privacy and security by preventing cross-origin data leakage 
-// during fetch operations.
+// Controls whether the browser partitions the cache for cross-origin fetch requests.
+// When set to "true," the browser will create separate cache entries for fetch requests
+// made to different origins, preventing cross-origin data from being shared. This enhances
+// privacy by ensuring that resources fetched from different origins do not interfere with
+// each other's cache entries.
 // Options:
-// true = Enable cache partitioning for cross-origin
-// false = Disable
+// true = Enable cache partitioning for cross-origin fetch requests
+// false = Disable cache partitioning for cross-origin fetch requests
 // User preference:
 user_pref("network.fetch.cache_partition_cross_origin", true);
 
-// Configures fetch API to omit credentials by default
-// When true, specifies that the fetch API will not include credentials (such as 
-// cookies or HTTP authentication) in requests by default, which can enhance 
-// security but may require adjustments for certain sites.
+// Controls whether the browser defaults to omitting credentials in fetch requests.
+// When set to "true," the browser will not include credentials (such as cookies, HTTP authentication,
+// or client-side SSL certificates) in fetch requests by default. This can enhance privacy and security
+// by preventing unintended credential exposure when making cross-origin requests.
 // Options:
-// true = Omit credentials by default
-// false = Include credentials by default
+// true = Default to omitting credentials in fetch requests
+// false = Include credentials in fetch requests by default
 // User preference:
 user_pref("network.fetch.systemDefaultsToOmittingCredentials", true);
 
-// Adjusts urgency for fetch priority
-// When enabled, allows the system to modify the urgency level of fetch requests 
-// based on their context, improving the responsiveness of network operations and 
-// resource loading.
+// Controls whether the browser adjusts the urgency of fetch requests based on their priority.
+// When set to "true," the browser will modify the urgency of fetch requests according to their
+// specified priority levels, allowing for more efficient resource loading and better performance
+// by ensuring that higher-priority requests are processed first.
 // Options:
-// true = Adjust urgency
-// false = Do not adjust
+// true = Enable adjustment of fetch request urgency based on priority
+// false = Disable adjustment of fetch request urgency based on priority
 // User preference:
 user_pref("network.fetchpriority.adjust_urgency", true);
 
@@ -4317,9 +4377,13 @@ user_pref("network.fetchpriority.adjustments.script-in-head.high", -10);
 // User preference:
 user_pref("network.fetchpriority.adjustments.script-in-head.low", 10);
 
-// Enables fetch priority adjustments
-// Controls whether fetch priority adjustments are enabled, allowing the browser to 
-// optimize resource loading based on specified priority rules.
+// Controls whether the browser supports fetch priority for resource loading.
+// When set to "true," the browser will enable the use of fetch priority, allowing developers
+// to specify the priority of fetch requests. This can help optimize resource loading by
+// ensuring that higher-priority requests are processed before lower-priority ones.
+// Options:
+// true = Enable fetch priority for resource loading
+// false = Disable fetch priority for resource loading
 // User preference:
 user_pref("network.fetchpriority.enabled", true);
 
@@ -4329,66 +4393,102 @@ user_pref("network.fetchpriority.enabled", true);
 // User preference:
 user_pref("network.generic-ntlm-auth.workstation", "WORKSTATION");
 
-// Sets the HTTP Accept header
-// Configures the Accept HTTP header, which tells the server which content types 
-// the client can understand, affecting how responses are formatted by the server.
+// Controls the value of the "Accept" HTTP header sent by the browser in requests.
+// This header indicates the media types that the browser is willing to accept from the server.
+// When set, it can help the server determine the appropriate content type to return.
+// The default value typically includes a list of common media types, such as:
+// "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+// Options:
+// The value can be customized to specify different media types as needed.
 // User preference:
 user_pref("network.http.accept", "");
 
-// Specifies the HTTP Accept-Encoding header for requests
-// Configures the Accept-Encoding HTTP header, indicating the content-encoding 
-// methods (like gzip and deflate) that the client supports, allowing the server 
-// to compress responses accordingly.
+// Controls the value of the "Accept-Encoding" HTTP header sent by the browser in requests.
+// This header indicates the content-encoding methods that the browser supports and is willing to accept
+// from the server. Common encodings include gzip, deflate, and br (Brotli).
+// The default value typically includes:
+// "gzip, deflate, br"
+// Options:
+// The value can be customized to specify different encoding methods as needed.
 // User preference:
-user_pref("network.http.accept-encoding", "gzip, deflate");
+user_pref("network.http.accept-encoding", "gzip, deflate, br");
 
-// Specifies the HTTP Accept-Encoding header for secure requests
-// Configures the Accept-Encoding HTTP header for secure (HTTPS) requests, 
-// indicating additional compression methods (like br for Brotli and zstd) that 
-// the client can handle, optimizing data transfer over secure connections.
+// Controls the value of the "Accept-Encoding" HTTP header sent by the browser in secure (HTTPS) requests.
+// This header indicates the content-encoding methods that the browser supports and is willing to accept
+// from the server specifically for secure connections. Common encodings include gzip, deflate, and br (Brotli).
+// The default value typically includes:
+// "gzip, deflate, br"
+// Options:
+// The value can be customized to specify different encoding methods as needed for secure requests.
 // User preference:
 user_pref("network.http.accept-encoding.secure", "gzip, deflate, br, zstd");
 
-// Includes images in the Accept header
-// Controls whether image types are included in the Accept HTTP header sent to 
-// the server, affecting how the server responds with images and other resources.
+// Controls whether the browser includes images in the "Accept" HTTP header sent in requests.
+// When set to "true," the browser will include image content types (such as image/png, image/jpeg)
+// in the "Accept" header, indicating to the server that it can return images as part of the response.
+// Options:
+// true = Include images in the "Accept" header
+// false = Do not include images in the "Accept" header
 // User preference:
-user_pref("network.http.accept_include_images", false);
+user_pref("network.http.accept_include_images", true);
 
-// Enables active tab priority for HTTP requests
-// Controls whether HTTP requests from the currently active tab are prioritized 
-// over those from background tabs, enhancing the perceived performance of the 
-// active tab's content loading.
+// Controls whether the browser prioritizes network requests from the active tab.
+// When set to "true," the browser will give higher priority to network requests originating
+// from the currently active tab, ensuring that resources for the active tab load faster
+// compared to those from background tabs. This can enhance the user experience by reducing
+// loading times for the tab that the user is currently interacting with.
+// Options:
+// true = Enable active tab priority for network requests
+// false = Disable active tab priority for network requests
 // User preference:
 user_pref("network.http.active_tab_priority", true);
 
-// Enables ALTSVC (Alternative Services) support
-// Configures whether the ALTSVC HTTP/2 feature is enabled, allowing a server 
-// to specify alternative connection options to improve load balancing and 
-// performance.
+
+
+
+
+
+// Controls whether the browser supports Alternative Services (Alt-Svc) for HTTP requests.
+// When set to "true," the browser will enable the use of the Alt-Svc HTTP header, which allows
+// servers to indicate that a resource can be accessed using a different protocol or port.
+// This can improve performance by enabling the browser to connect to alternative services
+// that may be more efficient or faster than the original request.
+// Options:
+// true = Enable support for Alternative Services (Alt-Svc)
+// false = Disable support for Alternative Services (Alt-Svc)
 // User preference:
 user_pref("network.http.altsvc.enabled", true);
 
-// Disables ALTSVC origin error checking
-// Controls whether to perform origin error checking for ALTSVC, which can 
-// help ensure that the alternative service is from the expected origin, 
-// increasing security. 
+// Controls whether the browser uses the Alt-Svc (Alternative Services) HTTP header for origin-encoded (OE) requests.
+// When set to "true," the browser will enable the use of Alt-Svc for requests that are origin-encoded,
+// allowing it to connect to alternative services specified by the server for those requests.
+// This can enhance performance by enabling the browser to utilize more efficient protocols or ports
+// for resources that are served from the same origin.
+// Options:
+// true = Enable Alt-Svc for origin-encoded requests
+// false = Disable Alt-Svc for origin-encoded requests
 // User preference:
-user_pref("network.http.altsvc.oe", false);
+user_pref("network.http.altsvc.oe", true);
 
-// Enables proxy checks for ALTSVC
-// Configures whether to check the proxy settings before using ALTSVC, 
-// ensuring that alternative services are compatible with the current proxy 
-// configuration.
+// Controls whether the browser performs proxy checks for Alternative Services (Alt-Svc).
+// When set to "true," the browser will check if the alternative service specified in the
+// Alt-Svc header is accessible through the configured proxy settings. This ensures that
+// the browser can successfully connect to the alternative service when using a proxy.
+// Options:
+// true = Enable proxy checks for Alternative Services (Alt-Svc)
+// false = Disable proxy checks for Alternative Services (Alt-Svc)
 // User preference:
 user_pref("network.http.altsvc.proxy_checks", true);
 
-// Enforces HTTP association requests
-// Controls whether to enforce the association request policy, which governs 
-// how clients request related resources, potentially improving the efficiency 
-// of resource loading.
+// Controls whether the browser enforces the use of associated requests for HTTP/2 and HTTP/3.
+// When set to "true," the browser will enforce the use of associated requests, which allows
+// multiple requests to be sent together in a single HTTP/2 or HTTP/3 connection. This can
+// improve performance by reducing latency and optimizing resource loading.
+// Options:
+// true = Enforce the use of associated requests for HTTP/2 and HTTP/3
+// false = Do not enforce associated requests for HTTP/2 and HTTP/3
 // User preference:
-user_pref("network.http.assoc-req.enforce", false);
+user_pref("network.http.assoc-req.enforce", true);
 
 // Sets the timeout for retrying HTTP connections
 // Configures the timeout duration (in milliseconds) for retrying failed HTTP 
@@ -4404,16 +4504,22 @@ user_pref("network.http.connection-retry-timeout", 250);
 // User preference:
 user_pref("network.http.connection-timeout", 90);
 
-// Specifies the default socket type for HTTP connections
-// Allows the specification of the default socket type used for HTTP connections, 
-// affecting how the network stack manages connections.
+// Controls the default socket type used for HTTP connections.
+// This setting determines whether the browser uses a plain socket (for HTTP) or a secure socket (for HTTPS)
+// when establishing connections. The value can typically be set to either "default" or "ssl".
+// Options:
+// "default" = Use plain sockets for HTTP connections
+// "ssl" = Use secure sockets for HTTPS connections
 // User preference:
 user_pref("network.http.default-socket-type", "");
 
-// Enables HTTP diagnostics
-// Controls whether HTTP diagnostic features are enabled, which can assist 
-// developers in troubleshooting network issues by providing detailed 
-// connection information.
+// Controls whether the browser enables diagnostic logging for HTTP requests.
+// When set to "true," the browser will log detailed information about HTTP requests and responses,
+// which can be useful for debugging and troubleshooting network issues. This may include information
+// such as request headers, response headers, and timing information.
+// Options:
+// true = Enable HTTP diagnostics logging
+// false = Disable HTTP diagnostics logging
 // User preference:
 user_pref("network.http.diagnostics", false);
 
@@ -4426,13 +4532,13 @@ user_pref("network.http.diagnostics", false);
 // User preference:
 user_pref("network.http.digest_auth_cnonce_length", 16);
 
-// Disables early data on HTTP/3 connections upon errors
-// Controls whether to disable the use of early data in HTTP/3 connections 
-// if an error occurs, improving security by preventing potential issues with 
-// request processing during early data transmissions.
+// Controls whether the browser disables the use of early data in HTTP/3 connections upon encountering an error.
+// When set to "true," the browser will stop using early data for HTTP/3 requests if an error occurs during
+// the connection process. This can help prevent issues related to sending data prematurely before the connection
+// is fully established and secure.
 // Options:
-// true = Disable early data on error
-// false = Allow early data even if errors occur
+// true = Disable early data on error for HTTP/3 connections
+// false = Continue using early data even if an error occurs
 // User preference:
 user_pref("network.http.early_data_disable_on_error", true);
 
@@ -4445,42 +4551,43 @@ user_pref("network.http.early_data_disable_on_error", true);
 // User preference:
 user_pref("network.http.early_data_max_error", 5);
 
-// Trusts HTTP encoding when using HTTPS
-// Controls whether HTTP encoding (e.g., content encoding like gzip) is considered 
-// trustworthy only when using HTTPS, ensuring that potentially unsafe encodings 
-// are not accepted over insecure connections.
+// Controls whether the browser treats the "trustworthy" encoding for HTTP requests as secure when using HTTPS.
+// When set to "true," the browser will consider the encoding of requests made over HTTPS as trustworthy,
+// allowing for certain optimizations or behaviors that may not be applied to non-secure requests.
 // Options:
-// true = Trust HTTP encodings only over HTTPS
-// false = Trust HTTP encodings regardless of the protocol
+// true = Treat HTTPS request encoding as trustworthy
+// false = Do not treat HTTPS request encoding as trustworthy
 // User preference:
 user_pref("network.http.encoding.trustworthy_is_https", true);
 
-// Enforces framing rules for HTTP/1.1 connections
-// Configures the enforcement of framing rules for HTTP/1.1 connections, 
-// which can impact how data is framed and processed between client and server.
+// Controls whether the browser enforces framing for HTTP/1.1 requests.
+// When set to "true," the browser will enforce the use of framing for HTTP/1.1 connections,
+// which can help ensure that responses are properly framed and processed according to the HTTP/1.1 specification.
+// This can improve compatibility with servers that expect framed responses.
 // Options:
-// true = Enforce strict framing rules
-// false = Do not enforce strict framing rules
+// true = Enforce framing for HTTP/1.1 requests
+// false = Do not enforce framing for HTTP/1.1 requests
 // User preference:
-user_pref("network.http.enforce-framing.http1", false);
+user_pref("network.http.enforce-framing.http1", true);
 
-// Allows soft framing enforcement for HTTP connections
-// Configures whether to apply soft framing rules, which are less strict than 
-// hard enforcement, allowing for more flexible handling of HTTP framing while 
-// still maintaining some level of compliance.
+// Controls whether the browser enforces soft framing for HTTP/1.1 requests.
+// When set to "true," the browser will apply soft framing rules for HTTP/1.1 connections,
+// which allows for more lenient handling of framing issues. This can help improve compatibility
+// with servers that may not strictly adhere to the HTTP/1.1 specification while still attempting
+// to maintain proper framing behavior.
 // Options:
-// true = Apply soft framing rules
-// false = Do not apply soft framing rules
+// true = Enable soft framing enforcement for HTTP/1.1 requests
+// false = Disable soft framing enforcement for HTTP/1.1 requests
 // User preference:
 user_pref("network.http.enforce-framing.soft", true);
 
-// Enforces strict chunked encoding for HTTP connections
-// Controls whether strict chunked encoding rules are enforced in HTTP responses, 
-// which can ensure that data is properly chunked for transmission and enhance 
-// compatibility with various clients and servers.
+// Controls whether the browser enforces strict chunked encoding for HTTP/1.1 requests.
+// When set to "true," the browser will enforce strict adherence to the chunked transfer encoding
+// rules as defined in the HTTP/1.1 specification. This means that the browser will expect chunked
+// responses to be formatted correctly and will reject responses that do not comply with the standard.
 // Options:
-// true = Enforce strict chunked encoding
-// false = Do not enforce strict chunked encoding
+// true = Enforce strict chunked encoding for HTTP/1.1 requests
+// false = Do not enforce strict chunked encoding for HTTP/1.1 requests
 // User preference:
 user_pref("network.http.enforce-framing.strict_chunked_encoding", true);
 
@@ -4493,15 +4600,47 @@ user_pref("network.http.enforce-framing.strict_chunked_encoding", true);
 // User preference:
 user_pref("network.http.fallback-connection-timeout", 5);
 
-// Enables fast fallback to IPv4 connections
-// Controls whether the client should quickly switch to IPv4 connections 
-// when IPv6 connectivity issues are detected, enhancing the likelihood of 
-// establishing successful connections in dual-stack environments.
+// Controls whether the browser quickly falls back to IPv4 when IPv6 connections fail.
+// When set to "true," the browser will attempt to connect using IPv6 first, and if that fails,
+// it will quickly fall back to using IPv4. This can improve connection times in environments where
+// IPv6 is not fully supported or operational.
 // Options:
-// true = Enable fast fallback to IPv4
-// false = Do not enable fast fallback to IPv4
+// true = Enable fast fallback to IPv4 when IPv6 connections fail
+// false = Do not enable fast fallback to IPv4; the browser will wait longer before trying IPv4
 // User preference:
 user_pref("network.http.fast-fallback-to-IPv4", true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Sets the ratio of transactions for the focused window
 // Configures the transaction ratio for HTTP requests originating from the 
