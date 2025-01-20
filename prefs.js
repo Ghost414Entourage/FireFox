@@ -2975,20 +2975,14 @@ user_pref("extensions.startupScanScopes", 0);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Controls whether the Narrate feature, which provides text-to-speech functionality for web content, is enabled.
+// When set to "true," the Narrate feature is active, allowing users to listen to the text on web pages.
+// This can enhance accessibility for users with visual impairments or those who prefer auditory feedback.
+// Options:
+// true = Enable the Narrate feature for text-to-speech functionality
+// false = Disable the Narrate feature
+// User preference:
+user_pref("narrate.enabled", true);
 
 
 
