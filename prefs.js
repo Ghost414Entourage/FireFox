@@ -4443,11 +4443,6 @@ user_pref("network.http.accept_include_images", true);
 // User preference:
 user_pref("network.http.active_tab_priority", true);
 
-
-
-
-
-
 // Controls whether the browser supports Alternative Services (Alt-Svc) for HTTP requests.
 // When set to "true," the browser will enable the use of the Alt-Svc HTTP header, which allows
 // servers to indicate that a resource can be accessed using a different protocol or port.
