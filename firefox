@@ -236,10 +236,9 @@ user_pref("dom.cookieStore.enabled", false);
 user_pref("cookiebanners.cookieInjector.defaultExpiryRelative", 0);
 user_pref("dom.cookieStore.manager.enabled", false);
 user_pref("dom.cookieStore.extra.enabled", false);
-user_pref("network.cookie.cookieBehavior", 1);
 user_pref("network.cookie.cookieBehavior.pbmode", 1);
 user_pref("network.cookie.cookieBehavior.optInPartitioning", false);
-
+user_pref("network.cookie.skip_browsing_context_check_in_parent_for_testing", false);
 
 
 // --- Group 21 ---
@@ -258,5 +257,4 @@ user_pref("network.cookie.block_nameless_with_equal_char", true);
 
 
 // --- Group 22 ---
-user_pref("network.cookie.skip_browsing_context_check_in_parent_for_testing", false);
 user_pref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
