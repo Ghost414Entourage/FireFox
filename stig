@@ -1,0 +1,22 @@
+sudo defaults write /Library/Preferences/org.mozilla.firefox EnterprisePoliciesEnabled -bool TRUE && sudo defaults write /Library/Preferences/org.mozilla.firefox SSLVersionMin -string "tls1.2"
+
+
+defaults read /Library/Preferences/org.mozilla.firefox
+
+
+
+
+sudo defaults write /Library/Preferences/org.mozilla.firefox NewTabPage -bool FALSE
+
+
+
+sudo defaults write /Library/Preferences/org.mozilla.firefox SSLVersionMin -string "tls1.2"
+
+
+sudo defaults write /Library/Preferences/org.mozilla.firefox SSLVersionMin -string "tls1.3"
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences dict" -c "Add :Preferences:security.default_personal_cert dict" -c "Add :Preferences:security.default_personal_cert:Value string 'Ask Every Time'" -c "Add :Preferences:security.default_personal_cert:Status string 'locked'" /Library/Preferences/org.mozilla.firefox.plist
+
+
