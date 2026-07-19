@@ -20,3 +20,499 @@ sudo defaults write /Library/Preferences/org.mozilla.firefox SSLVersionMin -stri
 sudo /usr/libexec/PlistBuddy -c "Add :Preferences dict" -c "Add :Preferences:security.default_personal_cert dict" -c "Add :Preferences:security.default_personal_cert:Value string 'Ask Every Time'" -c "Add :Preferences:security.default_personal_cert:Status string 'locked'" /Library/Preferences/org.mozilla.firefox.plist
 
 
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.search.update dict" -c "Add :Preferences:browser.search.update:Value bool false" -c "Add :Preferences:browser.search.update:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :ExtensionUpdate bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableFormHistory bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :PasswordManagerEnabled bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :PopupBlocking dict" -c "Add :PopupBlocking:Default bool true" -c "Add :PopupBlocking:Locked bool true" -c "Add :PopupBlocking:Allow array" -c "Add :PopupBlocking:Allow:0 string 'http://example.mil'" -c "Add :PopupBlocking:Allow:1 string 'http://example.gov'" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.disable_window_move_resize dict" -c "Add :Preferences:dom.disable_window_move_resize:Value bool true" -c "Add :Preferences:dom.disable_window_move_resize:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.disable_window_flip dict" -c "Add :Preferences:dom.disable_window_flip:Value bool true" -c "Add :Preferences:dom.disable_window_flip:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :InstallAddonsPermission dict" -c "Add :InstallAddonsPermission:Default bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableTelemetry bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableDeveloperTools bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableForgetButton bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisablePrivateBrowsing bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :DisableForgetButton bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :SearchSuggestEnabled bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Permissions dict" -c "Add :Permissions:Autoplay dict" -c "Add :Permissions:Autoplay:Default string 'block-audio-video'" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :NetworkPrediction bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :EnableTrackingProtection dict" -c "Add :EnableTrackingProtection:Fingerprinting bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :EnableTrackingProtection:Cryptomining bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.contentblocking.category dict" -c "Add :Preferences:browser.contentblocking.category:Value string strict" -c "Add :Preferences:browser.contentblocking.category:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:extensions.htmlaboutaddons.recommendations.enabled dict" -c "Add :Preferences:extensions.htmlaboutaddons.recommendations.enabled:Value bool false" -c "Add :Preferences:extensions.htmlaboutaddons.recommendations.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisabledCiphers dict" -c "Add :DisabledCiphers:TLS_RSA_WITH_3DES_EDE_CBC_SHA bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :UserMessaging dict" -c "Add :UserMessaging:ExtensionRecommendations bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :FirefoxHome dict" \
+-c "Add :FirefoxHome:Search bool false" \
+-c "Add :FirefoxHome:TopSites bool false" \
+-c "Add :FirefoxHome:SponsoredTopSites bool false" \
+-c "Add :FirefoxHome:Pocket bool false" \
+-c "Add :FirefoxHome:SponsoredPocket bool false" \
+-c "Add :FirefoxHome:Highlights bool false" \
+-c "Add :FirefoxHome:Snippets bool false" \
+-c "Add :FirefoxHome:Locked bool true" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :DNSOverHTTPS dict" -c "Add :DNSOverHTTPS:Enabled bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableFirefoxAccounts bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableFeedbackCommands bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :EncryptedMediaExtensions dict" -c "Add :EncryptedMediaExtensions:Enabled bool false" -c "Add :EncryptedMediaExtensions:Locked bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown dict" \
+-c "Add :SanitizeOnShutdown:Cache bool false" \
+-c "Add :SanitizeOnShutdown:Cookies bool false" \
+-c "Add :SanitizeOnShutdown:Downloads bool false" \
+-c "Add :SanitizeOnShutdown:FormData bool false" \
+-c "Add :SanitizeOnShutdown:History bool false" \
+-c "Add :SanitizeOnShutdown:Sessions bool false" \
+-c "Add :SanitizeOnShutdown:SiteSettings bool false" \
+-c "Add :SanitizeOnShutdown:OfflineApps bool false" \
+-c "Add :SanitizeOnShutdown:Locked bool true" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :DisableFirefoxStudies bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Homepage dict" \
+-c "Add :Homepage:URL string about:blank" \
+-c "Add :Homepage:Locked bool true" \
+-c "Add :Homepage:StartPage string homepage" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:security.OCSP.require dict" -c "Add :Preferences:security.OCSP.require:Value bool true" -c "Add :Preferences:security.OCSP.require:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy \
+-c "Add :Preferences:toolkit.telemetry.enabled dict" \
+-c "Add :Preferences:toolkit.telemetry.enabled:Value bool false" \
+-c "Add :Preferences:toolkit.telemetry.enabled:Status string locked" \
+-c "Add :Preferences:toolkit.telemetry.unified dict" \
+-c "Add :Preferences:toolkit.telemetry.unified:Value bool false" \
+-c "Add :Preferences:toolkit.telemetry.unified:Status string locked" \
+-c "Add :Preferences:datareporting.policy.dataSubmissionEnabled dict" \
+-c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Value bool false" \
+-c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Status string locked" \
+-c "Add :Preferences:browser.newtabpage.activity-stream.telemetry dict" \
+-c "Add :Preferences:browser.newtabpage.activity-stream.telemetry:Value bool false" \
+-c "Add :Preferences:browser.newtabpage.activity-stream.telemetry:Status string locked" \
+-c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry dict" \
+-c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry:Value bool false" \
+-c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry:Status string locked" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.enabled dict" -c "Add :Preferences:toolkit.telemetry.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.unified dict" -c "Add :Preferences:toolkit.telemetry.unified:Value bool false" -c "Add :Preferences:toolkit.telemetry.unified:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled dict" -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Value bool false" -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry dict" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry:Value bool false" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry dict" -c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry:Value bool false" -c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:geo.enabled dict" -c "Add :Preferences:geo.enabled:Value bool false" -c "Add :Preferences:geo.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.sanitize.sanitizeOnShutdown dict" -c "Add :Preferences:privacy.sanitize.sanitizeOnShutdown:Value bool true" -c "Add :Preferences:privacy.sanitize.sanitizeOnShutdown:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.cache dict" -c "Add :Preferences:privacy.clearOnShutdown.cache:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.cache:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.cookies dict" -c "Add :Preferences:privacy.clearOnShutdown.cookies:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.cookies:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.downloads dict" -c "Add :Preferences:privacy.clearOnShutdown.downloads:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.downloads:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.formdata dict" -c "Add :Preferences:privacy.clearOnShutdown.formdata:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.formdata:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.history dict" -c "Add :Preferences:privacy.clearOnShutdown.history:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.history:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.offlineApps dict" -c "Add :Preferences:privacy.clearOnShutdown.offlineApps:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.offlineApps:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.sessions dict" -c "Add :Preferences:privacy.clearOnShutdown.sessions:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.sessions:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.openWindows dict" -c "Add :Preferences:privacy.clearOnShutdown.openWindows:Value bool true" -c "Add :Preferences:privacy.clearOnShutdown.openWindows:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Cache bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Cookies bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Downloads bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:FormData bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:History bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:OfflineApps bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Sessions bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:SiteSettings bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Cache bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Cookies bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Downloads bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:FormData bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:History bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:OfflineApps bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Sessions bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:SiteSettings bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+# 1. Erase the existing root-level SanitizeOnShutdown dictionary completely
+sudo /usr/libexec/PlistBuddy -c "Delete :SanitizeOnShutdown" /Library/Preferences/org.mozilla.firefox.plist
+
+# 2. Re-create the empty dictionary container at the root level
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown dict" /Library/Preferences/org.mozilla.firefox.plist
+
+# 3. Add all internal properties fresh as strict boolean true values
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:Cache bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:Cookies bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:Downloads bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:FormData bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:History bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:OfflineApps bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:Sessions bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:SiteSettings bool true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Add :SanitizeOnShutdown:Locked bool true" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.offlineApps dict" -c "Add :Preferences:privacy.cpd.offlineApps:Value bool true" -c "Add :Preferences:privacy.cpd.offlineApps:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.cache dict" -c "Add :Preferences:privacy.cpd.cache:Value bool true" -c "Add :Preferences:privacy.cpd.cache:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.cookies dict" -c "Add :Preferences:privacy.cpd.cookies:Value bool true" -c "Add :Preferences:privacy.cpd.cookies:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.downloads dict" -c "Add :Preferences:privacy.cpd.downloads:Value bool true" -c "Add :Preferences:privacy.cpd.downloads:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.formdata dict" -c "Add :Preferences:privacy.cpd.formdata:Value bool true" -c "Add :Preferences:privacy.cpd.formdata:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.history dict" -c "Add :Preferences:privacy.cpd.history:Value bool true" -c "Add :Preferences:privacy.cpd.history:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.cpd.sessions dict" -c "Add :Preferences:privacy.cpd.sessions:Value bool true" -c "Add :Preferences:privacy.cpd.sessions:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:places.history.enabled dict" -c "Add :Preferences:places.history.enabled:Value bool false" -c "Add :Preferences:places.history.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.sessionstore.max_tabs_undo dict" -c "Add :Preferences:browser.sessionstore.max_tabs_undo:Value integer 0" -c "Add :Preferences:browser.sessionstore.max_tabs_undo:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.cache.disk.enable dict" -c "Add :Preferences:browser.cache.disk.enable:Value bool false" -c "Add :Preferences:browser.cache.disk.enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.cache.disk_cache_ssl dict" -c "Add :Preferences:browser.cache.disk_cache_ssl:Value bool false" -c "Add :Preferences:browser.cache.disk_cache_ssl:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.download.manager.retention dict" -c "Add :Preferences:browser.download.manager.retention:Value integer 0" -c "Add :Preferences:browser.download.manager.retention:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:signon.rememberSignons dict" -c "Add :Preferences:signon.rememberSignons:Value bool false" -c "Add :Preferences:signon.rememberSignons:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.formfill.enable dict" -c "Add :Preferences:browser.formfill.enable:Value bool false" -c "Add :Preferences:browser.formfill.enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:network.cookie.lifetimePolicy dict" -c "Add :Preferences:network.cookie.lifetimePolicy:Value integer 2" -c "Add :Preferences:network.cookie.lifetimePolicy:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:security.cert_pinning.enforcement_level dict" -c "Add :Preferences:security.cert_pinning.enforcement_level:Value integer 2" -c "Add :Preferences:security.cert_pinning.enforcement_level:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.enabled dict" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.enabled:Value bool false" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled dict" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled:Value bool false" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtabPing.enabled dict" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtabPing.enabled:Value bool false" -c "Add :Preferences:browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtabPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.cachedClientID dict" -c "Add :Preferences:toolkit.telemetry.cachedClientID:Value string ''" -c "Add :Preferences:toolkit.telemetry.cachedClientID:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Delete :Preferences:toolkit.telemetry.cachedClientID" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.cachedClientID dict" -c "Add :Preferences:toolkit.telemetry.cachedClientID:Value string 'blank'" -c "Add :Preferences:toolkit.telemetry.cachedClientID:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy \
+-c "Add :Preferences:dom.gamepad.enabled dict" -c "Add :Preferences:dom.gamepad.enabled:Value bool false" -c "Add :Preferences:dom.gamepad.enabled:Status string locked" \
+-c "Add :Preferences:dom.gamepad.non_standard_events.enabled dict" -c "Add :Preferences:dom.gamepad.non_standard_events.enabled:Value bool false" -c "Add :Preferences:dom.gamepad.non_standard_events.enabled:Status string locked" \
+-c "Add :Preferences:dom.imagecapture.enabled dict" -c "Add :Preferences:dom.imagecapture.enabled:Value bool false" -c "Add :Preferences:dom.imagecapture.enabled:Status string locked" \
+-c "Add :Preferences:dom.presentation.discoverable dict" -c "Add :Preferences:dom.presentation.discoverable:Value bool false" -c "Add :Preferences:dom.presentation.discoverable:Status string locked" \
+-c "Add :Preferences:dom.presentation.discovery.enabled dict" -c "Add :Preferences:dom.presentation.discovery.enabled:Value bool false" -c "Add :Preferences:dom.presentation.discovery.enabled:Status string locked" \
+-c "Add :Preferences:dom.presentation.enabled dict" -c "Add :Preferences:dom.presentation.enabled:Value bool false" -c "Add :Preferences:dom.presentation.enabled:Status string locked" \
+-c "Add :Preferences:dom.presentation.tcp_server.debug dict" -c "Add :Preferences:dom.presentation.tcp_server.debug:Value bool false" -c "Add :Preferences:dom.presentation.tcp_server.debug:Status string locked" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy \
+-c "Add :Preferences:media.getusermedia.aec_enabled dict" -c "Add :Preferences:media.getusermedia.aec_enabled:Value bool false" -c "Add :Preferences:media.getusermedia.aec_enabled:Status string locked" \
+-c "Add :Preferences:media.getusermedia.audiocapture.enabled dict" -c "Add :Preferences:media.getusermedia.audiocapture.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.audiocapture.enabled:Status string locked" \
+-c "Add :Preferences:media.getusermedia.browser.enabled dict" -c "Add :Preferences:media.getusermedia.browser.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.browser.enabled:Status string locked" \
+-c "Add :Preferences:media.getusermedia.noise_enabled dict" -c "Add :Preferences:media.getusermedia.noise_enabled:Value bool false" -c "Add :Preferences:media.getusermedia.noise_enabled:Status string locked" \
+-c "Add :Preferences:media.getusermedia.screensharing.enabled dict" -c "Add :Preferences:media.getusermedia.screensharing.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.screensharing.enabled:Status string locked" \
+-c "Add :Preferences:media.navigator.enabled dict" -c "Add :Preferences:media.navigator.enabled:Value bool false" -c "Add :Preferences:media.navigator.enabled:Status string locked" \
+-c "Add :Preferences:media.navigator.video.enabled dict" -c "Add :Preferences:media.navigator.video.enabled:Value bool false" -c "Add :Preferences:media.navigator.video.enabled:Status string locked" \
+-c "Add :Preferences:media.navigator.permission.disabled dict" -c "Add :Preferences:media.navigator.permission.disabled:Value bool true" -c "Add :Preferences:media.navigator.permission.disabled:Status string locked" \
+-c "Add :Preferences:media.video_stats.enabled dict" -c "Add :Preferences:media.video_stats.enabled:Value bool false" -c "Add :Preferences:media.video_stats.enabled:Status string locked" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy \
+-c "Add :Preferences:dom.battery.enabled dict" -c "Add :Preferences:dom.battery.enabled:Value bool false" -c "Add :Preferences:dom.battery.enabled:Status string locked" \
+-c "Add :Preferences:dom.vibrator.enabled dict" -c "Add :Preferences:dom.vibrator.enabled:Value bool false" -c "Add :Preferences:dom.vibrator.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.require-gesture dict" -c "Add :Preferences:dom.vr.require-gesture:Value bool false" -c "Add :Preferences:dom.vr.require-gesture:Status string locked" \
+-c "Add :Preferences:dom.vr.poseprediction.enabled dict" -c "Add :Preferences:dom.vr.poseprediction.enabled:Value bool false" -c "Add :Preferences:dom.vr.poseprediction.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.openvr.enabled dict" -c "Add :Preferences:dom.vr.openvr.enabled:Value bool false" -c "Add :Preferences:dom.vr.openvr.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.oculus.enabled dict" -c "Add :Preferences:dom.vr.oculus.enabled:Value bool false" -c "Add :Preferences:dom.vr.oculus.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.oculus.invisible.enabled dict" -c "Add :Preferences:dom.vr.oculus.invisible.enabled:Value bool false" -c "Add :Preferences:dom.vr.oculus.invisible.enabled:Status string locked" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy \
+-c "Add :Preferences:dom.vr.enabled dict" -c "Add :Preferences:dom.vr.enabled:Value bool false" -c "Add :Preferences:dom.vr.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.test.enabled dict" -c "Add :Preferences:dom.vr.test.enabled:Value bool false" -c "Add :Preferences:dom.vr.test.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.puppet.enabled dict" -c "Add :Preferences:dom.vr.puppet.enabled:Value bool false" -c "Add :Preferences:dom.vr.puppet.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.osvr.enabled dict" -c "Add :Preferences:dom.vr.osvr.enabled:Value bool false" -c "Add :Preferences:dom.vr.osvr.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.external.enabled dict" -c "Add :Preferences:dom.vr.external.enabled:Value bool false" -c "Add :Preferences:dom.vr.external.enabled:Status string locked" \
+-c "Add :Preferences:dom.vr.autoactivate.enabled dict" -c "Add :Preferences:dom.vr.autoactivate.enabled:Value bool false" -c "Add :Preferences:dom.vr.autoactivate.enabled:Status string locked" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy \
+-c "Add :Preferences:media.webspeech.synth.enabled dict" -c "Add :Preferences:media.webspeech.synth.enabled:Value bool false" -c "Add :Preferences:media.webspeech.synth.enabled:Status string locked" \
+-c "Add :Preferences:media.webspeech.test.enable dict" -c "Add :Preferences:media.webspeech.test.enable:Value bool false" -c "Add :Preferences:media.webspeech.test.enable:Status string locked" \
+-c "Add :Preferences:media.webspeech.synth.force_global_queue dict" -c "Add :Preferences:media.webspeech.synth.force_global_queue:Value bool false" -c "Add :Preferences:media.webspeech.synth.force_global_queue:Status string locked" \
+-c "Add :Preferences:media.webspeech.recognition.force_enable dict" -c "Add :Preferences:media.webspeech.recognition.force_enable:Value bool false" -c "Add :Preferences:media.webspeech.recognition.force_enable:Status string locked" \
+-c "Add :Preferences:media.webspeech.recognition.enable dict" -c "Add :Preferences:media.webspeech.recognition.enable:Value bool false" -c "Add :Preferences:media.webspeech.recognition.enable:Status string locked" \
+/Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.gamepad.enabled dict" -c "Add :Preferences:dom.gamepad.enabled:Value bool false" -c "Add :Preferences:dom.gamepad.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.gamepad.non_standard_events.enabled dict" -c "Add :Preferences:dom.gamepad.non_standard_events.enabled:Value bool false" -c "Add :Preferences:dom.gamepad.non_standard_events.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.imagecapture.enabled dict" -c "Add :Preferences:dom.imagecapture.enabled:Value bool false" -c "Add :Preferences:dom.imagecapture.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.presentation.discoverable dict" -c "Add :Preferences:dom.presentation.discoverable:Value bool false" -c "Add :Preferences:dom.presentation.discoverable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.presentation.discovery.enabled dict" -c "Add :Preferences:dom.presentation.discovery.enabled:Value bool false" -c "Add :Preferences:dom.presentation.discovery.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.presentation.enabled dict" -c "Add :Preferences:dom.presentation.enabled:Value bool false" -c "Add :Preferences:dom.presentation.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.presentation.tcp_server.debug dict" -c "Add :Preferences:dom.presentation.tcp_server.debug:Value bool false" -c "Add :Preferences:dom.presentation.tcp_server.debug:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.getusermedia.aec_enabled dict" -c "Add :Preferences:media.getusermedia.aec_enabled:Value bool false" -c "Add :Preferences:media.getusermedia.aec_enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.getusermedia.audiocapture.enabled dict" -c "Add :Preferences:media.getusermedia.audiocapture.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.audiocapture.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.getusermedia.browser.enabled dict" -c "Add :Preferences:media.getusermedia.browser.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.browser.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.getusermedia.noise_enabled dict" -c "Add :Preferences:media.getusermedia.noise_enabled:Value bool false" -c "Add :Preferences:media.getusermedia.noise_enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.getusermedia.screensharing.enabled dict" -c "Add :Preferences:media.getusermedia.screensharing.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.screensharing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.navigator.enabled dict" -c "Add :Preferences:media.navigator.enabled:Value bool false" -c "Add :Preferences:media.navigator.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.navigator.video.enabled dict" -c "Add :Preferences:media.navigator.video.enabled:Value bool false" -c "Add :Preferences:media.navigator.video.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.navigator.permission.disabled dict" -c "Add :Preferences:media.navigator.permission.disabled:Value bool true" -c "Add :Preferences:media.navigator.permission.disabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.video_stats.enabled dict" -c "Add :Preferences:media.video_stats.enabled:Value bool false" -c "Add :Preferences:media.video_stats.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.battery.enabled dict" -c "Add :Preferences:dom.battery.enabled:Value bool false" -c "Add :Preferences:dom.battery.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vibrator.enabled dict" -c "Add :Preferences:dom.vibrator.enabled:Value bool false" -c "Add :Preferences:dom.vibrator.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.require-gesture dict" -c "Add :Preferences:dom.vr.require-gesture:Value bool false" -c "Add :Preferences:dom.vr.require-gesture:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.poseprediction.enabled dict" -c "Add :Preferences:dom.vr.poseprediction.enabled:Value bool false" -c "Add :Preferences:dom.vr.poseprediction.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.openvr.enabled dict" -c "Add :Preferences:dom.vr.openvr.enabled:Value bool false" -c "Add :Preferences:dom.vr.openvr.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.oculus.enabled dict" -c "Add :Preferences:dom.vr.oculus.enabled:Value bool false" -c "Add :Preferences:dom.vr.oculus.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.oculus.invisible.enabled dict" -c "Add :Preferences:dom.vr.oculus.invisible.enabled:Value bool false" -c "Add :Preferences:dom.vr.oculus.invisible.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.enabled dict" -c "Add :Preferences:dom.vr.enabled:Value bool false" -c "Add :Preferences:dom.vr.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.test.enabled dict" -c "Add :Preferences:dom.vr.test.enabled:Value bool false" -c "Add :Preferences:dom.vr.test.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.puppet.enabled dict" -c "Add :Preferences:dom.vr.puppet.enabled:Value bool false" -c "Add :Preferences:dom.vr.puppet.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.osvr.enabled dict" -c "Add :Preferences:dom.vr.osvr.enabled:Value bool false" -c "Add :Preferences:dom.vr.osvr.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.external.enabled dict" -c "Add :Preferences:dom.vr.external.enabled:Value bool false" -c "Add :Preferences:dom.vr.external.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.vr.autoactivate.enabled dict" -c "Add :Preferences:dom.vr.autoactivate.enabled:Value bool false" -c "Add :Preferences:dom.vr.autoactivate.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.webspeech.synth.enabled dict" -c "Add :Preferences:media.webspeech.synth.enabled:Value bool false" -c "Add :Preferences:media.webspeech.synth.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.webspeech.test.enable dict" -c "Add :Preferences:media.webspeech.test.enable:Value bool false" -c "Add :Preferences:media.webspeech.test.enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.webspeech.synth.force_global_queue dict" -c "Add :Preferences:media.webspeech.synth.force_global_queue:Value bool false" -c "Add :Preferences:media.webspeech.synth.force_global_queue:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.webspeech.recognition.force_enable dict" -c "Add :Preferences:media.webspeech.recognition.force_enable:Value bool false" -c "Add :Preferences:media.webspeech.recognition.force_enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.webspeech.recognition.enable dict" -c "Add :Preferences:media.webspeech.recognition.enable:Value bool false" -c "Add :Preferences:media.webspeech.recognition.enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.archive.enabled dict" -c "Add :Preferences:toolkit.telemetry.archive.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.archive.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.bhrPing.enabled dict" -c "Add :Preferences:toolkit.telemetry.bhrPing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.bhrPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.firstShutdownPing.enabled dict" -c "Add :Preferences:toolkit.telemetry.firstShutdownPing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.firstShutdownPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.hybridContent.enabled dict" -c "Add :Preferences:toolkit.telemetry.hybridContent.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.hybridContent.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.newProfilePing.enabled dict" -c "Add :Preferences:toolkit.telemetry.newProfilePing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.newProfilePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.previousBuildID dict" -c "Add :Preferences:toolkit.telemetry.previousBuildID:Value string ''" -c "Add :Preferences:toolkit.telemetry.previousBuildID:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.reportingpolicy.firstRun dict" -c "Add :Preferences:toolkit.telemetry.reportingpolicy.firstRun:Value bool false" -c "Add :Preferences:toolkit.telemetry.reportingpolicy.firstRun:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.server dict" -c "Add :Preferences:toolkit.telemetry.server:Value string ''" -c "Add :Preferences:toolkit.telemetry.server:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.server_owner dict" -c "Add :Preferences:toolkit.telemetry.server_owner:Value string ''" -c "Add :Preferences:toolkit.telemetry.server_owner:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.shutdownPingSender.enabled dict" -c "Add :Preferences:toolkit.telemetry.shutdownPingSender.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.shutdownPingSender.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.unified dict" -c "Add :Preferences:toolkit.telemetry.unified:Value bool false" -c "Add :Preferences:toolkit.telemetry.unified:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.updatePing.enabled dict" -c "Add :Preferences:toolkit.telemetry.updatePing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.updatePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.healthreport.infoURL dict" -c "Add :Preferences:datareporting.healthreport.infoURL:Value string ''" -c "Add :Preferences:datareporting.healthreport.infoURL:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.healthreport.uploadEnabled dict" -c "Add :Preferences:datareporting.healthreport.uploadEnabled:Value bool false" -c "Add :Preferences:datareporting.healthreport.uploadEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled dict" -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Value bool false" -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.policy.firstRunURL dict" -c "Add :Preferences:datareporting.policy.firstRunURL:Value string ''" -c "Add :Preferences:datareporting.policy.firstRunURL:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.tabs.crashReporting.sendReport dict" -c "Add :Preferences:browser.tabs.crashReporting.sendReport:Value bool false" -c "Add :Preferences:browser.tabs.crashReporting.sendReport:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.tabs.crashReporting.email dict" -c "Add :Preferences:browser.tabs.crashReporting.email:Value bool false" -c "Add :Preferences:browser.tabs.crashReporting.email:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.tabs.crashReporting.emailMe dict" -c "Add :Preferences:browser.tabs.crashReporting.emailMe:Value bool false" -c "Add :Preferences:browser.tabs.crashReporting.emailMe:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:breakpad.reportURL dict" -c "Add :Preferences:breakpad.reportURL:Value string ''" -c "Add :Preferences:breakpad.reportURL:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:security.ssl.errorReporting.automatic dict" -c "Add :Preferences:security.ssl.errorReporting.automatic:Value bool false" -c "Add :Preferences:security.ssl.errorReporting.automatic:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.crashreporter.infoURL dict" -c "Add :Preferences:toolkit.crashreporter.infoURL:Value string ''" -c "Add :Preferences:toolkit.crashreporter.infoURL:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:network.allow-experiments dict" -c "Add :Preferences:network.allow-experiments:Value bool false" -c "Add :Preferences:network.allow-experiments:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.ipc.plugins.reportCrashUR dict" -c "Add :Preferences:dom.ipc.plugins.reportCrashUR:Value bool false" -c "Add :Preferences:dom.ipc.plugins.reportCrashUR:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.ipc.plugins.flash.subprocess.crashreporter.enabled dict" -c "Add :Preferences:dom.ipc.plugins.flash.subprocess.crashreporter.enabled:Value bool false" -c "Add :Preferences:dom.ipc.plugins.flash.subprocess.crashreporter.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.ipc.plugins.reportCrashURL dict" -c "Add :Preferences:dom.ipc.plugins.reportCrashURL:Value bool false" -c "Add :Preferences:dom.ipc.plugins.reportCrashURL:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:dom.event.clipboardevents.enabled dict" -c "Add :Preferences:dom.event.clipboardevents.enabled:Value bool false" -c "Add :Preferences:dom.event.clipboardevents.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.enabled dict" -c "Add :Preferences:media.peerconnection.enabled:Value bool false" -c "Add :Preferences:media.peerconnection.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.ice.default_address_only dict" -c "Add :Preferences:media.peerconnection.ice.default_address_only:Value bool true" -c "Add :Preferences:media.peerconnection.ice.default_address_only:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.ice.no_host dict" -c "Add :Preferences:media.peerconnection.ice.no_host:Value bool true" -c "Add :Preferences:media.peerconnection.ice.no_host:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.ice.relay_only dict" -c "Add :Preferences:media.peerconnection.ice.relay_only:Value bool true" -c "Add :Preferences:media.peerconnection.ice.relay_only:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.ice.tcp dict" -c "Add :Preferences:media.peerconnection.ice.tcp:Value bool false" -c "Add :Preferences:media.peerconnection.ice.tcp:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.identity.enabled dict" -c "Add :Preferences:media.peerconnection.identity.enabled:Value bool false" -c "Add :Preferences:media.peerconnection.identity.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.turn.disable dict" -c "Add :Preferences:media.peerconnection.turn.disable:Value bool true" -c "Add :Preferences:media.peerconnection.turn.disable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.use_document_iceservers dict" -c "Add :Preferences:media.peerconnection.use_document_iceservers:Value bool false" -c "Add :Preferences:media.peerconnection.use_document_iceservers:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.video.enabled dict" -c "Add :Preferences:media.peerconnection.video.enabled:Value bool false" -c "Add :Preferences:media.peerconnection.video.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.default_iceservers dict" -c "Add :Preferences:media.peerconnection.default_iceservers:Value string '[]'" -c "Add :Preferences:media.peerconnection.default_iceservers:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+sudo killall cfprefsd
+
+
+
