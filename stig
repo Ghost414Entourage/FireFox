@@ -1,3 +1,14 @@
+https://github.com/mozilla/policy-templates/blob/master/mac/org.mozilla.firefox.plist
+
+https://firefox-admin-docs.mozilla.org/reference/policies/homepage/
+
+https://mozilla.github.io/policy-templates/
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 sudo defaults write /Library/Preferences/org.mozilla.firefox EnterprisePoliciesEnabled -bool TRUE && sudo defaults write /Library/Preferences/org.mozilla.firefox SSLVersionMin -string "tls1.2"
 
 
