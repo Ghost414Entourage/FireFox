@@ -530,4 +530,5 @@ sudo killall cfprefsd
 
 sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.resistFingerprinting dict" -c "Add :Preferences:privacy.resistFingerprinting:Value bool true" -c "Add :Preferences:privacy.resistFingerprinting:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
 
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:security.family_safety.mode dict" -c "Add :Preferences:security.family_safety.mode:Value integer 0" -c "Add :Preferences:security.family_safety.mode:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
 
