@@ -537,3 +537,74 @@ sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.firstparty.isolate dic
 sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.cache.offline.enable dict" -c "Add :Preferences:browser.cache.offline.enable:Value bool false" -c "Add :Preferences:browser.cache.offline.enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
 
 
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled dict" -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Value bool false" -c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:datareporting.healthreport.uploadEnabled dict" -c "Add :Preferences:datareporting.healthreport.uploadEnabled:Value bool false" -c "Add :Preferences:datareporting.healthreport.uploadEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.enabled dict" -c "Add :Preferences:toolkit.telemetry.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.unified dict" -c "Add :Preferences:toolkit.telemetry.unified:Value bool false" -c "Add :Preferences:toolkit.telemetry.unified:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.server dict" -c "Add :Preferences:toolkit.telemetry.server:Value string 'data:,'" -c "Add :Preferences:toolkit.telemetry.server:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.archive.enabled dict" -c "Add :Preferences:toolkit.telemetry.archive.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.archive.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.newProfilePing.enabled dict" -c "Add :Preferences:toolkit.telemetry.newProfilePing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.newProfilePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.shutdownPingSender.enabled dict" -c "Add :Preferences:toolkit.telemetry.shutdownPingSender.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.shutdownPingSender.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.updatePing.enabled dict" -c "Add :Preferences:toolkit.telemetry.updatePing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.updatePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.bhrPing.enabled dict" -c "Add :Preferences:toolkit.telemetry.bhrPing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.bhrPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.firstShutdownPing.enabled dict" -c "Add :Preferences:toolkit.telemetry.firstShutdownPing.enabled:Value bool false" -c "Add :Preferences:toolkit.telemetry.firstShutdownPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.coverage.opt-out dict" -c "Add :Preferences:toolkit.telemetry.coverage.opt-out:Value bool true" -c "Add :Preferences:toolkit.telemetry.coverage.opt-out:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.coverage.opt-out dict" -c "Add :Preferences:toolkit.coverage.opt-out:Value bool true" -c "Add :Preferences:toolkit.coverage.opt-out:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.coverage.endpoint.base dict" -c "Add :Preferences:toolkit.coverage.endpoint.base:Value string ''" -c "Add :Preferences:toolkit.coverage.endpoint.base:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.ping-centre.telemetry dict" -c "Add :Preferences:browser.ping-centre.telemetry:Value bool false" -c "Add :Preferences:browser.ping-centre.telemetry:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:beacon.enabled dict" -c "Add :Preferences:beacon.enabled:Value bool false" -c "Add :Preferences:beacon.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:datareporting.policy.dataSubmissionEnabled:Value bool false" -c "Set :Preferences:datareporting.policy.dataSubmissionEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:datareporting.healthreport.uploadEnabled:Value bool false" -c "Set :Preferences:datareporting.healthreport.uploadEnabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.unified:Value bool false" -c "Set :Preferences:toolkit.telemetry.unified:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.server:Value string 'data:,'" -c "Set :Preferences:toolkit.telemetry.server:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.archive.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.archive.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.newProfilePing.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.newProfilePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.shutdownPingSender.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.shutdownPingSender.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.updatePing.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.updatePing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.bhrPing.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.bhrPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.firstShutdownPing.enabled:Value bool false" -c "Set :Preferences:toolkit.telemetry.firstShutdownPing.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.telemetry.coverage.opt-out:Value bool true" -c "Set :Preferences:toolkit.telemetry.coverage.opt-out:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.coverage.opt-out:Value bool true" -c "Set :Preferences:toolkit.coverage.opt-out:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.coverage.endpoint.base:Value string ''" -c "Set :Preferences:toolkit.coverage.endpoint.base:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:browser.ping-centre.telemetry:Value bool false" -c "Set :Preferences:browser.ping-centre.telemetry:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:beacon.enabled:Value bool false" -c "Set :Preferences:beacon.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
