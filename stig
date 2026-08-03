@@ -534,3 +534,6 @@ sudo /usr/libexec/PlistBuddy -c "Add :Preferences:security.family_safety.mode di
 
 sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.firstparty.isolate dict" -c "Add :Preferences:privacy.firstparty.isolate:Value bool true" -c "Add :Preferences:privacy.firstparty.isolate:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
 
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.cache.offline.enable dict" -c "Add :Preferences:browser.cache.offline.enable:Value bool false" -c "Add :Preferences:browser.cache.offline.enable:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
