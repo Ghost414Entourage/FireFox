@@ -528,4 +528,6 @@ sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.peerconnection.default_i
 sudo killall cfprefsd
 
 
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.resistFingerprinting dict" -c "Add :Preferences:privacy.resistFingerprinting:Value bool true" -c "Add :Preferences:privacy.resistFingerprinting:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
 
