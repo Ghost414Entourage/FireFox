@@ -608,3 +608,9 @@ sudo /usr/libexec/PlistBuddy -c "Set :Preferences:toolkit.coverage.endpoint.base
 sudo /usr/libexec/PlistBuddy -c "Set :Preferences:browser.ping-centre.telemetry:Value bool false" -c "Set :Preferences:browser.ping-centre.telemetry:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
 
 sudo /usr/libexec/PlistBuddy -c "Set :Preferences:beacon.enabled:Value bool false" -c "Set :Preferences:beacon.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.aboutConfig.showWarning dict" -c "Add :Preferences:browser.aboutConfig.showWarning:Value bool false" -c "Add :Preferences:browser.aboutConfig.showWarning:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:browser.aboutConfig.showWarning:Value bool false" -c "Set :Preferences:browser.aboutConfig.showWarning:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
