@@ -614,3 +614,22 @@ sudo /usr/libexec/PlistBuddy -c "Set :Preferences:beacon.enabled:Value bool fals
 sudo /usr/libexec/PlistBuddy -c "Add :Preferences:browser.aboutConfig.showWarning dict" -c "Add :Preferences:browser.aboutConfig.showWarning:Value bool false" -c "Add :Preferences:browser.aboutConfig.showWarning:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
 
 sudo /usr/libexec/PlistBuddy -c "Set :Preferences:browser.aboutConfig.showWarning:Value bool false" -c "Set :Preferences:browser.aboutConfig.showWarning:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
+
+
+
+
+
+
+
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:media.eme.enabled dict" -c "Add :Preferences:media.eme.enabled:Value bool false" -c "Add :Preferences:media.eme.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:media.eme.enabled:Value bool false" -c "Set :Preferences:media.eme.enabled:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:media.eme.enabled bool false" /Library/Preferences/org.mozilla.firefox.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:media.eme.enabled:Value false" -c "Set :Preferences:media.eme.enabled:Status locked" /Library/Preferences/org.mozilla.firefox.plist
+
