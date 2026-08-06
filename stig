@@ -620,6 +620,13 @@ sudo /usr/libexec/PlistBuddy -c "Set :Preferences:browser.aboutConfig.showWarnin
 
 
 
+sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.firstparty.isolate dict" -c "Add :Preferences:privacy.firstparty.isolate:Value bool true" -c "Add :Preferences:privacy.firstparty.isolate:Status string locked" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:privacy.firstparty.isolate:Value true" /Library/Preferences/org.mozilla.firefox.plist
+sudo /usr/libexec/PlistBuddy -c "Set :Preferences:privacy.firstparty.isolate:Value true" -c "Set :Preferences:privacy.firstparty.isolate:Status locked" /Library/Preferences/org.mozilla.firefox.plist
+
+
+
+
 
 
 
