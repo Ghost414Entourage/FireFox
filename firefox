@@ -253,6 +253,13 @@ user_pref("network.cookie.blockUnicode", true);
 user_pref("network.cookie.fixup_on_db_load", true);
 user_pref("network.cookie.block_nameless_with_equal_char", true);
 
+// --- Group 23 ---
+user_pref("privacy.firstparty.isolate", true);
+user_pref("privacy.firstparty.isolate.restrict_opener_access", true);
+user_pref("privacy.firstparty.isolate.block_post_message", true);
+user_pref("privacy.firstparty.isolate.use_site", true);
+user_pref("privacy.dynamic_firstparty.use_site", true);
+user_pref("privacy.dynamic_firstparty.limitforeign", true);
 
 
 
