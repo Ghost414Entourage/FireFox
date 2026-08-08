@@ -253,7 +253,7 @@ user_pref("network.cookie.blockUnicode", true);
 user_pref("network.cookie.fixup_on_db_load", true);
 user_pref("network.cookie.block_nameless_with_equal_char", true);
 
-// --- Group 23 ---
+// --- Group 22 ---
 user_pref("privacy.firstparty.isolate", true);
 user_pref("privacy.firstparty.isolate.restrict_opener_access", true);
 user_pref("privacy.firstparty.isolate.block_post_message", true);
@@ -263,5 +263,14 @@ user_pref("privacy.dynamic_firstparty.limitforeign", true);
 
 
 
-// --- Group 22 ---
+// --- Group 23 ---
 user_pref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
+user_pref("javascript.options.baselinejit", false);
+user_pref("javascript.options.ion", false);
+user_pref("javascript.options.jit_trustedprincipals", false);
+user_pref("javascript.options.wasm", false);
+user_pref("javascript.options.wasm_trustedprincipals", false);
+user_pref("javascript.options.wasm_baselinejit", false);
+user_pref("javascript.options.wasm_optimizingjit", false);
+user_pref("javascript.options.asmjs", false);
+user_pref("javascript.options.blinterp", false);
