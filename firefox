@@ -325,3 +325,4 @@ user_pref("media.webspeech.test.enable", false);
 user_pref("media.webspeech.synth.force_global_queue", false);
 user_pref("media.webspeech.recognition.force_enable", false);
 user_pref("media.webspeech.recognition.enable", false);
+user_pref("browser.startup.homepage", "about:blank");
