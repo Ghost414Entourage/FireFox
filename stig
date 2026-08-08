@@ -202,22 +202,6 @@ sudo /usr/libexec/PlistBuddy -c "Add :Preferences:privacy.clearOnShutdown.openWi
 
 
 
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Cache bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Cookies bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Downloads bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:FormData bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:History bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:OfflineApps bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:Sessions bool true" /Library/Preferences/org.mozilla.firefox.plist
-sudo /usr/libexec/PlistBuddy -c "Set :SanitizeOnShutdown:SiteSettings bool true" /Library/Preferences/org.mozilla.firefox.plist
-
-
-
-
-
-
-
-
 
 # 1. Erase the existing root-level SanitizeOnShutdown dictionary completely
 sudo /usr/libexec/PlistBuddy -c "Delete :SanitizeOnShutdown" /Library/Preferences/org.mozilla.firefox.plist
