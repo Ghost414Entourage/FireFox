@@ -141,24 +141,6 @@ sudo /usr/libexec/PlistBuddy -c "Add :Preferences:security.OCSP.require dict" -c
 
 
 
-sudo /usr/libexec/PlistBuddy \
--c "Add :Preferences:toolkit.telemetry.enabled dict" \
--c "Add :Preferences:toolkit.telemetry.enabled:Value bool false" \
--c "Add :Preferences:toolkit.telemetry.enabled:Status string locked" \
--c "Add :Preferences:toolkit.telemetry.unified dict" \
--c "Add :Preferences:toolkit.telemetry.unified:Value bool false" \
--c "Add :Preferences:toolkit.telemetry.unified:Status string locked" \
--c "Add :Preferences:datareporting.policy.dataSubmissionEnabled dict" \
--c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Value bool false" \
--c "Add :Preferences:datareporting.policy.dataSubmissionEnabled:Status string locked" \
--c "Add :Preferences:browser.newtabpage.activity-stream.telemetry dict" \
--c "Add :Preferences:browser.newtabpage.activity-stream.telemetry:Value bool false" \
--c "Add :Preferences:browser.newtabpage.activity-stream.telemetry:Status string locked" \
--c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry dict" \
--c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry:Value bool false" \
--c "Add :Preferences:browser.newtabpage.activity-stream.feeds.telemetry:Status string locked" \
-/Library/Preferences/org.mozilla.firefox.plist
-
 
 
 
