@@ -284,56 +284,6 @@ sudo /usr/libexec/PlistBuddy -c "Add :Preferences:toolkit.telemetry.cachedClient
 
 
 
-sudo /usr/libexec/PlistBuddy \
--c "Add :Preferences:dom.gamepad.enabled dict" -c "Add :Preferences:dom.gamepad.enabled:Value bool false" -c "Add :Preferences:dom.gamepad.enabled:Status string locked" \
--c "Add :Preferences:dom.gamepad.non_standard_events.enabled dict" -c "Add :Preferences:dom.gamepad.non_standard_events.enabled:Value bool false" -c "Add :Preferences:dom.gamepad.non_standard_events.enabled:Status string locked" \
--c "Add :Preferences:dom.imagecapture.enabled dict" -c "Add :Preferences:dom.imagecapture.enabled:Value bool false" -c "Add :Preferences:dom.imagecapture.enabled:Status string locked" \
--c "Add :Preferences:dom.presentation.discoverable dict" -c "Add :Preferences:dom.presentation.discoverable:Value bool false" -c "Add :Preferences:dom.presentation.discoverable:Status string locked" \
--c "Add :Preferences:dom.presentation.discovery.enabled dict" -c "Add :Preferences:dom.presentation.discovery.enabled:Value bool false" -c "Add :Preferences:dom.presentation.discovery.enabled:Status string locked" \
--c "Add :Preferences:dom.presentation.enabled dict" -c "Add :Preferences:dom.presentation.enabled:Value bool false" -c "Add :Preferences:dom.presentation.enabled:Status string locked" \
--c "Add :Preferences:dom.presentation.tcp_server.debug dict" -c "Add :Preferences:dom.presentation.tcp_server.debug:Value bool false" -c "Add :Preferences:dom.presentation.tcp_server.debug:Status string locked" \
-/Library/Preferences/org.mozilla.firefox.plist
-
-sudo /usr/libexec/PlistBuddy \
--c "Add :Preferences:media.getusermedia.aec_enabled dict" -c "Add :Preferences:media.getusermedia.aec_enabled:Value bool false" -c "Add :Preferences:media.getusermedia.aec_enabled:Status string locked" \
--c "Add :Preferences:media.getusermedia.audiocapture.enabled dict" -c "Add :Preferences:media.getusermedia.audiocapture.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.audiocapture.enabled:Status string locked" \
--c "Add :Preferences:media.getusermedia.browser.enabled dict" -c "Add :Preferences:media.getusermedia.browser.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.browser.enabled:Status string locked" \
--c "Add :Preferences:media.getusermedia.noise_enabled dict" -c "Add :Preferences:media.getusermedia.noise_enabled:Value bool false" -c "Add :Preferences:media.getusermedia.noise_enabled:Status string locked" \
--c "Add :Preferences:media.getusermedia.screensharing.enabled dict" -c "Add :Preferences:media.getusermedia.screensharing.enabled:Value bool false" -c "Add :Preferences:media.getusermedia.screensharing.enabled:Status string locked" \
--c "Add :Preferences:media.navigator.enabled dict" -c "Add :Preferences:media.navigator.enabled:Value bool false" -c "Add :Preferences:media.navigator.enabled:Status string locked" \
--c "Add :Preferences:media.navigator.video.enabled dict" -c "Add :Preferences:media.navigator.video.enabled:Value bool false" -c "Add :Preferences:media.navigator.video.enabled:Status string locked" \
--c "Add :Preferences:media.navigator.permission.disabled dict" -c "Add :Preferences:media.navigator.permission.disabled:Value bool true" -c "Add :Preferences:media.navigator.permission.disabled:Status string locked" \
--c "Add :Preferences:media.video_stats.enabled dict" -c "Add :Preferences:media.video_stats.enabled:Value bool false" -c "Add :Preferences:media.video_stats.enabled:Status string locked" \
-/Library/Preferences/org.mozilla.firefox.plist
-
-sudo /usr/libexec/PlistBuddy \
--c "Add :Preferences:dom.battery.enabled dict" -c "Add :Preferences:dom.battery.enabled:Value bool false" -c "Add :Preferences:dom.battery.enabled:Status string locked" \
--c "Add :Preferences:dom.vibrator.enabled dict" -c "Add :Preferences:dom.vibrator.enabled:Value bool false" -c "Add :Preferences:dom.vibrator.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.require-gesture dict" -c "Add :Preferences:dom.vr.require-gesture:Value bool false" -c "Add :Preferences:dom.vr.require-gesture:Status string locked" \
--c "Add :Preferences:dom.vr.poseprediction.enabled dict" -c "Add :Preferences:dom.vr.poseprediction.enabled:Value bool false" -c "Add :Preferences:dom.vr.poseprediction.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.openvr.enabled dict" -c "Add :Preferences:dom.vr.openvr.enabled:Value bool false" -c "Add :Preferences:dom.vr.openvr.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.oculus.enabled dict" -c "Add :Preferences:dom.vr.oculus.enabled:Value bool false" -c "Add :Preferences:dom.vr.oculus.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.oculus.invisible.enabled dict" -c "Add :Preferences:dom.vr.oculus.invisible.enabled:Value bool false" -c "Add :Preferences:dom.vr.oculus.invisible.enabled:Status string locked" \
-/Library/Preferences/org.mozilla.firefox.plist
-
-sudo /usr/libexec/PlistBuddy \
--c "Add :Preferences:dom.vr.enabled dict" -c "Add :Preferences:dom.vr.enabled:Value bool false" -c "Add :Preferences:dom.vr.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.test.enabled dict" -c "Add :Preferences:dom.vr.test.enabled:Value bool false" -c "Add :Preferences:dom.vr.test.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.puppet.enabled dict" -c "Add :Preferences:dom.vr.puppet.enabled:Value bool false" -c "Add :Preferences:dom.vr.puppet.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.osvr.enabled dict" -c "Add :Preferences:dom.vr.osvr.enabled:Value bool false" -c "Add :Preferences:dom.vr.osvr.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.external.enabled dict" -c "Add :Preferences:dom.vr.external.enabled:Value bool false" -c "Add :Preferences:dom.vr.external.enabled:Status string locked" \
--c "Add :Preferences:dom.vr.autoactivate.enabled dict" -c "Add :Preferences:dom.vr.autoactivate.enabled:Value bool false" -c "Add :Preferences:dom.vr.autoactivate.enabled:Status string locked" \
-/Library/Preferences/org.mozilla.firefox.plist
-
-sudo /usr/libexec/PlistBuddy \
--c "Add :Preferences:media.webspeech.synth.enabled dict" -c "Add :Preferences:media.webspeech.synth.enabled:Value bool false" -c "Add :Preferences:media.webspeech.synth.enabled:Status string locked" \
--c "Add :Preferences:media.webspeech.test.enable dict" -c "Add :Preferences:media.webspeech.test.enable:Value bool false" -c "Add :Preferences:media.webspeech.test.enable:Status string locked" \
--c "Add :Preferences:media.webspeech.synth.force_global_queue dict" -c "Add :Preferences:media.webspeech.synth.force_global_queue:Value bool false" -c "Add :Preferences:media.webspeech.synth.force_global_queue:Status string locked" \
--c "Add :Preferences:media.webspeech.recognition.force_enable dict" -c "Add :Preferences:media.webspeech.recognition.force_enable:Value bool false" -c "Add :Preferences:media.webspeech.recognition.force_enable:Status string locked" \
--c "Add :Preferences:media.webspeech.recognition.enable dict" -c "Add :Preferences:media.webspeech.recognition.enable:Value bool false" -c "Add :Preferences:media.webspeech.recognition.enable:Status string locked" \
-/Library/Preferences/org.mozilla.firefox.plist
-
-
 
 
 
