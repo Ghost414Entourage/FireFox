@@ -338,3 +338,19 @@ user_pref("privacy.cpd.sessions", true);
 user_pref("places.history.enabled", false);
 user_pref("browser.sessionstore.max_tabs_undo", 0);
 user_pref("browser.cache.disk.enable", false);
+
+
+// --- Group 30 ---
+user_pref("browser.cache.disk_cache_ssl", false);
+user_pref("browser.download.manager.retention", 0);
+user_pref("signon.rememberSignons", false);
+user_pref("browser.formfill.enable", false);
+user_pref("network.cookie.lifetimePolicy", 2);
+user_pref("security.cert_pinning.enforcement_level", 2);
+user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
+user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled", false);
+user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtabPing.enabled", false);
+user_pref("toolkit.telemetry.cachedClientID", "blank");
+
+
+
