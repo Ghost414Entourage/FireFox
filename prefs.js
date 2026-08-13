@@ -346,7 +346,6 @@ user_pref("browser.download.manager.retention", 0);
 user_pref("signon.rememberSignons", false);
 user_pref("browser.formfill.enable", false);
 user_pref("network.cookie.lifetimePolicy", 2);
-user_pref("security.cert_pinning.enforcement_level", 2);
 user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false);
 user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled", false);
 user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtabPing.enabled", false);
