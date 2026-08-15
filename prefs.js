@@ -275,7 +275,7 @@ user_pref("javascript.options.ion", false);
 user_pref("javascript.options.jit_trustedprincipals", true);
 user_pref("javascript.options.wasm", false);
 user_pref("javascript.options.wasm_trustedprincipals", false);
-user_pref("javascript.options.wasm_baselinejit", false);
+user_pref("javascript.options.wasm_baselinejit", true);
 user_pref("javascript.options.wasm_optimizingjit", false);
 user_pref("javascript.options.asmjs", false);
 user_pref("javascript.options.blinterp", false);
