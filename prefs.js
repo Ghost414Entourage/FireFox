@@ -203,6 +203,11 @@ user_pref("privacy.cpd.offlineApps", true);
 user_pref("privacy.cpd.siteSettings", true);
 user_pref("privacy.cpd.openWindows", true);
 user_pref("privacy.clearHistory.historyFormDataAndDownloads", true);
+user_pref("privacy.cpd.history", true);
+user_pref("places.history.enabled", false);
+user_pref("browser.sessionstore.max_tabs_undo", 0);
+user_pref("browser.cache.disk.enable", false);
+
 
 // --- Group 18 ---
 user_pref("privacy.clearHistory.browsingHistoryAndDownloads", true);
@@ -327,20 +332,10 @@ user_pref("media.webspeech.recognition.force_enable", false);
 user_pref("media.webspeech.recognition.enable", false);
 user_pref("browser.startup.homepage", "about:blank");
 
+
+
+
 // --- Group 29 ---
-user_pref("privacy.cpd.offlineApps", true);
-user_pref("privacy.cpd.cache", true);
-user_pref("privacy.cpd.cookies", true);
-user_pref("privacy.cpd.downloads", true);
-user_pref("privacy.cpd.formdata", true);
-user_pref("privacy.cpd.history", true);
-user_pref("privacy.cpd.sessions", true);
-user_pref("places.history.enabled", false);
-user_pref("browser.sessionstore.max_tabs_undo", 0);
-user_pref("browser.cache.disk.enable", false);
-
-
-// --- Group 30 ---
 user_pref("browser.cache.disk_cache_ssl", false);
 user_pref("browser.download.manager.retention", 0);
 user_pref("signon.rememberSignons", false);
