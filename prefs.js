@@ -346,4 +346,8 @@ user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.redactNewtab
 user_pref("toolkit.telemetry.cachedClientID", "blank");
 
 
+// --- Group 30 ---
+user_pref("network.cookie.thirdparty.sessionOnly", true);
+user_pref("network.cookie.thirdparty.sessionOnly", true);
+
 
