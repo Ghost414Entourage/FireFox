@@ -272,7 +272,7 @@ user_pref("privacy.dynamic_firstparty.limitforeign", true);
 user_pref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
 user_pref("javascript.options.baselinejit", false);
 user_pref("javascript.options.ion", false);
-user_pref("javascript.options.jit_trustedprincipals", false);
+user_pref("javascript.options.jit_trustedprincipals", true);
 user_pref("javascript.options.wasm", false);
 user_pref("javascript.options.wasm_trustedprincipals", false);
 user_pref("javascript.options.wasm_baselinejit", false);
