@@ -350,6 +350,8 @@ user_pref("toolkit.telemetry.cachedClientID", "blank");
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 user_pref("privacy.antitracking.isolateContentScriptResources", true);
 user_pref("network.cookie.thirdparty.sessionOnly", true);
+user_pref("network.IDN_show_punycode", true);
+user_pref("network.IDN_show_punycode", true);
 
 
 
