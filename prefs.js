@@ -102,7 +102,6 @@ user_pref("browser.display.use_system_colors", false);
 user_pref("browser.startup.blankWindow", false);
 user_pref("dom.event.clipboardevents.enabled", false);
 user_pref("privacy.donottrackheader.enabled", true);
-user_pref("network.cookie.cookieBehavior", 5);
 user_pref("privacy.fingerprintingProtection", true);
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
