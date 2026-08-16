@@ -415,6 +415,8 @@ user_pref("privacy.globalprivacycontrol.pbmode.enabled", true);
 
 
 
+// --- Group 32 ---
+user_pref("browser.aboutConfig.showWarning", false);
 
 
 
