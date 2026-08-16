@@ -348,6 +348,8 @@ user_pref("toolkit.telemetry.cachedClientID", "blank");
 
 // --- Group 30 ---
 user_pref("network.cookie.thirdparty.sessionOnly", true);
+user_pref("privacy.antitracking.isolateContentScriptResources", true);
 user_pref("network.cookie.thirdparty.sessionOnly", true);
+
 
 
