@@ -105,7 +105,7 @@ user_pref("privacy.donottrackheader.enabled", true);
 user_pref("privacy.fingerprintingProtection", true);
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
-user_pref("privacy.partition.network_state.ocsp_cache", true);
+
 
 // --- Group 10 ---
 user_pref("privacy.query_stripping.enabled", true);
