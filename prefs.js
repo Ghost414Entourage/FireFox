@@ -351,7 +351,9 @@ user_pref("network.cookie.thirdparty.sessionOnly", true);
 user_pref("privacy.antitracking.isolateContentScriptResources", true);
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 user_pref("network.IDN_show_punycode", true);
-user_pref("network.IDN_show_punycode", true);
+user_pref("network.trr.allow-rfc1918", false);
+user_pref("network.dns.disableIPv6", true);
+
 
 
 
