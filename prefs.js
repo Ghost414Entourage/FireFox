@@ -354,6 +354,38 @@ user_pref("network.IDN_show_punycode", true);
 user_pref("network.trr.allow-rfc1918", false);
 user_pref("browser.send_pings", false);
 
+// --- Group 31 ---
+
+
+
+user_pref("browser.contentblocking.category", "strict");
+user_pref("privacy.trackingprotection.enabled", true); 
+user_pref("privacy.trackingprotection.pbmode.enabled", true);
+user_pref("browser.contentblocking.customBlockList.preferences.ui.enabled", false); 
+user_pref("privacy.trackingprotection.socialtracking.enabled", true); 
+user_pref("privacy.socialtracking.block_cookies.enabled", true); 
+user_pref("privacy.trackingprotection.cryptomining.enabled", true); 
+user_pref("privacy.trackingprotection.fingerprinting.enabled", true); 
+user_pref("privacy.trackingprotection.emailtracking.enabled", true); 
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true); 
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true); 
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true); 
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true); 
+user_pref("privacy.annotate_channels.strict_list.enabled", true);
+user_pref("privacy.annotate_channels.strict_list.pbmode.enabled", true); 
+user_pref("privacy.fingerprintingProtection", true); 
+user_pref("privacy.fingerprintingProtection.pbmode", true); 
+user_pref("privacy.bounceTrackingProtection.mode", 1);
+
+user_pref("privacy.antitracking.enableWebcompat", false);
+user_pref("privacy.restrict3rdpartystorage.heuristic.navigation", false);
+user_pref("privacy.restrict3rdpartystorage.heuristic.opened_window_after_interaction", false);
+user_pref("privacy.restrict3rdpartystorage.heuristic.recently_visited", false); 
+user_pref("privacy.restrict3rdpartystorage.heuristic.redirect", false); 
+user_pref("privacy.restrict3rdpartystorage.heuristic.window_open", false);
+
+
+
 
 
 
