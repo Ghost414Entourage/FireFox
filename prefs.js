@@ -456,10 +456,6 @@ user_pref("network.protocol-handler.external.ps", false);
 user_pref("network.protocol-handler.external.htps", false);
 user_pref("network.protocol-handler.external.ile", false);
 user_pref("network.protocol-handler.external.le", false);
-user_pref("
-user_pref("
-user_pref("
-user_pref("
 
 
 
