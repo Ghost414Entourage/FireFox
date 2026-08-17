@@ -412,11 +412,97 @@ user_pref("devtools.debugger.remote-enabled", false);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("privacy.globalprivacycontrol.functionality.enabled", true); 
 user_pref("privacy.globalprivacycontrol.pbmode.enabled", true); 
-
-
-
-// --- Group 32 ---
 user_pref("browser.aboutConfig.showWarning", false);
+
+
+// --- Group 32 "Should Firefox pass this protocol off to an external desktop application on the operating system?" Controls whether Firefox passes the protocol to an external OS application. ---
+user_pref("network.protocol-handler.warn-external-default",	true);
+user_pref("network.protocol-handler.external-default", false);
+user_pref("network.protocol-handler.external.http", false);
+user_pref("network.protocol-handler.external.https", false);
+user_pref("network.protocol-handler.external.javascript",	false);
+user_pref("network.protocol-handler.external.moz-extension",	false);
+user_pref("network.protocol-handler.external.ftp", false);
+user_pref("network.protocol-handler.external.file", false);
+user_pref("network.protocol-handler.external.about", false);
+user_pref("network.protocol-handler.external.chrome", false);
+user_pref("network.protocol-handler.external.blob", false);
+user_pref("network.protocol-handler.external.data", false);
+user_pref("network.protocol-handler.external.hcp", false);
+user_pref("network.protocol-handler.external.vbscript", false);
+user_pref("network.protocol-handler.external.ie.http", false);
+user_pref("network.protocol-handler.external.iehistory", false);
+user_pref("network.protocol-handler.external.ierss", false);
+user_pref("network.protocol-handler.external.mk", false);
+user_pref("network.protocol-handler.external.ms-cxh", false);
+user_pref("network.protocol-handler.external.ms-cxh-full", false);
+user_pref("network.protocol-handler.external.ms-help", false);
+user_pref("network.protocol-handler.external.ms-msdt", false);
+user_pref("network.protocol-handler.external.res", false);
+user_pref("network.protocol-handler.external.search", false);
+user_pref("network.protocol-handler.external.search-ms", false);
+user_pref("network.protocol-handler.external.shell", false);
+user_pref("network.protocol-handler.external.vnd.ms.radio", false);
+user_pref("network.protocol-handler.external.help", false);
+user_pref("network.protocol-handler.external.disk", false);
+user_pref("network.protocol-handler.external.disks", false);
+user_pref("network.protocol-handler.external.afp", false);
+user_pref("network.protocol-handler.external.moz-icon", false);
+user_pref("network.protocol-handler.external.ttp", false);
+user_pref("network.protocol-handler.external.htp", false); 
+user_pref("network.protocol-handler.external.ttps", false);
+user_pref("network.protocol-handler.external.tps", false);
+user_pref("network.protocol-handler.external.ps", false);
+user_pref("network.protocol-handler.external.htps", false);
+user_pref("network.protocol-handler.external.ile", false);
+user_pref("network.protocol-handler.external.le", false);
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+
+
+
+
+
+// --- Group 31 Does Firefox recognize and expose this protocol to web content and its internal renderer? Controls whether Firefox recognizes and renders the protocol internally. ---
+user_pref("network.protocol-handler.expose-all", false);
+user_pref("network.protocol-handler.expose.http", true);
+user_pref("network.protocol-handler.expose.https", true);
+user_pref("network.protocol-handler.expose.javascript", true);
+user_pref("network.protocol-handler.expose.moz-extension", true);
+user_pref("network.protocol-handler.expose.ftp", false);
+user_pref("network.protocol-handler.expose.file", true);
+user_pref("network.protocol-handler.expose.about", true);
+user_pref("network.protocol-handler.expose.chrome", true);
+user_pref("network.protocol-handler.expose.blob", true);
+user_pref("network.protocol-handler.expose.data", true);
+user_pref("network.protocol-handler.expose.mailto", false);
+user_pref("network.protocol-handler.expose.news", false);
+user_pref("network.protocol-handler.expose.nntp", false);
+user_pref("network.protocol-handler.expose.snews", false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
