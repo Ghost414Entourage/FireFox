@@ -516,9 +516,6 @@ user_pref("signon.recipes.remoteRecipes.enabled", false);
 user_pref("signon.relatedRealms.enabled", false);
 user_pref("signon.schemeUpgrades", false);
 user_pref("signon.includeOtherSubdomainsInLookup", false);
-
-
-
 user_pref("signon.masterPasswordReprompt.timeout_ms", 0); 
 user_pref("signon.showAutoCompleteFooter", false);
 user_pref("signon.firefoxRelay.base_url", "");
@@ -526,11 +523,9 @@ user_pref("signon.firefoxRelay.learn_more_url", "");
 user_pref("signon.firefoxRelay.manage_url", "");
 user_pref("signon.firefoxRelay.terms_of_service_url", "");
 user_pref("signon.firefoxRelay.privacy_policy_url", "");
-user_pref("signon.signupDetection.confidenceThreshold",     "0.75");
-
+user_pref("signon.signupDetection.confidenceThreshold", "0");
 user_pref("signon.rustMirror.enabled", false);
 user_pref("signon.rustMirror.collectFailedOrigins", false);
-
 user_pref("signon.rustMirror.enabled", false);
 user_pref("signon.rustMirror.collectFailedOrigins", false);
 
