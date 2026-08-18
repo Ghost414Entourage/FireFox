@@ -116,7 +116,6 @@ user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
 user_pref("dom.serviceWorkers.enabled", false);
 user_pref("dom.webnotifications.enabled", false);
 user_pref("dom.push.enabled", false);
-user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("browser.display.use_document_fonts", false);
 
 // --- Group 11 ---
