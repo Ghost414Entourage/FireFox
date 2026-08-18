@@ -461,7 +461,7 @@ user_pref("network.protocol-handler.external.le", false);
 
 
 
-// --- Group 31 Does Firefox recognize and expose this protocol to web content and its internal renderer? Controls whether Firefox recognizes and renders the protocol internally. ---
+// --- Group 33 Does Firefox recognize and expose this protocol to web content and its internal renderer? Controls whether Firefox recognizes and renders the protocol internally. ---
 user_pref("network.protocol-handler.expose-all", false);
 user_pref("network.protocol-handler.expose.http", true);
 user_pref("network.protocol-handler.expose.https", true);
@@ -482,7 +482,7 @@ user_pref("network.protocol-handler.expose.snews", false);
 
 
 
-// --- Group 32 ---
+// --- Group 34 ---
 
 
 
