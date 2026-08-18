@@ -233,7 +233,6 @@ user_pref("privacy.authPromptSpoofingProtection", true);
 
 // --- Group 20 ---
 user_pref("privacy.globalprivacycontrol.functionality.enabled", true);
-user_pref("privacy.globalprivacycontrol.pbmode.enabled", true);
 user_pref("privacy.socialtracking.block_cookies.enabled", true);
 user_pref("dom.cookieStore.enabled", false);
 user_pref("cookiebanners.cookieInjector.defaultExpiryRelative", 0);
