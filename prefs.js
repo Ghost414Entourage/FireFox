@@ -490,8 +490,49 @@ user_pref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true
 user_pref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
 user_pref("browser.display.use_system_colors", false);
 
-    
 
+// --- Group 35 ---
+user_pref("signon.rememberSignons", false);
+user_pref("signon.autofillForms", false);
+user_pref("signon.autofillForms.autocompleteOff", false);
+user_pref("signon.autofillForms.http", false);
+user_pref("signon.autologin.proxy", false);
+user_pref("signon.capture.inputChanges.enabled", false);
+user_pref("signon.formlessCapture.enabled", false);
+user_pref("signon.formRemovalCapture.enabled", false);
+user_pref("signon.generation.available", false);
+user_pref("signon.improvedPasswordRules.enabled", false);
+user_pref("signon.backup.enabled", false);
+user_pref("signon.generation.confidenceThreshold", 0");
+user_pref("signon.generation.enabled", false);
+user_pref("signon.passwordEditCapture.enabled", false);
+user_pref("signon.privateBrowsingCapture.enabled", false);
+user_pref("signon.storeWhenAutocompleteOff", false);
+user_pref("signon.userInputRequiredToCapture.enabled", false);
+user_pref("signon.usernameOnlyForm.lookupThreshold", 0);
+user_pref("signon.debug", false);
+user_pref("signon.recipes.path", "");
+user_pref("signon.recipes.remoteRecipes.enabled", false);
+user_pref("signon.relatedRealms.enabled", false);
+user_pref("signon.schemeUpgrades", false);
+user_pref("signon.includeOtherSubdomainsInLookup", false);
+
+
+
+user_pref("signon.masterPasswordReprompt.timeout_ms", 0); 
+user_pref("signon.showAutoCompleteFooter", false);
+user_pref("signon.firefoxRelay.base_url", "");
+user_pref("signon.firefoxRelay.learn_more_url", "");
+user_pref("signon.firefoxRelay.manage_url", "");
+user_pref("signon.firefoxRelay.terms_of_service_url", "");
+user_pref("signon.firefoxRelay.privacy_policy_url", "");
+user_pref("signon.signupDetection.confidenceThreshold",     "0.75");
+
+user_pref("signon.rustMirror.enabled", false);
+user_pref("signon.rustMirror.collectFailedOrigins", false);
+
+user_pref("signon.rustMirror.enabled", false);
+user_pref("signon.rustMirror.collectFailedOrigins", false);
 
 
 
