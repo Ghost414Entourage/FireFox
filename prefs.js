@@ -553,7 +553,29 @@ user_pref("security.tls.version.max", 4);
 user_pref("network.notify.IPv6", false);
 
 
-
+// --- Group 37 ---
+user_pref("accessibility.force_disabled", 1);
+user_pref("devtools.accessibility.enabled", false);
+user_pref("identity.fxaccounts.enabled", false);
+user_pref("identity.fxaccounts.autoconfig.uri", "");
+user_pref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
+user_pref("dom.push.enabled", false);
+user_pref("dom.push.userAgentID", "");
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.geo", 2);
+user_pref("geo.provider.ms-windows-location", false); 
+user_pref("geo.provider.use_corelocation", false); 
+user_pref("geo.provider.use_geoclue", false); 
+user_pref("geo.provider.network.logging.enabled", true);
+user_pref("browser.region.update.enabled", false);
+user_pref("browser.region.network.url", "");
+user_pref("extensions.blocklist.enabled", true);
+user_pref("app.update.auto", false);
+user_pref("extensions.update.enabled", false);
+user_pref("browser.search.update", false);
+user_pref("permissions.manager.defaultsUrl", "");
+user_pref("webchannel.allowObject.urlWhitelist", ""); 
+user_pref("extensions.getAddons.cache.enabled", false);
 
 
 
