@@ -545,6 +545,8 @@ user_pref("browser.download.manager.addToRecentDocs", false);
 user_pref("browser.download.panel.shown", true);
 user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.gmp-manager.url", "");
+user_pref("security.tls.version.min", 3);
+user_pref("security.tls.version.max", 4);
 
 
 
