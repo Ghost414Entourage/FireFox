@@ -551,7 +551,7 @@ user_pref("media.gmp-gmpopenh264.enabled", false);
 user_pref("media.gmp-manager.url", "");
 user_pref("security.tls.version.min", 3);
 user_pref("security.tls.version.max", 4);
-
+user_pref("network.notify.IPv6", false);
 
 
 
