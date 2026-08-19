@@ -533,6 +533,19 @@ user_pref("signon.rustMirror.collectFailedOrigins", false);
 
 
 
+// --- Group 36 ---
+user_pref("browser.download.useDownloadDir", false);
+user_pref("browser.download.alwaysOpenPanel", false);
+user_pref("browser.download.manager.addToRecentDocs", false);
+user_pref("browser.download.always_ask_before_handling_new_types", true);
+user_pref("browser.download.animateNotifications", true);
+user_pref("browser.download.folderList", 2);
+user_pref("browser.download.hide_plugins_without_extensions", false);
+user_pref("browser.download.manager.addToRecentDocs", false);
+user_pref("browser.download.panel.shown", true);
+user_pref("media.gmp-gmpopenh264.enabled", false);
+user_pref("media.gmp-manager.url", "");
+
 
 
 
