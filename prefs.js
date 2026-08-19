@@ -204,7 +204,6 @@ user_pref("privacy.clearHistory.historyFormDataAndDownloads", true);
 user_pref("privacy.cpd.history", true);
 user_pref("places.history.enabled", false);
 user_pref("browser.sessionstore.max_tabs_undo", 0);
-user_pref("browser.cache.disk.enable", false);
 
 
 // --- Group 18 ---
