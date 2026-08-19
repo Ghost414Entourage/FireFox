@@ -415,6 +415,7 @@ user_pref("browser.aboutConfig.showWarning", false);
 
 // --- Group 32 "Should Firefox pass this protocol off to an external desktop application on the operating system?" Controls whether Firefox passes the protocol to an external OS application. ---
 user_pref("network.protocol-handler.warn-external-default",	true);
+user_pref("network.protocol-handler.warn-external.mailto",	true);
 user_pref("network.protocol-handler.external-default", false);
 user_pref("network.protocol-handler.external.http", false);
 user_pref("network.protocol-handler.external.https", false);
@@ -454,27 +455,30 @@ user_pref("network.protocol-handler.external.ps", false);
 user_pref("network.protocol-handler.external.htps", false);
 user_pref("network.protocol-handler.external.ile", false);
 user_pref("network.protocol-handler.external.le", false);
-
+user_pref("network.protocol-handler.external.mailto", false);
 
 
 
 
 // --- Group 33 Does Firefox recognize and expose this protocol to web content and its internal renderer? Controls whether Firefox recognizes and renders the protocol internally. ---
 user_pref("network.protocol-handler.expose-all", false);
-user_pref("network.protocol-handler.expose.http", true);
+user_pref("network.protocol-handler.expose.http", false);
 user_pref("network.protocol-handler.expose.https", true);
-user_pref("network.protocol-handler.expose.javascript", true);
-user_pref("network.protocol-handler.expose.moz-extension", true);
+user_pref("network.protocol-handler.expose.javascript", false);
+user_pref("network.protocol-handler.expose.moz-extension", false);
 user_pref("network.protocol-handler.expose.ftp", false);
-user_pref("network.protocol-handler.expose.file", true);
-user_pref("network.protocol-handler.expose.about", true);
-user_pref("network.protocol-handler.expose.chrome", true);
-user_pref("network.protocol-handler.expose.blob", true);
-user_pref("network.protocol-handler.expose.data", true);
+user_pref("network.protocol-handler.expose.file", false);
+user_pref("network.protocol-handler.expose.about", false);
+user_pref("network.protocol-handler.expose.chrome", false);
+user_pref("network.protocol-handler.expose.blob", false);
+user_pref("network.protocol-handler.expose.data", false);
 user_pref("network.protocol-handler.expose.mailto", false);
 user_pref("network.protocol-handler.expose.news", false);
 user_pref("network.protocol-handler.expose.nntp", false);
 user_pref("network.protocol-handler.expose.snews", false);
+
+
+
 
 
 
