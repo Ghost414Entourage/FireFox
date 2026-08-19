@@ -576,7 +576,7 @@ user_pref("browser.search.update", false);
 user_pref("permissions.manager.defaultsUrl", "");
 user_pref("webchannel.allowObject.urlWhitelist", ""); 
 user_pref("extensions.getAddons.cache.enabled", false);
-
+user_pref("security.ssl3.deprecated.rsa_des_ede3_sha", false);
 
 
 
