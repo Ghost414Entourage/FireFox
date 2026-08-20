@@ -584,4 +584,8 @@ user_pref("security.ssl3.rsa_des_ede3_sha", false);
 // --- Group 38 ---
 user_pref("browser.cache.memory.enable", false);
 user_pref("browser.cache.memory.capacity", 0);
-
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+user_pref("
