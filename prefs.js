@@ -591,3 +591,5 @@ user_pref("browser.cache.offline.enable", false);
 
 // --- Group 39 ---
 user_pref("network.protocol-handler.prompt-without-user-activation", true);
+user_pref("dom.fs.enabled=false", false);
+user_pref("dom.fs.writable_file_stream.enabled", false);
