@@ -588,3 +588,6 @@ user_pref("network.dnsCacheEntries", 100);
 user_pref("network.dnsCacheExpiration", 60);
 user_pref("browser.cache.offline.enable", false);
 
+
+// --- Group 39 ---
+user_pref("network.protocol-handler.prompt-without-user-activation", true);
