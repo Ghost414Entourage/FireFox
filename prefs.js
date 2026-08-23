@@ -620,4 +620,6 @@ user_pref("dom.popup_maximum", 0);
 user_pref("privacy.fingerprintingProtection.remoteOverrides.enabled", false);
 user_pref("privacy.fingerprintingProtection.granularOverrides", "");
 user_pref("privacy.fingerprintingProtection.overrides", "");
+user_pref("privacy.resistFingerprinting.letterboxing", true);
+user_pref("privacy.resistFingerprinting.letterboxing.dimensions", "");
 
