@@ -617,5 +617,6 @@ user_pref("messaging-system.askForFeedback", true);
 
 // --- Group 40 ---
 user_pref("dom.popup_maximum", 0);
+user_pref("privacy.fingerprintingProtection.remoteOverrides.enabled", false);
 
 
