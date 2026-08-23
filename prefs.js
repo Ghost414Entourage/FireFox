@@ -123,7 +123,6 @@ user_pref("browser.zoom.siteSpecific", false);
 user_pref("device.sensors.enabled", false);
 user_pref("dom.enable_performance", false);
 user_pref("dom.enable_resource_timing", false);
-user_pref("dom.gamepad.enabled", false);
 user_pref("dom.maxHardwareConcurrency", false);
 user_pref("dom.w3c_touch_events.enabled", false);
 user_pref("dom.webaudio.enabled", false);
