@@ -623,3 +623,9 @@ user_pref("privacy.fingerprintingProtection.overrides", "");
 user_pref("privacy.resistFingerprinting.letterboxing", true);
 user_pref("privacy.resistFingerprinting.letterboxing.dimensions", "");
 
+// --- Group 41 ---
+user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.maxSubmissionDelayMs", 0);
+user_pref("
+user_pref("
+user_pref("
+user_pref("
