@@ -630,3 +630,4 @@ user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
 user_pref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
 user_pref("nimbus.telemetry.targetingContextEnabled", false);
 user_pref("nimbus.telemetry.targetingContextEnabled", false);
+user_pref("nimbus.rollouts.enabled", false);
