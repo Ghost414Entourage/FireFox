@@ -628,4 +628,5 @@ user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.maxSubmissio
 user_pref("browser.newtabpage.activity-stream.telemetry.surfaceId", "");
 user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
 user_pref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
-user_pref("
+user_pref("nimbus.telemetry.targetingContextEnabled", false);
+user_pref("nimbus.telemetry.targetingContextEnabled", false);
