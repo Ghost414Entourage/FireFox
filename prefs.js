@@ -627,5 +627,5 @@ user_pref("privacy.resistFingerprinting.letterboxing.dimensions", "");
 user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.maxSubmissionDelayMs", 0);
 user_pref("browser.newtabpage.activity-stream.telemetry.surfaceId", "");
 user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false);
-user_pref("
+user_pref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false);
 user_pref("
