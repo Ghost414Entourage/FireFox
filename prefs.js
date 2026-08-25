@@ -634,4 +634,6 @@ user_pref("nimbus.rollouts.enabled", false);
 // --- Group 42 ---
 user_pref("dom.block_external_protocol_in_iframes", true);
 user_pref("dom.delay.block_external_protocol_in_iframes", 120);
-
+user_pref("dom.security.https_only_mode_pbm", true);
+user_pref("
+user_pref("
