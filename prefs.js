@@ -558,7 +558,6 @@ user_pref("devtools.accessibility.enabled", false);
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("identity.fxaccounts.autoconfig.uri", "");
 user_pref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
-user_pref("dom.push.enabled", false);
 user_pref("dom.push.userAgentID", "");
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.geo", 2);
