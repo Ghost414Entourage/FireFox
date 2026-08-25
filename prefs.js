@@ -353,7 +353,6 @@ user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.trackingprotection.pbmode.enabled", true);
 user_pref("browser.contentblocking.customBlockList.preferences.ui.enabled", false); 
 user_pref("privacy.socialtracking.block_cookies.enabled", true); 
-user_pref("privacy.trackingprotection.fingerprinting.enabled", true); 
 user_pref("privacy.trackingprotection.emailtracking.enabled", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true); 
