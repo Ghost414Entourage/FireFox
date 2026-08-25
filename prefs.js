@@ -360,7 +360,6 @@ user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
 user_pref("privacy.trackingprotection.emailtracking.enabled", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true); 
-user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true); 
 user_pref("privacy.annotate_channels.strict_list.enabled", true);
 user_pref("privacy.annotate_channels.strict_list.pbmode.enabled", true); 
 user_pref("privacy.fingerprintingProtection.pbmode", true); 
