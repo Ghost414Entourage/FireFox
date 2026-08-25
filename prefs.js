@@ -372,7 +372,6 @@ user_pref("privacy.restrict3rdpartystorage.heuristic.redirect", false);
 user_pref("privacy.restrict3rdpartystorage.heuristic.window_open", false);
 user_pref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 user_pref("privacy.trackingprotection.allow_list.convenience.enabled", true);
-user_pref("privacy.query_stripping.enabled", true); 
 user_pref("privacy.query_stripping.enabled.pbmode", true); 
 user_pref("privacy.query_stripping.strip_list", ""); 
 user_pref("privacy.query_stripping.strip_on_share.enabled", true);
