@@ -358,7 +358,6 @@ user_pref("privacy.socialtracking.block_cookies.enabled", true);
 user_pref("privacy.trackingprotection.cryptomining.enabled", true); 
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true); 
 user_pref("privacy.trackingprotection.emailtracking.enabled", true); 
-user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navigation", true); 
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true); 
