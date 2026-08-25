@@ -179,7 +179,6 @@ user_pref("dom.disable_window_flip", true);
 
 // --- Group 16 ---
 user_pref("privacy.popups.showBrowserMessage", true);
-user_pref("privacy.clearOnShutdown.siteSettings", true);
 user_pref("privacy.clearOnShutdown.openWindows", true);
 user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", true);
 user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", true);
