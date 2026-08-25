@@ -352,7 +352,6 @@ user_pref("network.trr.allow-rfc1918", false);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.trackingprotection.pbmode.enabled", true);
 user_pref("browser.contentblocking.customBlockList.preferences.ui.enabled", false); 
-user_pref("privacy.trackingprotection.socialtracking.enabled", true); 
 user_pref("privacy.socialtracking.block_cookies.enabled", true); 
 user_pref("privacy.trackingprotection.cryptomining.enabled", true); 
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true); 
