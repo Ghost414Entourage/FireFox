@@ -364,7 +364,6 @@ user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.pbmode.top_navi
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true); 
 user_pref("privacy.annotate_channels.strict_list.enabled", true);
 user_pref("privacy.annotate_channels.strict_list.pbmode.enabled", true); 
-user_pref("privacy.fingerprintingProtection", true); 
 user_pref("privacy.fingerprintingProtection.pbmode", true); 
 user_pref("privacy.bounceTrackingProtection.mode", 1);
 user_pref("privacy.antitracking.enableWebcompat", false);
