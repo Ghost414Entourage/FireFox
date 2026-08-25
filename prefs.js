@@ -635,5 +635,6 @@ user_pref("nimbus.rollouts.enabled", false);
 user_pref("dom.block_external_protocol_in_iframes", true);
 user_pref("dom.delay.block_external_protocol_in_iframes", 120);
 user_pref("dom.security.https_only_mode_pbm", true);
-user_pref("
+user_pref("dom.security.https_only_mode.upgrade_local", true);
+user_pref("dom.security.https_only_mode.upgrade_onion", true);
 user_pref("
