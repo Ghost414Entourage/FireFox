@@ -489,7 +489,7 @@ user_pref("security.tls.enable_kyber", true);
 user_pref("network.http.http3.enable_kyber", true);
 user_pref("privacy.resistFingerprinting.randomization.daily_reset.enabled", true);
 user_pref("privacy.resistFingerprinting.randomization.daily_reset.private.enabled", true);
-user_pref("browser.display.use_system_colors", false);
+
 
 
 // --- Group 35 ---
