@@ -633,4 +633,6 @@ user_pref("nimbus.telemetry.targetingContextEnabled", false);
 user_pref("nimbus.rollouts.enabled", false);
 
 // --- Group 42 ---
+user_pref("dom.block_external_protocol_in_iframes", true);
+user_pref("dom.delay.block_external_protocol_in_iframes", 120);
 
