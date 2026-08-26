@@ -70,6 +70,8 @@ https://firefox-source-docs.mozilla.org/contributing/directory_structure.html
 
 https://codeberg.org/librewolf/settings
 
+https://chromedevtools.github.io/devtools-protocol/tot/Browser/
+
 https://librewolf.dev/librewolf/settings/search/branch/master?path=&q=pref%28&mode=exact
 
 https://searchfox.org/firefox-main/source/modules/libpref/init/StaticPrefList.yaml
