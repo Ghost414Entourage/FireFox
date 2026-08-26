@@ -318,7 +318,6 @@ user_pref("dom.vr.autoactivate.enabled", false);
 
 
 // --- Group 28 ---
-user_pref("media.webspeech.synth.enabled", false);
 user_pref("media.webspeech.test.enable", false);
 user_pref("media.webspeech.synth.force_global_queue", false);
 user_pref("media.webspeech.recognition.force_enable", false);
