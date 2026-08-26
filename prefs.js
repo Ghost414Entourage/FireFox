@@ -636,5 +636,5 @@ user_pref("dom.memory.memory_pressure_on_background", 3);
 user_pref("dom.memory.foreground_content_processes_have_larger_page_cache", false);
 user_pref("dom.prefetch_dns_for_anchor_http_document", false);
 user_pref("dom.prefetch_dns_for_anchor_https_document", false);
-user_pref("
+user_pref("dom.reporting.header.enabled", false);
 user_pref("
