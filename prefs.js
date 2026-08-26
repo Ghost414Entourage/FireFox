@@ -292,7 +292,6 @@ user_pref("media.getusermedia.audiocapture.enabled", false);
 user_pref("media.getusermedia.browser.enabled", false);
 user_pref("media.getusermedia.noise_enabled", false);
 user_pref("media.getusermedia.screensharing.enabled", false);
-user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
 user_pref("media.navigator.permission.disabled", true);
 user_pref("media.video_stats.enabled", false);
