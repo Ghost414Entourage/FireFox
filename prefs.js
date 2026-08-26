@@ -639,3 +639,4 @@ user_pref("dom.prefetch_dns_for_anchor_https_document", false);
 user_pref("dom.reporting.header.enabled", false);
 user_pref("dom.reporting.delivering.maxFailures", 0);
 user_pref("dom.reporting.delivering.maxReports", 0);
+user_pref("dom.serviceWorkers.privateBrowsing.enabled", false);
