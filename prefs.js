@@ -629,3 +629,12 @@ user_pref("dom.security.https_only_mode_pbm", true);
 user_pref("dom.security.https_only_mode.upgrade_local", true);
 user_pref("dom.security.https_only_mode.upgrade_onion", true);
 user_pref("dom.storage.enabled", false);
+
+
+// --- Group 43 ---
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+user_pref("
