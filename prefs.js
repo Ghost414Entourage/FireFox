@@ -632,7 +632,7 @@ user_pref("dom.storage.enabled", false);
 
 
 // --- Group 43 ---
-user_pref("
+user_pref("dom.memory.memory_pressure_on_background", 3);
 user_pref("
 user_pref("
 user_pref("
