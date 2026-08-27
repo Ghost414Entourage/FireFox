@@ -647,6 +647,6 @@ user_pref("browser.history.maxStateObjectSize", 0);
 user_pref("browser.sessionhistory.max_entries", 0);
 user_pref("browser.sessionhistory.max_total_viewers", 0);
 user_pref("browser.cache.disk.capacity", 0);
-user_pref("browser.cache.memory.capacity", 0);
+user_pref("
 user_pref("
 user_pref("          
