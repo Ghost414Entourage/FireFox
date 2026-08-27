@@ -70,6 +70,7 @@ user_pref("media.peerconnection.ice.no_host", true);
 user_pref("webgl.disabled", true);
 user_pref("media.autoplay.default", 5);
 user_pref("media.eme.enabled", false);
+user_pref("browser.eme.ui.enabled", false);
 user_pref("dom.disable_open_during_load", true);
 
 // --- Group 7 ---
