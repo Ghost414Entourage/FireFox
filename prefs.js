@@ -642,6 +642,9 @@ user_pref("dom.serviceWorkers.privateBrowsing.enabled", false);
 
 
 // --- Group 44 ---
+user_pref("network.cookie.maxageCap", 120);
+user_pref("network.cookie.maxPerHost", 0);
+user_pref("network.cookie.maxNumber", 0);
 user_pref("browser.cache.disk.max_entry_size", 0);
 user_pref("browser.cache.memory.max_entry_size", 0);
 user_pref("browser.history.maxStateObjectSize", 0);
