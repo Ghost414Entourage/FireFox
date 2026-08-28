@@ -653,7 +653,7 @@ user_pref("browser.history.maxStateObjectSize", 0);
 user_pref("browser.sessionhistory.max_entries", 0);
 user_pref("browser.sessionhistory.max_total_viewers", 0);
 user_pref("browser.cache.disk.capacity", 0);
-user_pref("dom.caches.enabled", 0);
+user_pref("dom.caches.enabled", false);
 user_pref("dom.quotaManager.temporaryStorage.fixedLimit", 0);
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);          
 user_pref("
