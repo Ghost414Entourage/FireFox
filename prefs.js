@@ -63,10 +63,6 @@ user_pref("security.pki.crlite_mode", 2);
 // --- Group 6 ---
 user_pref("network.http.referer.XOriginPolicy", 2);
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
-user_pref("media.peerconnection.enabled", false);
-user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-user_pref("media.peerconnection.ice.default_address_only", true);
-user_pref("media.peerconnection.ice.no_host", true);
 user_pref("webgl.disabled", true);
 user_pref("media.autoplay.default", 5);
 user_pref("media.eme.enabled", false);
@@ -667,3 +663,7 @@ user_pref("
 user_pref("
 user_pref("
 user_pref("
+user_pref("media.peerconnection.enabled", false);
+user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+user_pref("media.peerconnection.ice.default_address_only", true);
+user_pref("media.peerconnection.ice.no_host", true);
