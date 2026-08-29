@@ -659,7 +659,7 @@ user_pref("
 // --- Group 45 ---
 user_pref("network.http.redirection-limit", 0);
 user_pref("network.manage-offline-status", false);
-user_pref("
+user_pref("media.peerconnection.use_document_iceservers", false);
 user_pref("
 user_pref("
 user_pref("
