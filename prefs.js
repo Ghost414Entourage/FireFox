@@ -657,3 +657,13 @@ user_pref("dom.caches.enabled", false);
 user_pref("dom.quotaManager.temporaryStorage.fixedLimit", 0);
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);          
 user_pref("
+
+
+
+// --- Group 45 ---
+user_pref("network.http.redirection-limit", 0);
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+user_pref("
