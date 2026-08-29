@@ -660,10 +660,11 @@ user_pref("network.http.redirection-limit", 0);
 user_pref("network.manage-offline-status", false);
 user_pref("media.peerconnection.use_document_iceservers", false);
 user_pref("media.peerconnection.ice.relay_only", false);
-user_pref("dom.push.connection.enabled", false);
-user_pref("dom.push.enabled", false);
-user_pref("
 user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 user_pref("media.peerconnection.ice.default_address_only", true);
 user_pref("media.peerconnection.ice.no_host", true);
+user_pref("media.cache_size", 0);
+user_pref("media.cache_size.cellular", 0);
+user_pref("dom.push.connection.enabled", false);
+user_pref("dom.push.enabled", false);
