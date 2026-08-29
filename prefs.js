@@ -112,7 +112,6 @@ user_pref("privacy.trackingprotection.cryptomining.enabled", true);
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
 user_pref("dom.serviceWorkers.enabled", false);
 user_pref("dom.webnotifications.enabled", false);
-user_pref("dom.push.enabled", false);
 user_pref("browser.display.use_document_fonts", false);
 
 // --- Group 11 ---
@@ -661,7 +660,8 @@ user_pref("network.http.redirection-limit", 0);
 user_pref("network.manage-offline-status", false);
 user_pref("media.peerconnection.use_document_iceservers", false);
 user_pref("media.peerconnection.ice.relay_only", false);
-user_pref("
+user_pref("dom.push.connection.enabled", false);
+user_pref("dom.push.enabled", false);
 user_pref("
 user_pref("media.peerconnection.enabled", false);
 user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
