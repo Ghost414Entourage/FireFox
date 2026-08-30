@@ -364,7 +364,6 @@ user_pref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 user_pref("privacy.query_stripping.enabled.pbmode", true); 
 user_pref("privacy.query_stripping.strip_list", ""); 
 user_pref("privacy.query_stripping.strip_on_share.enabled", true);
-user_pref("extensions.webcompat.enable_shims", true); 
 user_pref("extensions.webcompat.smartblockEmbeds.enabled", true); 
 user_pref("privacy.trackingprotection.lower_network_priority", true);
 user_pref("fission.autostart", true);
