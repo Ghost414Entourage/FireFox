@@ -663,3 +663,12 @@ user_pref("media.cache_size", 0);
 user_pref("media.cache_size.cellular", 0);
 user_pref("dom.push.connection.enabled", false);
 user_pref("dom.push.enabled", false);
+
+
+// --- Group 46 ---
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+user_pref("
+user_pref("
