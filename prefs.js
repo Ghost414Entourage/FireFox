@@ -155,10 +155,10 @@ user_pref("extensions.webcompat.enable_shims", true);
 user_pref("geo.enabled", false);
 user_pref("full-screen-api.enabled", false);
 user_pref("permissions.default.geo", 2);
-user_pref("permissions.default.camera", 0);
-user_pref("permissions.default.microphone", 0);
-user_pref("permissions.default.desktop-notification", 0);
-user_pref("permissions.default.xr", 0);
+user_pref("permissions.default.camera", 2);
+user_pref("permissions.default.microphone", 2);
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.xr", 2);
 
 // --- Group 15 ---
 user_pref("dom.securecontext.allowlist_onions", true);
