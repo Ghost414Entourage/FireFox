@@ -552,7 +552,6 @@ user_pref("geo.provider.use_geoclue", false);
 user_pref("geo.provider.network.logging.enabled", true);
 user_pref("browser.region.update.enabled", false);
 user_pref("browser.region.network.url", "");
-user_pref("extensions.blocklist.enabled", true);
 user_pref("app.update.auto", false);
 user_pref("extensions.update.enabled", false);
 user_pref("browser.search.update", false);
