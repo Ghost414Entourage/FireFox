@@ -55,7 +55,7 @@ user_pref("dom.security.https_only_mode_send_http_background_request", false);
 user_pref("browser.xul.error_pages.expert_bad_cert", true);
 user_pref("security.tls.enable_0rtt_data", false);
 user_pref("security.OCSP.require", true);
-user_pref("security.pki.sha1_enforcement_level", 1);
+user_pref("security.pki.sha1_enforcement_level", 2);
 user_pref("security.cert_pinning.enforcement_level", 2);
 user_pref("security.remote_settings.crlite_filters.enabled", true);
 user_pref("security.pki.crlite_mode", 2);
