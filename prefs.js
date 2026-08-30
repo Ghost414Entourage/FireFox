@@ -154,7 +154,7 @@ user_pref("extensions.blocklist.enabled", true);
 user_pref("extensions.webcompat.enable_shims", true);
 user_pref("geo.enabled", false);
 user_pref("full-screen-api.enabled", false);
-user_pref("permissions.default.geo", 0);
+user_pref("permissions.default.geo", 2);
 user_pref("permissions.default.camera", 0);
 user_pref("permissions.default.microphone", 0);
 user_pref("permissions.default.desktop-notification", 0);
