@@ -151,7 +151,6 @@ user_pref("browser.contentanalysis.default_allow", false);
 
 // --- Group 14 ---
 user_pref("extensions.blocklist.enabled", true);
-user_pref("privacy.firstparty.isolate", true);
 user_pref("extensions.webcompat.enable_shims", true);
 user_pref("geo.enabled", false);
 user_pref("full-screen-api.enabled", false);
