@@ -542,7 +542,6 @@ user_pref("identity.fxaccounts.enabled", false);
 user_pref("identity.fxaccounts.autoconfig.uri", "");
 user_pref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
 user_pref("dom.push.userAgentID", "");
-user_pref("permissions.default.desktop-notification", 2);
 user_pref("geo.provider.ms-windows-location", false); 
 user_pref("geo.provider.use_corelocation", false); 
 user_pref("geo.provider.use_geoclue", false); 
