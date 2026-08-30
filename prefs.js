@@ -666,9 +666,9 @@ user_pref("dom.push.enabled", false);
 
 
 // --- Group 46 ---
-user_pref("browser.cache.disk.free_space_soft_limit
-user_pref("browser.cache.disk.free_space_hard_limit
-user_pref("
-user_pref("
-user_pref("
-user_pref("
+user_pref("browser.cache.disk.free_space_soft_limit", 4294967295);
+user_pref("browser.cache.disk.free_space_hard_limit", 4294967295);
+user_pref("browser.cache.disk.free_space_soft_limit", UINT32_MAX);
+user_pref("browser.cache.disk.free_space_hard_limit", UINT32_MAX);
+user_pref("browser.cache.disk.free_space_soft_limit", 4294967295U);
+user_pref("browser.cache.disk.free_space_hard_limit", 4294967295U);
