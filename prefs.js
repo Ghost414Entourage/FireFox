@@ -672,7 +672,13 @@ user_pref("app.normandy.run_interval_seconds", 0);
 user_pref("app.normandy.shieldLearnMoreUrl", "");
 user_pref("app.normandy.last_seen_buildid", "");
 user_pref("app.normandy.onsync_skew_sec", 0);          
+user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("
 user_pref("
+user_pref("
+user_pref("
+
+
+
 
           
