@@ -684,6 +684,6 @@ user_pref("browser.link.open_newwindow.restriction", 0);
 user_pref("browser.link.open_newwindow.disabled_in_fullscreen", true);
 user_pref("
 user_pref("browser.sessionstore.max_tabs_undo", 0);
-user_pref("
+user_pref("browser.sessionstore.max_windows_undo", 0);
 
           
