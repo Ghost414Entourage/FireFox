@@ -663,5 +663,16 @@ user_pref("dom.push.enabled", false);
 // --- Group 46 ---
 user_pref("browser.cache.disk.free_space_soft_limit", 2147483647);
 user_pref("browser.cache.disk.free_space_hard_limit", 2147483647);
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
+user_pref("app.normandy.dev_mode", false);
+user_pref("app.normandy.first_run", false);
+user_pref("app.normandy.logging.level", 0);
+user_pref("app.normandy.run_interval_seconds", 0);
+user_pref("app.normandy.shieldLearnMoreUrl", "");
+user_pref("app.normandy.last_seen_buildid", "");
+user_pref("app.normandy.onsync_skew_sec", 0);          
+user_pref("
+user_pref("
 
-
+          
