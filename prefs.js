@@ -677,7 +677,7 @@ user_pref("app.shield.optoutstudies.enabled", false);
 
 
 // --- Group 47 ---
-user_pref("
+user_pref("browser.link.force_default_user_context_id_for_external_opens", true);
 user_pref("
 user_pref("
 user_pref("
