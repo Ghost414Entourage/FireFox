@@ -688,7 +688,7 @@ user_pref("browser.sessionstore.max_windows_undo", 0);
 
 
 // --- Group 48 ---
-user_pref("
+user_pref("browser.chrome.site_icons", false);
 user_pref("
 user_pref("
 user_pref("
