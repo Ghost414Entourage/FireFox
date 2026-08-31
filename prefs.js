@@ -164,8 +164,6 @@ user_pref("permissions.default.xr", 2);
 user_pref("dom.securecontext.allowlist_onions", true);
 user_pref("network.http.referer.hideOnionSource", true);
 user_pref("dom.event.contextmenu.enabled", false);
-user_pref("app.normandy.enabled", false);
-user_pref("app.normandy.api_url", "");
 user_pref("breakpad.reportURL", "");
 user_pref("browser.tabs.crashReporting.sendReport", false);
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false);
