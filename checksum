@@ -26,6 +26,9 @@ curl -sO "https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS" && 
 grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | sed 's|mac/en-US/||' | shasum -a 256 -c -
 
 
+curl -sO "https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS" && \
+grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | sed 's|mac/en-US/||' | sha256sum -c -
+
 
 
 
