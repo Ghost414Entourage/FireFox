@@ -84,3 +84,6 @@ gpg --verify SHA256SUMS.asc SHA256SUMS
 
 
 
+
+
+tccutil reset All com.apple.Terminal
