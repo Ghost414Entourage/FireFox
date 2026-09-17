@@ -2,5 +2,76 @@ https://archive.mozilla.org/pub/firefox/releases/
 
 
 
+SHA-256 Verification Commands
+
+
+
 Linux & macOS (Terminal)
+
+Option A: Verify specific downloaded file using grep
+
+curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS
+grep "YOUR_FILENAME" SHA256SUMS | sha256sum -c -
+
+
+Option B: Compare calculated hash manually
+
+sha256sum YOUR_FILENAME
+
+
+
+Windows (PowerShell)
+
+
+Get-FileHash -Algorithm SHA256 .\YOUR_FILENAME
+
+
+
+
+
+
+
+
+SHA-512 Verification Commands
+
+
+Linux & macOS (Terminal)
+
+Option A: Verify specific downloaded file using grep
+
+curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA512SUMS
+grep "YOUR_FILENAME" SHA512SUMS | sha512sum -c -
+
+
+Option B: Compare calculated hash manually
+
+sha512sum YOUR_FILENAME
+
+
+Windows (PowerShell)
+
+Get-FileHash -Algorithm SHA512 .\YOUR_FILENAME
+
+
+
+
+
+GPG Signature Verification (Optional)
+To verify that the checksum file itself was authentically signed by Mozilla:
+
+
+
+# Download checksum file and signature
+curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS
+curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS.asc
+
+# Import Mozilla release key from directory
+curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/KEY
+gpg --import KEY
+
+# Verify signature
+gpg --verify SHA256SUMS.asc SHA256SUMS
+
+
+
 
