@@ -14,6 +14,11 @@ curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS
 grep "YOUR_FILENAME" SHA256SUMS | sha256sum -c -
 
 
+cd ~/Downloads
+curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS
+grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | shasum -a 256 -c -
+
+
 
 Option B: Compare calculated hash manually
 
