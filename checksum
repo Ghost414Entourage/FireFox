@@ -20,6 +20,46 @@ grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | shasum -a 256 -c -
 
 
 
+Here is the complete command for the file already sitting in your Downloads folder at /Users/computer/downloads/'Firefox 156.0.dmg:
+
+curl -sO "https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS" && \
+grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | sed 's|mac/en-US/||' | shasum -a 256 -c -
+
+
+
+
+
+Here is the complete, single-block command sequence you can copy and paste into your terminal. 
+It changes to your Downloads directory, downloads both the SHA256SUMS file and the Firefox DMG, strips the folder path, and verifies the file:
+
+cd ~/Downloads && \
+curl -sL "https://archive.mozilla.org/pub/firefox/releases/156.0/mac/en-US/Firefox%20156.0.dmg" -o "Firefox 156.0.dmg" && \
+curl -sO "https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS" && \
+grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | sed 's|mac/en-US/||' | shasum -a 256 -c -
+
+
+or
+
+
+cd ~/Downloads && \
+rm -f "Firefox 156.0.dmg" && \
+curl -sL "https://archive.mozilla.org/pub/firefox/releases/156.0/mac/en-US/Firefox%20156.0.dmg" -o "Firefox 156.0.dmg" && \
+curl -sO "https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS" && \
+grep "mac/en-US/Firefox 156.0.dmg" SHA256SUMS | sed 's|mac/en-US/||' | shasum -a 256 -c -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Option B: Compare calculated hash manually
 
 sha256sum YOUR_FILENAME
