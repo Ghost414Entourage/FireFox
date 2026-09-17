@@ -14,10 +14,12 @@ curl -sO https://archive.mozilla.org/pub/firefox/releases/156.0/SHA256SUMS
 grep "YOUR_FILENAME" SHA256SUMS | sha256sum -c -
 
 
+
 Option B: Compare calculated hash manually
 
 sha256sum YOUR_FILENAME
 
+shasum -a 256 "Firefox Setup 156.0.dmg"
 
 
 Windows (PowerShell)
@@ -46,6 +48,8 @@ grep "YOUR_FILENAME" SHA512SUMS | sha512sum -c -
 Option B: Compare calculated hash manually
 
 sha512sum YOUR_FILENAME
+
+shasum -a 512 "Firefox Setup 156.0.dmg"
 
 
 Windows (PowerShell)
