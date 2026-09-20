@@ -643,7 +643,7 @@ user_pref("browser.cache.disk.capacity", 0);
 user_pref("dom.caches.enabled", false);
 user_pref("dom.quotaManager.temporaryStorage.fixedLimit", 0);
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);          
-user_pref("
+
 
 
 
