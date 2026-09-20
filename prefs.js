@@ -453,6 +453,8 @@ user_pref("network.protocol-handler.expose.mailto", false);
 user_pref("network.protocol-handler.expose.news", false);
 user_pref("network.protocol-handler.expose.nntp", false);
 user_pref("network.protocol-handler.expose.snews", false);
+user_pref("network.protocol-handler.expose.imap", false);
+
 
 
 
