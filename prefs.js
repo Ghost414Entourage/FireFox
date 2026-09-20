@@ -692,8 +692,8 @@ user_pref("browser.sessionstore.max_windows_undo", 0);
 // --- Group 48 ---
 user_pref("browser.chrome.site_icons", false);
 user_pref("security.OCSP.enabled", 1);
-user_pref("
-user_pref("
+user_pref("network.security.ports.banned", "1-442, 444-65535");
+user_pref("network.security.ports.banned.override", "");
 user_pref("
 user_pref("
 user_pref("
