@@ -391,13 +391,13 @@ user_pref("browser.aboutConfig.showWarning", false);
 
 
 // --- Group 32 "Should Firefox pass this protocol off to an external desktop application on the operating system?" Controls whether Firefox passes the protocol to an external OS application. ---
-user_pref("network.protocol-handler.warn-external-default",	true);
-user_pref("network.protocol-handler.warn-external.mailto",	true);
+user_pref("network.protocol-handler.warn-external-default", true);
+user_pref("network.protocol-handler.warn-external.mailto", true);
 user_pref("network.protocol-handler.external-default", false);
 user_pref("network.protocol-handler.external.http", false);
 user_pref("network.protocol-handler.external.https", false);
-user_pref("network.protocol-handler.external.javascript",	false);
-user_pref("network.protocol-handler.external.moz-extension",	false);
+user_pref("network.protocol-handler.external.javascript", false);
+user_pref("network.protocol-handler.external.moz-extension", false);
 user_pref("network.protocol-handler.external.ftp", false);
 user_pref("network.protocol-handler.external.file", false);
 user_pref("network.protocol-handler.external.about", false);
