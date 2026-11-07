@@ -1,3 +1,6 @@
+https://downloads.cisecurity.org/#/
+
+
 - On MacOS type about:profiles into your firefox browser create a profile named ProfileOne 
 - Before opening it put the file labled prefs.js in /Users/YourUserName/Library/Application\ Support/Firefox/Profiles/ProfileOne/prefs.js 
 
