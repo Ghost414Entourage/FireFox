@@ -142,3 +142,7 @@ sudo nano /Library/Managed\ Preferences/com.brave.Browser.plist
 
 sudo chmod 644 /Library/Managed\ Preferences/com.brave.Browser.plist
 sudo chown root:wheel /Library/Managed\ Preferences/com.brave.Browser.plist
+
+
+plutil -lint /Library/Managed\ Preferences/com.brave.Browser.plist
+
