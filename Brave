@@ -23,3 +23,14 @@ codesign -dv -vvv /Applications/Brave\ Browser.app/ 2>&1 | grep Authority
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+~/Library/Application Support/BraveSoftware/Brave-Browser
+
+~/Library/Caches/BraveSoftware/Brave-Browser
+
+~/Library/Caches/com.brave.Browser
+
+~/Library/HTTPStorages/com.brave.Browser
+
+~/Library/Preferences/com.brave.Browser.plist
+
+~/Library/Saved Application State/com.brave.Browser.savedState
