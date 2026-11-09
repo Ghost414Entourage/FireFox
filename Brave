@@ -19,3 +19,7 @@ diskutil eject /Volumes/BraveTemp
 
 hdiutil detach /Volumes/BraveTemp
 
+codesign -dv -vvv /Applications/Brave\ Browser.app/ 2>&1 | grep Authority
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
