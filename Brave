@@ -11,3 +11,11 @@ codesign --verify --verbose Brave-Browser-arm64.dmg
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+diskutil image attach --mountOptions nobrowse --mountPoint /Volumes/BraveTemp Brave-Browser.dmg
+
+defaults read /Volumes/BraveTemp/Brave\ Browser.app/Contents/Info CFBundleShortVersionString
+
+diskutil eject /Volumes/BraveTemp
+
+hdiutil detach /Volumes/BraveTemp
+
