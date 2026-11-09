@@ -140,4 +140,5 @@ https://support.brave.app/hc/en-us/articles/360039248271-Group-Policy
 sudo mkdir -p /Library/Managed\ Preferences/
 sudo nano /Library/Managed\ Preferences/com.brave.Browser.plist
 
-
+sudo chmod 644 /Library/Managed\ Preferences/com.brave.Browser.plist
+sudo chown root:wheel /Library/Managed\ Preferences/com.brave.Browser.plist
