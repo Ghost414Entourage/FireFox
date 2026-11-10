@@ -43,4 +43,8 @@ codesign -dv -vvv /Applications/Brave\ Browser.app/ 2>&1 | grep Authority
 
 /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --user-data-dir="/Users/computer/Library/Application Support/BraveSoftware/Brave-Browser" --password-store=basic
 
+hdiutil attach ~/Downloads/Brave-Browser.dmg
 
+sudo cp -R /Volumes/Brave\ Browser/Brave\ Browser.app /Applications/
+
+hdiutil detach /Volumes/Brave\ Browser
