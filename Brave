@@ -41,4 +41,6 @@ codesign -dv -vvv /Applications/Brave\ Browser.app/ 2>&1 | grep Authority
 
 /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --user-data-dir="/Users/computer/Library/Application Support/BraveSoftware/Brave-Browser"
 
+/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --user-data-dir="/Users/computer/Library/Application Support/BraveSoftware/Brave-Browser" --password-store=basic
+
 
